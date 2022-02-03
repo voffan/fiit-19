@@ -66,6 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Авторизация\Authorization.cs" />
     <Compile Include="Объекты\Employee.cs" />
+    <Compile Include="Объекты\Reg.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
