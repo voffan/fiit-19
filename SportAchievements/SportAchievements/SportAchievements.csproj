@@ -56,6 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Competition.cs" />
+    <Compile Include="Classes\CompType.cs" />
+    <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Classes\KindOfSport.cs" />
+    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\Result.cs" />
+    <Compile Include="Classes\Sportsman.cs" />
+    <Compile Include="Classes\WeightCategory.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
