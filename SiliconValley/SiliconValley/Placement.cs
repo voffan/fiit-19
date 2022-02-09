@@ -8,7 +8,7 @@ namespace SiliconValley
 {
     abstract class Placement
     {
-        private string name;
-        public string Name { get => name; set => name = value; }
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

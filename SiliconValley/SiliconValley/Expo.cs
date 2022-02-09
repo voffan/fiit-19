@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,11 @@ namespace SiliconValley
 {
     class Expo : Placement
     {
-        private string address;
-        private DateTime start;
-        private DateTime end;
+        public int Id { get; set; }
 
-        public string Address { get => address; set => address = value; }
-        public DateTime Start { get => start; set => start = value; }
-        public DateTime End { get => end; set => end = value; }
+        [MaxLength(100)]
+        public string Address { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
     }
 }

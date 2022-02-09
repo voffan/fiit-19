@@ -8,7 +8,7 @@ namespace SiliconValley
 {
     class Education
     {
-        private string name;
-        public string Name { get => name; set => name = value; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     }
 }

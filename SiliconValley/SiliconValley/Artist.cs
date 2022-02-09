@@ -8,10 +8,8 @@ namespace SiliconValley
 {
     class Artist
     {
-        private string name;
-        private DateTime birthday;
-
-        public string Name { get => name; set => name = value; }
-        public DateTime Birthday { get => birthday; set => birthday = value; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public DateTime Birthday { get; set; }
     }
 }

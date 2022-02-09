@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artist.cs" />
+    <Compile Include="Db\Context.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Education.cs" />
     <Compile Include="Employee.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +9,14 @@ namespace SiliconValley
 {
     class Employee
     {
-        private Position position;
-        private string phoneNumber;
-        private Education education;
-        private DateTime birthday;
+        public int Id { get; set; }
+        [MaxLength(11)]
+        public string PhoneNumber { get; set; }
+        public DateTime Birthday { get; set; }
 
-        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
-        public DateTime Birthday { get => birthday; set => birthday = value; }
-        internal Position Position { get => position; set => position = value; }
-        internal Education Education { get => education; set => education = value; }
+        public int PositionId { get; set; }
+        public virtual Position Position { get; set; }
+        public int EducationId { get; set; }
+        public Education Education { get; set; }
     }
 }
