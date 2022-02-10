@@ -119,6 +119,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Cpu.cs" />
+    <Compile Include="Classes\Department.cs" />
+    <Compile Include="Classes\Device.cs" />
+    <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Classes\Hdd.cs" />
+    <Compile Include="Classes\Motherboard.cs" />
+    <Compile Include="Classes\PC.cs" />
+    <Compile Include="Classes\Peripheral.cs" />
+    <Compile Include="Classes\RepairStatus.cs" />
+    <Compile Include="Classes\Repair.cs" />
+    <Compile Include="Classes\Status.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

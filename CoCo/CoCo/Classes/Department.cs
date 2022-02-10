@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoCo
+namespace CoCo.Classes
 {
-    internal class Hdd
+    internal class Department
     {
+        private string name { get; set; }
+
     }
 }
