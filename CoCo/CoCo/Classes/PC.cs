@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    internal class PC : Device
+    public class PC : Device
     {
-        private Hdd hdd { get; set; }
-        private Cpu cpu { get; set; }
-        private Motherboard motherboard { get; set; }
-        [ForeignKey("employee")]
-        public Employee employee { get; set; }
+        public int HddId { get; set; }
+        public virtual Hdd Hdd { get; set; }
+        public int CpuId { get; set; }
+        public virtual Cpu Cpu { get; set; }
+        public int MotherboardId { get; set; }
+        public virtual Motherboard Motherboard { get; set; }
+        public int EmployeeId { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

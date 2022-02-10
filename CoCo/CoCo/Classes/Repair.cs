@@ -1,17 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    internal class Repair
+    public enum RepairStatus
     {
-        private Device device { get; set; }
-        private RepairStatus status { get; set; }
-        private DateTime begginingDate { get; set; }
-        private DateTime endDate { get; set; }
-        private String cause { get; set; }
+        inPprogress,
+        done,
+        failed
+    }
+    public class Repair
+    {
+        public int DeviceId { get; set; }
+        public virtual Device Device { get; set; }
+        public RepairStatus Status { get; set; }
+        public DateTime BegginingDate { get; set; }
+        public DateTime EndDate { get; set; }
+        [MaxLength(300)]
+        public String Cause { get; set; }
     }
 }

@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace CoCo.Classes
 {
-    internal class Peripheral:Device
+    public class Peripheral:Device
     {
-        private string name { get; set; }
-        private string manufacturer { get; set; }
-        [ForeignKey("employee")]
-        public Employee employee { get; set; }
+        [MaxLength(300)]
+        public string Name { get; set; }
+        [MaxLength(300)]
+        public string Manufacturer { get; set; }
+        public int EmployeeId { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

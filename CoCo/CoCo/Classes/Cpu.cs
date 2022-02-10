@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace CoCo.Classes
 {
-    internal class Cpu
+    public class Cpu
     {
-        private String name { get; set; }
-        private decimal frequency { get; set; }
-        private String manufacturer { get; set; }
+        public int Id { get; set; }
+        [MaxLength(300)]
+        public String Name { get; set; }
+        [Range(0, 30)]
+        public decimal Frequency { get; set; }
+        [MaxLength(300)]
+        public String Manufacturer { get; set; }
     }
 }

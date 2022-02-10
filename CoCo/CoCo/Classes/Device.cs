@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    abstract class Device
+    public enum Status
     {
-        private int inventoryNumber { get; set; }
-        private Status status { get; set; }
+        working,
+        repairing,
+        broken
+    }
+    public class Device
+    {
+        public int InventoryNumber { get; set; }
+        public Status Status { get; set; }
+
     }
 }

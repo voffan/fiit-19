@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    internal class Motherboard
+    public class Motherboard
     {
-        private String name { get; set; }
-        private String manufacturer { get; set; }
+        public int Id { get; set; }
+        [MaxLength(300)]
+        public String Name { get; set; }
+        [MaxLength(300)]
+        public String Manufacturer { get; set; }
 
     }
 }
