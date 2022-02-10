@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SiliconValley.Db
+namespace SiliconValley
 {
     class Context:DbContext
     {
-        public Context() : base() { }
 
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Department> Departments { get; set; }
@@ -21,5 +20,15 @@ namespace SiliconValley.Db
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Placement> Placements { get; set; }
         public DbSet<Position> Positions { get; set; }
+
+        /*public Context(DbContextOptions<Context> options):base(options)
+        {
+                Database.EnsureCreated();
+        }*/
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=userappdb;Trusted_Connection=True;");
+        }
     }
 }

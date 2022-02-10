@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SiliconValley.Авторизация;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,31 @@ namespace SiliconValley
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string login = textBox1.Text;
+            string pass = textBox2.Text;
+
+            if (login == "")
+            {
+                MessageBox.Show("Введите логин");
+                return;
+            }
+
+            if (pass == "")
+            {
+                MessageBox.Show("Введите пароль");
+                return;
+            }
+
+            Auth auth = new Auth(login,pass);
         }
     }
 }
