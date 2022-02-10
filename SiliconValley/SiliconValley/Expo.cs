@@ -9,8 +9,6 @@ namespace SiliconValley
 {
     class Expo : Placement
     {
-        public int Id { get; set; }
-
         [MaxLength(100)]
         public string Address { get; set; }
         public DateTime Start { get; set; }
