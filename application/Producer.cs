@@ -8,5 +8,7 @@ namespace application
 {
     class Producer
     {
+        public int Id { get; set; }
+        public String Initials { get; set; }
     }
 }

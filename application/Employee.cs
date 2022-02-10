@@ -8,5 +8,8 @@ namespace application
 {
     class Employee
     {
+        public int Id { get; set; }
+        public String Initials { get; set; }
+        public String Position { get; set; }
     }
 }

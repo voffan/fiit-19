@@ -8,5 +8,6 @@ namespace application
 {
     class Pledge
     {
+        public int Amount { get; set; }
     }
 }

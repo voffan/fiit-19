@@ -8,5 +8,7 @@ namespace application
 {
     class Genre
     {
+        public int Id { get; set; }
+        public String Name { get; set; }
     }
 }
