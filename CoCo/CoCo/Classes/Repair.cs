@@ -19,7 +19,7 @@ namespace CoCo.Classes
         public virtual Device Device { get; set; }
         public RepairStatus Status { get; set; }
         public DateTime BegginingDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
         [MaxLength(300)]
         public String Cause { get; set; }
     }

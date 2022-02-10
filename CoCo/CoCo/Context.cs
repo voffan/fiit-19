@@ -10,8 +10,9 @@ using CoCo.Classes;
 
 namespace CoCo
 {
-    internal class Context
+    public class Context : DbContext
     {
+        public Context() : base("MyString") { }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Device> Device { get; set; }

@@ -14,6 +14,7 @@ namespace CoCo.Classes
     }
     public class Device
     {
+        public int Id { get; set; }
         public int InventoryNumber { get; set; }
         public Status Status { get; set; }
 

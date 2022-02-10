@@ -12,7 +12,6 @@ namespace CoCo.Classes
         public int Id { get; set; }
         [MaxLength(300)]
         public String Name { get; set; }
-        [Range(0, 5000)]
         public decimal Volume { get; set; }
         [MaxLength(300)]
         public String Manufacturer { get; set; }
