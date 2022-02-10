@@ -16,5 +16,6 @@ namespace SportAchievements.Classes
         public DateTime DateEnding { get; set; } 
         public KindOfSport Sport { get; set; }
         public CompType Type { get; set; }
+        public virtual List<Employee> Employee { get; set; }
     }
 }

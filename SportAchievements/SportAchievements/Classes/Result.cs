@@ -12,7 +12,11 @@ namespace SportAchievements.Classes
         public int Id { get; set; }
         [Range(1, 3)]
         public int Place { get; set; }
-        public int points { get; set; }
-        public KindOfSport sport { get; set; }
-}
+        public int Points { get; set; }
+        public KindOfSport Sport { get; set; }
+        public int SportsmanId { get; set; }
+        public int CompetitionId { get; set; }
+        public virtual Sportsman Sportsman { get; set; }
+        public virtual Competition Competition { get; set; }
+    }
 }

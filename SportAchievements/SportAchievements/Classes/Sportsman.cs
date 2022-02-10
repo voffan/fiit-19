@@ -8,11 +8,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SportAchievements.Classes
 {
-    public class Sportsman
+    public class Sportsman : Person
     {
-        public int Id { get; set; }
-        [MaxLength(1)] //???
-        public char Gender { get; set; }
+        /*public enum Gender : int 
+        { 
+            [StringValue("Мужской")]
+            Man = 1,
+            [StringValue("Женский")]
+            Woman = 2
+        } //enum*/
+
         public WeightCategory Weight { get; set; }
     }
 }
