@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    class Education
+    public class Education
     {
         public int Id { get; set; }
         public string Name { get; set; }

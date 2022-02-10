@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    class Artist
+    public class Artist
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Birthday { get; set; }
     }

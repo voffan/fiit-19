@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    class Expo : Placement
+    public class Expo : Placement
     {
         [MaxLength(100)]
         public string Address { get; set; }

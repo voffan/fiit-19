@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    class Journal
+    public class Journal
     {
         
         public int Id { get; set; }
