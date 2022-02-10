@@ -12,15 +12,12 @@ namespace SiliconValley
         public int Id { get; set; }
         [MaxLength(255)]
         public string Login { get; set; }
-        [Range(8,255)]
+        [MaxLength(255)]
         public string Password { get; set; }
         [MaxLength(11)]
         public string PhoneNumber { get; set; }
         public DateTime Birthday { get; set; }
-
-        public int PositionId { get; set; }
-        public virtual Position Position { get; set; }
-        public int EducationId { get; set; }
-        public virtual Education Education { get; set; }
+        public Position Position { get; set; }
+        public Education Education { get; set; }
     }
 }

@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    class Education
+    enum Education
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        Higher,
+        Secondary,
+        None
     }
 }
