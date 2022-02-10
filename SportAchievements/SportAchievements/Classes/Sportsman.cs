@@ -5,19 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 
 namespace SportAchievements.Classes
 {
-    public class Sportsman : Person
+    public enum Gender
     {
-        /*public enum Gender : int 
-        { 
-            [StringValue("Мужской")]
-            Man = 1,
-            [StringValue("Женский")]
-            Woman = 2
-        } //enum*/
+        [Description("Мужской")]
+        Man = 1,
+        [Description("Женский")]
+        Woman = 2
+    }
 
+    public class Sportsman : Person
+    {        
         public WeightCategory Weight { get; set; }
     }
 }

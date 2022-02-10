@@ -13,8 +13,8 @@ namespace SportAchievements.Classes
         [MaxLength(50)]
         public string Name { get; set; }
         public DateTime DateBeginning { get; set; } 
-        public DateTime DateEnding { get; set; } 
-        public KindOfSport Sport { get; set; }
+        public DateTime DateEnding { get; set; }
+        public int CompTypeId { get; set; }
         public CompType Type { get; set; }
         public virtual List<Employee> Employee { get; set; }
     }

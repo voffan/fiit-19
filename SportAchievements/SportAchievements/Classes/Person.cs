@@ -15,5 +15,6 @@ namespace SportAchievements.Classes
         public string Name { get; set; }
         [MaxLength(10)]
         public DateTime BirthDate { get; set; }
+
     }
 }
