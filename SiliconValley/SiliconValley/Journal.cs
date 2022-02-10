@@ -22,7 +22,8 @@ namespace SiliconValley
 
         public int ToID { get; set; }
         [ForeignKey("ToID")]
-        public Placement To { get; set; }     public int EmployeeId { get; set; }
+        public Placement To { get; set; }
+        public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
     }
 }

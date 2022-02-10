@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    enum Position
+    public enum Position
     {
         Director,
         Employee

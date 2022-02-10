@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    enum Education
+    public enum Education
     {
         Higher,
         Secondary,

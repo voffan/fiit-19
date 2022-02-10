@@ -9,6 +9,7 @@ namespace SiliconValley
     public class Placement
     {
         public int Id { get; set; }
+        [MaxLength(255)]
         public string Name { get; set; }
     }
 }
