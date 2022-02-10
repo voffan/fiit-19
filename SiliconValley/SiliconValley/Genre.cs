@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    class Genre
+    public class Genre
     {
         public int Id { get; set; }
         [MaxLength(255)]

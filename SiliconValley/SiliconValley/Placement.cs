@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    abstract class Placement
+    public class Placement
     {
         public int Id { get; set; }
         public string Name { get; set; }

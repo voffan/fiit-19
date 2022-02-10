@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    class Employee
+    public class Employee
     {
         public int Id { get; set; }
         [MaxLength(255)]
