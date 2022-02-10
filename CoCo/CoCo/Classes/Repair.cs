@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,11 @@ namespace CoCo.Classes
 {
     public enum RepairStatus
     {
-        inPprogress,
+        [Description("inProgress")]
+        inProgress,
+        [Description("done")]
         done,
+        [Description("failed")]
         failed
     }
     public class Repair
