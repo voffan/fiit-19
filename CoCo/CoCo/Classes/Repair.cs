@@ -19,6 +19,7 @@ namespace CoCo.Classes
     }
     public class Repair
     {
+        [Key]
         public int DeviceId { get; set; }
         public virtual Device Device { get; set; }
         public RepairStatus Status { get; set; }
