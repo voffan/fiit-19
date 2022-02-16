@@ -15,10 +15,10 @@ namespace SiliconValley
         public double Price { get; set; }
         public DateTime Date { get; set; }
         public int PlacementId { get; set; }
-        public Placement Placement { get; set; }
+        public virtual Placement Placement { get; set; }
         public int GenreId { get; set; }
-        public Genre Genre { get; set; }
+        public virtual Genre Genre { get; set; }
         public int ArtistId { get; set; }
-        public Artist Artist { get; set; }
+        public virtual Artist Artist { get; set; }
     }
 }

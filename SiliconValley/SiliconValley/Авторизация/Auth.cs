@@ -16,7 +16,7 @@ namespace SiliconValley.Авторизация
             Check(login,password);
         }
 
-        public void Check(string login,string password)//проверка на аворизации
+        public void Check(string login,string password)//проверка на авторизации
         {
             int fl = 0;
             using (Context db = new Context())

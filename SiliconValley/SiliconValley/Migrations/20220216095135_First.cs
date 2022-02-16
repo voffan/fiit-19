@@ -11,8 +11,9 @@ namespace SiliconValley.Migrations
                 name: "Artists",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(maxLength: 255, nullable: true),
                     Birthday = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -21,15 +22,21 @@ namespace SiliconValley.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "educations",
+                name: "Employees",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true)
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Login = table.Column<string>(maxLength: 255, nullable: true),
+                    Password = table.Column<string>(maxLength: 255, nullable: true),
+                    PhoneNumber = table.Column<string>(maxLength: 11, nullable: true),
+                    Birthday = table.Column<DateTime>(nullable: false),
+                    Position = table.Column<int>(nullable: false),
+                    Education = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_educations", x => x.Id);
+                    table.PrimaryKey("PK_Employees", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -51,7 +58,7 @@ namespace SiliconValley.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(maxLength: 255, nullable: true),
                     Discriminator = table.Column<string>(nullable: false),
                     Address = table.Column<string>(maxLength: 100, nullable: true),
                     Start = table.Column<DateTime>(nullable: true),
@@ -60,19 +67,6 @@ namespace SiliconValley.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Placements", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Positions",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Positions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -85,11 +79,18 @@ namespace SiliconValley.Migrations
                     Price = table.Column<double>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
                     PlacementId = table.Column<int>(nullable: false),
-                    GenreId = table.Column<int>(nullable: false)
+                    GenreId = table.Column<int>(nullable: false),
+                    ArtistId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pictures", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pictures_Artists_ArtistId",
+                        column: x => x.ArtistId,
+                        principalTable: "Artists",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Pictures_Genres_GenreId",
                         column: x => x.GenreId,
@@ -100,36 +101,6 @@ namespace SiliconValley.Migrations
                         name: "FK_Pictures_Placements_PlacementId",
                         column: x => x.PlacementId,
                         principalTable: "Placements",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Employees",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Login = table.Column<string>(maxLength: 255, nullable: true),
-                    Password = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<string>(maxLength: 11, nullable: true),
-                    Birthday = table.Column<DateTime>(nullable: false),
-                    PositionId = table.Column<int>(nullable: false),
-                    EducationId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Employees", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Employees_educations_EducationId",
-                        column: x => x.EducationId,
-                        principalTable: "educations",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Employees_Positions_PositionId",
-                        column: x => x.PositionId,
-                        principalTable: "Positions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -176,16 +147,6 @@ namespace SiliconValley.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employees_EducationId",
-                table: "Employees",
-                column: "EducationId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Employees_PositionId",
-                table: "Employees",
-                column: "PositionId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Journals_EmployeeId",
                 table: "Journals",
                 column: "EmployeeId");
@@ -206,6 +167,11 @@ namespace SiliconValley.Migrations
                 column: "ToID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Pictures_ArtistId",
+                table: "Pictures",
+                column: "ArtistId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Pictures_GenreId",
                 table: "Pictures",
                 column: "GenreId");
@@ -219,9 +185,6 @@ namespace SiliconValley.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Artists");
-
-            migrationBuilder.DropTable(
                 name: "Journals");
 
             migrationBuilder.DropTable(
@@ -231,10 +194,7 @@ namespace SiliconValley.Migrations
                 name: "Pictures");
 
             migrationBuilder.DropTable(
-                name: "educations");
-
-            migrationBuilder.DropTable(
-                name: "Positions");
+                name: "Artists");
 
             migrationBuilder.DropTable(
                 name: "Genres");

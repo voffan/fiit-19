@@ -177,17 +177,9 @@
     </Compile>
     <Compile Include="Genre.cs" />
     <Compile Include="Journal.cs" />
-    <Compile Include="Migrations\20220209125129_First.cs" />
-    <Compile Include="Migrations\20220209125129_First.designer.cs">
-      <DependentUpon>20220209125129_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20220209141339_Second.cs" />
-    <Compile Include="Migrations\20220209141339_Second.designer.cs">
-      <DependentUpon>20220209141339_Second.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20220210020240_Third.cs" />
-    <Compile Include="Migrations\20220210020240_Third.designer.cs">
-      <DependentUpon>20220210020240_Third.cs</DependentUpon>
+    <Compile Include="Migrations\20220216095135_First.cs" />
+    <Compile Include="Migrations\20220216095135_First.designer.cs">
+      <DependentUpon>20220216095135_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Picture.cs" />

@@ -13,17 +13,17 @@ namespace SiliconValley
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public int PictureId { get; set; }
-        public Picture Picture { get; set; }
+        public virtual Picture Picture { get; set; }
 
         
         public int FromID { get; set; }
         [ForeignKey("FromID")]
-        public Placement From { get; set; }
+        public virtual Placement From { get; set; }
 
         public int ToID { get; set; }
         [ForeignKey("ToID")]
-        public Placement To { get; set; }
+        public virtual Placement To { get; set; }
         public int EmployeeId { get; set; }
-        public Employee Employee { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using SiliconValley;
 namespace SiliconValley.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220209141339_Second")]
-    partial class Second
+    [Migration("20220216095135_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,31 +23,21 @@ namespace SiliconValley.Migrations
 
             modelBuilder.Entity("SiliconValley.Artist", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
                     b.ToTable("Artists");
-                });
-
-            modelBuilder.Entity("SiliconValley.Education", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("educations");
                 });
 
             modelBuilder.Entity("SiliconValley.Employee", b =>
@@ -60,31 +50,25 @@ namespace SiliconValley.Migrations
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("EducationId")
+                    b.Property<int>("Education")
                         .HasColumnType("int");
-
-                    b.Property<string>("EducationId1")
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Login")
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
                     b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(11)")
                         .HasMaxLength(11);
 
-                    b.Property<int>("PositionId")
+                    b.Property<int>("Position")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EducationId1");
-
-                    b.HasIndex("PositionId");
 
                     b.ToTable("Employees");
                 });
@@ -147,6 +131,9 @@ namespace SiliconValley.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ArtistId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
@@ -164,6 +151,8 @@ namespace SiliconValley.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ArtistId");
 
                     b.HasIndex("GenreId");
 
@@ -184,28 +173,14 @@ namespace SiliconValley.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
                     b.ToTable("Placements");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Placement");
-                });
-
-            modelBuilder.Entity("SiliconValley.Position", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Positions");
                 });
 
             modelBuilder.Entity("SiliconValley.Department", b =>
@@ -230,19 +205,6 @@ namespace SiliconValley.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasDiscriminator().HasValue("Expo");
-                });
-
-            modelBuilder.Entity("SiliconValley.Employee", b =>
-                {
-                    b.HasOne("SiliconValley.Education", "Education")
-                        .WithMany()
-                        .HasForeignKey("EducationId1");
-
-                    b.HasOne("SiliconValley.Position", "Position")
-                        .WithMany()
-                        .HasForeignKey("PositionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("SiliconValley.Journal", b =>
@@ -274,6 +236,12 @@ namespace SiliconValley.Migrations
 
             modelBuilder.Entity("SiliconValley.Picture", b =>
                 {
+                    b.HasOne("SiliconValley.Artist", "Artist")
+                        .WithMany()
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("SiliconValley.Genre", "Genre")
                         .WithMany()
                         .HasForeignKey("GenreId")

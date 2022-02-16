@@ -21,14 +21,17 @@ namespace SiliconValley.Migrations
 
             modelBuilder.Entity("SiliconValley.Artist", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -48,24 +51,19 @@ namespace SiliconValley.Migrations
                     b.Property<int>("Education")
                         .HasColumnType("int");
 
-                    b.Property<int>("EducationId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Login")
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
                     b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(11)")
                         .HasMaxLength(11);
 
                     b.Property<int>("Position")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PositionId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -131,6 +129,9 @@ namespace SiliconValley.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ArtistId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
@@ -148,6 +149,8 @@ namespace SiliconValley.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ArtistId");
 
                     b.HasIndex("GenreId");
 
@@ -168,7 +171,8 @@ namespace SiliconValley.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -230,6 +234,12 @@ namespace SiliconValley.Migrations
 
             modelBuilder.Entity("SiliconValley.Picture", b =>
                 {
+                    b.HasOne("SiliconValley.Artist", "Artist")
+                        .WithMany()
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("SiliconValley.Genre", "Genre")
                         .WithMany()
                         .HasForeignKey("GenreId")
