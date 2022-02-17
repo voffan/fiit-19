@@ -39,8 +39,13 @@ namespace SiliconValley
                 MessageBox.Show("Введите пароль");
                 return;
             }
-
-            Auth auth = new Auth(login,pass);
+            try
+            {
+                Auth.Check(login, pass);
+            }catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
     }
 }

@@ -7,16 +7,16 @@ using System.Windows.Forms;
 
 namespace SiliconValley.Авторизация
 {
-    class Auth
+    static class Auth
     {
-        Employee user;
+        public static Employee User { get; set; };
 
         public Auth(string login,string password)
         {
             Check(login,password);
         }
 
-        public void Check(string login,string password)//проверка на авторизации
+        public static void Check(string login,string password)//проверка на авторизации
         {
             int fl = 0;
             using (Context db = new Context())
@@ -27,18 +27,15 @@ namespace SiliconValley.Авторизация
                     if (u.Login==login && u.Password == password)
                     {
                         fl = 1;
-                        this.user = u;
+                        User = u;
                         break;
                     }
                 }
 
-                if (fl == 1)
+                if (fl == 0)
                 {
-                    MessageBox.Show("Вы успешно авторизовались");
-                    return;
+                    throw new Exception("Неверный логин или пароль!");
                 }
-
-                MessageBox.Show("Неверный логин или пароль");
             }
         }
 
