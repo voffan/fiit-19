@@ -13,5 +13,7 @@ namespace SMM
         [MaxLength(255)]
         public string Name { get; set; }
         public string Code { get; set; }
+        public int ErrorId { get; set; }
+        public virtual Error Error { get; set; }
     }
 }

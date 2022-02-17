@@ -13,5 +13,6 @@ namespace SMM
         [MaxLength(255)]
         public string Name { get; set; }
         public string Code { get; set; }
+        public virtual List<Solution> Solutions { get; set; }
     }
 }
