@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Classes\Competition.cs" />
     <Compile Include="Classes\CompType.cs" />
+    <Compile Include="Classes\DescriptionAttributes.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\KindOfSport.cs" />
     <Compile Include="Classes\Person.cs" />

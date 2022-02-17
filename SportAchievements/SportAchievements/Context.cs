@@ -9,7 +9,7 @@ using SportAchievements.Classes;
 
 namespace SportAchievements
 {
-    class Context : DbContext
+    public class Context : DbContext
     {
         public Context() : base("MyString") { }
 
