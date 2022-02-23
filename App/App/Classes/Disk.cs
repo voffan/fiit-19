@@ -9,7 +9,7 @@ namespace App.Classes
     public class Disk
     {
         public int Id { get; set; }
-        public List<Film> Film { get; set; }
+        public virtual List<Film> Film { get; set; }
         public int Price { get; set; }
     }
 }

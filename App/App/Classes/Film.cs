@@ -31,9 +31,9 @@ namespace App.Classes
         public string Title { get; set; }
         public int Year { get; set; }
         public AgeCategory_ AgeCategory { get; set; }
-        public List<Genre> Genre { get; set; }
-        public List<Producer> Producer { get; set; }
-        public List<Actor> Actor { get; set; }
-        public List<Disk> Disk { get; set; }
+        public virtual List<Genre> Genre { get; set; }
+        public virtual List<Producer> Producer { get; set; }
+        public virtual List<Actor> Actor { get; set; }
+        public virtual List<Disk> Disk { get; set; }
     }
 }
