@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace application
+namespace App
 {
-    class Genre
+    class Context
     {
-        public int Id { get; set; }
-        public String Name { get; set; }
     }
 }

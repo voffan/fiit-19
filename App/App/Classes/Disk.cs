@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace application
+namespace App.Classes
 {
-    class Order
+    public class Disk
     {
         public int Id { get; set; }
-        public int Passport { get; set; }
-        public int Data { get; set; }
-        public Pledge Pledge { get; set; }
+        public List<Film> Film { get; set; }
+        public int Price { get; set; }
     }
 }
