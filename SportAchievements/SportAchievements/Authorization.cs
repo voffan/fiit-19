@@ -12,7 +12,6 @@ namespace SportAchievements
 {
     public partial class Authorization : Form
     {
-        string Position, Login, Password;
         Form1 form;
         public static Context con;
 
