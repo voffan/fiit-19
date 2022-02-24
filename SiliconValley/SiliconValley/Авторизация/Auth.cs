@@ -9,12 +9,7 @@ namespace SiliconValley.Авторизация
 {
     static class Auth
     {
-        public static Employee User { get; set; };
-
-        public Auth(string login,string password)
-        {
-            Check(login,password);
-        }
+        public static Employee User { get; set; }
 
         public static void Check(string login,string password)//проверка на авторизации
         {

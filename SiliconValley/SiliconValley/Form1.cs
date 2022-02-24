@@ -46,6 +46,11 @@ namespace SiliconValley
             {
                 MessageBox.Show(error.Message);
             }
+            // авторизация выполнена успешно, переход к главному окну программы
+            
+            Main main = new Main();
+            this.Hide();
+            main.Show();
         }
     }
 }
