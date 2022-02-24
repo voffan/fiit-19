@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace SportAchievements
 {
@@ -16,7 +17,9 @@ namespace SportAchievements
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Authorization autho = new Authorization();
+            autho.StartPosition = FormStartPosition.CenterScreen;
+            Application.Run(autho);
         }
     }
 }

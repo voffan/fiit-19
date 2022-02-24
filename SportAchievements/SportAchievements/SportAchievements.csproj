@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Competition.cs" />
     <Compile Include="Classes\CompType.cs" />
     <Compile Include="Classes\DescriptionAttributes.cs" />
@@ -72,11 +78,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202240116242_Initial.cs" />
+    <Compile Include="Migrations\202202240116242_Initial.designer.cs">
+      <DependentUpon>202202240116242_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202240305341_update context.cs" />
+    <Compile Include="Migrations\202202240305341_update context.designer.cs">
+      <DependentUpon>202202240305341_update context.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202240116242_Initial.resx">
+      <DependentUpon>202202240116242_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202240305341_update context.resx">
+      <DependentUpon>202202240305341_update context.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

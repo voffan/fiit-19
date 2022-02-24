@@ -10,7 +10,6 @@ namespace SportAchievements.Classes
     public class Result
     {
         public int Id { get; set; }
-        [Range(1, 3)]
         public int Place { get; set; }
         public int Points { get; set; }
         
