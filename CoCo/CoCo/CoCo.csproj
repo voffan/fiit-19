@@ -125,6 +125,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auth.Designer.cs">
+      <DependentUpon>Auth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Cpu.cs" />
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Device.cs" />
@@ -183,6 +189,12 @@
 	</EmbeddedResource>
     <EmbeddedResource Include="Form_Hdds.resx">
       <DependentUpon>Form_Hdds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auth.resx">
+      <DependentUpon>Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202150917068_First.resx">
       <DependentUpon>202202150917068_First.cs</DependentUpon>
