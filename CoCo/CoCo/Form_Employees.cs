@@ -17,9 +17,9 @@ namespace CoCo
             InitializeComponent();
         }
 
-        private void Form_Departments_Load(object sender, EventArgs e)
+        private void Form_Employees_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = new Context().Departments.ToList();
+            dataGridView1.DataSource = new Context().Employees.ToList();
             dataGridView1.Columns[0].HeaderText = "Номер сотрудника";
             dataGridView1.Columns[1].HeaderText = "ФИО";
             dataGridView1.Columns[2].HeaderText = "Номер отдела";
