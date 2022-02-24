@@ -11,6 +11,10 @@ namespace SportAchievements.Classes
     {
         [MaxLength(50)]
         public string Position { get; set; }
+        [MaxLength(50)]
+        public string Login { get; set; }
+        [MaxLength(50)]
+        public string Pwd { get; set; }
         
         public virtual List<Competition> Competitions { get; set; }
     }
