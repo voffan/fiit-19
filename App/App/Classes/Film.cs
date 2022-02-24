@@ -32,8 +32,8 @@ namespace App.Classes
         public int Year { get; set; }
         public AgeCategory AgeCategory { get; set; }
         public virtual List<Genre> Genres { get; set; }
-        public virtual List<Person> Producers { get; set; }
-        public virtual List<Person> Actors { get; set; }
+        public virtual List<FilmMaker> Producers { get; set; }
+        public virtual List<FilmMaker> Actors { get; set; }
         public virtual List<Disk> Disks { get; set; }
     }
 }

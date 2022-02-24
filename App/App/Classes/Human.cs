@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace App.Classes
 {
-    public class Human : Person
+    public class Human
     {
-        [MaxLength(100)] public string Address { get; set; }
-        [MaxLength(11)] public string Passport { get; set; }
-        public DateTime Birthday { get; set; }
+        public int Id { get; set; }
+        [MaxLength(50)] 
+        public string Name { get; set; }
     }
 }

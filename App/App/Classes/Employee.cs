@@ -18,7 +18,7 @@ namespace App.Classes
         trainee = 2
     }
 
-    public class Employee : Human
+    public class Employee : Person
     {
         public Position Position { get; set; }
     }

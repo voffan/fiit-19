@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace App.Classes
 {
-    public class Person
+    public class Person : Human
     {
-        public int Id { get; set; }
-        [MaxLength(50)] public string Name { get; set; }
-        public virtual List<Film> Films { get; set; }
+        [MaxLength(100)] 
+        public string Address { get; set; }
+        [MaxLength(11)] 
+        public string Passport { get; set; }
+        public DateTime Birthday { get; set; }
+        [MaxLength(15)]
+        public string PhoneNumber { get; set; }
     }
 }

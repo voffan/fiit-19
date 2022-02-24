@@ -13,16 +13,17 @@ namespace App
     {
         public Context() : base("ConnectStr") { }
 
-        public DbSet<Genre> Genre { get; set; }
+        public DbSet<Genre> Genres { get; set; }
 
-        public DbSet<Person> Person { get; set; }
-        public DbSet<Human> Human { get; set; }
+        public DbSet<Person> People { get; set; }
+        public DbSet<Human> Humen { get; set; }
+        public DbSet<FilmMaker> FilmMakers { get; set; }
 
-        public DbSet<Client> Client { get; set; }
-        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
-        public DbSet<Film> Film { get; set; }
-        public DbSet<Disk> Disk { get; set; }
-        public DbSet<Order> Order { get; set; }
+        public DbSet<Film> Films { get; set; }
+        public DbSet<Disk> Disks { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

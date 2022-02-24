@@ -56,8 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Human.cs" />
+    <Compile Include="Classes\FilmMaker.cs" />
     <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\Human.cs" />
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\Disk.cs" />
     <Compile Include="Classes\Employee.cs" />

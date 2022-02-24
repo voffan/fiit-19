@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace App.Classes
 {
-    public class Client : Human
+    public class Client : Person
     {
         public bool BlackList { get; set; }
     }
