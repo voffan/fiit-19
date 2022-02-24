@@ -39,10 +39,13 @@ namespace SiliconValley
                 MessageBox.Show("Введите пароль");
                 return;
             }
+
             try
             {
                 Auth.Check(login, pass);
-            }catch(Exception error)
+                MessageBox.Show("Вы успешно авторизовались!");
+            }
+            catch(Exception error)
             {
                 MessageBox.Show(error.Message);
             }
