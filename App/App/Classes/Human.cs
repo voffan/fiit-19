@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace App.Classes
 {
-    public class Client : Human
+    public class Human : Person
     {
-        public bool BlackList { get; set; }
+        [MaxLength(100)] public string Address { get; set; }
+        [MaxLength(11)] public string Passport { get; set; }
+        public DateTime Birthday { get; set; }
     }
 }

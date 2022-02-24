@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace App.Classes
 {
-    public enum Pledge_
+    public enum Pledge
     {
         [Description("Деньги")]
         money = 0,
@@ -23,7 +23,7 @@ namespace App.Classes
         public int Id { get; set; }
         public Client Client { get; set; }
         public Employee Employee { get; set; }
-        public Pledge_ Pledge { get; set; }
+        public Pledge Pledge { get; set; }
         [MaxLength(100)] public string PledgeDescription { get; set; }
     }
 }

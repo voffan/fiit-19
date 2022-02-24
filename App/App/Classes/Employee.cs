@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace App.Classes
 {
-    public enum Position_
+    public enum Position
     {
         [Description("Директор")]
         director = 0,
@@ -18,13 +18,8 @@ namespace App.Classes
         trainee = 2
     }
 
-    public class Employee
+    public class Employee : Human
     {
-        public int Id { get; set; }
-        [MaxLength(50)] public string Name { get; set; }
-        [MaxLength(100)] public string Address { get; set; }
-        [MaxLength(11)] public string Passport { get; set; }
-        public DateTime Birthday { get; set; }
-        public Position_ Position { get; set; }
+        public Position Position { get; set; }
     }
 }

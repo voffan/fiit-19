@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Human.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\Disk.cs" />
@@ -78,6 +79,10 @@
     <Compile Include="Migrations\202202240147044_SecondMig.designer.cs">
       <DependentUpon>202202240147044_SecondMig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202240216125_ThirdMig.cs" />
+    <Compile Include="Migrations\202202240216125_ThirdMig.designer.cs">
+      <DependentUpon>202202240216125_ThirdMig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202240147044_SecondMig.resx">
       <DependentUpon>202202240147044_SecondMig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202240216125_ThirdMig.resx">
+      <DependentUpon>202202240216125_ThirdMig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

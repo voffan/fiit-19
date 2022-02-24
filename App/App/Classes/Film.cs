@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace App.Classes
 {
-    public enum AgeCategory_
+    public enum AgeCategory
     {
         [Description("0+")]
         a0 = 0,
@@ -30,7 +30,7 @@ namespace App.Classes
         public int Id { get; set; }
         public string Title { get; set; }
         public int Year { get; set; }
-        public AgeCategory_ AgeCategory { get; set; }
+        public AgeCategory AgeCategory { get; set; }
         public virtual List<Genre> Genres { get; set; }
         public virtual List<Person> Producers { get; set; }
         public virtual List<Person> Actors { get; set; }
