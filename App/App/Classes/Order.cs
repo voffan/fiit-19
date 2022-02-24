@@ -24,6 +24,7 @@ namespace App.Classes
         public Client Client { get; set; }
         public Employee Employee { get; set; }
         public Pledge Pledge { get; set; }
-        [MaxLength(100)] public string PledgeDescription { get; set; }
+        [MaxLength(100)]
+        public string PledgeDescription { get; set; }
     }
 }
