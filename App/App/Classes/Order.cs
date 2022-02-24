@@ -15,7 +15,7 @@ namespace App.Classes
         [Description("Документ подтверждающий личность")]
         document = 1,
         [Description("Другое")]
-        other = 3
+        other = 2
     }
 
     public class Order

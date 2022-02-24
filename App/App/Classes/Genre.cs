@@ -11,6 +11,6 @@ namespace App.Classes
     {
         public int Id { get; set; }
         [MaxLength(50)] public string Name { get; set; }
-        public virtual List<Film> Film { get; set; }
+        public virtual List<Film> Films { get; set; }
     }
 }

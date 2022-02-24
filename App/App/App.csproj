@@ -56,14 +56,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Actor.cs" />
+    <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\Disk.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Film.cs" />
     <Compile Include="Classes\Genre.cs" />
     <Compile Include="Classes\Order.cs" />
-    <Compile Include="Classes\Producer.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -75,11 +74,18 @@
     <Compile Include="Migrations\202202230956209_FirstMig.designer.cs">
       <DependentUpon>202202230956209_FirstMig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202240147044_SecondMig.cs" />
+    <Compile Include="Migrations\202202240147044_SecondMig.designer.cs">
+      <DependentUpon>202202240147044_SecondMig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Migrations\202202230956209_FirstMig.resx">
       <DependentUpon>202202230956209_FirstMig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202240147044_SecondMig.resx">
+      <DependentUpon>202202240147044_SecondMig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

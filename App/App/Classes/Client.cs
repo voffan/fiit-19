@@ -12,8 +12,8 @@ namespace App.Classes
         public int Id { get; set; }
         [MaxLength(50)] public string Name { get; set; }
         [MaxLength(100)] public string Address { get; set; }
-        public string Passport { get; set; }
-        public DateTime Birth { get; set; }
+        [MaxLength(11)] public string Passport { get; set; }
+        public DateTime Birthday { get; set; }
         public bool BlackList { get; set; }
     }
 }

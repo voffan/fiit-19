@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace App.Classes
 {
-    public class Producer
+    public class Person
     {
         public int Id { get; set; }
         [MaxLength(50)] public string Name { get; set; }
-        public virtual List<Film> Film { get; set; }
+        public virtual List<Film> Films { get; set; }
     }
 }
