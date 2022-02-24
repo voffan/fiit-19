@@ -10,13 +10,8 @@ namespace SMM
     public class Employer
     {
         public int Id { get; set; }
-        [MaxLength(50)]
-        public string Login { get; set; }
-        [MaxLength(50)]
-        public string Password { get; set; }
-        [MaxLength(11)]
-        public DateTime Birthday { get; set; }
-        public Position Position { get; set; }
+        [MaxLength(200)]
+        public string Name { get; set; }
         public virtual List<Employee> Employees { get; set; }
     }
 }

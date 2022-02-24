@@ -14,12 +14,11 @@ namespace SMM
         public string Login { get; set; }
         [MaxLength(50)]
         public string Password { get; set; }
-        [MaxLength(11)]
         public DateTime Birthday { get; set; }
         public Position Position { get; set; }
-        public int ErrorId { get; set; }
-        public virtual Error Error { get; set; }
-        public int SolutionID { get; set; }
+        public int EmployerId { get; set; }
+        public virtual Employer Employer { get; set; }
+        public virtual List<Error> Errors { get; set; }
         public virtual List<Solution> Solutions { get; set; }
 
     }

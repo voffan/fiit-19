@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace SMM
 {
-    class Comment
+    public class Comment
     {
         public int Id { get; set; }
-        [MaxLength(50)]
-        public string Text { get; set; }
         [MaxLength(500)]
+        public string Text { get; set; }
     }
 }

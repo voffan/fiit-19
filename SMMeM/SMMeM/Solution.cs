@@ -12,13 +12,12 @@ namespace SMM
         public int Id { get; set; }
         [MaxLength(50)]
         public string Name { get; set; }
-        [MaxLength(50)]
-        public string Code { get; set; }
         [MaxLength(255)]
+        public string Code { get; set; }
         public int ErrorId { get; set; }
         public virtual Error Error { get; set; }
-        public int CommentId { get; set; }
-        public virtual Comment Comments { get; set; }
-        public virtual List<Employee> Employees { get; set; }
+        public virtual List<Comment> Comments { get; set; }
+        public int EmployeeId { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }
