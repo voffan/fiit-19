@@ -185,6 +185,7 @@
     <Compile Include="Список авторов\Add_artist.Designer.cs">
       <DependentUpon>Add_artist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Список авторов\ArtistComponent.cs" />
     <Compile Include="Список авторов\List_artists.cs">
       <SubType>Form</SubType>
     </Compile>

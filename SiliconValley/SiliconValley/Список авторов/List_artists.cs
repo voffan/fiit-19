@@ -29,6 +29,7 @@ namespace SiliconValley.Список_авторов
         private void button1_Click(object sender, EventArgs e)
         {
             Add_artist add_artist = new Add_artist();
+            add_artist.Button.Text = "Добавить";
             add_artist.ShowDialog();
             var db = new Context();
             dataGridView1.DataSource = db.Artists.ToList();

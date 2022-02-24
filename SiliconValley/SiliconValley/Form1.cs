@@ -53,7 +53,8 @@ namespace SiliconValley
             
             Main main = new Main();
             this.Hide();
-            main.Show();
+            main.ShowDialog();
+            Close();
         }
     }
 }

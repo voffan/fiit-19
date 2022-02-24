@@ -12,6 +12,8 @@ namespace SiliconValley.Список_авторов
 {
     public partial class Add_artist : Form
     {
+        public Button Button { get { return button1; } }
+
         public Add_artist()
         {
             InitializeComponent();
