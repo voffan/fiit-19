@@ -141,6 +141,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Departments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Departments.Designer.cs">
+      <DependentUpon>Form_Departments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Employees.Designer.cs">
+      <DependentUpon>Form_Employees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202202150917068_First.cs" />
     <Compile Include="Migrations\202202150917068_First.designer.cs">
       <DependentUpon>202202150917068_First.cs</DependentUpon>
@@ -148,6 +160,15 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Departments.resx">
+      <DependentUpon>Form_Departments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Employees.resx">
+      <DependentUpon>Form_Employees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202150917068_First.resx">
       <DependentUpon>202202150917068_First.cs</DependentUpon>
     </EmbeddedResource>
