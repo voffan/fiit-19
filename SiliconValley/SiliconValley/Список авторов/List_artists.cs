@@ -28,9 +28,10 @@ namespace SiliconValley.Список_авторов
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Add_artist add_artist = new Add_artist();
-            add_artist.Button.Text = "Добавить";
-            add_artist.ShowDialog();
+            Form_artist formArtist = new Form_artist();
+            formArtist.Button.Text = "Добавить";
+            formArtist.Text = "Добавить автора";
+            formArtist.ShowDialog();
             var db = new Context();
             dataGridView1.DataSource = db.Artists.ToList();
             /*using (var db = new Context())
@@ -47,6 +48,17 @@ namespace SiliconValley.Список_авторов
                 db.SaveChanges();
                 dataGridView1.DataSource = db.Artists.ToList();
             }*/
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // нужен гет айди, и передача его в форму 
+            Form_artist formArtist = new Form_artist();
+            formArtist.Button.Text = "Изменить";
+            formArtist.Text = "Изменить автора";
+            formArtist.ShowDialog();
+            var db = new Context();
+            dataGridView1.DataSource = db.Artists.ToList();
         }
     }
 }

@@ -10,22 +10,25 @@ using System.Windows.Forms;
 
 namespace SiliconValley.Список_авторов
 {
-    public partial class Add_artist : Form
+    public partial class Form_artist : Form
     {
         public Button Button { get { return button1; } }
 
-        public Add_artist()
+        public Form_artist()
         {
+            // конструктор поменять, добавить во вход инт айди
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var db = new Context())
+            if (this.button1.Text == "Добавить")
             {
-                var art1 = new Artist { Name = textBox1.Text, Birthday = dateTimePicker1.Value };
-                db.Artists.Add(art1);
-                db.SaveChanges();
+                ArtistComponent.Add(textBox1.Text, dateTimePicker1.Value);
+            }
+            else if (this.button1.Text == "Изменить")
+            {
+                ArtistComponent.Edit(/* айди */);
             }
             this.Close();
         }

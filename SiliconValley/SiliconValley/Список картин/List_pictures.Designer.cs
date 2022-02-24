@@ -61,6 +61,7 @@ namespace SiliconValley.Список_картин
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "List_pictures";
             this.Text = "Список картин";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

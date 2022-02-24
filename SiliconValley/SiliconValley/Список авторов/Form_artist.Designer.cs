@@ -1,7 +1,7 @@
 ﻿
 namespace SiliconValley.Список_авторов
 {
-    partial class Add_artist
+    partial class Form_artist
     {
         /// <summary>
         /// Required designer variable.
@@ -81,7 +81,7 @@ namespace SiliconValley.Список_авторов
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Add_artist
+            // Form_artist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -91,7 +91,8 @@ namespace SiliconValley.Список_авторов
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Add_artist";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "Form_artist";
             this.Text = "Добавить автора";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -179,11 +179,11 @@
     </Compile>
     <Compile Include="Genre.cs" />
     <Compile Include="Journal.cs" />
-    <Compile Include="Список авторов\Add_artist.cs">
+    <Compile Include="Список авторов\Form_artist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Список авторов\Add_artist.Designer.cs">
-      <DependentUpon>Add_artist.cs</DependentUpon>
+    <Compile Include="Список авторов\Form_artist.Designer.cs">
+      <DependentUpon>Form_artist.cs</DependentUpon>
     </Compile>
     <Compile Include="Список авторов\ArtistComponent.cs" />
     <Compile Include="Список авторов\List_artists.cs">
@@ -218,8 +218,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Список авторов\Add_artist.resx">
-      <DependentUpon>Add_artist.cs</DependentUpon>
+    <EmbeddedResource Include="Список авторов\Form_artist.resx">
+      <DependentUpon>Form_artist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Список авторов\List_artists.resx">
       <DependentUpon>List_artists.cs</DependentUpon>
