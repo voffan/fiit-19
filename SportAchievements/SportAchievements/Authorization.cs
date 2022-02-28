@@ -45,5 +45,10 @@ namespace SportAchievements
             }
             else MessageBox.Show("Не все поля заполнены!");
         }
+
+        private void Authorization_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

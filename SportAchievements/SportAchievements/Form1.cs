@@ -30,5 +30,11 @@ namespace SportAchievements
         {
             
         }
+
+        private void списокСпортсменовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinkSportsman s = new LinkSportsman();
+            s.Show();
+        }
     }
 }
