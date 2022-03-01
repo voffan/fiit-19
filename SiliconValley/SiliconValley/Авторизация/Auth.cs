@@ -26,7 +26,6 @@ namespace SiliconValley.Авторизация
                         break;
                     }
                 }
-
                 if (fl == 0)
                 {
                     throw new Exception("Неверный логин или пароль!");

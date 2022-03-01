@@ -128,6 +128,7 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
@@ -209,11 +210,23 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Авторизация\Auth.cs" />
+    <Compile Include="Список Жанров\List_genres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Список Жанров\List_genres.Designer.cs">
+      <DependentUpon>List_genres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Список картин\List_pictures.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Список картин\List_pictures.Designer.cs">
       <DependentUpon>List_pictures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Список сотрудников\List_employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Список сотрудников\List_employees.Designer.cs">
+      <DependentUpon>List_employees.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -236,8 +249,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Список Жанров\List_genres.resx">
+      <DependentUpon>List_genres.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Список картин\List_pictures.resx">
       <DependentUpon>List_pictures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Список сотрудников\List_employees.resx">
+      <DependentUpon>List_employees.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

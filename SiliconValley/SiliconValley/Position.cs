@@ -8,7 +8,9 @@ namespace SiliconValley
 {
     public enum Position
     {
+        Admin,
         Director,
-        Employee
+        Employee,
+        
     }
 }

@@ -35,20 +35,21 @@ namespace SiliconValley
             this.списокВыставокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокВыставокToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.списокАвторовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокЖанровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокСотрудниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listGenreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.закрытьToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1067, 28);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -59,67 +60,72 @@ namespace SiliconValley
             this.списокВыставокToolStripMenuItem,
             this.списокВыставокToolStripMenuItem1,
             this.списокАвторовToolStripMenuItem,
-            this.списокЖанровToolStripMenuItem,
-            this.списокСотрудниковToolStripMenuItem});
+            this.listGenreToolStripMenuItem,
+            this.listEmployeeToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // списокКартинToolStripMenuItem
             // 
             this.списокКартинToolStripMenuItem.Name = "списокКартинToolStripMenuItem";
-            this.списокКартинToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.списокКартинToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.списокКартинToolStripMenuItem.Text = "Список картин";
             this.списокКартинToolStripMenuItem.Click += new System.EventHandler(this.списокКартинToolStripMenuItem_Click);
             // 
             // списокВыставокToolStripMenuItem
             // 
             this.списокВыставокToolStripMenuItem.Name = "списокВыставокToolStripMenuItem";
-            this.списокВыставокToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.списокВыставокToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.списокВыставокToolStripMenuItem.Text = "Список отделов";
             // 
             // списокВыставокToolStripMenuItem1
             // 
             this.списокВыставокToolStripMenuItem1.Name = "списокВыставокToolStripMenuItem1";
-            this.списокВыставокToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
+            this.списокВыставокToolStripMenuItem1.Size = new System.Drawing.Size(234, 26);
             this.списокВыставокToolStripMenuItem1.Text = "Список выставок";
             // 
             // списокАвторовToolStripMenuItem
             // 
             this.списокАвторовToolStripMenuItem.Name = "списокАвторовToolStripMenuItem";
-            this.списокАвторовToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.списокАвторовToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.списокАвторовToolStripMenuItem.Text = "Список авторов";
             this.списокАвторовToolStripMenuItem.Click += new System.EventHandler(this.списокАвторовToolStripMenuItem_Click);
             // 
-            // списокЖанровToolStripMenuItem
+            // listGenreToolStripMenuItem
             // 
-            this.списокЖанровToolStripMenuItem.Name = "списокЖанровToolStripMenuItem";
-            this.списокЖанровToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.списокЖанровToolStripMenuItem.Text = "Список жанров";
+            this.listGenreToolStripMenuItem.Name = "listGenreToolStripMenuItem";
+            this.listGenreToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.listGenreToolStripMenuItem.Text = "Список жанров";
+            this.listGenreToolStripMenuItem.Click += new System.EventHandler(this.listGenreToolStripMenuItem_Click);
             // 
-            // списокСотрудниковToolStripMenuItem
+            // listEmployeeToolStripMenuItem
             // 
-            this.списокСотрудниковToolStripMenuItem.Name = "списокСотрудниковToolStripMenuItem";
-            this.списокСотрудниковToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.списокСотрудниковToolStripMenuItem.Text = "Список сотрудников";
+            this.listEmployeeToolStripMenuItem.Name = "listEmployeeToolStripMenuItem";
+            this.listEmployeeToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.listEmployeeToolStripMenuItem.Text = "Список сотрудников";
+            this.listEmployeeToolStripMenuItem.Visible = false;
+            this.listEmployeeToolStripMenuItem.Click += new System.EventHandler(this.списокСотрудниковToolStripMenuItem_Click);
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.Text = "Gallery";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -134,8 +140,8 @@ namespace SiliconValley
         private System.Windows.Forms.ToolStripMenuItem списокВыставокToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокВыставокToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem списокАвторовToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem списокЖанровToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem списокСотрудниковToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listGenreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
     }
 }
