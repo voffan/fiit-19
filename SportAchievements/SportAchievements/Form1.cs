@@ -21,20 +21,44 @@ namespace SportAchievements
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void списокСпортсменовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LinkSportsman s = new LinkSportsman();
-            s.Show();
+            LinkSportsman Sportsman = new LinkSportsman();
+            Sportsman.Show();
+        }
+
+        private void списокСоревнованийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinkCompetition Competition = new LinkCompetition();
+            Competition.Show();
+        }
+
+        private void списокСотрудниковToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinkEmployee Employee = new LinkEmployee();
+            Employee.Show();
+        }
+
+        private void списокВидовСпортаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinkKindOfSport KindOfSport = new LinkKindOfSport();
+            KindOfSport.Show();
+        }
+
+        private void списокОтчетовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinkReport Report = new LinkReport();
+            Report.Show();
         }
     }
 }

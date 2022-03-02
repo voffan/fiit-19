@@ -113,7 +113,7 @@ namespace SportAchievements
             this.Controls.Add(this.txtLgn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Authorization";
-            this.Text = "Authorization";
+            this.Text = "Авторизация";
             this.Load += new System.EventHandler(this.Authorization_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

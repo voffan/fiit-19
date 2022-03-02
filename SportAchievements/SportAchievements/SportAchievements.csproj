@@ -78,6 +78,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LinkCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkCompetition.Designer.cs">
+      <DependentUpon>LinkCompetition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkEmployee.Designer.cs">
+      <DependentUpon>LinkEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkKindOfSport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkKindOfSport.Designer.cs">
+      <DependentUpon>LinkKindOfSport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkReport.Designer.cs">
+      <DependentUpon>LinkReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="LinkSportsman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +124,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkCompetition.resx">
+      <DependentUpon>LinkCompetition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkEmployee.resx">
+      <DependentUpon>LinkEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkKindOfSport.resx">
+      <DependentUpon>LinkKindOfSport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkReport.resx">
+      <DependentUpon>LinkReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LinkSportsman.resx">
       <DependentUpon>LinkSportsman.cs</DependentUpon>
@@ -133,6 +169,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

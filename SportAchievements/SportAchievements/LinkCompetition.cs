@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace SportAchievements
 {
-    public partial class LinkSportsman : Form
+    public partial class LinkCompetition : Form
     {
-        public LinkSportsman()
+        public LinkCompetition()
         {
             InitializeComponent();
         }
 
-        private void LinkSportsman_Load(object sender, EventArgs e)
+        private void LinkCompetition_Load(object sender, EventArgs e)
         {
             Context c = new Context();
-            dataGridView1.DataSource = c.Sportsmen.ToList();
+            dataGridView1.DataSource = c.Competitions.ToList();
             //dataGridView1.Columns[0].Visible = false;    ВИЖОН
             //dataGridView1.Columns[1].HeaderText = "";    МОЖНО МЕНЯТЬ НАЗВАНИЕ ВАУ!
         }

@@ -32,6 +32,10 @@ namespace SportAchievements
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокСпортсменовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокСоревнованийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокСотрудниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокВидовСпортаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокОтчетовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +52,11 @@ namespace SportAchievements
             // менюToolStripMenuItem
             // 
             this.менюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.списокСпортсменовToolStripMenuItem});
+            this.списокСпортсменовToolStripMenuItem,
+            this.списокСоревнованийToolStripMenuItem,
+            this.списокСотрудниковToolStripMenuItem,
+            this.списокВидовСпортаToolStripMenuItem,
+            this.списокОтчетовToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
@@ -56,9 +64,37 @@ namespace SportAchievements
             // списокСпортсменовToolStripMenuItem
             // 
             this.списокСпортсменовToolStripMenuItem.Name = "списокСпортсменовToolStripMenuItem";
-            this.списокСпортсменовToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.списокСпортсменовToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.списокСпортсменовToolStripMenuItem.Text = "Список спортсменов";
             this.списокСпортсменовToolStripMenuItem.Click += new System.EventHandler(this.списокСпортсменовToolStripMenuItem_Click);
+            // 
+            // списокСоревнованийToolStripMenuItem
+            // 
+            this.списокСоревнованийToolStripMenuItem.Name = "списокСоревнованийToolStripMenuItem";
+            this.списокСоревнованийToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.списокСоревнованийToolStripMenuItem.Text = "Список соревнований";
+            this.списокСоревнованийToolStripMenuItem.Click += new System.EventHandler(this.списокСоревнованийToolStripMenuItem_Click);
+            // 
+            // списокСотрудниковToolStripMenuItem
+            // 
+            this.списокСотрудниковToolStripMenuItem.Name = "списокСотрудниковToolStripMenuItem";
+            this.списокСотрудниковToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.списокСотрудниковToolStripMenuItem.Text = "Список сотрудников";
+            this.списокСотрудниковToolStripMenuItem.Click += new System.EventHandler(this.списокСотрудниковToolStripMenuItem_Click);
+            // 
+            // списокВидовСпортаToolStripMenuItem
+            // 
+            this.списокВидовСпортаToolStripMenuItem.Name = "списокВидовСпортаToolStripMenuItem";
+            this.списокВидовСпортаToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.списокВидовСпортаToolStripMenuItem.Text = "Список видов спорта";
+            this.списокВидовСпортаToolStripMenuItem.Click += new System.EventHandler(this.списокВидовСпортаToolStripMenuItem_Click);
+            // 
+            // списокОтчетовToolStripMenuItem
+            // 
+            this.списокОтчетовToolStripMenuItem.Name = "списокОтчетовToolStripMenuItem";
+            this.списокОтчетовToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.списокОтчетовToolStripMenuItem.Text = "Список отчетов";
+            this.списокОтчетовToolStripMenuItem.Click += new System.EventHandler(this.списокОтчетовToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -81,6 +117,10 @@ namespace SportAchievements
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокСпортсменовToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокСоревнованийToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокСотрудниковToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокВидовСпортаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокОтчетовToolStripMenuItem;
     }
 }
 
