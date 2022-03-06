@@ -88,7 +88,7 @@ namespace SiliconValley
 
         void CheckAccess()
         {
-            if (Position.Admin == Auth.User.Position)
+            if (Position.Admin == Auth.User?.Position)
             {
                 listEmployeeToolStripMenuItem.Visible = true;
             }

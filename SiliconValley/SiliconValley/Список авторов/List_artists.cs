@@ -52,10 +52,11 @@ namespace SiliconValley.Список_авторов
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // нужен гет айди, и передача его в форму 
+            // нужен гет айди, и передача его в форму
             Form_artist formArtist = new Form_artist();
             formArtist.Button.Text = "Изменить";
             formArtist.Text = "Изменить автора";
+            formArtist.Index = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             formArtist.ShowDialog();
             var db = new Context();
             dataGridView1.DataSource = db.Artists.ToList();

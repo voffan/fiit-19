@@ -49,7 +49,8 @@ namespace SiliconValley
             this.закрытьToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(800, 24);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -63,46 +64,46 @@ namespace SiliconValley
             this.listGenreToolStripMenuItem,
             this.listEmployeeToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // списокКартинToolStripMenuItem
             // 
             this.списокКартинToolStripMenuItem.Name = "списокКартинToolStripMenuItem";
-            this.списокКартинToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.списокКартинToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.списокКартинToolStripMenuItem.Text = "Список картин";
             this.списокКартинToolStripMenuItem.Click += new System.EventHandler(this.списокКартинToolStripMenuItem_Click);
             // 
             // списокВыставокToolStripMenuItem
             // 
             this.списокВыставокToolStripMenuItem.Name = "списокВыставокToolStripMenuItem";
-            this.списокВыставокToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.списокВыставокToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.списокВыставокToolStripMenuItem.Text = "Список отделов";
             // 
             // списокВыставокToolStripMenuItem1
             // 
             this.списокВыставокToolStripMenuItem1.Name = "списокВыставокToolStripMenuItem1";
-            this.списокВыставокToolStripMenuItem1.Size = new System.Drawing.Size(234, 26);
+            this.списокВыставокToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
             this.списокВыставокToolStripMenuItem1.Text = "Список выставок";
             // 
             // списокАвторовToolStripMenuItem
             // 
             this.списокАвторовToolStripMenuItem.Name = "списокАвторовToolStripMenuItem";
-            this.списокАвторовToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.списокАвторовToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.списокАвторовToolStripMenuItem.Text = "Список авторов";
             this.списокАвторовToolStripMenuItem.Click += new System.EventHandler(this.списокАвторовToolStripMenuItem_Click);
             // 
             // listGenreToolStripMenuItem
             // 
             this.listGenreToolStripMenuItem.Name = "listGenreToolStripMenuItem";
-            this.listGenreToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.listGenreToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.listGenreToolStripMenuItem.Text = "Список жанров";
             this.listGenreToolStripMenuItem.Click += new System.EventHandler(this.listGenreToolStripMenuItem_Click);
             // 
             // listEmployeeToolStripMenuItem
             // 
             this.listEmployeeToolStripMenuItem.Name = "listEmployeeToolStripMenuItem";
-            this.listEmployeeToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.listEmployeeToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.listEmployeeToolStripMenuItem.Text = "Список сотрудников";
             this.listEmployeeToolStripMenuItem.Visible = false;
             this.listEmployeeToolStripMenuItem.Click += new System.EventHandler(this.списокСотрудниковToolStripMenuItem_Click);
@@ -110,18 +111,17 @@ namespace SiliconValley
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.Text = "Gallery";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

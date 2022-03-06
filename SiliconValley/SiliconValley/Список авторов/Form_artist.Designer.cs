@@ -94,6 +94,7 @@ namespace SiliconValley.Список_авторов
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_artist";
             this.Text = "Добавить автора";
+            this.Load += new System.EventHandler(this.Form_artist_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -48,9 +48,8 @@ namespace SiliconValley
             catch(Exception error)
             {
                 MessageBox.Show(error.Message);
-                return; 
+                //return; 
             }
-            // авторизация выполнена успешно, переход к главному окну программы
             
             Main main = new Main();
             this.Hide();

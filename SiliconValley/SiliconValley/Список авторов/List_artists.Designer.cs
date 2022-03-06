@@ -45,6 +45,7 @@ namespace SiliconValley.Список_авторов
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(566, 426);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

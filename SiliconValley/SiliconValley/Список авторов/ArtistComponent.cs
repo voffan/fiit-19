@@ -17,9 +17,30 @@ namespace SiliconValley.Список_авторов
                 db.SaveChanges();
             }
         }
-        public static void Edit(/* int id */)
+        public static void Edit(int index, string name, DateTime birthday)
         {
-            // нужен код на sql
+            using (var db = new Context())
+            {
+                Artist a = GetArtistByIndex(index);
+                if (a != null)
+                {
+                    a.Name = name;
+                    a.Birthday = birthday;
+                    db.Entry(a).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                else throw new Exception("");
+            }
+           
+        }
+
+        public static Artist GetArtistByIndex(int index)
+        {
+            Context c = new Context();
+            Artist a = (from artist in c.Artists
+                       where artist.Id == index
+                       select artist).FirstOrDefault();
+            return a;
         }
     }
 }

@@ -13,10 +13,11 @@ namespace SiliconValley.Список_авторов
     public partial class Form_artist : Form
     {
         public Button Button { get { return button1; } }
+        public int Index { get; set; }
 
         public Form_artist()
         {
-            // конструктор поменять, добавить во вход инт айди
+            Index = -1;
             InitializeComponent();
         }
 
@@ -28,9 +29,23 @@ namespace SiliconValley.Список_авторов
             }
             else if (this.button1.Text == "Изменить")
             {
-                ArtistComponent.Edit(/* айди */);
+                if (Index < 0) {
+                    MessageBox.Show("");
+                    this.Close();
+                }
+                ArtistComponent.Edit(Index, textBox1.Text, dateTimePicker1.Value);
             }
             this.Close();
+        }
+
+        private void Form_artist_Load(object sender, EventArgs e)
+        {
+            if (Index > 0) 
+            {
+                Artist a = ArtistComponent.GetArtistByIndex(Index);
+                textBox1.Text = a.Name;
+                dateTimePicker1.Value = a.Birthday;
+            }
         }
     }
 }
