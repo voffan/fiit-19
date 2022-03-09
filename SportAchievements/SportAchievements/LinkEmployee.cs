@@ -21,8 +21,19 @@ namespace SportAchievements
         {
             Context c = new Context();
             dataGridView1.DataSource = c.Employees.ToList();
+            /*dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[2].Visible = false;*/
+            dataGridView1.Columns[4].HeaderText = "Имя";
+            dataGridView1.Columns[5].HeaderText = "Дата рождения";
             //dataGridView1.Columns[0].Visible = false;    ВИЖОН
             //dataGridView1.Columns[1].HeaderText = "";    МОЖНО МЕНЯТЬ НАЗВАНИЕ ВАУ!
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddEmployee Employee = new AddEmployee();
+            Employee.Show();
         }
     }
 }
