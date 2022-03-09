@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SiliconValley.Список_Жанров;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    public class Genre
+    public class Genre:IId
     {
         public int Id { get; set; }
         [MaxLength(255)]

@@ -22,18 +22,26 @@ namespace SiliconValley.Список_Жанров
             using (Context context = new Context())
             {
                 gridGenre.DataSource = context.Genres.ToList();
-
             }
         }
 
         private void AddGenre_Click(object sender, EventArgs e)
         {
+            Form_genres form_Genres = new Form_genres("Добавить жанр","Добавить");
+            form_Genres.ShowDialog();
 
+            var db = new Context();
+            gridGenre.DataSource = db.Genres.ToList();
         }
 
         private void ChangeGenre_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(gridGenre.CurrentRow.Cells[0].Value);
+            Form_genres form_Genres = new Form_genres("Изменить жанр", "Изменить",id);
+            form_Genres.ShowDialog();
 
+            var db = new Context();
+            gridGenre.DataSource = db.Genres.ToList();
         }
 
         private void gridGenre_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -31,7 +31,6 @@ namespace SiliconValley.Список_авторов
                 }
                 else throw new Exception("");
             }
-           
         }
 
         public static Artist GetArtistByIndex(int index)

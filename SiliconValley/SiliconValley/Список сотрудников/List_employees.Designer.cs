@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.gridGenre = new System.Windows.Forms.DataGridView();
-            this.AddGenre = new System.Windows.Forms.Button();
-            this.ChangeGenre = new System.Windows.Forms.Button();
+            this.AddEmployee = new System.Windows.Forms.Button();
+            this.ChangeEmployee = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridGenre)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,40 +42,44 @@
             this.gridGenre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridGenre.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.gridGenre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridGenre.Location = new System.Drawing.Point(222, 12);
+            this.gridGenre.Location = new System.Drawing.Point(296, 15);
+            this.gridGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridGenre.Name = "gridGenre";
             this.gridGenre.RowHeadersWidth = 51;
-            this.gridGenre.Size = new System.Drawing.Size(566, 426);
+            this.gridGenre.Size = new System.Drawing.Size(755, 524);
             this.gridGenre.TabIndex = 2;
             // 
-            // AddGenre
+            // AddEmployee
             // 
-            this.AddGenre.Location = new System.Drawing.Point(12, 12);
-            this.AddGenre.Name = "AddGenre";
-            this.AddGenre.Size = new System.Drawing.Size(182, 30);
-            this.AddGenre.TabIndex = 3;
-            this.AddGenre.Text = "Добавить сотрудника";
-            this.AddGenre.UseVisualStyleBackColor = true;
-            this.AddGenre.Click += new System.EventHandler(this.AddGenre_Click);
+            this.AddEmployee.Location = new System.Drawing.Point(16, 15);
+            this.AddEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddEmployee.Name = "AddEmployee";
+            this.AddEmployee.Size = new System.Drawing.Size(243, 37);
+            this.AddEmployee.TabIndex = 3;
+            this.AddEmployee.Text = "Добавить сотрудника";
+            this.AddEmployee.UseVisualStyleBackColor = true;
+            this.AddEmployee.Click += new System.EventHandler(this.AddEmployee_Click);
             // 
-            // ChangeGenre
+            // ChangeEmployee
             // 
-            this.ChangeGenre.Location = new System.Drawing.Point(12, 48);
-            this.ChangeGenre.Name = "ChangeGenre";
-            this.ChangeGenre.Size = new System.Drawing.Size(182, 30);
-            this.ChangeGenre.TabIndex = 4;
-            this.ChangeGenre.Text = "Изменить данные сотрудника";
-            this.ChangeGenre.UseVisualStyleBackColor = true;
+            this.ChangeEmployee.Location = new System.Drawing.Point(16, 59);
+            this.ChangeEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangeEmployee.Name = "ChangeEmployee";
+            this.ChangeEmployee.Size = new System.Drawing.Size(243, 37);
+            this.ChangeEmployee.TabIndex = 4;
+            this.ChangeEmployee.Text = "Изменить данные сотрудника";
+            this.ChangeEmployee.UseVisualStyleBackColor = true;
+            this.ChangeEmployee.Click += new System.EventHandler(this.ChangeEmployee_Click);
             // 
             // List_employees
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ChangeGenre);
-            this.Controls.Add(this.AddGenre);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.ChangeEmployee);
+            this.Controls.Add(this.AddEmployee);
             this.Controls.Add(this.gridGenre);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "List_employees";
             this.Text = "List_employees";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -88,7 +92,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gridGenre;
-        private System.Windows.Forms.Button AddGenre;
-        private System.Windows.Forms.Button ChangeGenre;
+        private System.Windows.Forms.Button AddEmployee;
+        private System.Windows.Forms.Button ChangeEmployee;
     }
 }

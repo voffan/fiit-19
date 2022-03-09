@@ -29,7 +29,8 @@ namespace SiliconValley.Список_авторов
             }
             else if (this.button1.Text == "Изменить")
             {
-                if (Index < 0) {
+                if (Index < 0) 
+                {
                     MessageBox.Show("");
                     this.Close();
                 }
