@@ -19,7 +19,7 @@ namespace SportAchievements
             Application.SetCompatibleTextRenderingDefault(false);
             Authorization autho = new Authorization();
             autho.StartPosition = FormStartPosition.CenterScreen;
-            Application.Run(autho);
+            Application.Run(new MainMenu());
         }
     }
 }

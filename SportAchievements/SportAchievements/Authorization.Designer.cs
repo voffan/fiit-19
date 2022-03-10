@@ -50,7 +50,7 @@ namespace SportAchievements
             this.LoginBtn.Location = new System.Drawing.Point(198, 183);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(75, 23);
-            this.LoginBtn.TabIndex = 1;
+            this.LoginBtn.TabIndex = 2;
             this.LoginBtn.Text = "Войти";
             this.LoginBtn.UseVisualStyleBackColor = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
@@ -60,7 +60,7 @@ namespace SportAchievements
             this.txtPsw.Location = new System.Drawing.Point(130, 137);
             this.txtPsw.Name = "txtPsw";
             this.txtPsw.Size = new System.Drawing.Size(240, 20);
-            this.txtPsw.TabIndex = 2;
+            this.txtPsw.TabIndex = 1;
             // 
             // LoginLbl
             // 
@@ -94,7 +94,7 @@ namespace SportAchievements
             this.CancelBtn.Location = new System.Drawing.Point(198, 212);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.CancelBtn.TabIndex = 6;
+            this.CancelBtn.TabIndex = 3;
             this.CancelBtn.Text = "Отмена";
             this.CancelBtn.UseVisualStyleBackColor = true;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);

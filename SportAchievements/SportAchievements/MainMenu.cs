@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SportAchievements
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
         public Context context = new Context();
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
         }
@@ -64,9 +64,15 @@ namespace SportAchievements
             LinkReport Report = new LinkReport();
             Report.MdiParent = this;
             Report.Show();
+            
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

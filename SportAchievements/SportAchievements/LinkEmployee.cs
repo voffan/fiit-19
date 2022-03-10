@@ -19,6 +19,18 @@ namespace SportAchievements
 
         private void LinkEmployee_Load(object sender, EventArgs e)
         {
+            InitTable();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddEmployee Employee = new AddEmployee();
+            Employee.ShowDialog();
+            InitTable();
+        }
+
+        private void InitTable()
+        {
             Context c = new Context();
             dataGridView1.DataSource = c.Employees.ToList();
             /*dataGridView1.Columns[0].Visible = false;
@@ -28,12 +40,6 @@ namespace SportAchievements
             dataGridView1.Columns[5].HeaderText = "Дата рождения";
             //dataGridView1.Columns[0].Visible = false;    ВИЖОН
             //dataGridView1.Columns[1].HeaderText = "";    МОЖНО МЕНЯТЬ НАЗВАНИЕ ВАУ!
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddEmployee Employee = new AddEmployee();
-            Employee.Show();
         }
     }
 }
