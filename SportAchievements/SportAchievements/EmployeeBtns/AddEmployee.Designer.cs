@@ -127,6 +127,7 @@ namespace SportAchievements
             this.Cancel.TabIndex = 11;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // pos
             // 

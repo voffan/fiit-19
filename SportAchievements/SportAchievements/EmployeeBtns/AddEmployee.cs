@@ -41,5 +41,10 @@ namespace SportAchievements
             }
             else MessageBox.Show("Заполните все поля!");
         }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

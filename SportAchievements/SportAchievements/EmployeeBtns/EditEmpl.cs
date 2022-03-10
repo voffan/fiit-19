@@ -14,7 +14,8 @@ namespace SportAchievements.EmployeeBtns
     public partial class EditEmpl : Form
     {
         int Id;
-        public EditEmpl( int Id)
+
+        public EditEmpl(int Id)
         {
             this.Id = Id;
             InitializeComponent();
@@ -43,6 +44,7 @@ namespace SportAchievements.EmployeeBtns
             pos.DataSource = new BindingSource(Classes.DescriptionAttributes<Classes.Position>.RetrieveAttributes(), null);
             pos.DisplayMember = "Key";
             pos.ValueMember = "Value";
+
         }
 
         private void Cancel_Click(object sender, EventArgs e)
