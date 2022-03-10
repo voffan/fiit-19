@@ -30,5 +30,35 @@ namespace SportAchievements.Components
             }
             throw new Exception("Пользователь с заданным логином уже существует!");
         }
+
+        public static void DelEmpl(int Id)
+        {
+
+            Context c = new Context();
+            Employee per = c.Employees.Where(p => p.Id == Id).FirstOrDefault();
+            if (per != null)
+            {
+                c.Employees.Remove(per);
+                c.SaveChanges();
+            }
+        }
+
+        public static Employee ChEmpl(Context con, string lgn, string psw, string FIO, DateTime bdate, Position pos, int Id)
+        {
+            Context c = new Context();
+            Employee per = c.Employees.Where(p => p.Id == Id).FirstOrDefault();
+            if (per != null)
+            {
+                per.Name = FIO;
+                per.Position = pos;
+                per.Login = lgn;
+                per.Pwd = psw;
+                per.BirthDate = bdate;
+                c.Entry(per).State = System.Data.Entity.EntityState.Modified;
+                c.SaveChanges();
+                return per;
+            }
+            return per;
+        }
     }
 }

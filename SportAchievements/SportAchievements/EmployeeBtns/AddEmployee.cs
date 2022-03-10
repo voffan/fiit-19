@@ -27,7 +27,7 @@ namespace SportAchievements
 
         private void addEmpl_Click(object sender, EventArgs e)
         {
-            if (lgn.Text.Length > 0 || psw.Text.Length > 0 || FIO.Text.Length > 0 || bdate.Value.Date.ToString().Length > 0 || pos.Text.Length > 0)
+            if (lgn.Text.Length > 0 && psw.Text.Length > 0 && FIO.Text.Length > 0 && bdate.Value.Date.ToString().Length > 0 && pos.Text.Length > 0)
             {
                 try
                 {

@@ -980,7 +980,7 @@ IndxFKName=%REFR%_FK
 IndxThreshold=
 ColnFKName=%.3:PARENT%_%COLUMN%
 ColnFKNameUse=No</a:ModelOptionsText>
-<a:RepositoryFilename>C:\ALEG\fiit-19\Модель ALEGa.oom</a:RepositoryFilename>
+<a:RepositoryFilename>C:\Users\Артём\Documents\GitHub\fiit-19\Модель ALEGa.oom</a:RepositoryFilename>
 <c:ObjectLanguage>
 <o:Shortcut Id="o3">
 <a:ObjectID>73BFBA40-9714-4A35-BA98-949782B563AD</a:ObjectID>
@@ -1556,8 +1556,8 @@ Shadow=0</a:DisplayPreferences>
 <o:AssociationSymbol Id="o5">
 <a:CreationDate>1634009180</a:CreationDate>
 <a:ModificationDate>1634011005</a:ModificationDate>
-<a:Rect>((-3737,19059), (2288,28752))</a:Rect>
-<a:ListOfPoints>((-1900,19459),(-1900,23626),(-1874,23626),(-1874,28352))</a:ListOfPoints>
+<a:Rect>((-3769,19249), (2476,28609))</a:Rect>
+<a:ListOfPoints>((-1895,19649),(-1895,23626),(-1874,23626),(-1874,28209))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -1578,8 +1578,8 @@ SOURCE 0 Arial Unicode MS,8,N</a:FontList>
 <o:AssociationSymbol Id="o9">
 <a:CreationDate>1634009243</a:CreationDate>
 <a:ModificationDate>1634011005</a:ModificationDate>
-<a:Rect>((-16815,15684), (-2065,31111))</a:Rect>
-<a:ListOfPoints>((-2465,16659),(-16115,16659),(-16115,30711))</a:ListOfPoints>
+<a:Rect>((-16815,15613), (-2065,31098))</a:Rect>
+<a:ListOfPoints>((-2465,16665),(-16115,16665),(-16115,30698))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -1600,8 +1600,8 @@ SOURCE 0 Arial Unicode MS,8,N</a:FontList>
 <o:GeneralizationSymbol Id="o12">
 <a:CreationDate>1634009397</a:CreationDate>
 <a:ModificationDate>1634009974</a:ModificationDate>
-<a:Rect>((-1268,32597), (532,42403))</a:Rect>
-<a:ListOfPoints>((-368,32997),(-368,42003))</a:ListOfPoints>
+<a:Rect>((-1268,32749), (532,42251))</a:Rect>
+<a:ListOfPoints>((-368,33149),(-368,41851))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>7</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1620,8 +1620,8 @@ SOURCE 0 Arial Unicode MS,8,N</a:FontList>
 <o:GeneralizationSymbol Id="o15">
 <a:CreationDate>1634009399</a:CreationDate>
 <a:ModificationDate>1634011071</a:ModificationDate>
-<a:Rect>((-16688,44753), (973,46553))</a:Rect>
-<a:ListOfPoints>((-16288,45653),(573,45653))</a:ListOfPoints>
+<a:Rect>((-16702,44814), (973,46614))</a:Rect>
+<a:ListOfPoints>((-16302,45714),(573,45714))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>7</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1641,8 +1641,8 @@ SOURCE 0 Arial Unicode MS,8,N</a:FontList>
 <o:AssociationSymbol Id="o18">
 <a:CreationDate>1634009523</a:CreationDate>
 <a:ModificationDate>1634011071</a:ModificationDate>
-<a:Rect>((-16300,34358), (-11801,43415))</a:Rect>
-<a:ListOfPoints>((-14463,34758),(-14463,43015))</a:ListOfPoints>
+<a:Rect>((-16298,34624), (-11799,43301))</a:Rect>
+<a:ListOfPoints>((-14461,35024),(-14461,42901))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -1663,7 +1663,7 @@ SOURCE 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634006933</a:CreationDate>
 <a:ModificationDate>1634010007</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-23301,27042), (-10659,34758))</a:Rect>
+<a:Rect>((-23301,26776), (-10659,35024))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1686,7 +1686,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634007339</a:CreationDate>
 <a:ModificationDate>1634009974</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-6815,28203), (4281,32997))</a:Rect>
+<a:Rect>((-6815,28051), (4281,33149))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1709,7 +1709,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634007420</a:CreationDate>
 <a:ModificationDate>1634011071</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-18730,43015), (-10954,46835))</a:Rect>
+<a:Rect>((-18768,42901), (-10916,46949))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1732,7 +1732,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634007677</a:CreationDate>
 <a:ModificationDate>1634011005</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-7168,13691), (2230,19459))</a:Rect>
+<a:Rect>((-7206,13501), (2268,19649))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1755,7 +1755,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634007803</a:CreationDate>
 <a:ModificationDate>1634010097</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-11143,8290), (-4139,12110))</a:Rect>
+<a:Rect>((-11143,8176), (-4139,12224))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1778,7 +1778,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634009065</a:CreationDate>
 <a:ModificationDate>1634009348</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-23351,8253), (-12485,13047))</a:Rect>
+<a:Rect>((-23351,8101), (-12485,13199))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1801,7 +1801,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634009383</a:CreationDate>
 <a:ModificationDate>1634009947</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-4294,42003), (3558,46797))</a:Rect>
+<a:Rect>((-4294,41851), (3558,46949))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1824,7 +1824,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634010987</a:CreationDate>
 <a:ModificationDate>1634011065</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-3655,8365), (2113,12185))</a:Rect>
+<a:Rect>((-3655,8251), (2113,12299))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
