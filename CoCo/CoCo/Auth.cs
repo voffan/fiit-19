@@ -35,6 +35,7 @@ namespace CoCo
             Admin admin = (from Admin dep in context.Admins
                            where dep.Id == 26
                             select dep).FirstOrDefault();
+ //           if (textBox)
             if (textBox1.Text == admin.FullName && textBox2.Text == admin.Password)
             {
                 Hide();
