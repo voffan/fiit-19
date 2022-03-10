@@ -48,5 +48,27 @@ namespace SiliconValley.Список_Жанров
         {
             
         }
+
+        private void DeleteGenre_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons box = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить?", "", box);
+
+            if (result == DialogResult.No)
+                return;
+
+            for (int i = 0; i < gridGenre.SelectedRows.Count; i++)
+            {
+                int currentId = Convert.ToInt32(gridGenre.SelectedRows[i].Cells[0].Value);
+                Genre genre = ListsComponent.GetObjById<Genre>(currentId);
+
+                ListsComponent.Delete(genre);
+            }
+
+            using (Context db = new Context())
+            {
+                gridGenre.DataSource = db.Genres.ToList();
+            }
+        }
     }
 }

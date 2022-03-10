@@ -31,6 +31,7 @@
             this.gridGenre = new System.Windows.Forms.DataGridView();
             this.AddGenre = new System.Windows.Forms.Button();
             this.ChangeGenre = new System.Windows.Forms.Button();
+            this.DeleteGenre = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridGenre)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +73,23 @@
             this.ChangeGenre.UseVisualStyleBackColor = true;
             this.ChangeGenre.Click += new System.EventHandler(this.ChangeGenre_Click);
             // 
+            // DeleteGenre
+            // 
+            this.DeleteGenre.Location = new System.Drawing.Point(16, 104);
+            this.DeleteGenre.Margin = new System.Windows.Forms.Padding(4);
+            this.DeleteGenre.Name = "DeleteGenre";
+            this.DeleteGenre.Size = new System.Drawing.Size(243, 37);
+            this.DeleteGenre.TabIndex = 4;
+            this.DeleteGenre.Text = "Удалить";
+            this.DeleteGenre.UseVisualStyleBackColor = true;
+            this.DeleteGenre.Click += new System.EventHandler(this.DeleteGenre_Click);
+            // 
             // List_genres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.DeleteGenre);
             this.Controls.Add(this.ChangeGenre);
             this.Controls.Add(this.AddGenre);
             this.Controls.Add(this.gridGenre);
@@ -94,5 +107,6 @@
         private System.Windows.Forms.DataGridView gridGenre;
         private System.Windows.Forms.Button AddGenre;
         private System.Windows.Forms.Button ChangeGenre;
+        private System.Windows.Forms.Button DeleteGenre;
     }
 }

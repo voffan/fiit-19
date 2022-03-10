@@ -32,7 +32,14 @@ namespace SiliconValley.Список_Жанров
             }
         }
 
-
+        public static void Delete<T>(T obj) where T : class
+        {
+            using (var db = new Context())
+            {
+                db.Set<T>().Remove(obj);
+                db.SaveChanges();
+            }
+        }
 
 
 

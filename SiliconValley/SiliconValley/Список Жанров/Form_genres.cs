@@ -23,8 +23,6 @@ namespace SiliconValley.Список_Жанров
 
         public Form_genres(string labelText, string buttonText, int id):this(labelText, buttonText)
         {
-            InitializeComponent();
-
             this.id = id;
         }
 
@@ -74,7 +72,7 @@ namespace SiliconValley.Список_Жанров
                 return;
 
             Genre genre = ListsComponent.GetObjById<Genre>(id);
-
+            
             textBox1.Text = genre.Name;
         }
 

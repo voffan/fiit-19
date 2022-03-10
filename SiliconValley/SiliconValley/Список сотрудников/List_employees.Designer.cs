@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridGenre = new System.Windows.Forms.DataGridView();
+            this.gridEmployee = new System.Windows.Forms.DataGridView();
             this.AddEmployee = new System.Windows.Forms.Button();
             this.ChangeEmployee = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gridGenre)).BeginInit();
+            this.deleteEmployee = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEmployee)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridGenre
+            // gridEmployee
             // 
-            this.gridGenre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridGenre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridGenre.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.gridGenre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridGenre.Location = new System.Drawing.Point(296, 15);
-            this.gridGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gridGenre.Name = "gridGenre";
-            this.gridGenre.RowHeadersWidth = 51;
-            this.gridGenre.Size = new System.Drawing.Size(755, 524);
-            this.gridGenre.TabIndex = 2;
+            this.gridEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridEmployee.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.gridEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEmployee.Location = new System.Drawing.Point(296, 15);
+            this.gridEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.gridEmployee.Name = "gridEmployee";
+            this.gridEmployee.RowHeadersWidth = 51;
+            this.gridEmployee.Size = new System.Drawing.Size(755, 524);
+            this.gridEmployee.TabIndex = 2;
             // 
             // AddEmployee
             // 
             this.AddEmployee.Location = new System.Drawing.Point(16, 15);
-            this.AddEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.AddEmployee.Name = "AddEmployee";
             this.AddEmployee.Size = new System.Drawing.Size(243, 37);
             this.AddEmployee.TabIndex = 3;
@@ -63,7 +64,7 @@
             // ChangeEmployee
             // 
             this.ChangeEmployee.Location = new System.Drawing.Point(16, 59);
-            this.ChangeEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangeEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.ChangeEmployee.Name = "ChangeEmployee";
             this.ChangeEmployee.Size = new System.Drawing.Size(243, 37);
             this.ChangeEmployee.TabIndex = 4;
@@ -71,28 +72,41 @@
             this.ChangeEmployee.UseVisualStyleBackColor = true;
             this.ChangeEmployee.Click += new System.EventHandler(this.ChangeEmployee_Click);
             // 
+            // deleteEmployee
+            // 
+            this.deleteEmployee.Location = new System.Drawing.Point(16, 104);
+            this.deleteEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteEmployee.Name = "deleteEmployee";
+            this.deleteEmployee.Size = new System.Drawing.Size(243, 37);
+            this.deleteEmployee.TabIndex = 5;
+            this.deleteEmployee.Text = "Удалить";
+            this.deleteEmployee.UseVisualStyleBackColor = true;
+            this.deleteEmployee.Click += new System.EventHandler(this.deleteEmployee_Click);
+            // 
             // List_employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.deleteEmployee);
             this.Controls.Add(this.ChangeEmployee);
             this.Controls.Add(this.AddEmployee);
-            this.Controls.Add(this.gridGenre);
+            this.Controls.Add(this.gridEmployee);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "List_employees";
             this.Text = "List_employees";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.List_employees_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridGenre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEmployee)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridGenre;
+        private System.Windows.Forms.DataGridView gridEmployee;
         private System.Windows.Forms.Button AddEmployee;
         private System.Windows.Forms.Button ChangeEmployee;
+        private System.Windows.Forms.Button deleteEmployee;
     }
 }
