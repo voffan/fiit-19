@@ -15,6 +15,7 @@ namespace CoCo
         public Context() : base("MyString") { }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Admin> Admins { get; set; }
         public DbSet<Device> Device { get; set; }
         public DbSet<PC> PCs { get; set; }
         public DbSet<Peripheral> Peripherals { get; set; }

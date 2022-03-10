@@ -131,6 +131,7 @@
     <Compile Include="Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\Cpu.cs" />
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Device.cs" />
@@ -147,6 +148,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Cpus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Cpus.Designer.cs">
+      <DependentUpon>Form_Cpus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Departments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,16 +165,38 @@
     </Compile>
     <Compile Include="Form_Employees.Designer.cs">
       <DependentUpon>Form_Employees.cs</DependentUpon>
-		</Compile>
+    </Compile>
     <Compile Include="Form_Hdds.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Hdds.Designer.cs">
       <DependentUpon>Form_Hdds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Pcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Pcs.Designer.cs">
+      <DependentUpon>Form_Pcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Peripherals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Peripherals.Designer.cs">
+      <DependentUpon>Form_Peripherals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Repairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Repairs.Designer.cs">
+      <DependentUpon>Form_Repairs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202202150917068_First.cs" />
     <Compile Include="Migrations\202202150917068_First.designer.cs">
       <DependentUpon>202202150917068_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203100335468_second.cs" />
+    <Compile Include="Migrations\202203100335468_second.designer.cs">
+      <DependentUpon>202203100335468_second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Form_Motherboards.cs">
@@ -181,26 +210,38 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Cpus.resx">
+      <DependentUpon>Form_Cpus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Departments.resx">
       <DependentUpon>Form_Departments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Employees.resx">
       <DependentUpon>Form_Employees.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Hdds.resx">
       <DependentUpon>Form_Hdds.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Pcs.resx">
+      <DependentUpon>Form_Pcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Peripherals.resx">
+      <DependentUpon>Form_Peripherals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Repairs.resx">
+      <DependentUpon>Form_Repairs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202150917068_First.resx">
       <DependentUpon>202202150917068_First.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Motherboards.resx">
       <DependentUpon>Form_Motherboards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203100335468_second.resx">
+      <DependentUpon>202203100335468_second.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -28,20 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.спискиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.компьютерыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.периферияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отделыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.компонентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.матПлатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.жДискиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.процессорыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ремонтыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.спискиToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // спискиToolStripMenuItem
+            // 
+            this.спискиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.компьютерыToolStripMenuItem,
+            this.периферияToolStripMenuItem,
+            this.сотрудникиToolStripMenuItem,
+            this.отделыToolStripMenuItem,
+            this.компонентыToolStripMenuItem,
+            this.ремонтыToolStripMenuItem});
+            this.спискиToolStripMenuItem.Name = "спискиToolStripMenuItem";
+            this.спискиToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.спискиToolStripMenuItem.Text = "Списки";
+            // 
+            // компьютерыToolStripMenuItem
+            // 
+            this.компьютерыToolStripMenuItem.Name = "компьютерыToolStripMenuItem";
+            this.компьютерыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.компьютерыToolStripMenuItem.Text = "Компьютеры";
+            this.компьютерыToolStripMenuItem.Click += new System.EventHandler(this.компьютерыToolStripMenuItem_Click);
+            // 
+            // периферияToolStripMenuItem
+            // 
+            this.периферияToolStripMenuItem.Name = "периферияToolStripMenuItem";
+            this.периферияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.периферияToolStripMenuItem.Text = "Периферия";
+            this.периферияToolStripMenuItem.Click += new System.EventHandler(this.периферияToolStripMenuItem_Click);
+            // 
+            // сотрудникиToolStripMenuItem
+            // 
+            this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
+            this.сотрудникиToolStripMenuItem.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
+            // 
+            // отделыToolStripMenuItem
+            // 
+            this.отделыToolStripMenuItem.Name = "отделыToolStripMenuItem";
+            this.отделыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.отделыToolStripMenuItem.Text = "Отделы";
+            this.отделыToolStripMenuItem.Click += new System.EventHandler(this.отделыToolStripMenuItem_Click);
+            // 
+            // компонентыToolStripMenuItem
+            // 
+            this.компонентыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.матПлатыToolStripMenuItem,
+            this.жДискиToolStripMenuItem,
+            this.процессорыToolStripMenuItem});
+            this.компонентыToolStripMenuItem.Name = "компонентыToolStripMenuItem";
+            this.компонентыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.компонентыToolStripMenuItem.Text = "Компоненты";
+            // 
+            // матПлатыToolStripMenuItem
+            // 
+            this.матПлатыToolStripMenuItem.Name = "матПлатыToolStripMenuItem";
+            this.матПлатыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.матПлатыToolStripMenuItem.Text = "Мат платы";
+            this.матПлатыToolStripMenuItem.Click += new System.EventHandler(this.матПлатыToolStripMenuItem_Click);
+            // 
+            // жДискиToolStripMenuItem
+            // 
+            this.жДискиToolStripMenuItem.Name = "жДискиToolStripMenuItem";
+            this.жДискиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.жДискиToolStripMenuItem.Text = "Ж диски";
+            this.жДискиToolStripMenuItem.Click += new System.EventHandler(this.жДискиToolStripMenuItem_Click);
+            // 
+            // процессорыToolStripMenuItem
+            // 
+            this.процессорыToolStripMenuItem.Name = "процессорыToolStripMenuItem";
+            this.процессорыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.процессорыToolStripMenuItem.Text = "Процессоры";
+            this.процессорыToolStripMenuItem.Click += new System.EventHandler(this.процессорыToolStripMenuItem_Click);
+            // 
+            // ремонтыToolStripMenuItem
+            // 
+            this.ремонтыToolStripMenuItem.Name = "ремонтыToolStripMenuItem";
+            this.ремонтыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ремонтыToolStripMenuItem.Text = "Ремонты";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "CoCo";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem спискиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem компьютерыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem периферияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отделыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem компонентыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem матПлатыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem жДискиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem процессорыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ремонтыToolStripMenuItem;
     }
 }
 

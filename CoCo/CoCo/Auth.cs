@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CoCo.Classes;
 
 namespace CoCo
 {
@@ -20,17 +21,21 @@ namespace CoCo
         private void LoginButton_Click(object sender, EventArgs e)
         {
             Context context = new Context();
-            Classes.Department d = new Classes.Department();
-            d.Name = "Dep";
-            context.Departments.Add(d);
-            context.SaveChanges();
-            Classes.Employee empl = new Classes.Employee();
-            empl.FullName = "San";
-            string password = "qwerty";
-            empl.Department = d;
-            context.Employees.Add(empl);
-            context.SaveChanges();
-            if (textBox1.Text == empl.FullName && textBox2.Text == password)
+            /*
+            Department d = (from Department dep in context.Departments
+                           where dep.Id == 1
+                           select dep).FirstOrDefault();
+            
+            Admin admin = new Classes.Admin();
+            admin.FullName = "San";
+            admin.Password = "qwerty";
+            admin.Department = d;
+            context.Admins.Add(admin);
+            context.SaveChanges();*/
+            Admin admin = (from Admin dep in context.Admins
+                           where dep.Id == 26
+                            select dep).FirstOrDefault();
+            if (textBox1.Text == admin.FullName && textBox2.Text == admin.Password)
             {
                 Hide();
                 new Form1().ShowDialog();

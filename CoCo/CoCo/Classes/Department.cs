@@ -12,6 +12,10 @@ namespace CoCo.Classes
         public int Id { get; set; }
         [MaxLength(300)]
         public String Name { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
 
     }
 }
