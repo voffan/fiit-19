@@ -49,6 +49,7 @@ namespace SportAchievements
             this.lgn.Name = "lgn";
             this.lgn.Size = new System.Drawing.Size(266, 20);
             this.lgn.TabIndex = 0;
+            this.lgn.TextChanged += new System.EventHandler(this.lgn_TextChanged);
             // 
             // psw
             // 

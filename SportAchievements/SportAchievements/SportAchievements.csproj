@@ -56,6 +56,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompetitionBtns\AddCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompetitionBtns\AddCompetition.Designer.cs">
+      <DependentUpon>AddCompetition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\CompetitionComp.cs" />
     <Compile Include="EmployeeBtns\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +139,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CompetitionBtns\AddCompetition.resx">
+      <DependentUpon>AddCompetition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeBtns\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>

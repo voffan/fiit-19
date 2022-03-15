@@ -11,27 +11,26 @@ using SportAchievements.Components;
 
 namespace SportAchievements
 {
-    public partial class AddEmployee : Form
+    public partial class AddCompetition : Form
     {
-        public AddEmployee()
+        public AddCompetition()
         {
             InitializeComponent();
+            //Context con, string name, DateTime start, DateTime end, int typeid, string type
         }
 
-        private void AddEmployee_Load(object sender, EventArgs e)
+        private void AddCompetition_Load(object sender, EventArgs e)
         {
-            pos.DataSource = new BindingSource(Classes.DescriptionAttributes<Classes.Position>.RetrieveAttributes(), null);
-            pos.DisplayMember = "Key";
-            pos.ValueMember = "Value";
+            
         }
 
         private void addEmpl_Click(object sender, EventArgs e)
         {
-            if (lgn.Text.Length > 0 && psw.Text.Length > 0 && FIO.Text.Length > 0 && bdate.Value.Date.ToString().Length > 0 && pos.Text.Length > 0)
+            if (name.Text.Length > 0 &&  start.Value.Date.ToString().Length > 0 && end.Value.Date.ToString().Length > 0 && typeid.Text.Length > 0 && type.Text.Length > 0)
             {
                 try
                 {
-                    EmployeeComp.AddEmployee(Authorization.con, lgn.Text, psw.Text, FIO.Text, bdate.Value.Date, (Classes.Position)Enum.Parse(typeof(Classes.Position), (string)pos.SelectedValue));
+                    CompetitionComp.AddCompetition(Authorization.con, name.Text, start.Value.Date, end.Value.Date, ((int)typeid.Value), type.Text);
                     Close();
                 }
                 catch
@@ -45,11 +44,6 @@ namespace SportAchievements
         private void Cancel_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void lgn_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
