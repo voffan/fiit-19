@@ -208,9 +208,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Forms\Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </None>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Cpus.resx">
       <DependentUpon>Form_Cpus.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,12 +223,12 @@
     <EmbeddedResource Include="Forms\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Forms\Form_Motherboards.resx">
+    <EmbeddedResource Include="Forms\Form_Motherboards.resx">
       <DependentUpon>Form_Motherboards.cs</DependentUpon>
-    </None>
-    <None Include="Forms\Form_Hdds.resx">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Hdds.resx">
       <DependentUpon>Form_Hdds.cs</DependentUpon>
-    </None>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Pcs.resx">
       <DependentUpon>Form_Pcs.cs</DependentUpon>
     </EmbeddedResource>
