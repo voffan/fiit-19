@@ -33,16 +33,30 @@ namespace CoCo
             context.Admins.Add(admin);
             context.SaveChanges();*/
             Admin admin = (from Admin dep in context.Admins
-                           where dep.Id == 26
+                           where dep.Id == 4
                             select dep).FirstOrDefault();
- //           if (textBox)
+            //           if (textBox)
             if (textBox1.Text == admin.FullName && textBox2.Text == admin.Password)
             {
                 Hide();
                 new Form1().ShowDialog();
                 Close();
             }
+            else
+                MessageBox.Show(
+                    "Нвеврный логин или пароль",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ((char)Keys.Enter))
+            {
+                LoginButton_Click(sender, e);
+            }
         }
     }
 }
