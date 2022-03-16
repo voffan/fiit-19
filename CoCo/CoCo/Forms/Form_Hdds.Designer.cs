@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form_Hdds";
-            this.Text = "Form_Hdds";
+            this.Text = "Жесткие диски";
             this.Load += new System.EventHandler(this.Form_Hdds_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

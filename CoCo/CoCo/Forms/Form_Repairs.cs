@@ -16,5 +16,10 @@ namespace CoCo
         {
             InitializeComponent();
         }
+
+        private void Form_Repairs_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = new Context().Repairs.ToList();
+        }
     }
 }

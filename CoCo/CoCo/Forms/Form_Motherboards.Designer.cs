@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form_Motherboards";
-            this.Text = "Motherboards";
+            this.Text = "Материнские платы";
             this.Load += new System.EventHandler(this.Motherboards_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

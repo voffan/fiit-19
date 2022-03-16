@@ -19,51 +19,45 @@ namespace CoCo
 
         private void компьютерыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = new Form_Pcs();
-            form.MdiParent = this;
-            form.Show();
-            
-
+            Show_Child_Form(new Form_Pcs());
         }
 
         private void периферияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = new Form_Peripherals();
-            form.MdiParent = this;
-            form.Show();
+            Show_Child_Form(new Form_Peripherals());
         }
 
         private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = new Form_Employees();
-            form.MdiParent = this;
-            form.Show();
+            Show_Child_Form(new Form_Employees());
         }
 
         private void отделыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = new Form_Departments();
-            form.MdiParent = this;
-            form.Show();
+            Show_Child_Form(new Form_Departments());
         }
 
         private void матПлатыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = new Form_Motherboards();
-            form.MdiParent = this;
-            form.Show();
+            Show_Child_Form(new Form_Motherboards());
         }
 
         private void жДискиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = new Form_Hdds();
-            form.MdiParent = this;
-            form.Show();
+            Show_Child_Form(new Form_Hdds());
         }
 
         private void процессорыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form form = new Form_Cpus();
+            Show_Child_Form(new Form_Cpus());
+        }
+
+        private void ремонтыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Show_Child_Form(new Form_Repairs());
+        }
+        private void Show_Child_Form(Form form)
+        {
             form.MdiParent = this;
             form.Show();
         }

@@ -48,7 +48,8 @@ namespace CoCo
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form_Repairs";
-            this.Text = "Form_Repairs";
+            this.Text = "Ремонты";
+            this.Load += new System.EventHandler(this.Form_Repairs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
