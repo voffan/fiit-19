@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CoCo.Classes;
 
 namespace CoCo
 {
@@ -24,6 +25,13 @@ namespace CoCo
             dataGridView1.Columns[1].HeaderText = "HDD";
             dataGridView1.Columns[2].HeaderText = "CPU";
             dataGridView1.Columns[3].HeaderText = "Motherboard";*/
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Context context = new Context();    
+            PC pC = new PC();   
+
         }
     }
 }

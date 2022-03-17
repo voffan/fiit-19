@@ -68,7 +68,11 @@
             // 
             // LoginButton
             // 
+<<<<<<< HEAD
             this.LoginButton.Location = new System.Drawing.Point(220, 138);
+=======
+            this.LoginButton.Location = new System.Drawing.Point(179, 136);
+>>>>>>> cff2555a9cd23c68148d7650db7296e16d7977dc
             this.LoginButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(56, 19);
@@ -109,7 +113,12 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Auth";
+<<<<<<< HEAD
             this.Text = "Авторизация";
+=======
+            this.Text = "Auth";
+            this.Load += new System.EventHandler(this.Auth_Load);
+>>>>>>> cff2555a9cd23c68148d7650db7296e16d7977dc
             this.ResumeLayout(false);
             this.PerformLayout();
 
