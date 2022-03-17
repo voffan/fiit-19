@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CoCo.Forms;
 
 namespace CoCo
 {
@@ -28,9 +29,9 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form add_form = new Form();
 
-            add_form.ShowDialog();
+
+            new Form_Add_Cpus().ShowDialog();
         }
     }
 }

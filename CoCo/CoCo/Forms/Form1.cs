@@ -61,5 +61,10 @@ namespace CoCo
             form.MdiParent = this;
             form.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
