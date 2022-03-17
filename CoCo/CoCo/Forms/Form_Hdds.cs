@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CoCo.Forms;
 
 namespace CoCo
 {
@@ -17,6 +18,8 @@ namespace CoCo
             InitializeComponent();
         }
 
+
+
         private void Form_Hdds_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = new Context().Hdds.ToList();
@@ -24,6 +27,12 @@ namespace CoCo
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Объем";
             dataGridView1.Columns[3].HeaderText = "Производитель";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+       
+            new AddHdd().ShowDialog();
         }
     }
 }

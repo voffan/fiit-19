@@ -126,6 +126,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddHdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddHdd.Designer.cs">
+      <DependentUpon>AddHdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddPc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddPc.Designer.cs">
+      <DependentUpon>AddPc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Auth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +220,12 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddHdd.resx">
+      <DependentUpon>AddHdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddPc.resx">
+      <DependentUpon>AddPc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

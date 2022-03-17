@@ -33,7 +33,7 @@ namespace CoCo
             context.Admins.Add(admin);
             context.SaveChanges();*/
             Admin admin = (from Admin dep in context.Admins
-                           where dep.Id == 4
+                           where dep.Id == 1
                             select dep).FirstOrDefault();
             //           if (textBox)
             if (textBox1.Text == admin.FullName && textBox2.Text == admin.Password)
@@ -57,6 +57,11 @@ namespace CoCo
             {
                 LoginButton_Click(sender, e);
             }
+        }
+
+        private void Auth_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
