@@ -26,7 +26,7 @@ namespace CoCo.Forms
                 cpu.Name = textBox1.Text;
                 cpu.Frequency = Convert.ToInt32(textBox2.Text);
                 cpu.Manufacturer = textBox3.Text;
-
+                Close();
             }
         }
     }

@@ -29,9 +29,7 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-            new Form_Add_Cpus().ShowDialog();
+            new Form_Add_Cpu().ShowDialog();
         }
     }
 }
