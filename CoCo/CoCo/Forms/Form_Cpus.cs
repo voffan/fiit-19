@@ -20,6 +20,20 @@ namespace CoCo
 
         private void Form_Cpus_Load(object sender, EventArgs e)
         {
+            initTable();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Form_Add_Cpu adc = new Form_Add_Cpu();
+            adc.MdiParent = this.MdiParent;
+            adc.FormClosing += MdiChildClose;
+            adc.Show();
+        }
+
+        private void initTable()
+        {
             dataGridView1.DataSource = new Context().Cpus.ToList();
             dataGridView1.Columns[0].HeaderText = "Номер";
             dataGridView1.Columns[1].HeaderText = "Название";
@@ -27,9 +41,9 @@ namespace CoCo
             dataGridView1.Columns[3].HeaderText = "Производитель";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void MdiChildClose(Object sender, FormClosingEventArgs e)
         {
-            new Form_Add_Cpu().ShowDialog();
+            initTable();
         }
     }
 }

@@ -13,7 +13,6 @@ namespace CoCo.Forms
 {
     public partial class AddHdd : Form
     {
-        List<Hdd> hddList;
         public AddHdd()
         {
             InitializeComponent();

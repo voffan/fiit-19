@@ -24,5 +24,10 @@ namespace CoCo
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Производитель";*/
         }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
