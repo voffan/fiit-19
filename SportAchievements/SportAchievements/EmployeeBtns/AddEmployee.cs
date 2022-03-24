@@ -23,6 +23,7 @@ namespace SportAchievements
             pos.DataSource = new BindingSource(Classes.DescriptionAttributes<Classes.Position>.RetrieveAttributes(), null);
             pos.DisplayMember = "Key";
             pos.ValueMember = "Value";
+            psw.PasswordChar = '*';
         }
 
         private void addEmpl_Click(object sender, EventArgs e)

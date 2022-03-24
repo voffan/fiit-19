@@ -20,6 +20,7 @@ namespace SportAchievements.Classes
     public class Sportsman : Person
     {
         public Gender Gender { get; set; }
-        public WeightCategory Weight { get; set; }
+        public int WeightCategoryId { get; set; }
+        public virtual WeightCategory Weight { get; set; }
     }
 }

@@ -57,6 +57,7 @@ namespace SportAchievements
             this.psw.Name = "psw";
             this.psw.Size = new System.Drawing.Size(266, 20);
             this.psw.TabIndex = 1;
+            this.psw.UseSystemPasswordChar = true;
             // 
             // FIO
             // 

@@ -24,5 +24,21 @@ namespace SportAchievements
             //dataGridView1.Columns[0].Visible = false;    ВИЖОН
             //dataGridView1.Columns[1].HeaderText = "";    МОЖНО МЕНЯТЬ НАЗВАНИЕ ВАУ!
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SportsmanBtns.AddSportsman sportsman = new SportsmanBtns.AddSportsman();
+            sportsman.ShowDialog();
+            InitTable();
+        }
+
+        private void InitTable()
+        {
+            Context c = new Context();
+            dataGridView1.DataSource = c.Sportsmen.ToList();
+            /*dataGridView1.Columns[3].Visible = false;
+            dataGridView1.Columns[4].HeaderText = "Имя";
+            dataGridView1.Columns[5].HeaderText = "Дата рождения";*/
+        }
     }
 }
