@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SiliconValley.Список_Жанров
+namespace SiliconValley
 {
     interface IId
     {

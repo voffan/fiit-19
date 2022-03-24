@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SiliconValley.Список_Жанров
+namespace SiliconValley
 {
     class ListsComponent
     {
@@ -40,9 +40,6 @@ namespace SiliconValley.Список_Жанров
                 db.SaveChanges();
             }
         }
-
-
-
 
         public static T GetObjById<T>(int index) where T : class
         {

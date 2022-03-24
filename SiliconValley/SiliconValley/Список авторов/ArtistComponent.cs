@@ -32,6 +32,19 @@ namespace SiliconValley.Список_авторов
                 else throw new Exception("");
             }
         }
+        public static void Delete(int index)
+        {
+            using (var db = new Context())
+            {
+                Artist a = GetArtistByIndex(index);
+                if (a != null)
+                {
+                    db.Remove(a);
+                    db.SaveChanges();
+                }
+                else throw new Exception("");
+            }
+        }
 
         public static Artist GetArtistByIndex(int index)
         {

@@ -19,6 +19,7 @@ namespace SiliconValley.Список_сотрдников
         public List_employees()
         {
             InitializeComponent();
+            this.Name = "list";
         }
         private void List_employees_Load(object sender, EventArgs e)
         {

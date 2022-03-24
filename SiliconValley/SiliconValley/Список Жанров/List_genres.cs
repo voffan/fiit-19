@@ -15,6 +15,7 @@ namespace SiliconValley.Список_Жанров
         public List_genres()
         {
             InitializeComponent();
+            this.Name = "list";
         }
 
         private void List_genres_Load(object sender, EventArgs e)
@@ -29,7 +30,6 @@ namespace SiliconValley.Список_Жанров
         {
             Form_genres form_Genres = new Form_genres("Добавить жанр","Добавить");
             form_Genres.ShowDialog();
-
             var db = new Context();
             gridGenre.DataSource = db.Genres.ToList();
         }
@@ -39,14 +39,8 @@ namespace SiliconValley.Список_Жанров
             int id = Convert.ToInt32(gridGenre.CurrentRow.Cells[0].Value);
             Form_genres form_Genres = new Form_genres("Изменить жанр", "Изменить",id);
             form_Genres.ShowDialog();
-
             var db = new Context();
             gridGenre.DataSource = db.Genres.ToList();
-        }
-
-        private void gridGenre_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
 
         private void DeleteGenre_Click(object sender, EventArgs e)
@@ -61,7 +55,6 @@ namespace SiliconValley.Список_Жанров
             {
                 int currentId = Convert.ToInt32(gridGenre.SelectedRows[i].Cells[0].Value);
                 Genre genre = ListsComponent.GetObjById<Genre>(currentId);
-
                 ListsComponent.Delete(genre);
             }
 

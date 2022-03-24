@@ -15,10 +15,12 @@ namespace SiliconValley.Список_авторов
         public Button Button { get { return button1; } }
         public int Index { get; set; }
 
-        public Form_artist()
+        public Form_artist(string labelText, string buttonText)
         {
             Index = -1;
             InitializeComponent();
+            Text = labelText;
+            button1.Text = buttonText;
         }
 
         private void button1_Click(object sender, EventArgs e)

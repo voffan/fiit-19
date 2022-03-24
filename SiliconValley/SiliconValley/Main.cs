@@ -51,10 +51,6 @@ namespace SiliconValley
                 ActiveMdiChild.Close();
             l_pictures.Show();
         }
-        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void listGenreToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -67,7 +63,6 @@ namespace SiliconValley
             
             if (Application.OpenForms["list"] != null)
                 ActiveMdiChild.Close();
-
             listGenres.Show();
         }
 
@@ -92,6 +87,10 @@ namespace SiliconValley
             {
                 listEmployeeToolStripMenuItem.Visible = true;
             }
+        }
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
