@@ -20,13 +20,73 @@ namespace CoCo.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if(textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
             {
-                Cpu cpu = new Cpu();
-                cpu.Name = textBox1.Text;
-                cpu.Frequency = Convert.ToInt32(textBox2.Text);
-                cpu.Manufacturer = textBox3.Text;
-                Close();
+                if (textBox1.Text.Length > 300)
+                {
+                    MessageBox.Show(
+                    "Название слишком длинное",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else if (textBox3.Text.Length > 300)
+                {
+                    MessageBox.Show(
+                    "Название слишком длинное",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else try
+                    {
+                        decimal freq = Convert.ToDecimal(textBox2.Text);
+                        if (freq < 0 || freq > 30)
+                        {
+                            MessageBox.Show(
+                            "Не поддерживаемая частота",
+                            "Сообщение",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            Cpu cpu = new Cpu();
+                            try
+                            {
+                                cpu.Add(textBox1.Text, freq, textBox3.Text);
+                                Close();
+                            }
+                            catch
+                            {
+                                MessageBox.Show(
+                        "Ошибка сервера",
+                        "Сообщение",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                            }
+                        }
+                    
+                }
+                catch
+                {
+                    MessageBox.Show(
+                    "Неверный формат ввода частоты",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                
+                
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Заполните все поля",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
     }
