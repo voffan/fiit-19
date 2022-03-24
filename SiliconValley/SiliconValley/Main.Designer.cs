@@ -85,6 +85,7 @@ namespace SiliconValley
             this.списокВыставокToolStripMenuItem1.Name = "списокВыставокToolStripMenuItem1";
             this.списокВыставокToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
             this.списокВыставокToolStripMenuItem1.Text = "Список выставок";
+            this.списокВыставокToolStripMenuItem1.Click += new System.EventHandler(this.списокВыставокToolStripMenuItem1_Click);
             // 
             // списокАвторовToolStripMenuItem
             // 
