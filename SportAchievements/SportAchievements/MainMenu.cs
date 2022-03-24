@@ -54,7 +54,7 @@ namespace SportAchievements
 
         private void списокВидовСпортаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LinkKindOfSport KindOfSport = new LinkKindOfSport();
+            DovavitLink KindOfSport = new DovavitLink();
             KindOfSport.MdiParent = this;
             KindOfSport.Show();
         }

@@ -63,6 +63,7 @@
       <DependentUpon>AddCompetition.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\CompetitionComp.cs" />
+    <Compile Include="Components\KindofsportComp.cs" />
     <Compile Include="EmployeeBtns\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +92,18 @@
     </Compile>
     <Compile Include="EmployeeBtns\EditEmpl.Designer.cs">
       <DependentUpon>EditEmpl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KindOfSportBtns\AddKindOfSport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KindOfSportBtns\AddKindOfSport.Designer.cs">
+      <DependentUpon>AddKindOfSport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KindOfSportBtns\EditKindOfS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KindOfSportBtns\EditKindOfS.Designer.cs">
+      <DependentUpon>EditKindOfS.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -154,6 +167,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeBtns\EditEmpl.resx">
       <DependentUpon>EditEmpl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KindOfSportBtns\AddKindOfSport.resx">
+      <DependentUpon>AddKindOfSport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KindOfSportBtns\EditKindOfS.resx">
+      <DependentUpon>EditKindOfS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
