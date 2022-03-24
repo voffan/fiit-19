@@ -44,7 +44,25 @@ namespace CoCo
 
         private void жДискиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Show_Child_Form(new Form_Hdds());
+           // Show_Child_Form(new Form_Hdds());
+            Form_Hdds form_Hdds;
+            bool isOpen = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "Жесткие диски")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                form_Hdds = new Form_Hdds();
+                form_Hdds.Text = "Жесткие диски";
+                form_Hdds.MdiParent = this;
+                form_Hdds.Show();
+            }
         }
 
         private void процессорыToolStripMenuItem_Click(object sender, EventArgs e)
