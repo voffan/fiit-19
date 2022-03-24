@@ -126,6 +126,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddDepartments.Designer.cs">
+      <DependentUpon>AddDepartments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddDepartments.resx">
+      <DependentUpon>AddDepartments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEmployees.resx">
       <DependentUpon>AddEmployees.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CoCo.Forms;
 
 namespace CoCo
 {
@@ -19,9 +20,32 @@ namespace CoCo
 
         private void Form_Departments_Load(object sender, EventArgs e)
         {
+            initTable();
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void initTable()
+        {
             dataGridView1.DataSource = new Context().Departments.ToList();
             dataGridView1.Columns[0].HeaderText = "Номер";
             dataGridView1.Columns[1].HeaderText = "Название";
+        }
+        private void MdiChildClose(Object sender, FormClosingEventArgs e)
+        {
+            initTable();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddDepartments adh = new AddDepartments();
+            adh.MdiParent = this.MdiParent;
+            adh.FormClosing += MdiChildClose;
+            adh.Show();
         }
     }
 }
