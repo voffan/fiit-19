@@ -11,24 +11,27 @@ namespace SportAchievements.Components
     public static class CompetitionComp
     {
         //Context con, string name, DateTime start, DateTime end, int typeid, string type
-        public static Competition AddCompetition(Context con, string name, DateTime start, DateTime end, int typeid, string type)
+        public static Competition AddCompetition(string name, DateTime start, DateTime end, int typeid, List<KindOfSport> kind)
         {
-            Competition empl1 = (from person in con.Competitions
-                              where person.Name == name
-                              select person).FirstOrDefault();
-
-
-                Competition empl = new Competition();
-                CompType empl2 = new CompType();
-                empl.Name = name;
-                empl.DateBeginning = start;
-                empl.DateEnding = end;
-                empl.CompTypeId = typeid;
-                empl2.Name = type;
-                
-                con.SaveChanges();
-                return empl;
-            
+            using (Context c = new Context()) 
+            { 
+                Competition cmp = new Competition();
+                CompType cmpType = (from CompType ct in c.CompTypes
+                                    where ct.Id == typeid
+                                    select ct).FirstOrDefault();
+               /* if (cmpType == null)
+                {*/
+                    cmp.Name = name;
+                    cmp.DateBeginning = start;
+                    cmp.DateEnding = end;
+                    cmp.CompTypeId = typeid;
+                    cmp.KindOfSports.AddRange(kind);
+                    c.Competitions.Add(cmp);
+                    c.SaveChanges();
+                    return cmp;
+                /*}
+                throw new Exception("Заданного типа соревнований не существует!");/**/
+            }
         }
 
         

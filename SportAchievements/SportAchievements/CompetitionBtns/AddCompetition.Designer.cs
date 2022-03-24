@@ -37,16 +37,15 @@ namespace SportAchievements
             this.label1 = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.TextBox();
             this.start = new System.Windows.Forms.DateTimePicker();
-            this.type = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.typeid = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.typeid)).BeginInit();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // addEmpl
             // 
-            this.addEmpl.Location = new System.Drawing.Point(77, 266);
+            this.addEmpl.Location = new System.Drawing.Point(94, 312);
             this.addEmpl.Name = "addEmpl";
             this.addEmpl.Size = new System.Drawing.Size(75, 23);
             this.addEmpl.TabIndex = 11;
@@ -56,7 +55,7 @@ namespace SportAchievements
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(272, 266);
+            this.Cancel.Location = new System.Drawing.Point(289, 312);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 12;
@@ -112,13 +111,6 @@ namespace SportAchievements
             this.start.Size = new System.Drawing.Size(265, 20);
             this.start.TabIndex = 24;
             // 
-            // type
-            // 
-            this.type.Location = new System.Drawing.Point(107, 169);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(266, 20);
-            this.type.TabIndex = 26;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -137,22 +129,33 @@ namespace SportAchievements
             this.label5.TabIndex = 28;
             this.label5.Text = "Вид спорта:";
             // 
-            // typeid
+            // comboBox2
             // 
-            this.typeid.Location = new System.Drawing.Point(108, 143);
-            this.typeid.Name = "typeid";
-            this.typeid.Size = new System.Drawing.Size(120, 20);
-            this.typeid.TabIndex = 29;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(107, 143);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(266, 21);
+            this.comboBox2.TabIndex = 30;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(107, 170);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(266, 95);
+            this.listBox1.TabIndex = 31;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // AddCompetition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 358);
-            this.Controls.Add(this.typeid);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.type);
             this.Controls.Add(this.start);
             this.Controls.Add(this.end);
             this.Controls.Add(this.label4);
@@ -164,7 +167,6 @@ namespace SportAchievements
             this.Name = "AddCompetition";
             this.Text = "AddCompetition";
             this.Load += new System.EventHandler(this.AddCompetition_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.typeid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,9 +182,9 @@ namespace SportAchievements
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.DateTimePicker start;
-        private System.Windows.Forms.TextBox type;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown typeid;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

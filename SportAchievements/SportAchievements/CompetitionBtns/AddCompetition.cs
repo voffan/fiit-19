@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SportAchievements.Components;
+using SportAchievements.Classes;
 
 namespace SportAchievements
 {
@@ -21,16 +22,34 @@ namespace SportAchievements
 
         private void AddCompetition_Load(object sender, EventArgs e)
         {
-            
+            using (Context c = new Context() )
+            {
+                listBox1.SelectionMode = SelectionMode.MultiExtended;
+                
+                comboBox2.DataSource = c.CompTypes.ToList();
+                comboBox2.DisplayMember = "Name";
+                comboBox2.ValueMember = "Id";
+                listBox1.DataSource = c.KindsOfSports.ToList();
+                listBox1.DisplayMember = "Name";
+                listBox1.ValueMember = "Id";
+
+            } 
+         
         }
 
         private void addEmpl_Click(object sender, EventArgs e)
         {
-            if (name.Text.Length > 0 &&  start.Value.Date.ToString().Length > 0 && end.Value.Date.ToString().Length > 0 && typeid.Text.Length > 0 && type.Text.Length > 0)
+            
+            if (name.Text.Length > 0 &&  start.Value.Date.ToString().Length > 0 && end.Value.Date.ToString().Length > 0 && comboBox2.Text.Length > 0 && listBox1.Text.Length > 0)
             {
                 try
                 {
-                    CompetitionComp.AddCompetition(Authorization.con, name.Text, start.Value.Date, end.Value.Date, ((int)typeid.Value), type.Text);
+                    List<KindOfSport> list = new List<KindOfSport>();
+                    foreach(KindOfSport k in listBox1.SelectedItems)
+                    {
+                        list.Add(k);
+                    }
+                    CompetitionComp.AddCompetition(name.Text, start.Value.Date, end.Value.Date, ((int)comboBox2.SelectedValue), list);
                     Close();
                 }
                 catch
@@ -44,6 +63,26 @@ namespace SportAchievements
         private void Cancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void typeid_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202202240305341_update context.designer.cs">
       <DependentUpon>202202240305341_update context.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203170139058_third migration.cs" />
+    <Compile Include="Migrations\202203170139058_third migration.designer.cs">
+      <DependentUpon>202203170139058_third migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -174,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202240305341_update context.resx">
       <DependentUpon>202202240305341_update context.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203170139058_third migration.resx">
+      <DependentUpon>202203170139058_third migration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
