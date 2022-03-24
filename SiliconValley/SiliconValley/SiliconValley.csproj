@@ -210,6 +210,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Авторизация\Auth.cs" />
+    <Compile Include="Список выставок\Form_expos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Список выставок\Form_expos.Designer.cs">
+      <DependentUpon>Form_expos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Список выставок\List_expos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Список выставок\List_expos.Designer.cs">
+      <DependentUpon>List_expos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Список Жанров\Form_genres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +282,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Список выставок\Form_expos.resx">
+      <DependentUpon>Form_expos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Список выставок\List_expos.resx">
+      <DependentUpon>List_expos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Список Жанров\Form_genres.resx">
       <DependentUpon>Form_genres.cs</DependentUpon>
     </EmbeddedResource>
