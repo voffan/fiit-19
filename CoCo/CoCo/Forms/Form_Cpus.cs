@@ -32,7 +32,7 @@ namespace CoCo
 
 
             
-           new Form_Add_Cpus().ShowDialog();
+           //new Form_Add_Cpus().ShowDialog();
         }
     }
 }
