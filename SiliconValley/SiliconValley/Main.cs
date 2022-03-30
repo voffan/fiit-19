@@ -53,7 +53,7 @@ namespace SiliconValley
         }
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            ActiveMdiChild?.Close();
         }
 
         private void listGenreToolStripMenuItem_Click(object sender, EventArgs e)
