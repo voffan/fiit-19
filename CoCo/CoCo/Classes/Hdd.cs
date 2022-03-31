@@ -16,4 +16,5 @@ namespace CoCo.Classes
         [MaxLength(300)]
         public String Manufacturer { get; set; }
     }
+
 }

@@ -16,6 +16,13 @@ namespace CoCo.Classes
         {
             return Name;
         }
+        public void Add(string name)
+        {
+            Context context = new Context();
+            Name = name;      
+            context.Departments.Add(this);
+            context.SaveChanges();
+        }
 
     }
 }

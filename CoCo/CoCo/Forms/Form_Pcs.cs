@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoCo.Classes;
+using CoCo.Forms;
 
 namespace CoCo
 {
@@ -29,9 +30,9 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Context context = new Context();    
-            PC pC = new PC();   
-
+         
+            new AddPc().Show();
+          
         }
     }
 }

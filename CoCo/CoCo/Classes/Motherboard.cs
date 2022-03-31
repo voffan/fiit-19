@@ -14,6 +14,14 @@ namespace CoCo.Classes
         public String Name { get; set; }
         [MaxLength(300)]
         public String Manufacturer { get; set; }
+        public void Add(string name,  string manu)
+        {
+            Context context = new Context();
+            Name = name;
+            Manufacturer = manu;
+            context.Motherboards.Add(this);
+            context.SaveChanges();
+        }
 
     }
 }

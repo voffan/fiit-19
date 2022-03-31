@@ -13,7 +13,7 @@ namespace CoCo.Forms
 {
     public partial class Form_Add_Hdd : Form
     {
-        List<Hdd> hddList;
+       
         public Form_Add_Hdd()
         {
             InitializeComponent();
@@ -28,20 +28,71 @@ namespace CoCo.Forms
         private void button1_Click(object sender, EventArgs e)
         {
            
-            if(textBox1.Text.Length > 0 && textBox2.Text.Length > 0 && textBox3.Text.Length > 0)
+            if(textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
             {
-                Context context = new Context();    
-                Hdd hdd = new Hdd();
-                hdd.Name = textBox1.Text;
-                hdd.Volume = Convert.ToDecimal(textBox2.Text);
-                hdd.Manufacturer = textBox3.Text;
-                context.Hdds.Add(hdd);
-                context.SaveChanges();
-                Close();
+                if (textBox1.Text.Length > 300)
+                {
+                    MessageBox.Show(
+                    "Название слишком длинное",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else if (textBox3.Text.Length > 300)
+                {
+                    MessageBox.Show(
+                    "Название слишком длинное",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else try
+                    {
+                        decimal volume = Convert.ToDecimal(textBox2.Text);
+                        if (volume < 500 || volume > 2000)
+                        {
+                            MessageBox.Show(
+                            "Не поддерживаемая частота",
+                            "Сообщение",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            try
+                            {
+                                HDDLogic.Add(textBox1.Text, Convert.ToDecimal(textBox2.Text), textBox3.Text);
+                                Close();
+                            }
+                            catch
+                            {
+                                MessageBox.Show(
+                                "Ошибка сервера",
+                                "Сообщение",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show(
+                        "Неверный формат ввода объема",
+                        "Сообщение",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+
+
+
             }
             else
             {
-                MessageBox.Show("Не все заполнено!");
+                MessageBox.Show(
+                "Заполните все поля",
+                 "Сообщение",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Information);
             }
             
         }

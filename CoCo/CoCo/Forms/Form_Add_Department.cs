@@ -13,7 +13,7 @@ namespace CoCo.Forms
 {
     public partial class Form_Add_Department : Form
     {
-        List<Department> departmentList;
+       
         public Form_Add_Department()
         {
             InitializeComponent();
@@ -21,20 +21,26 @@ namespace CoCo.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 0 )
+            if (textBox1.Text.Length > 300 )
             {
-                Context context = new Context();
-                Department dprt = new Department();
-                dprt.Name = textBox1.Text;
+                MessageBox.Show(
+                       "Название слишком длинное",
+                       "Сообщение",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
                
-                context.Departments.Add(dprt);
-                context.SaveChanges();
-                Close();
             }
             else
             {
-                MessageBox.Show("Не все заполнено!");
+                Department dprt = new Department();
+                dprt.Add(textBox1.Text);
+                Close();
             }
+        }
+
+        private void Form_Add_Department_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

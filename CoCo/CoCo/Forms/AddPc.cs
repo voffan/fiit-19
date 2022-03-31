@@ -22,7 +22,13 @@ namespace CoCo.Forms
         private void AddPc_Load(object sender, EventArgs e)
         {
             PCs = new List<PC>();
-            dataGridView1.DataSource = PCs;
+            // dataGridView1.DataSource = PCs;
+            using (Context c = new Context())
+            {
+                comboBox1.DataSource = (from h in c.Hdds select new { Id = h.Id, Name = h.Name + " " + h.Volume + "ГБ " + h.Manufacturer }).ToList();
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "Id";
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,6 +36,10 @@ namespace CoCo.Forms
 
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace CoCo.Forms
    
     public partial class Form_Add_Motherboard : Form
     {
-        List<Motherboard> motherboardList;
+       
         public Form_Add_Motherboard()
         {
             InitializeComponent();
@@ -22,21 +22,59 @@ namespace CoCo.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 )
+            if (textBox1.Text != "" && textBox2.Text != "")
             {
-                Context context = new Context();
-                Motherboard motherboard = new Motherboard();
-                motherboard.Name = textBox1.Text;
+                if (textBox1.Text.Length > 300)
+                {
+                    MessageBox.Show(
+                    "Название слишком длинное",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else if (textBox2.Text.Length > 300)
+                {
+                    MessageBox.Show(
+                    "Название слишком длинное",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else
+                    {
+
+                        Motherboard motherboard = new Motherboard();
+                        try
+                        {
+                            motherboard.Add(textBox1.Text, textBox2.Text);
+                            Close();
+                        }
+                        catch
+                        {
+                                MessageBox.Show(
+                                "Ошибка сервера",
+                                "Сообщение",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+                    }
                
-                motherboard.Manufacturer = textBox2.Text;
-                context.Motherboards.Add(motherboard);
-                context.SaveChanges();
-                Close();
+              
+               
             }
             else
             {
-                MessageBox.Show("Не все заполнено!");
+                  MessageBox.Show(
+                 "Заполните все поля",
+                  "Сообщение",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
             }
+        }
+
+        private void Form_Add_Motherboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
