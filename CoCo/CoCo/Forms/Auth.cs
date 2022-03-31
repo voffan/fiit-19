@@ -36,6 +36,15 @@ namespace CoCo
                            where dep.Id == 4
                             select dep).FirstOrDefault();
             //           if (textBox)
+            if(admin == null)
+            {
+                MessageBox.Show(
+                    "Пользователь не найден!",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
             if (textBox1.Text == admin.FullName && textBox2.Text == admin.Password)
             {
                 Hide();
@@ -47,7 +56,7 @@ namespace CoCo
                     "Нвеврный логин или пароль",
                     "Сообщение",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                    MessageBoxIcon.Error);
             
         }
 
