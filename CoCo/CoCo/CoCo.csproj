@@ -173,6 +173,12 @@
     <Compile Include="Forms\Form_Add_Cpu.Designer.cs">
       <DependentUpon>Form_Add_Cpu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Add_Per.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Add_Per.Designer.cs">
+      <DependentUpon>Form_Add_Per.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Add_Motherboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Add_Cpu.resx">
       <DependentUpon>Form_Add_Cpu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Add_Per.resx">
+      <DependentUpon>Form_Add_Per.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Add_Motherboard.resx">
       <DependentUpon>Form_Add_Motherboard.cs</DependentUpon>
