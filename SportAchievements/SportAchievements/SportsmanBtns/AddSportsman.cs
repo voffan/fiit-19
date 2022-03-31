@@ -20,9 +20,12 @@ namespace SportAchievements.SportsmanBtns
 
         private void AddSportsman_Load(object sender, EventArgs e)
         {
-            gen.DataSource = new BindingSource(Classes.DescriptionAttributes<Classes.Position>.RetrieveAttributes(), null);
+            gen.DataSource = new BindingSource(Classes.DescriptionAttributes<Classes.Gender>.RetrieveAttributes(), null);
             gen.DisplayMember = "Key";
             gen.ValueMember = "Value";
+            comboBox1.DataSource = (new Context()).WeightCategories.ToList();
+            comboBox1.DisplayMember = "Name";
+            comboBox1.ValueMember = "Id";
         }
 
         private void Cancel_Click(object sender, EventArgs e)
@@ -39,9 +42,9 @@ namespace SportAchievements.SportsmanBtns
                     SportsmanComp.AddSportsman(FIO.Text, bdate.Value.Date, (Classes.Gender)Enum.Parse(typeof(Classes.Gender), (string)gen.SelectedValue), (Classes.WeightCategory)Enum.Parse(typeof(Classes.WeightCategory), (string)comboBox1.SelectedValue));
                     Close();
                 }
-                catch
+                catch (Exception ex)
                 {
-
+                    
                 }
             }
             else MessageBox.Show("Заполните все поля!");

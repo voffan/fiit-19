@@ -13,6 +13,12 @@ namespace SportAchievements
     {
         public Context() : base("MyString") { }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<Context>(null);
+            base.OnModelCreating(modelBuilder);
+        }
+
         public DbSet<Competition> Competitions { get; set; }
         public DbSet<CompType> CompTypes { get; set; }
         public DbSet<Employee> Employees { get; set; }

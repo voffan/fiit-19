@@ -23,6 +23,5 @@ namespace SportAchievements.Components
                 return sportsman;
             }
         }
-
     }
 }

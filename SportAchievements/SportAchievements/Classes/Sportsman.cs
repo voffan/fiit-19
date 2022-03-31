@@ -12,15 +12,15 @@ namespace SportAchievements.Classes
     public enum Gender
     {
         [Description("Мужской")]
-        Man = 1,
+        Man,
         [Description("Женский")]
-        Woman = 2
+        Woman
     }
 
     public class Sportsman : Person
     {
         public Gender Gender { get; set; }
-        public int WeightCategoryId { get; set; }
+        public int? WeightCategoryId { get; set; }
         public virtual WeightCategory Weight { get; set; }
     }
 }

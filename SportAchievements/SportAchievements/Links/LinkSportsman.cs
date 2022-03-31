@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SportAchievements.Components;
 
 namespace SportAchievements
 {
@@ -19,10 +20,7 @@ namespace SportAchievements
 
         private void LinkSportsman_Load(object sender, EventArgs e)
         {
-            Context c = new Context();
-            dataGridView1.DataSource = c.Sportsmen.ToList();
-            //dataGridView1.Columns[0].Visible = false;    ВИЖОН
-            //dataGridView1.Columns[1].HeaderText = "";    МОЖНО МЕНЯТЬ НАЗВАНИЕ ВАУ!
+            InitTable();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,9 +34,6 @@ namespace SportAchievements
         {
             Context c = new Context();
             dataGridView1.DataSource = c.Sportsmen.ToList();
-            /*dataGridView1.Columns[3].Visible = false;
-            dataGridView1.Columns[4].HeaderText = "Имя";
-            dataGridView1.Columns[5].HeaderText = "Дата рождения";*/
         }
     }
 }
