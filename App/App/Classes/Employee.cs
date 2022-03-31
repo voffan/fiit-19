@@ -21,5 +21,9 @@ namespace App.Classes
     public class Employee : Person
     {
         public Position Position { get; set; }
+        [MaxLength(20)]
+        public string Login { get; set; }
+        [MaxLength(50)]
+        public string Password { get; set; }
     }
 }

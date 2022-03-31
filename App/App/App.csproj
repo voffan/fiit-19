@@ -72,15 +72,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\EmployeeLogic.cs" />
     <Compile Include="Migrations\202202240355015_Migration.cs" />
     <Compile Include="Migrations\202202240355015_Migration.designer.cs">
       <DependentUpon>202202240355015_Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203310212274_Empl_Login.cs" />
+    <Compile Include="Migrations\202203310212274_Empl_Login.designer.cs">
+      <DependentUpon>202203310212274_Empl_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202240355015_Migration.resx">
       <DependentUpon>202202240355015_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203310212274_Empl_Login.resx">
+      <DependentUpon>202203310212274_Empl_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
