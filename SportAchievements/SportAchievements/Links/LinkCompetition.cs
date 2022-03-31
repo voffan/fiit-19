@@ -32,8 +32,9 @@ namespace SportAchievements
         private void InitTable()
         {
             Context c = new Context();
-            dataGridView1.DataSource = c.Competitions.ToList();
-            
+            dataGridView1.DataSource = c.Competitions.Include("Type").ToList();
+            dataGridView1.Columns[4].Visible = false;
+
         }
     }
 }

@@ -20,6 +20,10 @@ namespace SportAchievements.Classes
 
     public class Competition
     {
+        public Competition()
+        {
+            KindOfSports = new List<KindOfSport>();
+        }
         public int Id { get; set; }
         [MaxLength(50)]
         public string Name { get; set; }
