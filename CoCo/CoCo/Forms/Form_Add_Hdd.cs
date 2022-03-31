@@ -11,9 +11,8 @@ using CoCo.Classes;
 
 namespace CoCo.Forms
 {
-    public partial class AddHdd : Form
+    public partial class Form_Add_Hdd : Form
     {
-        List<Hdd> hddList;
         public AddHdd()
         {
             InitializeComponent();
@@ -47,6 +46,11 @@ namespace CoCo.Forms
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -21,12 +21,25 @@ namespace CoCo
         private void Form_Departments_Load(object sender, EventArgs e)
         {
             initTable();
-            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            Form_Add_Department addprt = new Form_Add_Department();
+            addprt.MdiParent = this.MdiParent;
+            addprt.FormClosing += MdiChildClose;
+            addprt.Show();
+        }
+
+        private void MdiChildClose(object sender, FormClosingEventArgs e)
+        {
+            initTable();
         }
 
         private void initTable()

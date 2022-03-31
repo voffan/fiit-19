@@ -126,6 +126,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Form_Add_Department.cs">
+		<SubType>Form</SubType>
+	</Compile>
     <Compile Include="Forms\AddDepartments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,8 +144,14 @@
     <Compile Include="Forms\AddHdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddHdd.Designer.cs">
-      <DependentUpon>AddHdd.cs</DependentUpon>
+    <Compile Include="Forms\Form_Add_Department.Designer.cs">
+      <DependentUpon>Form_Add_Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Add_Hdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Add_Hdd.Designer.cs">
+      <DependentUpon>Form_Add_Hdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddPc.cs">
       <SubType>Form</SubType>
@@ -178,6 +187,18 @@
     </Compile>
     <Compile Include="Forms\Form_Add_Cpu.Designer.cs">
       <DependentUpon>Form_Add_Cpu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Add_Per.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Add_Per.Designer.cs">
+      <DependentUpon>Form_Add_Per.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Add_Motherboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Add_Motherboard.Designer.cs">
+      <DependentUpon>Form_Add_Motherboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_Cpus.cs">
       <SubType>Form</SubType>
@@ -246,6 +267,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddHdd.resx">
       <DependentUpon>AddHdd.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Add_Department.resx">
+      <DependentUpon>Form_Add_Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Add_Hdd.resx">
+      <DependentUpon>Form_Add_Hdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddPc.resx">
       <DependentUpon>AddPc.cs</DependentUpon>
@@ -255,6 +282,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Add_Cpu.resx">
       <DependentUpon>Form_Add_Cpu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Add_Per.resx">
+      <DependentUpon>Form_Add_Per.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Add_Motherboard.resx">
+      <DependentUpon>Form_Add_Motherboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Cpus.resx">
       <DependentUpon>Form_Cpus.cs</DependentUpon>

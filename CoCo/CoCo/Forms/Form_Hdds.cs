@@ -29,7 +29,7 @@ namespace CoCo
         {
        
            // new AddHdd().ShowDialog();
-           AddHdd  adh = new AddHdd();
+           Form_Add_Hdd  adh = new Form_Add_Hdd();
             adh.MdiParent = this.MdiParent;
             adh.FormClosing += MdiChildClose;
             adh.Show();
