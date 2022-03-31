@@ -89,5 +89,10 @@ namespace CoCo.Forms
                     MessageBoxIcon.Information);
             }
         }
+
+        private void Form_Add_Cpu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

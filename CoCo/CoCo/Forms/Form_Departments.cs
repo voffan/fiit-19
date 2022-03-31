@@ -48,17 +48,17 @@ namespace CoCo
             dataGridView1.Columns[0].HeaderText = "Номер";
             dataGridView1.Columns[1].HeaderText = "Название";
         }
-        private void MdiChildClose(Object sender, FormClosingEventArgs e)
-        {
-            initTable();
-        }
+        //private void MdiChildClose(Object sender, FormClosingEventArgs e)
+        //{
+        //    initTable();
+        //}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddDepartments adh = new AddDepartments();
-            adh.MdiParent = this.MdiParent;
-            adh.FormClosing += MdiChildClose;
-            adh.Show();
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    AddDepartments adh = new AddDepartments();
+        //    adh.MdiParent = this.MdiParent;
+        //    adh.FormClosing += MdiChildClose;
+        //    adh.Show();
+        //}
     }
 }

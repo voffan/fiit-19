@@ -109,6 +109,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form_Add_Cpu";
             this.Text = "Добавление процессора";
+            this.Load += new System.EventHandler(this.Form_Add_Cpu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

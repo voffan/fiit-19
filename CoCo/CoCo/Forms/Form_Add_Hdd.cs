@@ -13,11 +13,11 @@ namespace CoCo.Forms
 {
     public partial class Form_Add_Hdd : Form
     {
-        public AddHdd()
+      
+        public Form_Add_Hdd()
         {
             InitializeComponent();
         }
-
         private void AddHdd_Load(object sender, EventArgs e)
         {
           

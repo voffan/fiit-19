@@ -44,7 +44,7 @@ namespace CoCo
             // 
             // button_add
             // 
-            this.button_add.Location = new System.Drawing.Point(673, 13);
+            this.button_add.Location = new System.Drawing.Point(591, 320);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(75, 23);
             this.button_add.TabIndex = 1;

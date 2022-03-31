@@ -110,6 +110,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Auth";
             this.Text = "Авторизация";
+            this.Load += new System.EventHandler(this.Auth_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoCo.Classes;
+using CoCo.Forms;
 
 namespace CoCo.Forms
 {
@@ -38,43 +39,43 @@ namespace CoCo.Forms
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 }
-                else try
-                    {
-                        string empl_id = Convert.ToDecimal(textBox2.Text);
-                        if (freq < 0 || freq > 30)
-                        {
-                            MessageBox.Show(
-                            "Не поддерживаемая частота",
-                            "Сообщение",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            Peripheral per = new Peripheral();
-                            try
-                            {
-                                per.Add(textBox1.Text, empl_id, textBox2.Text);
-                                Close();
-                            }
-                            catch
-                            {
-                                MessageBox.Show(
-                        "Ошибка сервера",
-                        "Сообщение",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                            }
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show(
-                        "Неверный формат ввода частоты",
-                        "Сообщение",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    }
+                //else try
+                //    {
+                //        string empl_id = Convert.ToDecimal(textBox2.Text);
+                //        if (freq < 0 || freq > 30)
+                //        {
+                //            MessageBox.Show(
+                //            "Не поддерживаемая частота",
+                //            "Сообщение",
+                //            MessageBoxButtons.OK,
+                //            MessageBoxIcon.Error);
+                //        }
+                //        else
+                //        {
+                //            Peripheral per = new Peripheral();
+                //            try
+                //            {
+                //                per.Add(textBox1.Text, empl_id, textBox2.Text);
+                //                Close();
+                //            }
+                //            catch
+                //            {
+                //                MessageBox.Show(
+                //        "Ошибка сервера",
+                //        "Сообщение",
+                //        MessageBoxButtons.OK,
+                //        MessageBoxIcon.Error);
+                //            }
+                //        }
+                //    }
+                //    catch
+                //    {
+                //        MessageBox.Show(
+                //        "Неверный формат ввода частоты",
+                //        "Сообщение",
+                //        MessageBoxButtons.OK,
+                //        MessageBoxIcon.Error);
+                //    }
             }
             else
             {
