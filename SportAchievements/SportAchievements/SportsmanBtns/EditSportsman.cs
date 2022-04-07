@@ -11,14 +11,18 @@ using SportAchievements.Components;
 
 namespace SportAchievements.SportsmanBtns
 {
-    public partial class AddSportsman : Form
+    public partial class EditSportsman : Form
     {
-        public AddSportsman()
+        int Id;
+
+        public EditSportsman(int Id)
         {
+            this.Id = Id;
             InitializeComponent();
+
         }
 
-        private void AddSportsman_Load(object sender, EventArgs e)
+        private void EditSportsman_Load(object sender, EventArgs e)
         {
             gen.DataSource = new BindingSource(Classes.DescriptionAttributes<Classes.Gender>.RetrieveAttributes(), null);
             gen.DisplayMember = "Key";
@@ -28,27 +32,27 @@ namespace SportAchievements.SportsmanBtns
             comboBox1.ValueMember = "Id";
         }
 
-        private void Cancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void addSprtmn_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             if (FIO.Text.Length > 0 && bdate.Value.Date.ToString().Length > 0 && gen.Text.Length > 0)
             {
                 try
-                {           
-                    SportsmanComp.AddSportsman(FIO.Text, bdate.Value.Date, (Classes.Gender)Enum.Parse(typeof(Classes.Gender), (string)gen.SelectedValue), (int)comboBox1.SelectedValue);
+                {
+
+                    SportsmanComp.ChSprtsmn(FIO.Text, bdate.Value.Date, (Classes.Gender)Enum.Parse(typeof(Classes.Gender), (string)gen.SelectedValue), (int)comboBox1.SelectedValue, Id);
                     Close();
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.ToString());
+
                 }
             }
             else MessageBox.Show("Заполните все поля!");
         }
-    
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

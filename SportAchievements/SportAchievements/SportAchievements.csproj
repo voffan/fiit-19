@@ -154,6 +154,12 @@
     <Compile Include="SportsmanBtns\AddSportsman.Designer.cs">
       <DependentUpon>AddSportsman.cs</DependentUpon>
     </Compile>
+    <Compile Include="SportsmanBtns\EditSportsman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SportsmanBtns\EditSportsman.Designer.cs">
+      <DependentUpon>EditSportsman.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CompetitionBtns\AddCompetition.resx">
       <DependentUpon>AddCompetition.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +213,9 @@
     </Compile>
     <EmbeddedResource Include="SportsmanBtns\AddSportsman.resx">
       <DependentUpon>AddSportsman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SportsmanBtns\EditSportsman.resx">
+      <DependentUpon>EditSportsman.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

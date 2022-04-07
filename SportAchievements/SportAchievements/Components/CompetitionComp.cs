@@ -19,18 +19,15 @@ namespace SportAchievements.Components
                 CompType cmpType = (from CompType ct in c.CompTypes
                                     where ct.Id == typeid
                                     select ct).FirstOrDefault();
-               /* if (cmpType == null)
-                {*/
-                    cmp.Name = name;
-                    cmp.DateBeginning = start;
-                    cmp.DateEnding = end;
-                    cmp.CompTypeId = typeid;
-                    cmp.KindOfSports.AddRange(kind);
-                    c.Competitions.Add(cmp);
-                    c.SaveChanges();
-                    return cmp;
-                /*}
-                throw new Exception("Заданного типа соревнований не существует!");/**/
+                cmp.Name = name;
+                cmp.DateBeginning = start;
+                cmp.DateEnding = end;
+                cmp.CompTypeId = typeid;
+                cmp.KindOfSports.AddRange(kind);
+                c.Competitions.Add(cmp);
+                c.SaveChanges();
+                return cmp;
+           
             }
         }
 
