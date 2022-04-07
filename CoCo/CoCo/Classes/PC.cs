@@ -15,7 +15,5 @@ namespace CoCo.Classes
         public virtual Cpu Cpu { get; set; }
         public int MotherboardId { get; set; }
         public virtual Motherboard Motherboard { get; set; }
-        public int EmployeeId { get; set; }
-        public virtual Employee Employee { get; set; }
     }
 }

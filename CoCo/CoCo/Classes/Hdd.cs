@@ -15,5 +15,10 @@ namespace CoCo.Classes
         public decimal Volume { get; set; }
         [MaxLength(300)]
         public String Manufacturer { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

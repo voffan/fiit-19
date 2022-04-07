@@ -28,5 +28,9 @@ namespace CoCo.Classes
             context.Cpus.Add(this);
             context.SaveChanges();
         }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

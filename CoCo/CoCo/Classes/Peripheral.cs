@@ -14,7 +14,5 @@ namespace CoCo.Classes
         public string Name { get; set; }
         [MaxLength(300)]
         public string Manufacturer { get; set; }
-        public int EmployeeId { get; set; }
-        public virtual Employee Employee { get; set; }
     }
 }

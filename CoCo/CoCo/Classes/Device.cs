@@ -21,6 +21,7 @@ namespace CoCo.Classes
         public int Id { get; set; }
         public int InventoryNumber { get; set; }
         public Status Status { get; set; }
-
+        public int EmployeeId { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

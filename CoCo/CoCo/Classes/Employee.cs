@@ -15,5 +15,10 @@ namespace CoCo.Classes
         public String FullName { get; set; }
         public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
+        public override string ToString()
+        {
+            return FullName;
+        }
     }
+    
 }
