@@ -21,6 +21,7 @@ namespace SiliconValley.Список_авторов
             InitializeComponent();
             Text = labelText;
             button1.Text = buttonText;
+            dateTimePicker1.MaxDate = DateTime.Today;
         }
 
         private void button1_Click(object sender, EventArgs e)

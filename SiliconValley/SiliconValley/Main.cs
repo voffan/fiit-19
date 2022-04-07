@@ -22,30 +22,22 @@ namespace SiliconValley
         public Main()
         {
             InitializeComponent();
-
             CheckAccess();
-        }
-        private void Main_Load(object sender, EventArgs e)
-        {
-
         }
         private void списокАвторовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List_artists l_artists = new List_artists
-            {
+            List_artists l_artists = new List_artists {
                 MdiParent = this
             };
             l_artists.LayoutMdi(MdiLayout.Cascade);
             if (Application.OpenForms["list"] != null)
                 ActiveMdiChild.Close();
             l_artists.Show();
-
         }
 
         private void списокКартинToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List_pictures l_pictures = new List_pictures
-            {
+            List_pictures l_pictures = new List_pictures {
                 MdiParent = this
             };
             l_pictures.LayoutMdi(MdiLayout.Cascade);
@@ -56,13 +48,10 @@ namespace SiliconValley
 
         private void listGenreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List_genres listGenres = new List_genres()
-            {
+            List_genres listGenres = new List_genres() {
                 MdiParent = this
             };
-
             listGenres.LayoutMdi(MdiLayout.Cascade);
-            
             if (Application.OpenForms["list"] != null)
                 ActiveMdiChild.Close();
             listGenres.Show();
@@ -70,44 +59,35 @@ namespace SiliconValley
 
         private void списокСотрудниковToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List_employees listEmployees = new List_employees()
-            {
+            List_employees listEmployees = new List_employees() {
                 MdiParent = this
             };
-
             listEmployees.LayoutMdi(MdiLayout.Cascade);
-
             if (Application.OpenForms["list"] != null)
                 ActiveMdiChild.Close();
-
             listEmployees.Show();
         }
 
         void CheckAccess()
         {
-            if (Position.Admin == Auth.User?.Position)
-            {
+            if (Position.Admin == Auth.User?.Position) {
                 listEmployeeToolStripMenuItem.Visible = true;
             }
-        }
-        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void списокВыставокToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            List_expos listExpos = new List_expos()
-            {
+            List_expos listExpos = new List_expos() {
                 MdiParent = this
             };
-
             listExpos.LayoutMdi(MdiLayout.Cascade);
-
             if (Application.OpenForms["list"] != null)
                 ActiveMdiChild.Close();
-
             listExpos.Show();
+        }
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
