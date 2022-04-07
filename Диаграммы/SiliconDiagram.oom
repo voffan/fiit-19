@@ -980,7 +980,7 @@ IndxFKName=%REFR%_FK
 IndxThreshold=
 ColnFKName=%.3:PARENT%_%COLUMN%
 ColnFKNameUse=No</a:ModelOptionsText>
-<a:RepositoryFilename>C:\Users\Student\Desktop\SiliconV3\SiliconDiagram.oom</a:RepositoryFilename>
+<a:RepositoryFilename>D:\Проекты\Програмная инженерия\fiit-19\Диаграммы\SiliconDiagram.oom</a:RepositoryFilename>
 <c:Keywords>
 <o:Keyword Id="o3">
 <a:ObjectID>E54EBAF2-DAA5-4A97-92D9-CACAB6AA963E</a:ObjectID>
@@ -1567,7 +1567,7 @@ Shadow=0</a:DisplayPreferences>
 <o:AssociationSymbol Id="o6">
 <a:CreationDate>1634009933</a:CreationDate>
 <a:ModificationDate>1634183319</a:ModificationDate>
-<a:Rect>((1547,24562), (13227,26510))</a:Rect>
+<a:Rect>((1547,24570), (13227,26489))</a:Rect>
 <a:ListOfPoints>((1947,25536),(12827,25536))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1588,7 +1588,7 @@ SOURCE 0 Arial Unicode MS,8,N</a:FontList>
 <o:AssociationSymbol Id="o10">
 <a:CreationDate>1634010123</a:CreationDate>
 <a:ModificationDate>1634184020</a:ModificationDate>
-<a:Rect>((-35036,8241), (-24438,10220))</a:Rect>
+<a:Rect>((-35036,8279), (-24438,10198))</a:Rect>
 <a:ListOfPoints>((-24838,9246),(-34636,9246))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1609,7 +1609,7 @@ SOURCE 0 Arial Unicode MS,8,N</a:FontList>
 <o:AssociationSymbol Id="o14">
 <a:CreationDate>1634010221</a:CreationDate>
 <a:ModificationDate>1637637689</a:ModificationDate>
-<a:Rect>((-14602,27949), (-8575,29896))</a:Rect>
+<a:Rect>((-14602,27995), (-8575,29914))</a:Rect>
 <a:ListOfPoints>((-14202,28961),(-8975,28961))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1630,8 +1630,8 @@ SOURCE 0 Arial Unicode MS,8,N</a:FontList>
 <o:GeneralizationSymbol Id="o17">
 <a:CreationDate>1634010484</a:CreationDate>
 <a:ModificationDate>1637637689</a:ModificationDate>
-<a:Rect>((-21051,17854), (-6634,27674))</a:Rect>
-<a:ListOfPoints>((-20651,27274),(-20651,18754),(-7034,18754))</a:ListOfPoints>
+<a:Rect>((-21051,17840), (-6572,27674))</a:Rect>
+<a:ListOfPoints>((-20651,27274),(-20651,18740),(-6972,18740))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>7</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1651,8 +1651,8 @@ SOURCE 0 Arial Unicode MS,8,N</a:FontList>
 <o:GeneralizationSymbol Id="o20">
 <a:CreationDate>1634010485</a:CreationDate>
 <a:ModificationDate>1634184003</a:ModificationDate>
-<a:Rect>((-21151,10905), (-6409,17958))</a:Rect>
-<a:ListOfPoints>((-20751,11305),(-20751,17058),(-6809,17058))</a:ListOfPoints>
+<a:Rect>((-21151,10905), (-6351,17964))</a:Rect>
+<a:ListOfPoints>((-20751,11305),(-20751,17064),(-6751,17064))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>7</a:ArrowStyle>
 <a:LineColor>16744576</a:LineColor>
@@ -1798,7 +1798,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634009836</a:CreationDate>
 <a:ModificationDate>1634180353</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((13499,10428), (20397,15372))</a:Rect>
+<a:Rect>((13559,10456), (20337,15344))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1821,7 +1821,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634010442</a:CreationDate>
 <a:ModificationDate>1634183399</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-7034,15104), (-30,20048))</a:Rect>
+<a:Rect>((-6972,15132), (-92,20020))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1844,7 +1844,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634010729</a:CreationDate>
 <a:ModificationDate>1634180353</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((13326,4578), (20406,9522))</a:Rect>
+<a:Rect>((13364,4606), (20368,9494))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1867,7 +1867,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634010817</a:CreationDate>
 <a:ModificationDate>1634180685</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-10623,116), (-221,7832))</a:Rect>
+<a:Rect>((-10530,165), (-314,7783))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1890,7 +1890,7 @@ LABL 0 Arial Unicode MS,8,N</a:FontList>
 <a:CreationDate>1634180179</a:CreationDate>
 <a:ModificationDate>1634180353</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((13153,-1501), (20234,3443))</a:Rect>
+<a:Rect>((13192,-1473), (20195,3415))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>16770222</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>

@@ -222,6 +222,12 @@
     <Compile Include="Список выставок\List_expos.Designer.cs">
       <DependentUpon>List_expos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Список выставок\OnlyListExpo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Список выставок\OnlyListExpo.Designer.cs">
+      <DependentUpon>OnlyListExpo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Список Жанров\Form_genres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,12 @@
     <Compile Include="Список картин\Form_pictures.Designer.cs">
       <DependentUpon>Form_pictures.cs</DependentUpon>
     </Compile>
+    <Compile Include="Список картин\Journal_picture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Список картин\Journal_picture.Designer.cs">
+      <DependentUpon>Journal_picture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Список картин\List_pictures.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +261,12 @@
       <DependentUpon>List_pictures.cs</DependentUpon>
     </Compile>
     <Compile Include="Список картин\PictureComponent.cs" />
+    <Compile Include="Список картин\Send_picture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Список картин\Send_picture.Designer.cs">
+      <DependentUpon>Send_picture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Список сотрудников\Form_employees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +306,9 @@
     <EmbeddedResource Include="Список выставок\List_expos.resx">
       <DependentUpon>List_expos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Список выставок\OnlyListExpo.resx">
+      <DependentUpon>OnlyListExpo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Список Жанров\Form_genres.resx">
       <DependentUpon>Form_genres.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,8 +318,14 @@
     <EmbeddedResource Include="Список картин\Form_pictures.resx">
       <DependentUpon>Form_pictures.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Список картин\Journal_picture.resx">
+      <DependentUpon>Journal_picture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Список картин\List_pictures.resx">
       <DependentUpon>List_pictures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Список картин\Send_picture.resx">
+      <DependentUpon>Send_picture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Список сотрудников\Form_employees.resx">
       <DependentUpon>Form_employees.cs</DependentUpon>

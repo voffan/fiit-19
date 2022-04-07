@@ -46,6 +46,12 @@ namespace SiliconValley
             l_pictures.Show();
         }
 
+        /*private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActiveMdiChild?.Close();
+        }*/
+
+
         private void listGenreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             List_genres listGenres = new List_genres() {

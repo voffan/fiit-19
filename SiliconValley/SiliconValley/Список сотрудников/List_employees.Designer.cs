@@ -49,6 +49,7 @@
             this.gridEmployee.RowHeadersWidth = 51;
             this.gridEmployee.Size = new System.Drawing.Size(755, 524);
             this.gridEmployee.TabIndex = 2;
+            this.gridEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEmployee_CellContentClick);
             // 
             // AddEmployee
             // 

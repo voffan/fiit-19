@@ -62,5 +62,21 @@ namespace SiliconValley.Список_картин
                 dataGridView1.DataSource = db.Pictures.ToList();
             }
         }
+
+        private void sendBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Выберите картину");
+                return;
+            }
+
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            int placementId= Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            Journal_picture journal = new Journal_picture(id,placementId);
+
+            journal.ShowDialog();
+        }
     }
 }

@@ -37,7 +37,8 @@ namespace SiliconValley.Список_выставок
 
         private void ChangeExpo_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(GridExpo.CurrentRow.Cells[0].Value);
+            int id = Convert.ToInt32(GridExpo.CurrentRow.Cells[3].Value);
+            MessageBox.Show(id.ToString());
             Form_expos form_Expos = new Form_expos("Изменить выставку", "Изменить", id);
             form_Expos.ShowDialog();
 
@@ -55,7 +56,7 @@ namespace SiliconValley.Список_выставок
 
             for (int i = 0; i < GridExpo.SelectedRows.Count; i++)
             {
-                int currentId = Convert.ToInt32(GridExpo.SelectedRows[i].Cells[0].Value);
+                int currentId = Convert.ToInt32(GridExpo.SelectedRows[i].Cells[3].Value);
                 Expo expo = ListsComponent.GetObjById<Expo>(currentId);
 
                 ListsComponent.Delete(expo);

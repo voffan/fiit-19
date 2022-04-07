@@ -9,13 +9,11 @@ namespace SiliconValley
 {
     public class Journal
     {
-        
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public int PictureId { get; set; }
         public virtual Picture Picture { get; set; }
 
-        
         public int FromID { get; set; }
         [ForeignKey("FromID")]
         public virtual Placement From { get; set; }
