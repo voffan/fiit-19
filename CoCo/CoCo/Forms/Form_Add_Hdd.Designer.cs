@@ -39,7 +39,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(217, 35);
+            this.button1.Location = new System.Drawing.Point(177, 90);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -51,21 +51,21 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(111, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(141, 20);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(111, 38);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(141, 20);
             this.textBox2.TabIndex = 3;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(111, 64);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(141, 20);
             this.textBox3.TabIndex = 4;
             // 
             // label1
@@ -94,13 +94,12 @@
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Производитель";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Form_Add_Hdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(322, 110);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -110,7 +109,6 @@
             this.Controls.Add(this.button1);
             this.Name = "Form_Add_Hdd";
             this.Text = "AddHdd";
-            this.Load += new System.EventHandler(this.AddHdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

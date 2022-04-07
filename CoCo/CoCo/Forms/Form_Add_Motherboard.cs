@@ -24,13 +24,7 @@ namespace CoCo.Forms
         {
             if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 )
             {
-                Context context = new Context();
-                Motherboard motherboard = new Motherboard();
-                motherboard.Name = textBox1.Text;
-               
-                motherboard.Manufacturer = textBox2.Text;
-                context.Motherboards.Add(motherboard);
-                context.SaveChanges();
+                MotherboardLogic.Add(textBox1.Text, textBox2.Text);
                 Close();
             }
             else

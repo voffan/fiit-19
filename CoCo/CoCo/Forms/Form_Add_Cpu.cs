@@ -45,26 +45,25 @@ namespace CoCo.Forms
                         if (freq < 0 || freq > 30)
                         {
                             MessageBox.Show(
-                            "Не поддерживаемая частота",
-                            "Сообщение",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                                "Не поддерживаемая частота",
+                                "Сообщение",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
                         }
                         else
                         {
-                            Cpu cpu = new Cpu();
                             try
                             {
-                                cpu.Add(textBox1.Text, freq, textBox3.Text);
+                                CpuLogic.Add(textBox1.Text, freq, textBox3.Text);
                                 Close();
                             }
                             catch
                             {
                                 MessageBox.Show(
-                        "Ошибка сервера",
-                        "Сообщение",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                                    "Ошибка сервера",
+                                    "Сообщение",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
                             }
                         }
                     

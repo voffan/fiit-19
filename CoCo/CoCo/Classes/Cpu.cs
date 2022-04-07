@@ -18,15 +18,5 @@ namespace CoCo.Classes
         public decimal Frequency { get; set; }
         [MaxLength(300)]
         public String Manufacturer { get; set; }
-
-        public void Add(string name, decimal freq, string manu)
-        {
-            Context context = new Context();
-            Name = name;
-            Frequency = freq;
-            Manufacturer = manu;
-            context.Cpus.Add(this);
-            context.SaveChanges();
-        }
     }
 }
