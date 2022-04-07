@@ -27,9 +27,8 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-       
            // new AddHdd().ShowDialog();
-           Form_Add_Hdd  adh = new Form_Add_Hdd();
+            Form_Add_Hdd  adh = new Form_Add_Hdd();
             adh.MdiParent = this.MdiParent;
             adh.FormClosing += MdiChildClose;
             adh.Show();

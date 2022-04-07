@@ -256,6 +256,14 @@
     <Compile Include="Migrations\202203100335468_second.designer.cs">
       <DependentUpon>202203100335468_second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204070214437_third.cs" />
+    <Compile Include="Migrations\202204070214437_third.designer.cs">
+      <DependentUpon>202204070214437_third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204070216082_fourth.cs" />
+    <Compile Include="Migrations\202204070216082_fourth.designer.cs">
+      <DependentUpon>202204070216082_fourth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -318,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203100335468_second.resx">
       <DependentUpon>202203100335468_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204070214437_third.resx">
+      <DependentUpon>202204070214437_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204070216082_fourth.resx">
+      <DependentUpon>202204070216082_fourth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
