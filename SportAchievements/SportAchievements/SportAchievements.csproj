@@ -62,6 +62,12 @@
     <Compile Include="CompetitionBtns\AddCompetition.Designer.cs">
       <DependentUpon>AddCompetition.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompetitionBtns\EditCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompetitionBtns\EditCompetition.Designer.cs">
+      <DependentUpon>EditCompetition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\CompetitionComp.cs" />
     <Compile Include="Components\KindofsportComp.cs" />
     <Compile Include="EmployeeBtns\AddEmployee.cs">
@@ -158,6 +164,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CompetitionBtns\AddCompetition.resx">
       <DependentUpon>AddCompetition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompetitionBtns\EditCompetition.resx">
+      <DependentUpon>EditCompetition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeBtns\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>

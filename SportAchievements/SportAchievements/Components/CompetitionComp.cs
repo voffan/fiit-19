@@ -34,6 +34,36 @@ namespace SportAchievements.Components
             }
         }
 
-        
+        public static void DelCom(int Id)
+        {
+
+            Context c = new Context();
+            Competition per = c.Competitions.Where(p => p.Id == Id).FirstOrDefault();
+            if (per != null)
+            {
+                c.Competitions.Remove(per);
+                c.SaveChanges();
+            }
+        }
+
+        public static Competition ChCom(string name, DateTime start, DateTime end, int typeid, List<KindOfSport> kind, int Id)
+        {
+            Context c = new Context();
+            Competition per = c.Competitions.Where(p => p.Id == Id).FirstOrDefault();
+            if (per != null)
+            {
+                per.Name = name;
+                per.DateBeginning = start;
+                per.DateEnding = end;
+                per.CompTypeId = typeid;
+                per.KindOfSports.AddRange(kind);
+
+                c.Entry(per).State = System.Data.Entity.EntityState.Modified;
+                c.SaveChanges();
+                return per;
+            }
+            return per;
+        }
+
     }
 }

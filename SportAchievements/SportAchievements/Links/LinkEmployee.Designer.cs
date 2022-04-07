@@ -43,7 +43,7 @@ namespace SportAchievements
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 34);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(870, 263);
+            this.dataGridView1.Size = new System.Drawing.Size(869, 263);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
@@ -62,7 +62,7 @@ namespace SportAchievements
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(808, 304);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(74, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Удалить";
             this.button2.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@ namespace SportAchievements
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Location = new System.Drawing.Point(727, 304);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(74, 23);
             this.button3.TabIndex = 2;
             this.button3.Text = "Изменить";
             this.button3.UseVisualStyleBackColor = true;
@@ -84,7 +84,7 @@ namespace SportAchievements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 396);
+            this.ClientSize = new System.Drawing.Size(905, 396);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
