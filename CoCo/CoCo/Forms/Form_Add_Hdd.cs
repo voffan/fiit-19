@@ -57,10 +57,9 @@ namespace CoCo.Forms
                         }
                         else
                         {
-                            Hdd_Logic hdd_Logic = new Hdd_Logic();
                             try
                             {
-                                hdd_Logic.Add(textBox1.Text, volume, textBox3.Text);
+                                HddLogic.Add(textBox1.Text, volume, textBox3.Text);
                                 Close();
                             }
                             catch
