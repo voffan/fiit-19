@@ -126,6 +126,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CpuLogic.cs" />
+    <Compile Include="Classes\HddLogic.cs" />
+    <Compile Include="Classes\MotherboardLogic.cs" />
     <Compile Include="Forms\Form_Add_Department.cs">
       <SubType>Form</SubType>
     </Compile>

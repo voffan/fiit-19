@@ -18,24 +18,13 @@ namespace CoCo.Forms
         {
             InitializeComponent();
         }
-        private void AddHdd_Load(object sender, EventArgs e)
-        {
-          
-    
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
            
             if(textBox1.Text.Length > 0 && textBox2.Text.Length > 0 && textBox3.Text.Length > 0)
             {
-                Context context = new Context();    
-                Hdd hdd = new Hdd();
-                hdd.Name = textBox1.Text;
-                hdd.Volume = Convert.ToDecimal(textBox2.Text);
-                hdd.Manufacturer = textBox3.Text;
-                context.Hdds.Add(hdd);
-                context.SaveChanges();
+                HddLogic.Add(textBox1.Text, Convert.ToDecimal(textBox2.Text), textBox3.Text);
                 Close();
             }
             else
@@ -43,16 +32,6 @@ namespace CoCo.Forms
                 MessageBox.Show("Не все заполнено!");
             }
             
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
