@@ -20,46 +20,48 @@ namespace SiliconValley.Список_авторов
 
         private void List_artists_Load(object sender, EventArgs e)
         {
-            using (var db = new Context())
+            using (Context context = new Context())
             {
-                dataGridView1.DataSource = db.Artists.ToList();
+                dataGridView1.DataSource = context.Artists.ToList();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
-            Form_artist formArtist = new Form_artist();
-            formArtist.Button.Text = "Добавить";
-            formArtist.Text = "Добавить автора";
+            Form_artist formArtist = new Form_artist("Добавить автора", "Добавить");
             formArtist.ShowDialog();
             var db = new Context();
             dataGridView1.DataSource = db.Artists.ToList();
-            /*using (var db = new Context())
-            {
-                var artists = new List<Artist>
-                {
-                    new Artist { Name = "Пабло Пикассо", Birthday = DateTime.Parse("1881-10-25")},
-                    new Artist { Name = "Клод Моне", Birthday = DateTime.Parse("1840-11-14")},
-                    new Artist { Name = "Сальвадор Дали", Birthday = DateTime.Parse("1904-5-11")},
-                    new Artist { Name = "Винсент Ван Гог", Birthday = DateTime.Parse("1853-3-30")},
-                    new Artist { Name = "Пьер Огюст Ренуар", Birthday = DateTime.Parse("1841-2-25")}
-                };
-                db.Artists.AddRange(artists);
-                db.SaveChanges();
-                dataGridView1.DataSource = db.Artists.ToList();
-            }*/
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void editBtn_Click(object sender, EventArgs e)
         {
-            // нужен гет айди, и передача его в форму
-            Form_artist formArtist = new Form_artist();
-            formArtist.Button.Text = "Изменить";
-            formArtist.Text = "Изменить автора";
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            Form_artist formArtist = new Form_artist("Изменить автора", "Изменить");
             formArtist.Index = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             formArtist.ShowDialog();
             var db = new Context();
             dataGridView1.DataSource = db.Artists.ToList();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons box = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить?", "", box);
+
+            if (result == DialogResult.No)
+                return;
+
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+            {
+                int currentId = Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value);
+                ArtistComponent.Delete(currentId);
+            }
+
+            using (Context db = new Context())
+            {
+                dataGridView1.DataSource = db.Artists.ToList();
+            }
         }
     }
 }

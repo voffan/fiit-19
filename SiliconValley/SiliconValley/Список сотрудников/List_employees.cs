@@ -19,6 +19,7 @@ namespace SiliconValley.Список_сотрдников
         public List_employees()
         {
             InitializeComponent();
+            this.Name = "list";
         }
         private void List_employees_Load(object sender, EventArgs e)
         {
@@ -26,6 +27,8 @@ namespace SiliconValley.Список_сотрдников
             {
                 gridEmployee.DataSource = context.Employees.ToList();
             }
+
+            DescriptionViewInTable();
         }
         private void AddEmployee_Click(object sender, EventArgs e)
         {
@@ -57,7 +60,6 @@ namespace SiliconValley.Список_сотрдников
             for (int i = 0; i < gridEmployee.SelectedRows.Count; i++)
             {
                 int currentId = Convert.ToInt32(gridEmployee.SelectedRows[i].Cells[0].Value);
-                MessageBox.Show(currentId.ToString());
                 Employee emp = ListsComponent.GetObjById<Employee>(currentId);
 
                 ListsComponent.Delete(emp);
@@ -66,6 +68,23 @@ namespace SiliconValley.Список_сотрдников
             using (Context db = new Context())
             {
                 gridEmployee.DataSource = db.Genres.ToList();
+            }
+        }
+
+        private void gridEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        void DescriptionViewInTable()
+        {
+            for (int i = 0; i < gridEmployee.Rows.Count; i++)
+            {
+                Position pos = (Position)Enum.Parse(typeof(Position), gridEmployee.Rows[i].Cells[5].Value.ToString());
+                gridEmployee.Rows[i].Cells[5].Value = "asdsad";
+
+                Education edu = (Education)Enum.Parse(typeof(Education), gridEmployee.Rows[i].Cells[6].Value.ToString());
+                //gridEmployee.Rows[i].Cells[6].Value = edu.GetDescription();
             }
         }
     }

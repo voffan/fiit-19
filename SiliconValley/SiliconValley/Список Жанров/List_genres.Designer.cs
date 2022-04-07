@@ -49,7 +49,6 @@
             this.gridGenre.RowHeadersWidth = 51;
             this.gridGenre.Size = new System.Drawing.Size(755, 524);
             this.gridGenre.TabIndex = 1;
-            this.gridGenre.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridGenre_CellContentClick);
             // 
             // AddGenre
             // 

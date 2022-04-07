@@ -16,7 +16,6 @@ namespace SiliconValley.Список_Жанров
         public Form_genres(string labelText,string buttonText)
         {
             InitializeComponent();
-
             Text = labelText;
             button1.Text = buttonText;
         }
@@ -25,10 +24,12 @@ namespace SiliconValley.Список_Жанров
         {
             this.id = id;
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void Form_genres_Load(object sender, EventArgs e)
         {
-
+            if (button1.Text != "Изменить")
+                return;
+            Genre genre = ListsComponent.GetObjById<Genre>(id);
+            textBox1.Text = genre.Name;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,14 +37,12 @@ namespace SiliconValley.Список_Жанров
             if (button1.Text == "Добавить")
             {
                 AddGenres();
-
                 Close();
             }
 
             if (button1.Text == "Изменить")
             {
                 ChangeGenre();
-
                 Close();
             }
         }
@@ -53,7 +52,6 @@ namespace SiliconValley.Список_Жанров
         {
             Genre genre = new Genre();
             genre.Name = textBox1.Text;
-
             ListsComponent.Add(genre);
         }
 
@@ -62,23 +60,8 @@ namespace SiliconValley.Список_Жанров
         {
             Genre genre = ListsComponent.GetObjById<Genre>(id);
             genre.Name = textBox1.Text;
-
             ListsComponent.Edit(genre);
         }
 
-        private void Form_genres_Load(object sender, EventArgs e)
-        {
-            if (button1.Text != "Изменить")
-                return;
-
-            Genre genre = ListsComponent.GetObjById<Genre>(id);
-            
-            textBox1.Text = genre.Name;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
