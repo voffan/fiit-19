@@ -69,6 +69,7 @@
       <DependentUpon>EditCompetition.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\CompetitionComp.cs" />
+    <Compile Include="Components\SportsmanComp.cs" />
     <Compile Include="Components\KindofsportComp.cs" />
     <Compile Include="EmployeeBtns\AddEmployee.cs">
       <SubType>Form</SubType>
@@ -159,9 +160,25 @@
     <Compile Include="Migrations\202203170139058_third migration.designer.cs">
       <DependentUpon>202203170139058_third migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203310238425_fourth migration.cs" />
+    <Compile Include="Migrations\202203310238425_fourth migration.designer.cs">
+      <DependentUpon>202203310238425_fourth migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SportsmanBtns\AddSportsman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SportsmanBtns\AddSportsman.Designer.cs">
+      <DependentUpon>AddSportsman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SportsmanBtns\EditSportsman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SportsmanBtns\EditSportsman.Designer.cs">
+      <DependentUpon>EditSportsman.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CompetitionBtns\AddCompetition.resx">
       <DependentUpon>AddCompetition.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +227,9 @@
     <EmbeddedResource Include="Migrations\202203170139058_third migration.resx">
       <DependentUpon>202203170139058_third migration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203310238425_fourth migration.resx">
+      <DependentUpon>202203310238425_fourth migration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -219,6 +239,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SportsmanBtns\AddSportsman.resx">
+      <DependentUpon>AddSportsman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SportsmanBtns\EditSportsman.resx">
+      <DependentUpon>EditSportsman.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

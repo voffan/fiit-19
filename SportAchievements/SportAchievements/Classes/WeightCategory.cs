@@ -9,10 +9,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SportAchievements.Classes
 {
     public class WeightCategory
-    {
+    { 
         public int Id { get; set; }
         [MaxLength(50)]
         public string Name { get; set; }
         public KindOfSport SportKind { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
