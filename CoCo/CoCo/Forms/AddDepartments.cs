@@ -30,11 +30,9 @@ namespace CoCo.Forms
         {
             if (textBox1.Text.Length > 0)
             {
-                Context context = new Context();
-                Department dep = new Department();
-                dep.Name = textBox1.Text;
-                context.Departments.Add(dep);
-                context.SaveChanges();
+                String dname = textBox1.Text;
+                DepartmentLogic depL = new DepartmentLogic();
+                depL.DepartmentAdd(dname);
                 Close();
             }
             else

@@ -11,22 +11,17 @@ using CoCo.Classes;
 
 namespace CoCo.Forms
 {
-    public partial class AddEmployees : Form
+    public partial class ChangeEmployees : Form
     {
         List<Employee> employeeList;
-        public AddEmployees()
+        public ChangeEmployees()
         {
             InitializeComponent();
         }
 
-        private void AddEmployees_Load(object sender, EventArgs e)
+        private void ChangeEmployees_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +38,12 @@ namespace CoCo.Forms
             {
                 MessageBox.Show("Не все заполнено!");
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

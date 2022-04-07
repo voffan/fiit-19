@@ -23,14 +23,6 @@ namespace CoCo
             initTable();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddEmployees adh = new AddEmployees();
-            adh.MdiParent = this.MdiParent;
-            adh.FormClosing += MdiChildClose;
-            adh.Show();
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -47,6 +39,23 @@ namespace CoCo
         private void MdiChildClose(Object sender, FormClosingEventArgs e)
         {
             initTable();
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddEmployees adh = new AddEmployees();
+            adh.MdiParent = this.MdiParent;
+            adh.FormClosing += MdiChildClose;
+            adh.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ChangeEmployees adh = new ChangeEmployees();
+            adh.MdiParent = this.MdiParent;
+            adh.FormClosing += MdiChildClose;
+            adh.Show();
         }
     }
 }

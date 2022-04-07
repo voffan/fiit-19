@@ -126,6 +126,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DepartmentLogic.cs" />
+    <Compile Include="Classes\EmployeeLogic.cs" />
+    <Compile Include="Forms\ChangeEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeEmployees.Designer.cs">
+      <DependentUpon>ChangeEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Add_Department.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEmployees.resx">
       <DependentUpon>AddEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeEmployees.resx">
+      <DependentUpon>ChangeEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Add_Department.resx">
       <DependentUpon>Form_Add_Department.cs</DependentUpon>

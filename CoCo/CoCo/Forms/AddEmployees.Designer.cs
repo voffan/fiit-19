@@ -36,8 +36,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +52,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(54, 364);
+            this.label2.Location = new System.Drawing.Point(38, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 29);
             this.label2.TabIndex = 1;
@@ -64,7 +62,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(54, 421);
+            this.label3.Location = new System.Drawing.Point(38, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 29);
             this.label3.TabIndex = 2;
@@ -82,25 +80,25 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(294, 359);
+            this.textBox1.Location = new System.Drawing.Point(278, 95);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(569, 34);
+            this.textBox1.Size = new System.Drawing.Size(538, 34);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(294, 416);
+            this.textBox2.Location = new System.Drawing.Point(278, 152);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(569, 34);
+            this.textBox2.Size = new System.Drawing.Size(538, 34);
             this.textBox2.TabIndex = 5;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(531, 472);
+            this.button1.Location = new System.Drawing.Point(515, 208);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 45);
+            this.button1.Size = new System.Drawing.Size(128, 39);
             this.button1.TabIndex = 7;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -109,30 +107,19 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(718, 472);
+            this.button2.Location = new System.Drawing.Point(702, 208);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 45);
+            this.button2.Size = new System.Drawing.Size(114, 39);
             this.button2.TabIndex = 8;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(821, 243);
-            this.dataGridView1.TabIndex = 9;
-            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 539);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(835, 272);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
@@ -143,7 +130,6 @@
             this.Controls.Add(this.label1);
             this.Name = "AddEmployees";
             this.Text = "AddEmployees";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +145,5 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
