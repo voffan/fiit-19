@@ -35,12 +35,25 @@ namespace App
             try
             {
                 Employee emp = EmployeeLogic.Authorize(textBox1.Text, textBox2.Text);
-                if(emp == null)
+                if(textBox1.Text == "")
                 {
-                    MessageBox.Show("Неправильный логин или пароль!!!");
+                    MessageBox.Show("Введите логин!");
                     return;
                 }
-                MessageBox.Show("Success");
+                if (textBox2.Text == "")
+                {
+                    MessageBox.Show("Введите пароль!");
+                    return;
+                }
+                if (emp==null)
+                {
+                    MessageBox.Show("Неверный пароль или логин!");
+                    return;
+                }
+                Form2 form2 = new Form2();
+                this.Hide();
+                form2.ShowDialog();
+                this.Show();
             }
             catch(Exception exp)
             {
