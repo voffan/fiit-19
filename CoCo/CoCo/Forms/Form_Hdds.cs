@@ -18,8 +18,6 @@ namespace CoCo
             InitializeComponent();
         }
 
-
-
         private void Form_Hdds_Load(object sender, EventArgs e)
         {
             initTable();
