@@ -33,7 +33,7 @@ namespace CoCo
             context.Admins.Add(admin);
             context.SaveChanges();*/
             Admin admin = (from Admin dep in context.Admins
-                           where dep.Id == 1
+                           where dep.Id == 4
                             select dep).FirstOrDefault();
             //           if (textBox)
             if(admin == null)

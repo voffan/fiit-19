@@ -52,5 +52,15 @@ namespace CoCo
         {
             initTable();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+
+        }
     }
 }
