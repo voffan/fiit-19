@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CoCo.Forms;
 
 namespace CoCo
 {
@@ -19,10 +20,27 @@ namespace CoCo
 
         private void Form_Peripherals_Load(object sender, EventArgs e)
         {
+            initTable();
+        }
+
+        private void initTable()
+        {
             dataGridView1.DataSource = new Context().Peripherals.ToList();
             /*dataGridView1.Columns[0].HeaderText = "Номер";
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Производитель";*/
+        }
+        private void MdiChildClose(Object sender, FormClosingEventArgs e)
+        {
+            initTable();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddPer adh = new AddPer();
+            adh.MdiParent = this.MdiParent;
+            adh.FormClosing += MdiChildClose;
+            adh.Show();
         }
     }
 }

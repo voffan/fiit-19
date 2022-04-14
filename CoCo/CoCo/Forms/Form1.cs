@@ -19,27 +19,117 @@ namespace CoCo
 
         private void компьютерыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Show_Child_Form(new Form_Pcs());
+            //            Show_Child_Form(new Form_Pcs());
+            Form_Pcs form_pcs;
+            bool isOpen = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "Компьютеры")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                form_pcs = new Form_Pcs();
+                form_pcs.Text = "Компьютеры";
+                form_pcs.MdiParent = this;
+                form_pcs.Show();
+            }
         }
 
         private void периферияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Show_Child_Form(new Form_Peripherals());
+ //           Show_Child_Form(new Form_Peripherals());
+            Form_Peripherals form_per;
+            bool isOpen = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "Периферия")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                form_per = new Form_Peripherals();
+                form_per.Text = "Периферия";
+                form_per.MdiParent = this;
+                form_per.Show();
+            }
         }
 
         private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Show_Child_Form(new Form_Employees());
+            //           Show_Child_Form(new Form_Employees());
+            Form_Employees form_per;
+            bool isOpen = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "Сотрудники")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                form_per = new Form_Employees();
+                form_per.Text = "Сотрудники";
+                form_per.MdiParent = this;
+                form_per.Show();
+            }
         }
 
         private void отделыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Show_Child_Form(new Form_Departments());
+            //            Show_Child_Form(new Form_Departments());
+            Form_Departments form_per;
+            bool isOpen = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "Отделы")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                form_per = new Form_Departments();
+                form_per.Text = "Отделы";
+                form_per.MdiParent = this;
+                form_per.Show();
+            }
         }
 
         private void матПлатыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Show_Child_Form(new Form_Motherboards());
+            //            Show_Child_Form(new Form_Motherboards());
+            Form_Motherboards form_per;
+            bool isOpen = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "Материнские платы")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                form_per = new Form_Motherboards();
+                form_per.Text = "Материнские платы";
+                form_per.MdiParent = this;
+                form_per.Show();
+            }
         }
 
         private void жДискиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,12 +157,48 @@ namespace CoCo
 
         private void процессорыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Show_Child_Form(new Form_Cpus());
+            //            Show_Child_Form(new Form_Cpus());
+            Form_Cpus form_Hdds;
+            bool isOpen = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "Процессоры")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                form_Hdds = new Form_Cpus();
+                form_Hdds.Text = "Процессоры";
+                form_Hdds.MdiParent = this;
+                form_Hdds.Show();
+            }
         }
 
         private void ремонтыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Show_Child_Form(new Form_Repairs());
+            //            Show_Child_Form(new Form_Repairs());
+            Form_Repairs form_Hdds;
+            bool isOpen = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "Ремонты")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                form_Hdds = new Form_Repairs();
+                form_Hdds.Text = "Ремонты";
+                form_Hdds.MdiParent = this;
+                form_Hdds.Show();
+            }
         }
         private void Show_Child_Form(Form form)
         {
