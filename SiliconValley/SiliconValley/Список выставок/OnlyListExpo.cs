@@ -16,9 +16,12 @@ namespace SiliconValley.Список_выставок
         public string ExpoHeader { get; } = "Выберите выставку";
         public string PlacementHeader { get; } = "Выберите отдел";
 
+        Send_picture send_Picture;
         public OnlyListExpo()
         {
             InitializeComponent();
+
+            this.send_Picture = send_Picture;
         }
 
         private void OnlyListExpo_Load(object sender, EventArgs e)
@@ -42,7 +45,7 @@ namespace SiliconValley.Список_выставок
             
             Context db = new Context();
            
-            GridExpo.DataSource = db.Placements.ToList();
+            GridExpo.DataSource = db.Departments.ToList();
 
             GridExpo.CellDoubleClick += DoubleClickRow_Placement;
         }
@@ -56,7 +59,7 @@ namespace SiliconValley.Список_выставок
 
         void DoubleClickRow_Placement(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(e.RowIndex.ToString());
+            Send_picture.placementId = Convert.ToInt32(GridExpo.CurrentRow.Cells[0].Value);
             Close();
         }
     }

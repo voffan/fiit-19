@@ -47,9 +47,7 @@ namespace SiliconValley.Список_картин
             this.dataGridView1.Location = new System.Drawing.Point(249, 15);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(801, 524);
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(601, 426);
             this.dataGridView1.TabIndex = 0;
@@ -89,7 +87,7 @@ namespace SiliconValley.Список_картин
             // sendBtn
             // 
             this.sendBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sendBtn.Location = new System.Drawing.Point(16, 498);
+            this.sendBtn.Location = new System.Drawing.Point(16, 400);
             this.sendBtn.Margin = new System.Windows.Forms.Padding(4);
             this.sendBtn.Name = "sendBtn";
             this.sendBtn.Size = new System.Drawing.Size(212, 41);
@@ -102,7 +100,7 @@ namespace SiliconValley.Список_картин
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(867, 452);
             this.Controls.Add(this.sendBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.editBtn);

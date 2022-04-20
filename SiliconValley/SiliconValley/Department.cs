@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    public class Department : Placement
+    public class Department : Placement,IId
     {
     }
 }

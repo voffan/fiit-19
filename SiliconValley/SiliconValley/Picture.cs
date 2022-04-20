@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    public class Picture
+    public class Picture:IId
     {
         public int Id { get; set; }
         [MaxLength(255)]

@@ -34,6 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlUpdateCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlDeleteCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter();
             this.SuspendLayout();
             // 
             // label1
@@ -93,11 +100,41 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(376, 38);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(108, 34);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Изменить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(132, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Якутские художники";
+            this.label3.Visible = false;
+            // 
+            // sqlDataAdapter1
+            // 
+            this.sqlDataAdapter1.DeleteCommand = this.sqlDeleteCommand1;
+            this.sqlDataAdapter1.InsertCommand = this.sqlInsertCommand1;
+            this.sqlDataAdapter1.SelectCommand = this.sqlSelectCommand1;
+            this.sqlDataAdapter1.UpdateCommand = this.sqlUpdateCommand1;
+            // 
             // Send_picture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 209);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2);
@@ -119,5 +156,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label3;
+        private System.Data.SqlClient.SqlCommand sqlSelectCommand1;
+        private System.Data.SqlClient.SqlCommand sqlInsertCommand1;
+        private System.Data.SqlClient.SqlCommand sqlUpdateCommand1;
+        private System.Data.SqlClient.SqlCommand sqlDeleteCommand1;
+        private System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
     }
 }

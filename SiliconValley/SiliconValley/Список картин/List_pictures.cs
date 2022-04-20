@@ -71,12 +71,15 @@ namespace SiliconValley.Список_картин
                 return;
             }
 
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            int placementId= Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);//id выбранной картины
 
-            Journal_picture journal = new Journal_picture(id,placementId);
+            Journal_picture journal = new Journal_picture(id);
 
             journal.ShowDialog();
+
+            Context db = new Context();
+            dataGridView1.DataSource = db.Pictures.ToList();
+
         }
     }
 }

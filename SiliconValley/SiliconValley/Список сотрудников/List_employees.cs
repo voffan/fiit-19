@@ -28,7 +28,7 @@ namespace SiliconValley.Список_сотрдников
                 gridEmployee.DataSource = context.Employees.ToList();
             }
 
-            DescriptionViewInTable();
+            //DescriptionViewInTable();
         }
         private void AddEmployee_Click(object sender, EventArgs e)
         {
