@@ -33,10 +33,7 @@ namespace CoCo
             //initTable();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void initTable()
         {
@@ -53,12 +50,17 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
-        {
-
+            Context context = new Context();
+            var hdd = context.Hdds.Find(dataGridView1.SelectedCells[0].Value);
+            //context.Hdds.Attach(hdd);
+            context.Hdds.Remove(hdd);
+            context.SaveChanges();
+            //Refresh();
+            //foreach(DataGridViewRow row in dataGridView1.SelectedRows)
+            //{
+            //    dataGridView1.Rows[0].Selected = true;
+            //    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+            //}
         }
     }
 }
