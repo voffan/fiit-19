@@ -33,9 +33,9 @@ namespace SportAchievements
                     KindofsportComp.AddKindOfSport(name.Text);
                     Close();
                 }
-                catch
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
             else MessageBox.Show("Заполните все поля!");

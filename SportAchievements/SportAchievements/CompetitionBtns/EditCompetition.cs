@@ -15,11 +15,15 @@ namespace SportAchievements.CompetitionBtns
     public partial class EditCompetition : Form
     {
         int Id;
+        Competition com;
+        KindOfSport com2;
 
         public EditCompetition(int Id)
         {
             this.Id = Id;
             InitializeComponent();
+            com = (new Context()).Competitions.Find(Id);
+            com2 = (new Context()).KindsOfSports.Find(Id);
         }
 
         
@@ -38,6 +42,25 @@ namespace SportAchievements.CompetitionBtns
                 listBox1.ValueMember = "Id";
 
             }
+            name.Text = com.Name;
+            start.Value = com.DateBeginning;
+            end.Value = com.DateEnding;
+            comboBox2.DataSource = (new Context()).CompTypes.ToList();
+            comboBox2.DisplayMember = "Name";
+            comboBox2.ValueMember = "Id";
+            comboBox2.SelectedItem = (from CompType wc in comboBox2.Items where wc.Id == com.CompTypeId select wc).FirstOrDefault();
+
+            listBox1.DataSource = (new Context()).KindsOfSports.ToList();
+            listBox1.DisplayMember = "Name";
+            listBox1.ValueMember = "Id";
+            //listBox1.SelectedItem = (from KindOfSport wc in listBox1.Items where wc.Id == com2. select wc).FirstOrDefault();
+
+            if (com == null)
+            {
+                MessageBox.Show("Сотрудник не найден!");
+                Close();
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -65,6 +88,11 @@ namespace SportAchievements.CompetitionBtns
                 }
             }
             else MessageBox.Show("Заполните все поля!");
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

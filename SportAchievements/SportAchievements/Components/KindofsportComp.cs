@@ -16,15 +16,13 @@ namespace SportAchievements
             {
                 KindOfSport k = new KindOfSport();
                 
-                /* if (cmpType == null)
-                 {*/
+                
                 k.Name = name;
                 
                 c.KindsOfSports.Add(k);
                 c.SaveChanges();
                 return k;
-                /*}
-                throw new Exception("Заданного типа соревнований не существует!");/**/
+                
             }
         }
         public static void DelKind(int Id)
