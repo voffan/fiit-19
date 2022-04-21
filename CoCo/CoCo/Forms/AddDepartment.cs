@@ -23,6 +23,7 @@ namespace CoCo.Forms
         {
             if (textBox1.Text.Length > 0)
             {
+                //добавить обработку ошибок
                 String dname = textBox1.Text;
                 DepartmentLogic.DepartmentAdd(dname);
                 Close();
