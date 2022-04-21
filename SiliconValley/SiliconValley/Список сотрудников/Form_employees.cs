@@ -14,9 +14,6 @@ namespace SiliconValley.Список_сотрудников
     public partial class Form_employees : Form
     {
         int id;
-
-        Position pos;
-        Education edu;
         public Form_employees(string title,string buttonText)
         {
             InitializeComponent();
@@ -57,18 +54,16 @@ namespace SiliconValley.Список_сотрудников
         void InitForm()
         {
             //init ComboBox
-            Array posItems = Enum.GetValues(pos.GetType());
-            Array eduItems = Enum.GetValues(edu.GetType());
+            /*Array posItems = Enum.GetValues(pos.GetType());
+            Array eduItems = Enum.GetValues(edu.GetType());*/
 
-            for (int i = 0; i < posItems.Length; i++)
-            {
-                comboBox1.Items.Add(posItems.GetValue(i));
-            }
+            comboBox1.DataSource = new BindingSource(DescriptionAttributes<Position>.RetrieveAttributes(), null);
+            comboBox1.DisplayMember = "Key";
+            comboBox1.ValueMember = "Value";
 
-            for (int i = 0; i < eduItems.Length; i++)
-            {
-                comboBox2.Items.Add(eduItems.GetValue(i));
-            }
+            comboBox2.DataSource = new BindingSource(DescriptionAttributes<Education>.RetrieveAttributes(), null);
+            comboBox2.DisplayMember = "Key";
+            comboBox2.ValueMember = "Value";
 
             if (button1.Text == "Изменить")
             {
@@ -95,8 +90,8 @@ namespace SiliconValley.Список_сотрудников
 
             employee.Birthday = dateTimePicker1.Value;
 
-            employee.Position = (Position)comboBox1.SelectedIndex;
-            employee.Education = (Education)comboBox2.SelectedIndex;
+            employee.Position = (Position)Enum.Parse(typeof(Position), (string)comboBox1.SelectedValue);
+            employee.Education = (Education)Enum.Parse(typeof(Education), (string)comboBox2.SelectedValue);
 
             ListsComponent.Add(employee);
         }
@@ -111,8 +106,8 @@ namespace SiliconValley.Список_сотрудников
 
             employee.Birthday = dateTimePicker1.Value;
 
-            employee.Position = (Position)comboBox1.SelectedIndex;
-            employee.Education = (Education)comboBox2.SelectedIndex;
+            employee.Position = (Position)Enum.Parse(typeof(Position), (string)comboBox1.SelectedValue);
+            employee.Education = (Education)Enum.Parse(typeof(Education), (string)comboBox2.SelectedValue);
 
             ListsComponent.Edit(employee);
         }

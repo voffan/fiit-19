@@ -49,6 +49,13 @@ namespace SiliconValley
                         select obj).FirstOrDefault();
             return a;
         }
-
+        public static Genre GetGenreByName(string name)
+        {
+            Context c = new Context();
+            Genre g = (from genre in c.Genres
+                        where genre.Name == name
+                        select genre).FirstOrDefault();
+            return g;
+        }
     }
 }

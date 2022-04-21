@@ -126,7 +126,6 @@ namespace SiliconValley
             this.Name = "Main";
             this.Text = "Gallery";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);

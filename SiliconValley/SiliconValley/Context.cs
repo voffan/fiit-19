@@ -9,7 +9,6 @@ namespace SiliconValley
 {
     class Context:DbContext
     {
-
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
@@ -26,7 +25,7 @@ namespace SiliconValley
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=siliconDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\HOVROV\siliconDB.mdf;Integrated Security=True;Connect Timeout=30");
         }
     }
 }

@@ -54,5 +54,13 @@ namespace SiliconValley.Список_авторов
                        select artist).FirstOrDefault();
             return a;
         }
+        public static Artist GetArtistByName(string name)
+        {
+            Context c = new Context();
+            Artist a = (from artist in c.Artists
+                        where artist.Name == name
+                        select artist).FirstOrDefault();
+            return a;
+        }
     }
 }

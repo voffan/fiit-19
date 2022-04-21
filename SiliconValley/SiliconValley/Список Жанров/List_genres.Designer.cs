@@ -43,19 +43,18 @@
             this.gridGenre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridGenre.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.gridGenre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridGenre.Location = new System.Drawing.Point(296, 15);
-            this.gridGenre.Margin = new System.Windows.Forms.Padding(4);
+            this.gridGenre.Location = new System.Drawing.Point(222, 12);
             this.gridGenre.Name = "gridGenre";
             this.gridGenre.RowHeadersWidth = 51;
-            this.gridGenre.Size = new System.Drawing.Size(755, 524);
+            this.gridGenre.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridGenre.Size = new System.Drawing.Size(566, 426);
             this.gridGenre.TabIndex = 1;
             // 
             // AddGenre
             // 
-            this.AddGenre.Location = new System.Drawing.Point(16, 15);
-            this.AddGenre.Margin = new System.Windows.Forms.Padding(4);
+            this.AddGenre.Location = new System.Drawing.Point(12, 12);
             this.AddGenre.Name = "AddGenre";
-            this.AddGenre.Size = new System.Drawing.Size(243, 37);
+            this.AddGenre.Size = new System.Drawing.Size(182, 30);
             this.AddGenre.TabIndex = 2;
             this.AddGenre.Text = "Добавить жанр";
             this.AddGenre.UseVisualStyleBackColor = true;
@@ -63,10 +62,9 @@
             // 
             // ChangeGenre
             // 
-            this.ChangeGenre.Location = new System.Drawing.Point(16, 59);
-            this.ChangeGenre.Margin = new System.Windows.Forms.Padding(4);
+            this.ChangeGenre.Location = new System.Drawing.Point(12, 48);
             this.ChangeGenre.Name = "ChangeGenre";
-            this.ChangeGenre.Size = new System.Drawing.Size(243, 37);
+            this.ChangeGenre.Size = new System.Drawing.Size(182, 30);
             this.ChangeGenre.TabIndex = 3;
             this.ChangeGenre.Text = "Изменить жанр";
             this.ChangeGenre.UseVisualStyleBackColor = true;
@@ -74,10 +72,9 @@
             // 
             // DeleteGenre
             // 
-            this.DeleteGenre.Location = new System.Drawing.Point(16, 104);
-            this.DeleteGenre.Margin = new System.Windows.Forms.Padding(4);
+            this.DeleteGenre.Location = new System.Drawing.Point(12, 84);
             this.DeleteGenre.Name = "DeleteGenre";
-            this.DeleteGenre.Size = new System.Drawing.Size(243, 37);
+            this.DeleteGenre.Size = new System.Drawing.Size(182, 30);
             this.DeleteGenre.TabIndex = 4;
             this.DeleteGenre.Text = "Удалить";
             this.DeleteGenre.UseVisualStyleBackColor = true;
@@ -85,13 +82,14 @@
             // 
             // List_genres
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.DeleteGenre);
             this.Controls.Add(this.ChangeGenre);
             this.Controls.Add(this.AddGenre);
             this.Controls.Add(this.gridGenre);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "List_genres";
             this.Text = "List_genres";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
