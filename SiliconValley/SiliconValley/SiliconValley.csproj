@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SiliconValley</RootNamespace>
     <AssemblyName>SiliconValley</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -216,6 +216,7 @@
     <Compile Include="Список выставок\Form_expos.Designer.cs">
       <DependentUpon>Form_expos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Список выставок\ExposComponent.cs" />
     <Compile Include="Список выставок\List_expos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +282,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Список выставок\Form_expos.resx">
       <DependentUpon>Form_expos.cs</DependentUpon>
