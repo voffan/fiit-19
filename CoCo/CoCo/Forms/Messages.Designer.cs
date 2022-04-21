@@ -1,6 +1,6 @@
 ﻿namespace CoCo.Forms
 {
-    partial class Delete_Message
+    partial class Messages
     {
         /// <summary> 
         /// Обязательная переменная конструктора.

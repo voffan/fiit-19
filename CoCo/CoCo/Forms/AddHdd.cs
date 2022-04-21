@@ -11,17 +11,22 @@ using CoCo.Classes;
 
 namespace CoCo.Forms
 {
-    public partial class Form_Add_Cpu : Form
+    public partial class AddHdd : Form
     {
-        public Form_Add_Cpu()
+      
+        public AddHdd()
         {
             InitializeComponent();
+        }
+        private void AddHdd_Load(object sender, EventArgs e)
+        {
+        
+    
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            if(textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
             {
                 if (textBox1.Text.Length > 300)
                 {
@@ -41,43 +46,43 @@ namespace CoCo.Forms
                 }
                 else try
                     {
-                        decimal freq = Convert.ToDecimal(textBox2.Text);
-                        if (freq < 0 || freq > 30)
+                        decimal volume = Convert.ToDecimal(textBox2.Text);
+                        if (volume < 0 || volume > 2000)
                         {
                             MessageBox.Show(
-                                "Не поддерживаемая частота",
-                                "Сообщение",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                            "Не поддерживаемая частота",
+                            "Сообщение",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                         }
                         else
                         {
                             try
                             {
-                                CpuLogic.Add(textBox1.Text, freq, textBox3.Text);
+                                HddLogic.Add(textBox1.Text, volume, textBox3.Text);
                                 Close();
                             }
                             catch
                             {
                                 MessageBox.Show(
-                                    "Ошибка сервера",
-                                    "Сообщение",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                        "Ошибка сервера",
+                        "Сообщение",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                             }
                         }
-                    
-                }
-                catch
-                {
-                    MessageBox.Show(
-                    "Неверный формат ввода частоты",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                }
-                
-                
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show(
+                        "Неверный формат ввода частоты",
+                        "Сообщение",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+
+
             }
             else
             {
@@ -87,11 +92,16 @@ namespace CoCo.Forms
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-        }
-
-        private void Form_Add_Cpu_Load(object sender, EventArgs e)
-        {
-
+            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 && textBox3.Text.Length > 0)
+            {
+                HddLogic.Add(textBox1.Text, Convert.ToDecimal(textBox2.Text), textBox3.Text);
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Не все заполнено!");
+            }
+            
         }
     }
 }

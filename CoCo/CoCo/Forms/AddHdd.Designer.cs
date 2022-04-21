@@ -1,6 +1,6 @@
 ﻿namespace CoCo.Forms
 {
-    partial class Form_Add_Hdd
+    partial class AddHdd
     {
         /// <summary>
         /// Required designer variable.

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    class PC_Logic
+    class PCLogic
     {
         public static void Add(int hddid ,int cpuid,int motherboardid,int employeeid)
         {

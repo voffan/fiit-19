@@ -130,16 +130,11 @@
     <Compile Include="Classes\CpuLogic.cs" />
     <Compile Include="Classes\HddLogic.cs" />
     <Compile Include="Classes\MotherboardLogic.cs" />
-    <Compile Include="Classes\PC_Logic.cs" />
+    <Compile Include="Classes\PCLogic.cs" />
     <Compile Include="Classes\DepartmentLogic.cs" />
     <Compile Include="Classes\EmployeeLogic.cs" />
     <Compile Include="Classes\PeripheralLogic.cs" />
-    <Compile Include="Forms\AddPer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AddPer.Designer.cs">
-      <DependentUpon>AddPer.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Classes\RepairLogic.cs" />
     <Compile Include="Forms\ChangeDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,14 +147,11 @@
     <Compile Include="Forms\ChangeEmployees.Designer.cs">
       <DependentUpon>ChangeEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Delete_Message.cs">
+    <Compile Include="Forms\Messages.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Delete_Message.Designer.cs">
-      <DependentUpon>Delete_Message.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form_Add_Department.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Forms\Messages.Designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddDepartments.cs">
       <SubType>Form</SubType>
@@ -173,11 +165,11 @@
     <Compile Include="Forms\AddEmployees.Designer.cs">
       <DependentUpon>AddEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Add_Hdd.cs">
+    <Compile Include="Forms\AddHdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Add_Hdd.Designer.cs">
-      <DependentUpon>Form_Add_Hdd.cs</DependentUpon>
+    <Compile Include="Forms\AddHdd.Designer.cs">
+      <DependentUpon>AddHdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddPc.cs">
       <SubType>Form</SubType>
@@ -208,23 +200,23 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Add_Cpu.cs">
+    <Compile Include="Forms\AddCpu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Add_Cpu.Designer.cs">
-      <DependentUpon>Form_Add_Cpu.cs</DependentUpon>
+    <Compile Include="Forms\AddCpu.Designer.cs">
+      <DependentUpon>AddCpu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Add_Per.cs">
+    <Compile Include="Forms\AddPer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Add_Per.Designer.cs">
-      <DependentUpon>Form_Add_Per.cs</DependentUpon>
+    <Compile Include="Forms\AddPer.Designer.cs">
+      <DependentUpon>AddPer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Add_Motherboard.cs">
+    <Compile Include="Forms\AddMotherboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Add_Motherboard.Designer.cs">
-      <DependentUpon>Form_Add_Motherboard.cs</DependentUpon>
+    <Compile Include="Forms\AddMotherboard.Designer.cs">
+      <DependentUpon>AddMotherboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_Cpus.cs">
       <SubType>Form</SubType>
@@ -299,17 +291,14 @@
     <EmbeddedResource Include="Forms\AddEmployees.resx">
       <DependentUpon>AddEmployees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddPer.resx">
-      <DependentUpon>AddPer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeDepartment.resx">
       <DependentUpon>ChangeDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeEmployees.resx">
       <DependentUpon>ChangeEmployees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Add_Hdd.resx">
-      <DependentUpon>Form_Add_Hdd.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddHdd.resx">
+      <DependentUpon>AddHdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddPc.resx">
       <DependentUpon>AddPc.cs</DependentUpon>
@@ -317,14 +306,14 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Add_Cpu.resx">
-      <DependentUpon>Form_Add_Cpu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddCpu.resx">
+      <DependentUpon>AddCpu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Add_Per.resx">
-      <DependentUpon>Form_Add_Per.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddPer.resx">
+      <DependentUpon>AddPer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Add_Motherboard.resx">
-      <DependentUpon>Form_Add_Motherboard.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddMotherboard.resx">
+      <DependentUpon>AddMotherboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Cpus.resx">
       <DependentUpon>Form_Cpus.cs</DependentUpon>
@@ -375,6 +364,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

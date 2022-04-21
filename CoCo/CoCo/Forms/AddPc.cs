@@ -45,7 +45,7 @@ namespace CoCo.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             
-            PC_Logic.Add((int)comboBox1.SelectedValue, (int)comboBox2.SelectedValue, (int)comboBox3.SelectedValue, (int)comboBox4.SelectedValue);
+            PCLogic.Add((int)comboBox1.SelectedValue, (int)comboBox2.SelectedValue, (int)comboBox3.SelectedValue, (int)comboBox4.SelectedValue);
             Close();
     
         }

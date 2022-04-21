@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CoCo.Classes;
+using System;
 using System.Windows.Forms;
-using CoCo.Classes;
 
 namespace CoCo.Forms
 {
@@ -16,24 +9,61 @@ namespace CoCo.Forms
         public AddPer()
         {
             InitializeComponent();
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_Add_Click(object sender, EventArgs e)
         {
-            PeripheralLogic.Add(textBox1.Text, textBox2.Text, (int)comboBox4.SelectedValue);
-            Close();
-        }
-
-        private void AddPer_Load(object sender, EventArgs e)
-        {
-            using (Context c = new Context())
+            if (textBox1.Text != "" && textBox2.Text != "" && comboBox1.Text != "")
             {
-
-                comboBox4.DataSource = (from em in c.Employees select new { Id = em.Id, Name = em.FullName + " " + em.DepartmentId + " отдел" }).ToList();
-                comboBox4.DisplayMember = "Name";
-                comboBox4.ValueMember = "Id";
-                // comboBox1.Items.Add((from em in c.Employees select new { Id = em.Id, Name = em.FullName + " " + em.DepartmentId + "отдел" }).ToList()[i).Name;
+                if (textBox1.Text.Length > 300)
+                {
+                    MessageBox.Show(
+                    "Название слишком длинное",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else if (textBox2.Text.Length > 300)
+                {
+                    MessageBox.Show(
+                    "Название производителя слишком длинное",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else try
+                    {
+                        int empl_id = Convert.ToInt32(textBox2.Text);
+                        try
+                        {
+                            PeripheralLogic.Add(textBox1.Text, textBox2.Text, empl_id);
+                            Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show(
+                    "Ошибка сервера",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show(
+                        "Неверный формат ввода частоты",
+                        "Сообщение",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Заполните все поля",
+                    "Сообщение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
     }

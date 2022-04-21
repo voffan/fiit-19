@@ -56,7 +56,7 @@ namespace CoCo
         }
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Delete_Message.Message())
+            if (Messages.Error_Message())
                 DepartmentLogic.Delete(dataGridView1.SelectedCells[0].Value);
         }
     }

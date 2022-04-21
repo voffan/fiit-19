@@ -1,6 +1,6 @@
 ﻿namespace CoCo.Forms
 {
-    partial class Form_Add_Motherboard
+    partial class AddMotherboard
     {
         /// <summary>
         /// Required designer variable.

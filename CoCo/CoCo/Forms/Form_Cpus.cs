@@ -35,7 +35,7 @@ namespace CoCo
         private void button1_Click(object sender, EventArgs e)
         {
             // new AddHdd().ShowDialog();
-            Form_Add_Cpu adh = new Form_Add_Cpu();
+            AddCpu adh = new AddCpu();
             adh.MdiParent = this.MdiParent;
             adh.FormClosing += MdiChildClose;
             adh.Show();
@@ -48,7 +48,7 @@ namespace CoCo
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Delete_Message.Message())
+            if (Messages.Error_Message())
                 CpuLogic.Delete(dataGridView1.SelectedCells[0].Value);
         }
     }

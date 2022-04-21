@@ -13,7 +13,7 @@ namespace CoCo.Forms
 {
     public partial class ChangeDepartment : Form
     {
-        object depId;
+        readonly object depId;
         public ChangeDepartment(object _dep)
         {
             InitializeComponent();

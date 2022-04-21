@@ -46,7 +46,7 @@ namespace CoCo
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Delete_Message.Message())
+            if (Messages.Error_Message())
             {
                 PeripheralLogic.Delete(dataGridView1.SelectedRows[0].Cells["id"].Value);
                 initTable();

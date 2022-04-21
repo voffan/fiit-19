@@ -12,10 +12,10 @@ using CoCo.Classes;
 namespace CoCo.Forms
 {
    
-    public partial class Form_Add_Motherboard : Form
+    public partial class AddMotherboard : Form
     {
         List<Motherboard> motherboardList;
-        public Form_Add_Motherboard()
+        public AddMotherboard()
         {
             InitializeComponent();
         }

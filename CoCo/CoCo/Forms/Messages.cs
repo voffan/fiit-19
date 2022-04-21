@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CoCo.Forms
 {
-    public partial class Delete_Message : UserControl
+    public partial class Messages : UserControl
     {
-        public static bool Message()
+        public static bool Error_Message()
         {
             if (MessageBox.Show(
                 "Вы уверены, что хатите удалить этот элемент?",
