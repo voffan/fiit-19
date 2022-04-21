@@ -11,33 +11,35 @@ using CoCo.Classes;
 
 namespace CoCo.Forms
 {
-    public partial class AddEmployees : Form
+    public partial class AddDepartment : Form
     {
-    
-        public AddEmployees()
+      
+        public AddDepartment()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0)
+            if (textBox1.Text.Length > 0)
             {
-                string Name = textBox1.Text;
-                int Id = Convert.ToInt32(textBox2.Text);
-                EmployeeLogic empL = new EmployeeLogic();
-                empL.EmployeeAdd(Name, Id);
+                String dname = textBox1.Text;
+                DepartmentLogic depL = new DepartmentLogic();
+                depL.DepartmentAdd(dname);
                 Close();
             }
             else
             {
                 MessageBox.Show("Не все заполнено!");
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

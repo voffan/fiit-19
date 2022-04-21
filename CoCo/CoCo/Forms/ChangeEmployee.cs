@@ -11,11 +11,11 @@ using CoCo.Classes;
 
 namespace CoCo.Forms
 {
-    public partial class ChangeEmployees : Form
+    public partial class ChangeEmployee : Form
     {
 
         object emplId;
-        public ChangeEmployees(object _empl)
+        public ChangeEmployee(object _empl)
         {
             InitializeComponent();
             emplId = _empl;       

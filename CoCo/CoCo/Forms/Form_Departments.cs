@@ -27,7 +27,7 @@ namespace CoCo
         private void button1_Click(object sender, EventArgs e)
         {
             
-            AddDepartments addprt = new AddDepartments();
+            AddDepartment addprt = new AddDepartment();
             addprt.MdiParent = this.MdiParent;
             addprt.FormClosing += MdiChildClose;
             addprt.Show();

@@ -41,7 +41,7 @@ namespace CoCo
         private void button1_Click(object sender, EventArgs e)
         {   
             
-            AddEmployees adh = new AddEmployees();
+            AddEmployee adh = new AddEmployee();
             adh.MdiParent = this.MdiParent;
             adh.FormClosing += MdiChildClose;
             adh.Show();
@@ -51,7 +51,7 @@ namespace CoCo
         {
             var emplId = dataGridView1.SelectedCells[0].Value;
             Employee emp = new Employee();
-            ChangeEmployees adh = new ChangeEmployees(emplId);
+            ChangeEmployee adh = new ChangeEmployee(emplId);
             adh.MdiParent = this.MdiParent;
             adh.FormClosing += MdiChildClose;
             adh.Show();
