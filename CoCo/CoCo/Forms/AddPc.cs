@@ -13,7 +13,6 @@ namespace CoCo.Forms
 {
     public partial class AddPc : Form
     {
-        List<PC> PCs;
         public AddPc()
         {
             InitializeComponent();
@@ -21,7 +20,6 @@ namespace CoCo.Forms
 
         private void AddPc_Load(object sender, EventArgs e)
         {
-            PCs = new List<PC>();
             using (Context c = new Context())
             {
                 comboBox1.DataSource = (from h in c.Hdds select new { Id = h.Id, Name = h.Name + " " + h.Volume + "ГБ " + h.Manufacturer }).ToList();
@@ -44,31 +42,11 @@ namespace CoCo.Forms
            
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        
-
         private void button1_Click(object sender, EventArgs e)
         {
             
-            Context context = new Context();
-            PC pc = new PC();
-            PC_Logic pC_Logic = new PC_Logic();
-            
-           /* int cpu = Convert.ToInt32(comboBox2.SelectedText.Split(' ')[0]);
-            int mb = Convert.ToInt32(comboBox3.SelectedText.Split(' ')[0]);
-            int em = Convert.ToInt32(comboBox4.SelectedText.Split(' ')[0]); */
-            pc.HddId = (int)comboBox1.SelectedValue;
-            pc.CpuId = (int)comboBox2.SelectedValue;
-            pc.MotherboardId = (int)comboBox3.SelectedValue;
-            pc.EmployeeId = (int)comboBox4.SelectedValue;
-
-            pC_Logic.Add(pc.HddId, pc.CpuId, pc.MotherboardId, pc.EmployeeId);
-                context.SaveChanges();
-                Close();
+            PC_Logic.Add((int)comboBox1.SelectedValue, (int)comboBox2.SelectedValue, (int)comboBox3.SelectedValue, (int)comboBox4.SelectedValue);
+            Close();
     
         }
     }

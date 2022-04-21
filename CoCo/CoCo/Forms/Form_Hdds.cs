@@ -51,8 +51,8 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            HddLogic.Delete(dataGridView1.SelectedCells[0].Value);
+            if(Delete_Message.Message())
+                HddLogic.Delete(dataGridView1.SelectedCells[0].Value);
             //Refresh();
             //foreach(DataGridViewRow row in dataGridView1.SelectedRows)
             //{

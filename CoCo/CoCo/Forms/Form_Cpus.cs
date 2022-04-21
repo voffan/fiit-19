@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoCo.Forms;
+using CoCo.Classes;
 
 namespace CoCo
 {
@@ -43,6 +44,12 @@ namespace CoCo
         private void MdiChildClose(Object sender, FormClosingEventArgs e)
         {
             initTable();
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            if (Delete_Message.Message())
+                CpuLogic.Delete(dataGridView1.SelectedCells[0].Value);
         }
     }
 }

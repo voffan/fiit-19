@@ -105,6 +105,7 @@
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -144,6 +145,12 @@
     </Compile>
     <Compile Include="Forms\ChangeEmployees.Designer.cs">
       <DependentUpon>ChangeEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Delete_Message.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Delete_Message.Designer.cs">
+      <DependentUpon>Delete_Message.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form_Add_Department.cs">
       <SubType>Form</SubType>
@@ -289,6 +296,9 @@
     <EmbeddedResource Include="Forms\AddEmployees.resx">
       <DependentUpon>AddEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddPer.resx">
+      <DependentUpon>AddPer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeEmployees.resx">
       <DependentUpon>ChangeEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,9 +386,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Alerts\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

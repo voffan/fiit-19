@@ -8,7 +8,7 @@ namespace CoCo.Classes
 {
     class PC_Logic
     {
-        public void Add(int hddid ,int cpuid,int motherboardid,int employeeid)
+        public static void Add(int hddid ,int cpuid,int motherboardid,int employeeid)
         {
             Context context = new Context();
             PC pc = new PC();

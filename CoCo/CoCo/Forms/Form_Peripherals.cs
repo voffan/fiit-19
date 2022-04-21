@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoCo.Forms;
+using CoCo.Classes;
 
 namespace CoCo
 {
@@ -41,6 +42,12 @@ namespace CoCo
             adh.MdiParent = this.MdiParent;
             adh.FormClosing += MdiChildClose;
             adh.Show();
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            if (Delete_Message.Message())
+                PeripheralLogic.Delete(dataGridView1.SelectedCells[0].Value);
         }
     }
 }
