@@ -16,14 +16,12 @@ namespace SportAchievements.CompetitionBtns
     {
         int Id;
         Competition com;
-        KindOfSport com2;
 
         public EditCompetition(int Id)
         {
             this.Id = Id;
             InitializeComponent();
             com = (new Context()).Competitions.Find(Id);
-            com2 = (new Context()).KindsOfSports.Find(Id);
         }
 
         
@@ -49,11 +47,12 @@ namespace SportAchievements.CompetitionBtns
             comboBox2.DisplayMember = "Name";
             comboBox2.ValueMember = "Id";
             comboBox2.SelectedItem = (from CompType wc in comboBox2.Items where wc.Id == com.CompTypeId select wc).FirstOrDefault();
+            listBox1.SelectedItems.Clear();
+            foreach (KindOfSport item in com.KindOfSports)
+            {
+                listBox1.SetSelected(item.Id - 1, true);
+            }
 
-            listBox1.DataSource = (new Context()).KindsOfSports.ToList();
-            listBox1.DisplayMember = "Name";
-            listBox1.ValueMember = "Id";
-            //listBox1.SelectedItem = (from KindOfSport wc in listBox1.Items where wc.Id == com2. select wc).FirstOrDefault();
 
             if (com == null)
             {
@@ -75,10 +74,6 @@ namespace SportAchievements.CompetitionBtns
                 try
                 {
                     List<KindOfSport> list = new List<KindOfSport>();
-                    /*foreach (KindOfSport k in listBox1.SelectedItems)
-                    {
-                        list.Add(k);
-                    }*/
                     CompetitionComp.ChCom(name.Text, start.Value.Date, end.Value.Date, ((int)comboBox2.SelectedValue), list, Id);
                     Close();
                 }

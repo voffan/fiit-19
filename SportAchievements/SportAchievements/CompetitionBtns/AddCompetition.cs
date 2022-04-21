@@ -44,8 +44,9 @@ namespace SportAchievements
             {
                 try
                 {
-                    List<KindOfSport> list = new List<KindOfSport>();
-                    
+                    List<KindOfSport> list = new List<KindOfSport>();                    
+                    foreach (KindOfSport item in listBox1.SelectedItems)
+                        list.Add(item);
                     CompetitionComp.AddCompetition(name.Text, start.Value.Date, end.Value.Date, ((int)comboBox2.SelectedValue), list);
                     Close();
                 }

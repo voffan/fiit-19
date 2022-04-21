@@ -14,7 +14,13 @@ namespace SportAchievements.Components
         public static Competition AddCompetition(string name, DateTime start, DateTime end, int typeid, List<KindOfSport> kind)
         {
             using (Context c = new Context()) 
-            { 
+            {
+                List<KindOfSport> kinds = new List<KindOfSport>();
+                foreach(var ks in kind)
+                {
+                    KindOfSport k = c.KindsOfSports.Find(ks.Id);
+                    if (k != null) kinds.Add(k);
+                }
                 Competition cmp = new Competition();
                 CompType cmpType = (from CompType ct in c.CompTypes
                                     where ct.Id == typeid
@@ -22,10 +28,11 @@ namespace SportAchievements.Components
                 cmp.Name = name;
                 cmp.DateBeginning = start;
                 cmp.DateEnding = end;
-                cmp.CompTypeId = typeid;
-                cmp.KindOfSports.AddRange(kind);
+                cmp.CompTypeId = typeid;                
                 c.Competitions.Add(cmp);
+                cmp.KindOfSports.AddRange(kinds);
                 c.SaveChanges();
+                
                 return cmp;
            
             }
