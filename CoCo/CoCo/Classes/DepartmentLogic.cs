@@ -17,8 +17,14 @@ namespace CoCo.Classes
             context.SaveChanges();
         }
 
-        public void DepartmentChange()
+        public static void DepartmentChange(string name, object depId)
         {
+            using (var context = new Context())
+            {
+                Department department = context.Departments.FirstOrDefault(x => x.Id == (int)depId);
+                department.Name = name;
+                context.SaveChanges();
+            }
 
         }
 

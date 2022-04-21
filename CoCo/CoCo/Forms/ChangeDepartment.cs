@@ -11,30 +11,20 @@ using CoCo.Classes;
 
 namespace CoCo.Forms
 {
-    public partial class AddDepartments : Form
+    public partial class ChangeDepartment : Form
     {
-      
-        public AddDepartments()
+        object depId;
+        public ChangeDepartment(object _dep)
         {
             InitializeComponent();
+            depId = _dep;
         }
-
-       
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 0)
-            {
-                String dname = textBox1.Text;
-                DepartmentLogic depL = new DepartmentLogic();
-                depL.DepartmentAdd(dname);
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Не все заполнено!");
-            }
-
+            string name = textBox1.Text;
+            DepartmentLogic.DepartmentChange(name, depId);
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
