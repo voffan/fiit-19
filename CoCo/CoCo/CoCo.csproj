@@ -132,6 +132,7 @@
     <Compile Include="Classes\PC_Logic.cs" />
     <Compile Include="Classes\DepartmentLogic.cs" />
     <Compile Include="Classes\EmployeeLogic.cs" />
+    <Compile Include="Classes\PeripheralLogic.cs" />
     <Compile Include="Forms\AddPer.cs">
       <SubType>Form</SubType>
     </Compile>
