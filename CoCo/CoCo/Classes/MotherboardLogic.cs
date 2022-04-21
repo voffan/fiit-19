@@ -16,6 +16,13 @@ namespace CoCo.Classes
             motherboard.Manufacturer = manufacturer;
             context.Motherboards.Add(motherboard);
             context.SaveChanges();
-        } 
+        }
+        public static void Delete(object value)
+        {
+            Context context = new Context();
+            var cpu = context.Motherboards.Find(value);
+            context.Motherboards.Remove(cpu);
+            context.SaveChanges();
+        }
     }
 }

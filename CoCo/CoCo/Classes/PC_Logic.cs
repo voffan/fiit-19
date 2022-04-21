@@ -23,5 +23,12 @@ namespace CoCo.Classes
             context.SaveChanges();
 
         }
+        public static void Delete(object value)
+        {
+            Context context = new Context();
+            var cpu = context.PCs.Find(value);
+            context.PCs.Remove(cpu);
+            context.SaveChanges();
+        }
     }
 }

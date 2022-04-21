@@ -18,5 +18,12 @@ namespace CoCo.Classes
             context.Cpus.Add(cpu);
             context.SaveChanges();
         }
+        public static void Delete(object value)
+        {
+            Context context = new Context();
+            var cpu = context.Hdds.Find(value);
+            context.Hdds.Remove(cpu);
+            context.SaveChanges();
+        }
     }
 }

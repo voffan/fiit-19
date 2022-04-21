@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoCo.Forms;
+using CoCo.Classes;
 
 namespace CoCo
 {
@@ -50,11 +51,8 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Context context = new Context();
-            var hdd = context.Hdds.Find(dataGridView1.SelectedCells[0].Value);
-            //context.Hdds.Attach(hdd);
-            context.Hdds.Remove(hdd);
-            context.SaveChanges();
+            
+            HddLogic.Delete(dataGridView1.SelectedCells[0].Value);
             //Refresh();
             //foreach(DataGridViewRow row in dataGridView1.SelectedRows)
             //{

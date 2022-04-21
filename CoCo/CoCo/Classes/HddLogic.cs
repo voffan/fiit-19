@@ -18,5 +18,12 @@ namespace CoCo.Classes
             context.Hdds.Add(hdd);
             context.SaveChanges();
         }
+        public static void Delete(object value)
+        {
+            Context context = new Context();
+            var hdd = context.Hdds.Find(value);
+            context.Hdds.Remove(hdd);
+            context.SaveChanges();
+        }
     }
 }

@@ -22,9 +22,12 @@ namespace CoCo.Classes
 
         }
 
-        public void DepartmentDelete()
+        public static void Delete(object value)
         {
-
+            Context context = new Context();
+            var dep = context.Departments.Find(value);
+            context.Departments.Remove(dep);
+            context.SaveChanges();
         }
     }
 }

@@ -25,9 +25,12 @@ namespace CoCo.Classes
 
         }
 
-        public void EmployeeDelete()
+        public static void Delete(object value)
         {
-
+            Context context = new Context();
+            var cpu = context.Employees.Find(value);
+            context.Employees.Remove(cpu);
+            context.SaveChanges();
         }
     }
 }
