@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace SiliconValley.Список_картин
 {
@@ -22,7 +23,7 @@ namespace SiliconValley.Список_картин
         {
             using (Context context = new Context())
             {
-                dataGridView1.DataSource = context.Pictures.ToList();
+                dataGridView1.DataSource = context.Pictures.Include("Placement").Include("Genre").Include("Artist").ToList();
             }
         }
 
@@ -31,7 +32,7 @@ namespace SiliconValley.Список_картин
             Form_pictures formPictures = new Form_pictures("Добавить картину", "Добавить");
             formPictures.ShowDialog();
             var db = new Context();
-            dataGridView1.DataSource = db.Pictures.ToList();
+            dataGridView1.DataSource = db.Pictures.Include("Placement").Include("Genre").Include("Artist").ToList();
         }
         private void editBtn_Click(object sender, EventArgs e)
         {
@@ -40,7 +41,7 @@ namespace SiliconValley.Список_картин
             formPicture.Index = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             formPicture.ShowDialog();
             var db = new Context();
-            dataGridView1.DataSource = db.Pictures.ToList();
+            dataGridView1.DataSource = db.Pictures.Include("Placement").Include("Genre").Include("Artist").ToList();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace SiliconValley.Список_картин
 
             using (Context db = new Context())
             {
-                dataGridView1.DataSource = db.Pictures.ToList();
+                dataGridView1.DataSource = db.Pictures.Include("Placement").Include("Genre").Include("Artist").ToList();
             }
         }
 
@@ -70,16 +71,11 @@ namespace SiliconValley.Список_картин
                 MessageBox.Show("Выберите картину");
                 return;
             }
-
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);//id выбранной картины
-
             Journal_picture journal = new Journal_picture(id);
-
             journal.ShowDialog();
-
             Context db = new Context();
-            dataGridView1.DataSource = db.Pictures.ToList();
-
+            dataGridView1.DataSource = db.Pictures.Include("Placement").Include("Genre").Include("Artist").ToList();
         }
     }
 }

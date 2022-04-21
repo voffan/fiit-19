@@ -44,20 +44,18 @@ namespace SiliconValley.Список_картин
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(249, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(187, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(601, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(451, 346);
             this.dataGridView1.TabIndex = 0;
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(16, 15);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addBtn.Location = new System.Drawing.Point(12, 12);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(212, 41);
+            this.addBtn.Size = new System.Drawing.Size(159, 33);
             this.addBtn.TabIndex = 1;
             this.addBtn.Text = "Добавить картину";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -65,20 +63,19 @@ namespace SiliconValley.Список_картин
             // 
             // editBtn
             // 
-            this.editBtn.Location = new System.Drawing.Point(16, 63);
-            this.editBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.editBtn.Location = new System.Drawing.Point(12, 51);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(212, 41);
+            this.editBtn.Size = new System.Drawing.Size(159, 33);
             this.editBtn.TabIndex = 2;
             this.editBtn.Text = "Изменить картину";
             this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(16, 111);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteBtn.Location = new System.Drawing.Point(12, 90);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(212, 41);
+            this.deleteBtn.Size = new System.Drawing.Size(159, 33);
             this.deleteBtn.TabIndex = 3;
             this.deleteBtn.Text = "Удалить";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -87,10 +84,9 @@ namespace SiliconValley.Список_картин
             // sendBtn
             // 
             this.sendBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sendBtn.Location = new System.Drawing.Point(16, 400);
-            this.sendBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.sendBtn.Location = new System.Drawing.Point(12, 325);
             this.sendBtn.Name = "sendBtn";
-            this.sendBtn.Size = new System.Drawing.Size(212, 41);
+            this.sendBtn.Size = new System.Drawing.Size(159, 33);
             this.sendBtn.TabIndex = 4;
             this.sendBtn.Text = "Открыть журнал";
             this.sendBtn.UseVisualStyleBackColor = true;
@@ -98,16 +94,15 @@ namespace SiliconValley.Список_картин
             // 
             // List_pictures
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 452);
+            this.ClientSize = new System.Drawing.Size(650, 367);
             this.Controls.Add(this.sendBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "List_pictures";
             this.Text = "Список картин";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

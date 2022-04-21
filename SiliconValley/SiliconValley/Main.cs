@@ -13,6 +13,7 @@ using SiliconValley.Список_Жанров;
 using SiliconValley.Авторизация;
 using SiliconValley.Список_сотрдников;
 using SiliconValley.Список_выставок;
+using SiliconValley.Список_отделов;
 
 
 namespace SiliconValley
@@ -94,6 +95,18 @@ namespace SiliconValley
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void списокВыставокToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List_departments listDeps = new List_departments()
+            {
+                MdiParent = this
+            };
+            listDeps.LayoutMdi(MdiLayout.Cascade);
+            if (Application.OpenForms["list"] != null)
+                ActiveMdiChild.Close();
+            listDeps.Show();
         }
     }
 }

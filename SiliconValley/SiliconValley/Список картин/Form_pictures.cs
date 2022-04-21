@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SiliconValley.Список_авторов;
 using SiliconValley.Список_Жанров;
+using SiliconValley.Список_отделов;
+using SiliconValley.Список_выставок;
 
 namespace SiliconValley.Список_картин
 {
@@ -25,38 +27,55 @@ namespace SiliconValley.Список_картин
             dateTimePicker1.MaxDate = DateTime.Today;
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
+
+            
             
             using (var db = new Context())
             {
-                for (int i = 0; i < db.Placements.Count(); i++) {
-                    comboBox1.Items.Add(db.Placements.ToList()[i].Name);
-                }
-                for (int i = 0; i < db.Genres.Count(); i++) {
-                    comboBox2.Items.Add(db.Genres.ToList()[i].Name);
-                }
-                for (int i = 0; i < db.Artists.Count(); i++) {
-                    comboBox3.Items.Add(db.Artists.ToList()[i].Name);
-                }
+                comboBox1.DataSource = db.Placements.ToList();
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "Id";
+
+                comboBox2.DataSource = db.Genres.ToList();
+                comboBox2.DisplayMember = "Name";
+                comboBox2.ValueMember = "Id";
+
+                comboBox3.DataSource = db.Artists.ToList();
+                comboBox3.DisplayMember = "Name";
+                comboBox3.ValueMember = "Id";
+
             }   
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             double price = double.Parse(textBox2.Text);
-            Placement placement = new Placement();
-            Genre genre = ListsComponent.GetGenreByName(comboBox2.Text);
-            Artist artist = ArtistComponent.GetArtistByName(comboBox3.Text);
+            Placement placement = (Placement)comboBox1.SelectedItem;
+            Genre genre = (Genre)comboBox2.SelectedItem;
+            Artist artist = (Artist)comboBox3.SelectedItem;
             if (this.button1.Text == "Добавить") {
-                PictureComponent.Add(textBox1.Text, price, dateTimePicker1.Value, placement, genre, artist);
+                PictureComponent.Add(textBox1.Text, price, dateTimePicker1.Value, placement.Id, genre.Id, artist.Id);
             }
             else if (this.button1.Text == "Изменить") {
                 if (Index < 0) {
                     MessageBox.Show("");
                     this.Close();
                 }
-                PictureComponent.Edit(Index, textBox1.Text, price, dateTimePicker1.Value, placement, genre, artist);
+                PictureComponent.Edit(Index, textBox1.Text, price, dateTimePicker1.Value, placement.Id, genre.Id, artist.Id);
             }
             this.Close();
+        }
+
+        private void Form_pictures_Load(object sender, EventArgs e)
+        {
+            if (Index > 0)
+            {
+                Picture p = PictureComponent.GetPictureByIndex(Index);
+                textBox1.Text = p.Name;
+                textBox2.Text = p.Price.ToString();
+                dateTimePicker1.Value = p.Date;
+                //////// осталось инициализировать комбобоксы 1 2 3 чтобы сразу стояли значения выбранной картины
+            }
         }
     }
 }

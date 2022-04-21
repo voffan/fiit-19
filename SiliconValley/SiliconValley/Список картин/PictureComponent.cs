@@ -8,16 +8,16 @@ namespace SiliconValley.Список_картин
 {
     class PictureComponent
     {
-        public static void Add(string name, double price, DateTime date, Placement placement, Genre genre, Artist artist)
+        public static void Add(string name, double price, DateTime date, int placement_id, int genre_id, int artist_id)
         {
             using (var db = new Context())
             {
-                var pic = new Picture { Name = name, Price = price, Date = date, Placement = placement, Genre = genre, Artist = artist };
+                var pic = new Picture { Name = name, Price = price, Date = date, PlacementId = placement_id, GenreId = genre_id, ArtistId = artist_id };
                 db.Pictures.Add(pic);
                 db.SaveChanges();
             }
         }
-        public static void Edit(int index, string name, double price, DateTime date, Placement placement, Genre genre, Artist artist)
+        public static void Edit(int index, string name, double price, DateTime date, int placement_id, int genre_id, int artist_id)
         {
             using (var db = new Context())
             {
@@ -27,9 +27,9 @@ namespace SiliconValley.Список_картин
                     p.Name = name;
                     p.Price = price;
                     p.Date = date;
-                    p.Placement = placement;
-                    p.Genre = genre;
-                    p.Artist = artist;
+                    p.PlacementId = placement_id;
+                    p.GenreId = genre_id;
+                    p.ArtistId = artist_id;
                     db.Entry(p).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     db.SaveChanges();
                 }

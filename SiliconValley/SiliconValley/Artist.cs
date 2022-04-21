@@ -7,11 +7,15 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    public class Artist
+    public class Artist:IId
     {
         public int Id { get; set; }
         [MaxLength(255)]
         public string Name { get; set; }
         public DateTime Birthday { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
