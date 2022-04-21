@@ -68,14 +68,6 @@ namespace CoCo
             }
         }
 
-        private void Auth_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Auth_Load_1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

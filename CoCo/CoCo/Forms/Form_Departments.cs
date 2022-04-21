@@ -24,15 +24,10 @@ namespace CoCo
             initTable();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             
-            Form_Add_Department addprt = new Form_Add_Department();
+            AddDepartments addprt = new AddDepartments();
             addprt.MdiParent = this.MdiParent;
             addprt.FormClosing += MdiChildClose;
             addprt.Show();
@@ -50,6 +45,15 @@ namespace CoCo
             dataGridView1.Columns[1].HeaderText = "Название";
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var depId = dataGridView1.SelectedCells[0].Value;
+            Department dep = new Department();
+            ChangeDepartment adh = new ChangeDepartment(depId);
+            adh.MdiParent = this.MdiParent;
+            adh.FormClosing += MdiChildClose;
+            adh.Show();
+        }
         private void button_delete_Click(object sender, EventArgs e)
         {
             if (Delete_Message.Message())

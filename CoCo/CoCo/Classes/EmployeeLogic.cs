@@ -20,9 +20,16 @@ namespace CoCo.Classes
             context.SaveChanges();
         }
 
-        public void EmployeeChange()
+        public static void EmployeeChange(string Name, int Id, object emplId)
         {
 
+            using (var context = new Context())
+            {
+                Employee employee = context.Employees.FirstOrDefault(x => x.Id == (int)emplId);
+                employee.FullName = Name;
+                employee.DepartmentId = Id;
+                context.SaveChanges();
+            }
         }
 
         public static void Delete(object value)

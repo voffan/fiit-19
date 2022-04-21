@@ -13,32 +13,24 @@ namespace CoCo.Forms
 {
     public partial class ChangeEmployees : Form
     {
-        List<Employee> employeeList;
-        public ChangeEmployees()
+
+        object emplId;
+        public ChangeEmployees(object _empl)
         {
             InitializeComponent();
+            emplId = _empl;       
         }
 
         private void ChangeEmployees_Load(object sender, EventArgs e)
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0)
-            {
-                string Name = textBox1.Text;
-                int Id = Convert.ToInt32(textBox2.Text);
-                EmployeeLogic empL = new EmployeeLogic();
-                empL.EmployeeAdd(Name, Id);
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Не все заполнено!");
-            }
-
+            string name = textBox1.Text;
+            int id = Convert.ToInt32(textBox2.Text);
+            EmployeeLogic.EmployeeChange(name, id, emplId);
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -13,15 +13,10 @@ namespace CoCo.Forms
 {
     public partial class AddEmployees : Form
     {
-        List<Employee> employeeList;
+    
         public AddEmployees()
         {
             InitializeComponent();
-        }
-
-        private void AddEmployees_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
