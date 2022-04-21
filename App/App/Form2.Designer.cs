@@ -39,6 +39,7 @@ namespace App
             this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.дискиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.жанрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +95,8 @@ namespace App
             this.сотрудникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сотрудникиToolStripMenuItem1,
             this.клиентыToolStripMenuItem,
-            this.дискиToolStripMenuItem});
+            this.дискиToolStripMenuItem,
+            this.жанрыToolStripMenuItem});
             this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
             this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.сотрудникиToolStripMenuItem.Text = "Списки";
@@ -102,20 +104,23 @@ namespace App
             // сотрудникиToolStripMenuItem1
             // 
             this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
-            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
+            this.сотрудникиToolStripMenuItem1.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem1_Click);
             // 
             // клиентыToolStripMenuItem
             // 
             this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
-            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.клиентыToolStripMenuItem.Text = "Клиенты";
+            this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.клиентыToolStripMenuItem_Click);
             // 
             // дискиToolStripMenuItem
             // 
             this.дискиToolStripMenuItem.Name = "дискиToolStripMenuItem";
-            this.дискиToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.дискиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.дискиToolStripMenuItem.Text = "Диски";
+            this.дискиToolStripMenuItem.Click += new System.EventHandler(this.дискиToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -125,6 +130,14 @@ namespace App
             this.button1.TabIndex = 2;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // жанрыToolStripMenuItem
+            // 
+            this.жанрыToolStripMenuItem.Name = "жанрыToolStripMenuItem";
+            this.жанрыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.жанрыToolStripMenuItem.Text = "Жанры";
+            this.жанрыToolStripMenuItem.Click += new System.EventHandler(this.жанрыToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -159,5 +172,6 @@ namespace App
         private System.Windows.Forms.ToolStripMenuItem клиентыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дискиToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem жанрыToolStripMenuItem;
     }
 }
