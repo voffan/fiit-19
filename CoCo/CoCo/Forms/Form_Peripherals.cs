@@ -38,15 +38,17 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddPer adh = new AddPer();
-            adh.MdiParent = this.MdiParent;
+            AddPer adh = new AddPer
+            {
+                MdiParent = this.MdiParent
+            };
             adh.FormClosing += MdiChildClose;
             adh.Show();
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Messages.Error_Message())
+            if (Messages.ConfirmDelete())
             {
                 PeripheralLogic.Delete(dataGridView1.SelectedRows[0].Cells["id"].Value);
                 initTable();

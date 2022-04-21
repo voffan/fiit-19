@@ -39,10 +39,12 @@ namespace CoCo
 
 
         private void button1_Click(object sender, EventArgs e)
-        {   
-            
-            AddEmployee adh = new AddEmployee();
-            adh.MdiParent = this.MdiParent;
+        {
+
+            AddEmployee adh = new AddEmployee
+            {
+                MdiParent = this.MdiParent
+            };
             adh.FormClosing += MdiChildClose;
             adh.Show();
         }
@@ -51,15 +53,17 @@ namespace CoCo
         {
             var emplId = dataGridView1.SelectedCells[0].Value;
             Employee emp = new Employee();
-            ChangeEmployee adh = new ChangeEmployee(emplId);
-            adh.MdiParent = this.MdiParent;
+            ChangeEmployee adh = new ChangeEmployee(emplId)
+            {
+                MdiParent = this.MdiParent
+            };
             adh.FormClosing += MdiChildClose;
             adh.Show();
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Messages.Error_Message())
+            if (Messages.ConfirmDelete())
                 EmployeeLogic.Delete(dataGridView1.SelectedCells[0].Value);
         }
     }

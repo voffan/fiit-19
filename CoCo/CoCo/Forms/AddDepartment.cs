@@ -19,20 +19,17 @@ namespace CoCo.Forms
             InitializeComponent();
         }
 
-       
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Length > 0)
             {
                 String dname = textBox1.Text;
-                DepartmentLogic depL = new DepartmentLogic();
-                depL.DepartmentAdd(dname);
+                DepartmentLogic.DepartmentAdd(dname);
                 Close();
             }
             else
             {
-                MessageBox.Show("Не все заполнено!");
+                Messages.Empty();
             }
 
         }

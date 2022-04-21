@@ -26,9 +26,11 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // new AddHdd().ShowDialog();
-            AddHdd  adh = new AddHdd();
-            adh.MdiParent = this.MdiParent;
+            // new AddHdd().ShowDialog();
+            AddHdd adh = new AddHdd
+            {
+                MdiParent = this.MdiParent
+            };
             adh.FormClosing += MdiChildClose;
             adh.Show();
             //initTable();
@@ -51,7 +53,7 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Messages.Error_Message()) { 
+            if (Messages.ConfirmDelete()) { 
                 HddLogic.Delete(dataGridView1.SelectedRows[0].Cells["id"].Value);
                 initTable();
             }

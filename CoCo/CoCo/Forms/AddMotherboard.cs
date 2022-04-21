@@ -14,7 +14,6 @@ namespace CoCo.Forms
    
     public partial class AddMotherboard : Form
     {
-        List<Motherboard> motherboardList;
         public AddMotherboard()
         {
             InitializeComponent();
@@ -24,12 +23,27 @@ namespace CoCo.Forms
         {
             if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 )
             {
-                MotherboardLogic.Add(textBox1.Text, textBox2.Text);
-                Close();
+                if (textBox1.Text.Length > 300)
+                {
+                    Messages.TooLong(label1.Text);
+                }
+                else if (textBox2.Text.Length > 300)
+                {
+                    Messages.TooLong(label2.Text);
+                }
+                else try
+                    {
+                        MotherboardLogic.Add(textBox1.Text, textBox2.Text);
+                        Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
             }
             else
             {
-                MessageBox.Show("Не все заполнено!");
+                Messages.Empty();
             }
         }
     }

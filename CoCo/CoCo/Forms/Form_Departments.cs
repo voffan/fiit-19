@@ -26,9 +26,11 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            AddDepartment addprt = new AddDepartment();
-            addprt.MdiParent = this.MdiParent;
+
+            AddDepartment addprt = new AddDepartment
+            {
+                MdiParent = this.MdiParent
+            };
             addprt.FormClosing += MdiChildClose;
             addprt.Show();
         }
@@ -49,14 +51,16 @@ namespace CoCo
         {
             var depId = dataGridView1.SelectedCells[0].Value;
             Department dep = new Department();
-            ChangeDepartment adh = new ChangeDepartment(depId);
-            adh.MdiParent = this.MdiParent;
+            ChangeDepartment adh = new ChangeDepartment(depId)
+            {
+                MdiParent = this.MdiParent
+            };
             adh.FormClosing += MdiChildClose;
             adh.Show();
         }
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Messages.Error_Message())
+            if (Messages.ConfirmDelete())
                 DepartmentLogic.Delete(dataGridView1.SelectedCells[0].Value);
         }
     }

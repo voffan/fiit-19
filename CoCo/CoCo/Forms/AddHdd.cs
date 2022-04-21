@@ -18,11 +18,6 @@ namespace CoCo.Forms
         {
             InitializeComponent();
         }
-        private void AddHdd_Load(object sender, EventArgs e)
-        {
-        
-    
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -30,30 +25,18 @@ namespace CoCo.Forms
             {
                 if (textBox1.Text.Length > 300)
                 {
-                    MessageBox.Show(
-                    "Название слишком длинное",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    Messages.TooLong(label1.Text);
                 }
                 else if (textBox3.Text.Length > 300)
                 {
-                    MessageBox.Show(
-                    "Название слишком длинное",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    Messages.TooLong(label3.Text);
                 }
                 else try
                     {
                         decimal volume = Convert.ToDecimal(textBox2.Text);
                         if (volume < 0 || volume > 2000)
                         {
-                            MessageBox.Show(
-                            "Не поддерживаемая частота",
-                            "Сообщение",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                            Messages.WrongFormat(label2.Text);
                         }
                         else
                         {
@@ -62,44 +45,23 @@ namespace CoCo.Forms
                                 HddLogic.Add(textBox1.Text, volume, textBox3.Text);
                                 Close();
                             }
-                            catch
+                            catch(Exception ex)
                             {
-                                MessageBox.Show(
-                        "Ошибка сервера",
-                        "Сообщение",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                                MessageBox.Show(ex.Message);
                             }
                         }
 
                     }
-                    catch
+                    catch ( FormatException ex)
                     {
-                        MessageBox.Show(
-                        "Неверный формат ввода частоты",
-                        "Сообщение",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message);
                     }
 
 
             }
             else
             {
-                MessageBox.Show(
-                    "Заполните все поля",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 && textBox3.Text.Length > 0)
-            {
-                HddLogic.Add(textBox1.Text, Convert.ToDecimal(textBox2.Text), textBox3.Text);
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Не все заполнено!");
+                Messages.Empty();
             }
             
         }

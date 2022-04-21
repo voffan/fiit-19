@@ -8,11 +8,13 @@ namespace CoCo.Classes
 {
     internal class DepartmentLogic
     {
-        public void DepartmentAdd(string name) 
+        public static void DepartmentAdd(string name) 
         {
             Context context = new Context();
-            Department dep = new Department();
-            dep.Name = name;
+            Department dep = new Department
+            {
+                Name = name
+            };
             context.Departments.Add(dep);
             context.SaveChanges();
         }

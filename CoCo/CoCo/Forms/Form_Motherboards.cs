@@ -36,8 +36,10 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddMotherboard mthb = new AddMotherboard();
-            mthb.MdiParent = this.MdiParent;
+            AddMotherboard mthb = new AddMotherboard
+            {
+                MdiParent = this.MdiParent
+            };
             mthb.FormClosing += MdiChildClose;
             mthb.Show();
         }
@@ -48,7 +50,7 @@ namespace CoCo
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Messages.Error_Message()) 
+            if (Messages.ConfirmDelete()) 
                 MotherboardLogic.Delete(dataGridView1.SelectedCells[0].Value);
         }
     }

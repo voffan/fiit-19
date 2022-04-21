@@ -29,14 +29,27 @@ namespace CoCo.Forms
             if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0)
             {
                 string Name = textBox1.Text;
-                int Id = Convert.ToInt32(textBox2.Text);
-                EmployeeLogic empL = new EmployeeLogic();
-                empL.EmployeeAdd(Name, Id);
-                Close();
+                if (Name.Length > 300)
+                    Messages.TooLong("Имя");
+                else
+                    try
+                    {
+                        int Id = Convert.ToInt32(textBox2.Text);
+                        EmployeeLogic.EmployeeAdd(Name, Id);
+                        Close();
+                    }
+                    catch (FormatException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    catch (Exception ex) 
+                    { 
+                        Messages.ServerError(); 
+                    }
             }
             else
             {
-                MessageBox.Show("Не все заполнено!");
+                Messages.Empty();
             }
         }
     }
