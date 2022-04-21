@@ -15,6 +15,24 @@ namespace CoCo
         public Form1()
         {
             InitializeComponent();
+            Form_Pcs form_pcs;
+            bool isOpen = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "Компьютеры")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                form_pcs = new Form_Pcs();
+                form_pcs.Text = "Компьютеры";
+                form_pcs.MdiParent = this;
+                form_pcs.Show();
+            }
         }
 
         private void компьютерыToolStripMenuItem_Click(object sender, EventArgs e)

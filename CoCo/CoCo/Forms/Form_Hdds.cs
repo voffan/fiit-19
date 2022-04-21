@@ -51,14 +51,10 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(Delete_Message.Message())
-                HddLogic.Delete(dataGridView1.SelectedCells[0].Value);
-            //Refresh();
-            //foreach(DataGridViewRow row in dataGridView1.SelectedRows)
-            //{
-            //    dataGridView1.Rows[0].Selected = true;
-            //    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-            //}
+            if (Delete_Message.Message()) { 
+                HddLogic.Delete(dataGridView1.SelectedRows[0].Cells["id"].Value);
+                initTable();
+            }
         }
     }
 }

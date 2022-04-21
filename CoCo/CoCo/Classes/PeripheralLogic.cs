@@ -22,7 +22,7 @@ namespace CoCo.Classes
         public static void Delete(object value)
         {
             Context context = new Context();
-            var cpu = context.Peripherals.Find(value);
+            var cpu = context.Peripherals.Find((int)value);
             context.Peripherals.Remove(cpu);
             context.SaveChanges();
         }
