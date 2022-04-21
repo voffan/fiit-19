@@ -52,7 +52,6 @@ namespace CoCo
                 {
                     PCLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
-                
                 initTable();
             }
                 

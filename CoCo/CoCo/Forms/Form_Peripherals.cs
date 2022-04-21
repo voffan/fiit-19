@@ -50,7 +50,10 @@ namespace CoCo
         {
             if (Messages.ConfirmDelete())
             {
-                PeripheralLogic.Delete(dataGridView1.SelectedRows[0].Cells["id"].Value);
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                {
+                    PeripheralLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                }
                 initTable();
             }
                 

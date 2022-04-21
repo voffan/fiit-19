@@ -21,5 +21,13 @@ namespace CoCo.Classes
             context.Repairs.Add(repair);
             context.SaveChanges();
         }
+
+        internal static void Delete(object value)
+        {
+            Context context = new Context();
+            var cpu = context.Repairs.Find((int)value);
+            context.Repairs.Remove(cpu);
+            context.SaveChanges();
+        }
     }
 }

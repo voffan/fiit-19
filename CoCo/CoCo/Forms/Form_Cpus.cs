@@ -51,7 +51,13 @@ namespace CoCo
         private void button_delete_Click(object sender, EventArgs e)
         {
             if (Messages.ConfirmDelete())
-                CpuLogic.Delete(dataGridView1.SelectedCells[0].Value);
+            {
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                {
+                    CpuLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                }
+                initTable();
+            }
         }
     }
 }

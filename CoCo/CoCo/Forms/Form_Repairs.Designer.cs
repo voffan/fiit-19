@@ -30,6 +30,7 @@ namespace CoCo
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,11 +42,22 @@ namespace CoCo
             this.dataGridView1.Size = new System.Drawing.Size(620, 288);
             this.dataGridView1.TabIndex = 0;
             // 
+            // button_delete
+            // 
+            this.button_delete.Location = new System.Drawing.Point(192, 323);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_delete.TabIndex = 4;
+            this.button_delete.Text = "Удалить";
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
             // Form_Repairs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_delete);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form_Repairs";
             this.Text = "Ремонты";
@@ -58,5 +70,6 @@ namespace CoCo
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button_delete;
     }
 }

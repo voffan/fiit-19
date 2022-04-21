@@ -53,8 +53,12 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Messages.ConfirmDelete()) { 
-                HddLogic.Delete(dataGridView1.SelectedRows[0].Cells["id"].Value);
+            if (Messages.ConfirmDelete())
+            {
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                {
+                    HddLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                }
                 initTable();
             }
         }
