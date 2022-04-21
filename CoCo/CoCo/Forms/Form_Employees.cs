@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoCo.Forms;
+using CoCo.Classes;
 
 namespace CoCo
 {
@@ -21,11 +22,6 @@ namespace CoCo
         private void Form_Employees_Load(object sender, EventArgs e)
         {
             initTable();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void initTable()
@@ -43,7 +39,8 @@ namespace CoCo
 
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {   
+            
             AddEmployees adh = new AddEmployees();
             adh.MdiParent = this.MdiParent;
             adh.FormClosing += MdiChildClose;
@@ -52,7 +49,9 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ChangeEmployees adh = new ChangeEmployees();
+            var emplId = dataGridView1.SelectedCells[0].Value;
+            Employee emp = new Employee();
+            ChangeEmployees adh = new ChangeEmployees(emplId);
             adh.MdiParent = this.MdiParent;
             adh.FormClosing += MdiChildClose;
             adh.Show();

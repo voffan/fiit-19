@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoCo.Forms;
+using CoCo.Classes;
 
 namespace CoCo
 {
@@ -23,15 +24,10 @@ namespace CoCo
             initTable();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             
-            Form_Add_Department addprt = new Form_Add_Department();
+            AddDepartments addprt = new AddDepartments();
             addprt.MdiParent = this.MdiParent;
             addprt.FormClosing += MdiChildClose;
             addprt.Show();
@@ -48,17 +44,15 @@ namespace CoCo
             dataGridView1.Columns[0].HeaderText = "Номер";
             dataGridView1.Columns[1].HeaderText = "Название";
         }
-        //private void MdiChildClose(Object sender, FormClosingEventArgs e)
-        //{
-        //    initTable();
-        //}
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    AddDepartments adh = new AddDepartments();
-        //    adh.MdiParent = this.MdiParent;
-        //    adh.FormClosing += MdiChildClose;
-        //    adh.Show();
-        //}
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var depId = dataGridView1.SelectedCells[0].Value;
+            Department dep = new Department();
+            ChangeDepartment adh = new ChangeDepartment(depId);
+            adh.MdiParent = this.MdiParent;
+            adh.FormClosing += MdiChildClose;
+            adh.Show();
+        }
     }
 }

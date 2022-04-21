@@ -35,10 +35,6 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Form_Add_Hdd adh = new Form_Add_Hdd();
-            //adh.MdiParent = this.MdiParent;
-            //adh.FormClosing += MdiChildClose;
-            //adh.Show();
             Form_Add_Motherboard mthb = new Form_Add_Motherboard();
             mthb.MdiParent = this.MdiParent;
             mthb.FormClosing += MdiChildClose;
