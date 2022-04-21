@@ -141,11 +141,11 @@
     <Compile Include="Forms\ChangeDepartment.Designer.cs">
       <DependentUpon>ChangeDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ChangeEmployees.cs">
+    <Compile Include="Forms\ChangeEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ChangeEmployees.Designer.cs">
-      <DependentUpon>ChangeEmployees.cs</DependentUpon>
+    <Compile Include="Forms\ChangeEmployee.Designer.cs">
+      <DependentUpon>ChangeEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Messages.cs">
       <SubType>UserControl</SubType>
@@ -153,17 +153,17 @@
     <Compile Include="Forms\Messages.Designer.cs">
       <DependentUpon>Messages.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddDepartments.cs">
+    <Compile Include="Forms\AddDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddDepartments.Designer.cs">
-      <DependentUpon>AddDepartments.cs</DependentUpon>
+    <Compile Include="Forms\AddDepartment.Designer.cs">
+      <DependentUpon>AddDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddEmployees.cs">
+    <Compile Include="Forms\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddEmployees.Designer.cs">
-      <DependentUpon>AddEmployees.cs</DependentUpon>
+    <Compile Include="Forms\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddHdd.cs">
       <SubType>Form</SubType>
@@ -285,17 +285,17 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\AddDepartments.resx">
-      <DependentUpon>AddDepartments.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddDepartment.resx">
+      <DependentUpon>AddDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddEmployees.resx">
-      <DependentUpon>AddEmployees.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeDepartment.resx">
       <DependentUpon>ChangeDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChangeEmployees.resx">
-      <DependentUpon>ChangeEmployees.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ChangeEmployee.resx">
+      <DependentUpon>ChangeEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddHdd.resx">
       <DependentUpon>AddHdd.cs</DependentUpon>
