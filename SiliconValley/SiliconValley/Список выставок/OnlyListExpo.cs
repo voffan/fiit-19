@@ -1,4 +1,5 @@
 ﻿using SiliconValley.Список_картин;
+using SiliconValley.Список_отделов;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace SiliconValley.Список_выставок
     public partial class OnlyListExpo : Form
     {
         public string ExpoHeader { get; } = "Выберите выставку";
-        public string PlacementHeader { get; } = "Выберите отдел";
+        public string DepartmentHeader { get; } = "Выберите отдел";
 
         Send_picture send_Picture;
         public OnlyListExpo()
@@ -36,16 +37,20 @@ namespace SiliconValley.Список_выставок
 
             GridExpo.DataSource = db.Expos.ToList();
 
+            button1.Text = "Добавить выставку";
+
             GridExpo.CellDoubleClick += DoubleClickRow_Expo;
         }
 
         public void PlacementInit()
         {
-            Text = PlacementHeader;
+            Text = DepartmentHeader;
             
             Context db = new Context();
            
             GridExpo.DataSource = db.Departments.ToList();
+
+            button1.Text = "Добавить отдел";
 
             GridExpo.CellDoubleClick += DoubleClickRow_Placement;
         }
@@ -61,6 +66,27 @@ namespace SiliconValley.Список_выставок
         {
             Send_picture.placementId = Convert.ToInt32(GridExpo.CurrentRow.Cells[0].Value);
             Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Text == ExpoHeader)
+            {
+                Form_expos form_Expos = new Form_expos("Добавить выставку", "Добавить");
+                form_Expos.ShowDialog();
+
+                var db = new Context();
+                GridExpo.DataSource = db.Expos.ToList();
+            }
+
+            if (Text == DepartmentHeader)
+            {
+                Form_department form_Department = new Form_department("Добавить отдел", "Добавить");
+                form_Department.ShowDialog();
+
+                var db = new Context();
+                GridExpo.DataSource = db.Departments.ToList();
+            }
         }
     }
 }

@@ -15,6 +15,12 @@ namespace SiliconValley
         public string Login { get; set; }
         [MaxLength(255)]
         public string Password { get; set; }
+        [MaxLength(255)]
+        public string Surname { get; set; }
+        [MaxLength(255)]
+        public string Name { get; set; }
+        [MaxLength(255)]
+        public string Patronymic { get; set; }
         [MaxLength(11)]
         public string PhoneNumber { get; set; }
         public DateTime Birthday { get; set; }
