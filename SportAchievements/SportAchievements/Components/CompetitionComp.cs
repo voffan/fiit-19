@@ -32,9 +32,7 @@ namespace SportAchievements.Components
                 c.Competitions.Add(cmp);
                 cmp.KindOfSports.AddRange(kinds);
                 c.SaveChanges();
-                
                 return cmp;
-           
             }
         }
 

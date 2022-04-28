@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SportAchievements.Links;
 
 namespace SportAchievements
 {
@@ -75,6 +76,13 @@ namespace SportAchievements
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void результатыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinkResult Result = new LinkResult();
+            Result.MdiParent = this;
+            Result.Show();
         }
     }
 }

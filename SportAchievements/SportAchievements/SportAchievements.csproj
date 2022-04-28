@@ -69,6 +69,7 @@
       <DependentUpon>EditCompetition.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\CompetitionComp.cs" />
+    <Compile Include="Components\ResultComp.cs" />
     <Compile Include="Components\SportsmanComp.cs" />
     <Compile Include="Components\KindofsportComp.cs" />
     <Compile Include="EmployeeBtns\AddEmployee.cs">
@@ -111,6 +112,12 @@
     </Compile>
     <Compile Include="KindOfSportBtns\EditKindOfS.Designer.cs">
       <DependentUpon>EditKindOfS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Links\LinkResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Links\LinkResult.Designer.cs">
+      <DependentUpon>LinkResult.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -173,6 +180,12 @@
     <Compile Include="ReportBtns\AddReport.Designer.cs">
       <DependentUpon>AddReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultBtns\AddResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultBtns\AddResult.Designer.cs">
+      <DependentUpon>AddResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="SportsmanBtns\AddSportsman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KindOfSportBtns\EditKindOfS.resx">
       <DependentUpon>EditKindOfS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Links\LinkResult.resx">
+      <DependentUpon>LinkResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -247,6 +263,9 @@
     </Compile>
     <EmbeddedResource Include="ReportBtns\AddReport.resx">
       <DependentUpon>AddReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultBtns\AddResult.resx">
+      <DependentUpon>AddResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SportsmanBtns\AddSportsman.resx">
       <DependentUpon>AddSportsman.cs</DependentUpon>

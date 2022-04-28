@@ -36,6 +36,7 @@ namespace SportAchievements
             this.списокСотрудниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокВидовСпортаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокОтчетовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.результатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@ namespace SportAchievements
             this.списокСоревнованийToolStripMenuItem,
             this.списокСотрудниковToolStripMenuItem,
             this.списокВидовСпортаToolStripMenuItem,
-            this.списокОтчетовToolStripMenuItem});
+            this.списокОтчетовToolStripMenuItem,
+            this.результатыToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
@@ -97,7 +99,14 @@ namespace SportAchievements
             this.списокОтчетовToolStripMenuItem.Text = "Список отчетов";
             this.списокОтчетовToolStripMenuItem.Click += new System.EventHandler(this.списокОтчетовToolStripMenuItem_Click);
             // 
-            // Form1
+            // результатыToolStripMenuItem
+            // 
+            this.результатыToolStripMenuItem.Name = "результатыToolStripMenuItem";
+            this.результатыToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.результатыToolStripMenuItem.Text = "Результаты";
+            this.результатыToolStripMenuItem.Click += new System.EventHandler(this.результатыToolStripMenuItem_Click);
+            // 
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,7 +114,7 @@ namespace SportAchievements
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainMenu";
             this.Text = "Главное меню";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load_1);
@@ -125,6 +134,7 @@ namespace SportAchievements
         private System.Windows.Forms.ToolStripMenuItem списокСотрудниковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокВидовСпортаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокОтчетовToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem результатыToolStripMenuItem;
     }
 }
 
