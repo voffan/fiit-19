@@ -1,6 +1,6 @@
 ﻿namespace CoCo.Forms
 {
-    partial class ChangeEmployees
+    partial class ChangeEmployee
     {
         /// <summary>
         /// Required designer variable.

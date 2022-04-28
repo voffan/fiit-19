@@ -84,6 +84,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(184, 20);
             this.textBox1.TabIndex = 5;
+            this.textBox1.Text = "San";
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
@@ -93,6 +94,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(184, 20);
             this.textBox2.TabIndex = 6;
+            this.textBox2.Text = "qwerty";
             this.textBox2.UseSystemPasswordChar = true;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 

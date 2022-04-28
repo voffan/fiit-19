@@ -27,18 +27,14 @@ namespace CoCo
         private void initTable()
         {
             dataGridView1.DataSource = new Context().PCs.ToList();
-            /*dataGridView1.Columns[0].HeaderText = "Номер";
-            dataGridView1.Columns[1].HeaderText = "HDD";
-            dataGridView1.Columns[2].HeaderText = "CPU";
-            dataGridView1.Columns[3].HeaderText = "Мotherboard";*/
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddPc addPc = new AddPc();
-
-
-            addPc.MdiParent = this.MdiParent;
+            AddPc addPc = new AddPc
+            {
+                MdiParent = this.MdiParent
+            };
             addPc.FormClosing += MdiChildClose;
             addPc.Show();
         }
@@ -50,8 +46,15 @@ namespace CoCo
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Delete_Message.Message())
-                PC_Logic.Delete(dataGridView1.SelectedCells[0].Value);
+            if (Messages.ConfirmDelete())
+            {
+                for(int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                {
+                    PCLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                }
+                initTable();
+            }
+                
         }
     }
 }

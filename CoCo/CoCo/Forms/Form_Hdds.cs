@@ -26,9 +26,11 @@ namespace CoCo
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // new AddHdd().ShowDialog();
-            Form_Add_Hdd  adh = new Form_Add_Hdd();
-            adh.MdiParent = this.MdiParent;
+            // new AddHdd().ShowDialog();
+            AddHdd adh = new AddHdd
+            {
+                MdiParent = this.MdiParent
+            };
             adh.FormClosing += MdiChildClose;
             adh.Show();
             //initTable();
@@ -51,14 +53,14 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(Delete_Message.Message())
-                HddLogic.Delete(dataGridView1.SelectedCells[0].Value);
-            //Refresh();
-            //foreach(DataGridViewRow row in dataGridView1.SelectedRows)
-            //{
-            //    dataGridView1.Rows[0].Selected = true;
-            //    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-            //}
+            if (Messages.ConfirmDelete())
+            {
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                {
+                    HddLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                }
+                initTable();
+            }
         }
     }
 }

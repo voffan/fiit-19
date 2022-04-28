@@ -11,10 +11,12 @@ namespace CoCo.Classes
         public static void Add(string name, string manu, int employeeid)
         {
             Context context = new Context();
-            Peripheral pc = new Peripheral();
-            pc.Name = name;
-            pc.Manufacturer = manu;
-            pc.EmployeeId = employeeid;
+            Peripheral pc = new Peripheral
+            {
+                Name = name,
+                Manufacturer = manu,
+                EmployeeId = employeeid
+            };
             context.Peripherals.Add(pc);
             context.SaveChanges();
 
@@ -22,7 +24,7 @@ namespace CoCo.Classes
         public static void Delete(object value)
         {
             Context context = new Context();
-            var cpu = context.Peripherals.Find(value);
+            var cpu = context.Peripherals.Find((int)value);
             context.Peripherals.Remove(cpu);
             context.SaveChanges();
         }

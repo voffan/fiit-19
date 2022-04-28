@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    class PC_Logic
+    class PCLogic
     {
         public static void Add(int hddid ,int cpuid,int motherboardid,int employeeid)
         {
             Context context = new Context();
-            PC pc = new PC();
-            //pc.Hdd = hdd;
-            //pc.Cpu = cpu;
-            //pc.Motherboard = motherboard;
-            pc.HddId = hddid;
-            pc.CpuId = cpuid;
-            pc.MotherboardId = motherboardid;
-            pc.EmployeeId = employeeid;
+            PC pc = new PC
+            {
+                HddId = hddid,
+                CpuId = cpuid,
+                MotherboardId = motherboardid,
+                EmployeeId = employeeid
+            };
             context.PCs.Add(pc);
             context.SaveChanges();
 

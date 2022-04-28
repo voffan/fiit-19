@@ -11,26 +11,33 @@ using CoCo.Classes;
 
 namespace CoCo.Forms
 {
-   
-    public partial class Form_Add_Motherboard : Form
+    public partial class AddDepartment : Form
     {
-        List<Motherboard> motherboardList;
-        public Form_Add_Motherboard()
+      
+        public AddDepartment()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 )
+            if (textBox1.Text.Length > 0)
             {
-                MotherboardLogic.Add(textBox1.Text, textBox2.Text);
+                //добавить обработку ошибок
+                String dname = textBox1.Text;
+                DepartmentLogic.DepartmentAdd(dname);
                 Close();
             }
             else
             {
-                MessageBox.Show("Не все заполнено!");
+                Messages.Empty();
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

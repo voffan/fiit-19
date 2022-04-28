@@ -11,30 +11,26 @@ using CoCo.Classes;
 
 namespace CoCo.Forms
 {
-    public partial class AddDepartments : Form
+    public partial class ChangeEmployee : Form
     {
-      
-        public AddDepartments()
+
+        object emplId;
+        public ChangeEmployee(object _empl)
         {
             InitializeComponent();
+            emplId = _empl;       
         }
 
-       
+        private void ChangeEmployees_Load(object sender, EventArgs e)
+        {
 
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 0)
-            {
-                String dname = textBox1.Text;
-                DepartmentLogic depL = new DepartmentLogic();
-                depL.DepartmentAdd(dname);
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Не все заполнено!");
-            }
-
+            string name = textBox1.Text;
+            int id = Convert.ToInt32(textBox2.Text);
+            EmployeeLogic.EmployeeChange(name, id, emplId);
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

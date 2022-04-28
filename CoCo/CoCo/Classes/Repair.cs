@@ -10,11 +10,11 @@ namespace CoCo.Classes
 {
     public enum RepairStatus
     {
-        [Description("inProgress")]
+        [Description("в процессе")]
         inProgress,
-        [Description("done")]
+        [Description("завершено")]
         done,
-        [Description("failed")]
+        [Description("потрачено")]
         failed
     }
     public class Repair

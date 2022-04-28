@@ -10,12 +10,14 @@ namespace CoCo.Classes
 {
     internal class EmployeeLogic
     {
-        public void EmployeeAdd(string Name, int Id)
+        public static void EmployeeAdd(string Name, int Id)
         {
             Context context = new Context();
-            Employee emp = new Employee();
-            emp.FullName = Name;
-            emp.DepartmentId = Id;
+            Employee emp = new Employee
+            {
+                FullName = Name,
+                DepartmentId = Id
+            };
             context.Employees.Add(emp);
             context.SaveChanges();
         }
