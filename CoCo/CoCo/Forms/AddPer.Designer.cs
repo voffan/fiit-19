@@ -96,7 +96,7 @@
             this.button_Add.UseVisualStyleBackColor = true;
             this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
             // 
-            // Form_Add_Per
+            // AddPer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,8 +108,9 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Name = "Form_Add_Per";
+            this.Name = "AddPer";
             this.Text = "Добавление периферии";
+            this.Load += new System.EventHandler(this.AddPer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
