@@ -17,7 +17,6 @@ namespace SiliconValley.Список_выставок
         public Form_expos(string labelText, string buttonText)
         {
             InitializeComponent();
-
             Text = labelText;
             button1.Text = buttonText;
         }
@@ -32,14 +31,12 @@ namespace SiliconValley.Список_выставок
             if (button1.Text == "Добавить")
             {
                 AddExpos();
-
                 Close();
             }
 
             if (button1.Text == "Изменить")
             {
                 ChangeExpo();
-
                 Close();
             }
         }
@@ -47,16 +44,18 @@ namespace SiliconValley.Список_выставок
         {
             Expo expo = new Expo();
             expo.Name = textBox1.Text;
-
-            ExposComponent.Add(expo);
+            expo.Address = textBox2.Text;
+            expo.Start = dateTimePicker1.Value;
+            expo.End = dateTimePicker2.Value;
+            ListsComponent.Add(expo);
         }
 
         void ChangeExpo()
         {
-            Expo expo = ExposComponent.GetObjById<Expo>(id);
+            Expo expo = ListsComponent.GetObjById<Expo>(id);
             expo.Name = textBox1.Text;
-
-            ExposComponent.Edit(expo);
+            expo.Address = textBox2.Text;
+            ListsComponent.Edit(expo);
         }
         private void Form_expos_Load(object sender, EventArgs e)
         {
@@ -64,9 +63,10 @@ namespace SiliconValley.Список_выставок
             if (button1.Text != "Изменить")
                 return;
 
-            Expo expo = ExposComponent.GetObjById<Expo>(id);
+            Expo expo = ListsComponent.GetObjById<Expo>(id);
 
             textBox1.Text = expo.Name;
+            textBox2.Text = expo.Address;
             dateTimePicker1.Value = expo.Start;
             dateTimePicker2.Value = expo.End;
         }

@@ -43,7 +43,7 @@ namespace SiliconValley
             catch(Exception error)
             {
                 MessageBox.Show(error.Message);
-                //return; 
+                return; 
             }
             
             Main main = new Main();

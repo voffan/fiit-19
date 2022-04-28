@@ -77,5 +77,13 @@ namespace SiliconValley.Список_картин
             Context db = new Context();
             dataGridView1.DataSource = db.Pictures.Include("Placement").Include("Genre").Include("Artist").ToList();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text)).ToList();
+            }
+        }
     }
 }

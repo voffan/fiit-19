@@ -33,12 +33,13 @@ namespace SiliconValley.Список_отделов
             this.editBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(12, 84);
+            this.deleteBtn.Location = new System.Drawing.Point(12, 116);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(182, 30);
             this.deleteBtn.TabIndex = 7;
@@ -48,7 +49,7 @@ namespace SiliconValley.Список_отделов
             // 
             // editBtn
             // 
-            this.editBtn.Location = new System.Drawing.Point(12, 48);
+            this.editBtn.Location = new System.Drawing.Point(12, 80);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(182, 30);
             this.editBtn.TabIndex = 6;
@@ -58,7 +59,7 @@ namespace SiliconValley.Список_отделов
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(12, 12);
+            this.addBtn.Location = new System.Drawing.Point(12, 44);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(182, 30);
             this.addBtn.TabIndex = 5;
@@ -79,11 +80,21 @@ namespace SiliconValley.Список_отделов
             this.dataGridView1.Size = new System.Drawing.Size(566, 426);
             this.dataGridView1.TabIndex = 4;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(182, 26);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // List_departments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.addBtn);
@@ -94,6 +105,7 @@ namespace SiliconValley.Список_отделов
             this.Load += new System.EventHandler(this.List_departments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -103,5 +115,6 @@ namespace SiliconValley.Список_отделов
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

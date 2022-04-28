@@ -33,6 +33,7 @@ namespace SiliconValley.Список_авторов
             this.addBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@ namespace SiliconValley.Список_авторов
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(12, 12);
+            this.addBtn.Location = new System.Drawing.Point(12, 44);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(182, 30);
             this.addBtn.TabIndex = 1;
@@ -62,7 +63,7 @@ namespace SiliconValley.Список_авторов
             // 
             // editBtn
             // 
-            this.editBtn.Location = new System.Drawing.Point(12, 48);
+            this.editBtn.Location = new System.Drawing.Point(12, 80);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(182, 30);
             this.editBtn.TabIndex = 2;
@@ -72,7 +73,7 @@ namespace SiliconValley.Список_авторов
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(12, 84);
+            this.deleteBtn.Location = new System.Drawing.Point(12, 116);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(182, 30);
             this.deleteBtn.TabIndex = 3;
@@ -80,11 +81,21 @@ namespace SiliconValley.Список_авторов
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(182, 26);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // List_artists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.addBtn);
@@ -96,6 +107,7 @@ namespace SiliconValley.Список_авторов
             this.Load += new System.EventHandler(this.List_artists_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -105,5 +117,6 @@ namespace SiliconValley.Список_авторов
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -34,6 +34,7 @@ namespace SiliconValley.Список_картин
             this.editBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.sendBtn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@ namespace SiliconValley.Список_картин
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(12, 12);
+            this.addBtn.Location = new System.Drawing.Point(12, 44);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(159, 33);
             this.addBtn.TabIndex = 1;
@@ -63,7 +64,7 @@ namespace SiliconValley.Список_картин
             // 
             // editBtn
             // 
-            this.editBtn.Location = new System.Drawing.Point(12, 51);
+            this.editBtn.Location = new System.Drawing.Point(12, 83);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(159, 33);
             this.editBtn.TabIndex = 2;
@@ -73,7 +74,7 @@ namespace SiliconValley.Список_картин
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(12, 90);
+            this.deleteBtn.Location = new System.Drawing.Point(12, 122);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(159, 33);
             this.deleteBtn.TabIndex = 3;
@@ -92,11 +93,21 @@ namespace SiliconValley.Список_картин
             this.sendBtn.UseVisualStyleBackColor = true;
             this.sendBtn.Click += new System.EventHandler(this.sendBtn_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(159, 26);
+            this.textBox1.TabIndex = 11;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // List_pictures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 367);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.sendBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.editBtn);
@@ -109,6 +120,7 @@ namespace SiliconValley.Список_картин
             this.Load += new System.EventHandler(this.List_pictures_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -119,5 +131,6 @@ namespace SiliconValley.Список_картин
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button sendBtn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

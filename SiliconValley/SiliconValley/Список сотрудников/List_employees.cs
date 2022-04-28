@@ -67,13 +67,8 @@ namespace SiliconValley.Список_сотрдников
 
             using (Context db = new Context())
             {
-                gridEmployee.DataSource = db.Genres.ToList();
+                gridEmployee.DataSource = db.Employees.ToList();
             }
-        }
-
-        private void gridEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         void DescriptionViewInTable()
@@ -85,6 +80,14 @@ namespace SiliconValley.Список_сотрдников
 
                 Education edu = (Education)Enum.Parse(typeof(Education), gridEmployee.Rows[i].Cells[6].Value.ToString());
                 //gridEmployee.Rows[i].Cells[6].Value = edu.GetDescription();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                gridEmployee.DataSource = db.Employees.Where(d => d.Login.Contains(textBox1.Text)).ToList();
             }
         }
     }
