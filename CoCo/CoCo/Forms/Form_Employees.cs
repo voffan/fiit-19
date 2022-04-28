@@ -72,5 +72,13 @@ namespace CoCo
                 initTable();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (Context context = new Context())
+            {
+                dataGridView1.DataSource = context.Employees.Where(h => h.FullName.Contains(textBox1.Text)).ToList();
+            }
+        }
     }
 }
