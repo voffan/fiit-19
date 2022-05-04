@@ -64,5 +64,21 @@ namespace CoCo
                 dataGridView1.DataSource = context.PCs.Where(h => h.Hdd.Name.Contains(textBox1.Text)).ToList();
             }
         }
+
+        private void repair_Click(object sender, EventArgs e)
+        {
+                List<int> ids = new List<int>();
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                {
+                    ids.Add((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
+                }
+                AddRepair addRepair = new AddRepair(ids)
+                {
+                    MdiParent = this.MdiParent
+                };
+                addRepair.FormClosing += MdiChildClose;
+                addRepair.Show();
+                initTable();
+        }
     }
 }

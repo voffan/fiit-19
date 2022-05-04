@@ -48,14 +48,11 @@ namespace CoCo
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Messages.ConfirmDelete())
-            {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
                     PeripheralLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
                 initTable();
-            }
                 
         }
     }

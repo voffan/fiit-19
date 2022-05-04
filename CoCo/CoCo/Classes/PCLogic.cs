@@ -10,24 +10,38 @@ namespace CoCo.Classes
     {
         public static void Add(int hddid ,int cpuid,int motherboardid,int employeeid)
         {
-            Context context = new Context();
-            PC pc = new PC
+            using (Context context = new Context())
             {
-                HddId = hddid,
-                CpuId = cpuid,
-                MotherboardId = motherboardid,
-                EmployeeId = employeeid
-            };
-            context.PCs.Add(pc);
-            context.SaveChanges();
-
+                PC pc = new PC
+                {
+                    HddId = hddid,
+                    CpuId = cpuid,
+                    MotherboardId = motherboardid,
+                    EmployeeId = employeeid
+                };
+                context.PCs.Add(pc);
+                context.SaveChanges();
+            }
         }
         public static void Delete(object value)
         {
-            Context context = new Context();
-            var cpu = context.PCs.Find(value);
-            context.PCs.Remove(cpu);
-            context.SaveChanges();
+            using (Context context = new Context())
+            {
+                var pc = context.PCs.Find(value);
+                context.PCs.Remove(pc);
+                context.SaveChanges();
+            }
+                
+        }
+
+        internal static void ChangeStatus(int v, Status status)
+        {
+            using (Context context = new Context())
+            {
+                var pc = context.PCs.Find(v);
+                pc.Status = status;
+                context.SaveChanges();
+            }
         }
     }
 }

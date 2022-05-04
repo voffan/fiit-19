@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace CoCo.Forms
 {
@@ -52,5 +53,6 @@ namespace CoCo.Forms
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
         }
+
     }
 }

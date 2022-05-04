@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
@@ -26,6 +22,6 @@ namespace CoCo.Classes
         public DateTime BegginingDate { get; set; }
         public DateTime? EndDate { get; set; }
         [MaxLength(300)]
-        public String Cause { get; set; }
+        public string Cause { get; set; }
     }
 }

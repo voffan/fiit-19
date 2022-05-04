@@ -33,6 +33,7 @@ namespace CoCo
             this.button1 = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.repair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +73,22 @@ namespace CoCo
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // repair
+            // 
+            this.repair.Location = new System.Drawing.Point(352, 354);
+            this.repair.Name = "repair";
+            this.repair.Size = new System.Drawing.Size(139, 23);
+            this.repair.TabIndex = 5;
+            this.repair.Text = "Отправить на ремонт";
+            this.repair.UseVisualStyleBackColor = true;
+            this.repair.Click += new System.EventHandler(this.repair_Click);
+            // 
             // Form_Pcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 388);
+            this.Controls.Add(this.repair);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button1);
@@ -96,5 +108,6 @@ namespace CoCo
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button repair;
     }
 }
