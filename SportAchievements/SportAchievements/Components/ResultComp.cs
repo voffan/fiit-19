@@ -10,7 +10,7 @@ namespace SportAchievements.Components
 {
     class ResultComp
     {
-        public static Result AddResult()
+        public static Result AddResult(string name, string comp, KindOfSport kind, WeightCategory weight)
         {
             using (Context c = new Context())
             { 
