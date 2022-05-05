@@ -24,6 +24,7 @@ namespace SiliconValley.Список_картин
             using (Context context = new Context())
             {
                 dataGridView1.DataSource = context.Pictures.Include("Placement").Include("Genre").Include("Artist").ToList();
+                dataGridView1.Columns["Date"].DefaultCellStyle.Format = "yyyy";
             }
         }
 

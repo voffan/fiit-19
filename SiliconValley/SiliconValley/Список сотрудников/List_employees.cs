@@ -26,6 +26,7 @@ namespace SiliconValley.Список_сотрдников
             using (Context context = new Context())
             {
                 gridEmployee.DataSource = context.Employees.ToList();
+                gridEmployee.Columns["Birthday"].DefaultCellStyle.Format = "MM/dd/yyyy";
             }
 
             //DescriptionViewInTable();
