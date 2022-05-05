@@ -10,13 +10,15 @@ namespace CoCo.Classes
     {
         public static void DepartmentAdd(string name) 
         {
-            Context context = new Context();
-            Department dep = new Department
+            using (Context context = new Context())
             {
-                Name = name
-            };
-            context.Departments.Add(dep);
-            context.SaveChanges();
+                Department dep = new Department
+                {
+                    Name = name
+                };
+                context.Departments.Add(dep);
+                context.SaveChanges();
+            }
         }
 
         public static void DepartmentChange(string name, object depId)
@@ -32,10 +34,12 @@ namespace CoCo.Classes
 
         public static void Delete(object value)
         {
-            Context context = new Context();
-            var dep = context.Departments.Find(value);
-            context.Departments.Remove(dep);
-            context.SaveChanges();
+            using (Context context = new Context())
+            {
+                var dep = context.Departments.Find(value);
+                context.Departments.Remove(dep);
+                context.SaveChanges();
+            }
         }
     }
 }
