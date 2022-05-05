@@ -173,6 +173,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_pictures";
             this.Text = "Form_pictures";
             this.Load += new System.EventHandler(this.Form_pictures_Load);

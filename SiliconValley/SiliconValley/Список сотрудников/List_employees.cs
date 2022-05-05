@@ -87,7 +87,7 @@ namespace SiliconValley.Список_сотрдников
         {
             using (Context db = new Context())
             {
-                gridEmployee.DataSource = db.Employees.Where(d => d.Login.Contains(textBox1.Text)).ToList();
+                gridEmployee.DataSource = db.Employees.Where(d => d.Surname.Contains(textBox1.Text) || d.Name.Contains(textBox1.Text)).ToList();
             }
         }
     }

@@ -33,6 +33,7 @@ namespace SiliconValley.Список_выставок
             this.ChangeExpo = new System.Windows.Forms.Button();
             this.DeleteExpo = new System.Windows.Forms.Button();
             this.AddExpo = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridExpo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@ namespace SiliconValley.Список_выставок
             // 
             // ChangeExpo
             // 
-            this.ChangeExpo.Location = new System.Drawing.Point(12, 51);
+            this.ChangeExpo.Location = new System.Drawing.Point(12, 92);
             this.ChangeExpo.Name = "ChangeExpo";
             this.ChangeExpo.Size = new System.Drawing.Size(159, 30);
             this.ChangeExpo.TabIndex = 4;
@@ -59,7 +60,7 @@ namespace SiliconValley.Список_выставок
             // 
             // DeleteExpo
             // 
-            this.DeleteExpo.Location = new System.Drawing.Point(12, 87);
+            this.DeleteExpo.Location = new System.Drawing.Point(12, 128);
             this.DeleteExpo.Name = "DeleteExpo";
             this.DeleteExpo.Size = new System.Drawing.Size(159, 30);
             this.DeleteExpo.TabIndex = 5;
@@ -69,7 +70,7 @@ namespace SiliconValley.Список_выставок
             // 
             // AddExpo
             // 
-            this.AddExpo.Location = new System.Drawing.Point(12, 12);
+            this.AddExpo.Location = new System.Drawing.Point(12, 53);
             this.AddExpo.Name = "AddExpo";
             this.AddExpo.Size = new System.Drawing.Size(159, 30);
             this.AddExpo.TabIndex = 6;
@@ -77,11 +78,21 @@ namespace SiliconValley.Список_выставок
             this.AddExpo.UseVisualStyleBackColor = true;
             this.AddExpo.Click += new System.EventHandler(this.AddExpo_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(159, 26);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // List_expos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.AddExpo);
             this.Controls.Add(this.DeleteExpo);
             this.Controls.Add(this.ChangeExpo);
@@ -91,6 +102,7 @@ namespace SiliconValley.Список_выставок
             this.Load += new System.EventHandler(this.List_expos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridExpo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -99,5 +111,6 @@ namespace SiliconValley.Список_выставок
         private System.Windows.Forms.Button ChangeExpo;
         private System.Windows.Forms.Button DeleteExpo;
         private System.Windows.Forms.Button AddExpo;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
