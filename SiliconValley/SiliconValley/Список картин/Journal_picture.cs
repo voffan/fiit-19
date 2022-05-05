@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SiliconValley.Список_картин
@@ -18,8 +14,14 @@ namespace SiliconValley.Список_картин
         {
             InitializeComponent();
 
+
             this.pictureId = id;
-            this.placementId = ListsComponent.GetObjById<Picture>(pictureId).PlacementId;
+
+            Picture journal = ListsComponent.GetObjById<Picture>(pictureId);
+
+            this.placementId = journal.PlacementId;
+
+            Text = "История картины " + journal.Name;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,36 +40,38 @@ namespace SiliconValley.Список_картин
             ShowHistoryMovement();
         }
 
-
         void ShowHistoryMovement()
         {
-            listBox1.Items.Clear();
-
             Context c = new Context();
 
-            var list = from obj in c.Journals
-                        where obj.PictureId == pictureId
-                        select new
-                        {
-                            fromId = obj.FromID,
-                            toId = obj.ToID
+            var list = from move in c.Journals
+                       join emp in c.Employees
+                       on move.EmployeeId equals emp.Id
+                       where move.PictureId == pictureId
+                       select new
+                       {
+                           Из = ListsComponent.GetObjById<Placement>(move.FromID).Name,
+                           В = ListsComponent.GetObjById<Placement>(move.ToID).Name,
+                           Дата = move.Date,
+                           Логин = emp.Login
                         }
                         ;
 
-            foreach (var item in list)
+            /*foreach (var item in list)
             {
-                int fromId = item.fromId;
-                int toId = item.toId;
+                int fromId = item.FromID;
+                int toId = item.ToID;
 
                 Placement placeFrom = ListsComponent.GetObjById<Placement>(fromId);
                 Placement placeTo = ListsComponent.GetObjById<Placement>(toId);
 
                 string currentItem = placeFrom.Name + " -> " + placeTo.Name;
                 listBox1.Items.Add(currentItem);
-            }
+            }*/
 
-            
+            dataGridView1.DataSource = list.ToList();
         }
 
+        
     }
 }

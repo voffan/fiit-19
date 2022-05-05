@@ -1,12 +1,4 @@
-﻿using SiliconValley.Список_Жанров;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace SiliconValley.Список_сотрудников
@@ -70,9 +62,14 @@ namespace SiliconValley.Список_сотрудников
 
                 Employee employee = ListsComponent.GetObjById<Employee>(id);
 
+                surnameTextBox.Text = employee.Surname;
+                nameTextBox.Text = employee.Name;
+                patronymicTextBox.Text = employee.Patronymic;
+
                 textBox1.Text = employee.Login;
                 textBox2.Text = employee.Password;
                 textBox3.Text = employee.PhoneNumber;
+
                 dateTimePicker1.Value = employee.Birthday;
                 comboBox1.SelectedItem = employee.Position;
                 comboBox2.SelectedItem = employee.Education;
@@ -83,6 +80,10 @@ namespace SiliconValley.Список_сотрудников
         void AddEmployee()
         {
             Employee employee = new Employee();
+
+            employee.Surname = surnameTextBox.Text;
+            employee.Name = nameTextBox.Text;
+            employee.Patronymic = patronymicTextBox.Text;
 
             employee.Login = textBox1.Text;
             employee.Password = textBox2.Text;
@@ -99,6 +100,10 @@ namespace SiliconValley.Список_сотрудников
         void ChangeEmployee()
         {
             Employee employee = ListsComponent.GetObjById<Employee>(id);
+
+            employee.Surname = surnameTextBox.Text;
+            employee.Name = nameTextBox.Text;
+            employee.Patronymic = patronymicTextBox.Text;
 
             employee.Login = textBox1.Text;
             employee.Password = textBox2.Text;

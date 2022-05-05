@@ -44,9 +44,11 @@ namespace SiliconValley.Список_выставок
         {
             Expo expo = new Expo();
             expo.Name = textBox1.Text;
+
             expo.Address = textBox2.Text;
             expo.Start = dateTimePicker1.Value;
             expo.End = dateTimePicker2.Value;
+
             ListsComponent.Add(expo);
         }
 
@@ -55,6 +57,7 @@ namespace SiliconValley.Список_выставок
             Expo expo = ListsComponent.GetObjById<Expo>(id);
             expo.Name = textBox1.Text;
             expo.Address = textBox2.Text;
+
             ListsComponent.Edit(expo);
         }
         private void Form_expos_Load(object sender, EventArgs e)
