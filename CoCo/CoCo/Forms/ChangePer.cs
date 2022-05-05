@@ -25,7 +25,7 @@ namespace CoCo.Forms
             string name = textBox1.Text;
             string manu = textBox2.Text;
             string empl = comboBox1.Text;
-            PeripheralLogic.PeripheralChange(name, manu, emplId);
+            //PeripheralLogic.PeripheralChange(name, manu, emplId);
             Close();
         }
 
