@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoCo.Classes
 {
@@ -15,7 +16,8 @@ namespace CoCo.Classes
     }
     public class Repair
     {
-        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
         public int DeviceId { get; set; }
         public virtual Device Device { get; set; }
         public RepairStatus Status { get; set; }

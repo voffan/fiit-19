@@ -15,21 +15,21 @@ namespace CoCo.Classes
             Repair repair = new Repair
             {
                 Status = 0,
-                DeviceId = id,
+                //DeviceId = id,
                 Cause = cause,
                 BegginingDate = DateTime.Today
             };
             Context context = new Context();
-            context.Repairs.Add(repair);
-            context.SaveChanges();
+                context.Repairs.Add(repair);
+                context.SaveChanges();
         }
 
         internal static void Delete(object value)
         {
             Context context = new Context();
-            var cpu = context.Repairs.Find((int)value);
-            context.Repairs.Remove(cpu);
-            context.SaveChanges();
+                var cpu = context.Repairs.Find((int)value);
+                context.Repairs.Remove(cpu);
+                context.SaveChanges();
         }
     }
 }

@@ -295,6 +295,18 @@
     <Compile Include="Migrations\202204070216082_fourth.designer.cs">
       <DependentUpon>202204070216082_fourth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205050343403_fifth.cs" />
+    <Compile Include="Migrations\202205050343403_fifth.designer.cs">
+      <DependentUpon>202205050343403_fifth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205050344292_sixth.cs" />
+    <Compile Include="Migrations\202205050344292_sixth.designer.cs">
+      <DependentUpon>202205050344292_sixth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205050352109_7.cs" />
+    <Compile Include="Migrations\202205050352109_7.designer.cs">
+      <DependentUpon>202205050352109_7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -369,6 +381,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204070216082_fourth.resx">
       <DependentUpon>202204070216082_fourth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205050343403_fifth.resx">
+      <DependentUpon>202205050343403_fifth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205050344292_sixth.resx">
+      <DependentUpon>202205050344292_sixth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205050352109_7.resx">
+      <DependentUpon>202205050352109_7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
