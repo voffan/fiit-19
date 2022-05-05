@@ -38,7 +38,7 @@ namespace SiliconValley
             try
             {
                 Auth.Check(login, pass);
-                MessageBox.Show("Вы успешно авторизовались!");
+                //MessageBox.Show("Вы успешно авторизовались!");
             }
             catch(Exception error)
             {

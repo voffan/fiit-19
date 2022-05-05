@@ -14,7 +14,7 @@ using SiliconValley.Авторизация;
 using SiliconValley.Список_сотрдников;
 using SiliconValley.Список_выставок;
 using SiliconValley.Список_отделов;
-
+using SiliconValley.Статистика;
 
 namespace SiliconValley
 {
@@ -77,8 +77,14 @@ namespace SiliconValley
 
         void CheckAccess()
         {
-            if (Position.Admin == Auth.User?.Position) {
+            if (Position.Admin == Auth.User?.Position) 
+            {
                 listEmployeeToolStripMenuItem.Visible = true;
+            }
+
+            if (Position.Director == Auth.User?.Position)
+            {
+                отчетToolStripMenuItem.Visible = true;
             }
         }
 
@@ -107,6 +113,14 @@ namespace SiliconValley
             if (Application.OpenForms["list"] != null)
                 ActiveMdiChild.Close();
             listDeps.Show();
+        }
+
+        private void отчетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Statistic stat = new Statistic();
+
+            stat.MdiParent = this;
+            stat.Show();
         }
     }
 }

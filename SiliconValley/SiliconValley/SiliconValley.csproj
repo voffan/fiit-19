@@ -294,6 +294,12 @@
     <Compile Include="Список_отделов\List_departments.Designer.cs">
       <DependentUpon>List_departments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Статистика\Statistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Статистика\Statistic.Designer.cs">
+      <DependentUpon>Statistic.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Список_отделов\List_departments.resx">
       <DependentUpon>List_departments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Статистика\Statistic.resx">
+      <DependentUpon>Statistic.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
