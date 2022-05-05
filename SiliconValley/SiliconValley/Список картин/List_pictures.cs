@@ -23,6 +23,18 @@ namespace SiliconValley.Список_картин
         {
             using (Context context = new Context())
             {
+                comboBox1.DataSource = context.Placements.ToList();
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "Id";
+
+                comboBox2.DataSource = context.Genres.ToList();
+                comboBox2.DisplayMember = "Name";
+                comboBox2.ValueMember = "Id";
+
+                comboBox3.DataSource = context.Artists.ToList();
+                comboBox3.DisplayMember = "Name";
+                comboBox3.ValueMember = "Id";
+
                 dataGridView1.DataSource = context.Pictures.Include("Placement").Include("Genre").Include("Artist").ToList();
                 dataGridView1.Columns["Date"].DefaultCellStyle.Format = "yyyy";
             }
@@ -83,7 +95,133 @@ namespace SiliconValley.Список_картин
         {
             using (Context db = new Context())
             {
-                dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text)).ToList();
+                if (comboBox1.Visible == true)
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text) && d.Placement.Equals(comboBox1.SelectedItem)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+                else if (comboBox2.Visible == true)
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text) && d.Genre.Equals(comboBox2.SelectedItem)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+                else if (comboBox3.Visible == true)
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text) && d.Artist.Equals(comboBox3.SelectedItem)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+                else
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text)).Include("Placement").Include("Genre").Include("Artist").ToList();
+            }
+        }
+
+        private void filterBtn_Click(object sender, EventArgs e)
+        {
+            if(label1.Visible == true)
+            {
+                label1.Visible = false;
+                label2.Visible = false;
+                label3.Visible = false;
+                comboBox1.Visible = false;
+                comboBox2.Visible = false;
+                comboBox3.Visible = false;
+                using (var db = new Context())
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+            }
+            else
+            {
+                label1.Visible = true;
+                label2.Visible = true;
+                label3.Visible = true;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            if(comboBox1.Visible == true)
+            {
+                using (Context db = new Context())
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+                comboBox1.Visible = false;
+            }
+            else
+            {
+                using (Context db = new Context())
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text) && d.Placement.Equals(comboBox1.SelectedItem)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+                comboBox1.Visible = true;
+                comboBox2.Visible = false;
+                comboBox3.Visible = false;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.Visible == true)
+            {
+                using (Context db = new Context())
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+                comboBox2.Visible = false;
+            }
+            else
+            {
+                using (Context db = new Context())
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text) && d.Genre.Equals(comboBox2.SelectedItem)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+                comboBox2.Visible = true;
+                comboBox1.Visible = false;
+                comboBox3.Visible = false;
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            if (comboBox3.Visible == true)
+            {
+                using (Context db = new Context())
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+                comboBox3.Visible = false;
+            }
+            else
+            {
+                using (Context db = new Context())
+                {
+                    dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text) && d.Artist.Equals(comboBox3.SelectedItem)).Include("Placement").Include("Genre").Include("Artist").ToList();
+                }
+                comboBox3.Visible = true;
+                comboBox1.Visible = false;
+                comboBox2.Visible = false;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text) && d.Placement.Equals(comboBox1.SelectedItem)).Include("Placement").Include("Genre").Include("Artist").ToList();
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text) && d.Genre.Equals(comboBox2.SelectedItem)).Include("Placement").Include("Genre").Include("Artist").ToList();
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                dataGridView1.DataSource = db.Pictures.Where(d => d.Name.Contains(textBox1.Text) && d.Artist.Equals(comboBox3.SelectedItem)).Include("Placement").Include("Genre").Include("Artist").ToList();
             }
         }
     }
