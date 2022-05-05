@@ -55,5 +55,37 @@ namespace CoCo
                 initTable();
                 
         }
+
+        private void textChange()
+        {
+            Context context = new Context();
+          
+
+                dataGridView1.DataSource = context.Peripherals.Where(h =>
+                h.Name.Contains(textBox1.Text) &&
+                h.Manufacturer.Contains(textBox2.Text) &&
+                h.Employee.FullName.Contains(textBox3.Text)).ToList();
+           
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

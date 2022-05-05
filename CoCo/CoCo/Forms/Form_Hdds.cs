@@ -62,13 +62,30 @@ namespace CoCo
                 initTable();
             }
         }
+        private void textChange()
+        {
+            using (Context context = new Context())
+            {
+                dataGridView1.DataSource = context.Hdds.Where(h => 
+                h.Name.Contains(textBox1.Text) && 
+                h.Manufacturer.Contains(textBox3.Text)&& 
+                h.Volume.ToString().Contains(textBox2.Text)).ToList();
+            }
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            using(Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Hdds.Where(h => h.Name.Contains(textBox1.Text)).ToList();
-            }
+            textChange();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
         }
     }
 }

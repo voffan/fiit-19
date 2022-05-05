@@ -43,5 +43,16 @@ namespace CoCo.Classes
                 context.SaveChanges();
             }
         }
+
+        //static void Search()
+        //{
+        //    Context context = new Context();
+        //    dataGridView1.DataSource = context.PCs.Where(h =>
+        //   h.Hdd.Name.Contains(textBox1.Text) &&
+        //   h.Cpu.Name.Contains(textBox2.Text) &&
+        //   h.Motherboard.Name.Contains(textBox3.Text) &&
+        //   h.Employee.FullName.Contains(textBox4.Text)
+        //   ).ToList();
+        //}
     }
 }

@@ -40,25 +40,25 @@ namespace CoCo.Forms
                 }
                 else try
                     {
-                        int empl_id = Convert.ToInt32(textBox2.Text);
+                        //int empl_id = comboBox1.SelectedValue;
                         try
                         {
-                            PeripheralLogic.Add(textBox1.Text, textBox2.Text, empl_id);
+                            PeripheralLogic.Add(textBox1.Text, textBox2.Text, (int)comboBox1.SelectedValue);
                             Close();
                         }
                         catch
                         {
                             MessageBox.Show(
-                    "Ошибка сервера",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                            "Ошибка сервера",
+                            "Сообщение",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                         }
                     }
                     catch
                     {
                         MessageBox.Show(
-                        "Неверный формат ввода частоты",
+                        "Неизвестная ошибка",
                         "Сообщение",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);

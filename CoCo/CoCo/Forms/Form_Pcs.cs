@@ -57,14 +57,9 @@ namespace CoCo
                 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.PCs.Where(h => h.Hdd.Name.Contains(textBox1.Text)).ToList();
-            }
-        }
+       
 
+       
         private void repair_Click(object sender, EventArgs e)
         {
                 List<int> ids = new List<int>();
@@ -79,6 +74,36 @@ namespace CoCo
                 addRepair.FormClosing += MdiChildClose;
                 addRepair.Show();
                 initTable();
+        }
+
+
+        private void textChange()
+        {
+            Context context = new Context();
+            dataGridView1.DataSource = context.PCs.Where(h => 
+            h.Hdd.Name.Contains(textBox1.Text) && 
+            h.Cpu.Name.Contains(textBox2.Text) && 
+            h.Motherboard.Name.Contains(textBox3.Text)&&
+            h.Employee.FullName.Contains(textBox4.Text)
+            ).ToList();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
         }
     }
 }
