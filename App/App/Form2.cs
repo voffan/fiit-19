@@ -22,9 +22,8 @@ namespace App
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Context con = new Context();
-            dataGridView1.DataSource = con.Orders.ToList();
-
+            cat = 1;
+            InitTable();
         }
 
         private void закрытьToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -45,34 +44,62 @@ namespace App
         private void жанрыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cat = 4;
-            Context con = new Context();
-            dataGridView1.DataSource = con.Genres.ToList();
+            InitTable();
         }
 
         private void дискиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Context con = new Context();
-            dataGridView1.DataSource = con.Disks.ToList();
+            cat = 3;
+            InitTable();
         }
 
         private void клиентыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Context con = new Context();
-            dataGridView1.DataSource = con.Clients.ToList();
+            cat = 2;
+            InitTable();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             switch (cat)
             {
-                case 4: Form3 form3 = new Form3(); form3.Show(); break;
-                case 1: Form4 form4 = new Form4(); form4.Show(); break;
-            }     
+                case 4: Form3 form3 = new Form3(); form3.ShowDialog(); break;
+                case 1: Form4 form4 = new Form4(); form4.ShowDialog(); break;
+                case 5: Form5 form5 = new Form5(); form5.ShowDialog(); break;
+            }
+            InitTable();
         }
 
         private void сотрудникиToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             cat = 1;
+            InitTable();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void InitTable()
+        {
+            using (Context con = new Context())
+            {
+                switch (cat)
+                {
+                    case 4: dataGridView1.DataSource = con.Genres.ToList(); break;
+                    case 1: dataGridView1.DataSource = con.Orders.ToList(); break;
+                    case 2: dataGridView1.DataSource = con.Clients.ToList();break;
+                    case 3: dataGridView1.DataSource = con.Disks.ToList(); break;
+                    case 5: dataGridView1.DataSource = con.Humen.ToList(); break;
+                }
+            }
+        }
+
+        private void фИОToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cat = 5;
+            InitTable();
         }
     }
 }

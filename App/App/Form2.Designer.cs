@@ -38,8 +38,12 @@ namespace App
             this.сотрудникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.дискиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.жанрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.фИОToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.черныйСписокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.данныеКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -104,12 +108,16 @@ namespace App
             // сотрудникиToolStripMenuItem1
             // 
             this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
-            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
             this.сотрудникиToolStripMenuItem1.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem1_Click);
             // 
             // клиентыToolStripMenuItem
             // 
+            this.клиентыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.фИОToolStripMenuItem,
+            this.черныйСписокToolStripMenuItem,
+            this.данныеКлиентаToolStripMenuItem});
             this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
             this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.клиентыToolStripMenuItem.Text = "Клиенты";
@@ -118,9 +126,16 @@ namespace App
             // дискиToolStripMenuItem
             // 
             this.дискиToolStripMenuItem.Name = "дискиToolStripMenuItem";
-            this.дискиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.дискиToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.дискиToolStripMenuItem.Text = "Диски";
             this.дискиToolStripMenuItem.Click += new System.EventHandler(this.дискиToolStripMenuItem_Click);
+            // 
+            // жанрыToolStripMenuItem
+            // 
+            this.жанрыToolStripMenuItem.Name = "жанрыToolStripMenuItem";
+            this.жанрыToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.жанрыToolStripMenuItem.Text = "Жанры";
+            this.жанрыToolStripMenuItem.Click += new System.EventHandler(this.жанрыToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -132,12 +147,34 @@ namespace App
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // жанрыToolStripMenuItem
+            // button2
             // 
-            this.жанрыToolStripMenuItem.Name = "жанрыToolStripMenuItem";
-            this.жанрыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.жанрыToolStripMenuItem.Text = "Жанры";
-            this.жанрыToolStripMenuItem.Click += new System.EventHandler(this.жанрыToolStripMenuItem_Click);
+            this.button2.Location = new System.Drawing.Point(148, 382);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(146, 56);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // фИОToolStripMenuItem
+            // 
+            this.фИОToolStripMenuItem.Name = "фИОToolStripMenuItem";
+            this.фИОToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.фИОToolStripMenuItem.Text = "ФИО";
+            this.фИОToolStripMenuItem.Click += new System.EventHandler(this.фИОToolStripMenuItem_Click);
+            // 
+            // черныйСписокToolStripMenuItem
+            // 
+            this.черныйСписокToolStripMenuItem.Name = "черныйСписокToolStripMenuItem";
+            this.черныйСписокToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.черныйСписокToolStripMenuItem.Text = "Черный список";
+            // 
+            // данныеКлиентаToolStripMenuItem
+            // 
+            this.данныеКлиентаToolStripMenuItem.Name = "данныеКлиентаToolStripMenuItem";
+            this.данныеКлиентаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.данныеКлиентаToolStripMenuItem.Text = "Данные клиента";
             // 
             // Form2
             // 
@@ -145,6 +182,7 @@ namespace App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
@@ -173,5 +211,9 @@ namespace App
         private System.Windows.Forms.ToolStripMenuItem дискиToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem жанрыToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem фИОToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem черныйСписокToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem данныеКлиентаToolStripMenuItem;
     }
 }
