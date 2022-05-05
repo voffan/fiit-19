@@ -106,5 +106,20 @@ namespace SportAchievements
                 }
             }*/
         }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            using(Context c = new Context())
+            {
+                if (searchTextBox.Text.Length > 0)
+                {
+                    dataGridView1.DataSource = c.Competitions.Include("Type").Where(o => o.Name.Contains(searchTextBox.Text)).ToList();
+                }
+                else
+                {
+                    dataGridView1.DataSource = c.Competitions.Include("Type").ToList();
+                }
+            }
+        }
     }
 }
