@@ -64,5 +64,13 @@ namespace SiliconValley.Список_отделов
                 dataGridView1.DataSource = db.Departments.ToList();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                dataGridView1.DataSource = db.Departments.Where(d=>d.Name.Contains(textBox1.Text)).ToList();
+            }
+        }
     }
 }

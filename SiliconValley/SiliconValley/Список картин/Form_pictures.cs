@@ -28,8 +28,6 @@ namespace SiliconValley.Список_картин
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
 
-            
-            
             using (var db = new Context())
             {
                 comboBox1.DataSource = db.Placements.ToList();

@@ -17,7 +17,6 @@ namespace SiliconValley.Список_выставок
         public Form_expos(string labelText, string buttonText)
         {
             InitializeComponent();
-
             Text = labelText;
             button1.Text = buttonText;
         }
@@ -32,14 +31,12 @@ namespace SiliconValley.Список_выставок
             if (button1.Text == "Добавить")
             {
                 AddExpos();
-
                 Close();
             }
 
             if (button1.Text == "Изменить")
             {
                 ChangeExpo();
-
                 Close();
             }
         }

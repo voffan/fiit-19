@@ -67,5 +67,13 @@ namespace SiliconValley.Список_выставок
                 GridExpo.DataSource = db.Expos.ToList();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                GridExpo.DataSource = db.Expos.Where(d => d.Name.Contains(textBox1.Text)).ToList();
+            }
+        }
     }
 }

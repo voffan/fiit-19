@@ -63,5 +63,13 @@ namespace SiliconValley.Список_авторов
                 dataGridView1.DataSource = db.Artists.ToList();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                dataGridView1.DataSource = db.Artists.Where(d => d.Name.Contains(textBox1.Text)).ToList();
+            }
+        }
     }
 }

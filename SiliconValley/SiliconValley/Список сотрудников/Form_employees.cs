@@ -18,11 +18,6 @@ namespace SiliconValley.Список_сотрудников
             this.id = id;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form_employees_Load(object sender, EventArgs e)
         {
             InitForm();

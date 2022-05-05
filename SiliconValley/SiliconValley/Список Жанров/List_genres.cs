@@ -63,5 +63,13 @@ namespace SiliconValley.Список_Жанров
                 gridGenre.DataSource = db.Genres.ToList();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                gridGenre.DataSource = db.Genres.Where(d => d.Name.Contains(textBox1.Text)).ToList();
+            }
+        }
     }
 }

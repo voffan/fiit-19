@@ -26,6 +26,7 @@ namespace SiliconValley.Список_сотрдников
             using (Context context = new Context())
             {
                 gridEmployee.DataSource = context.Employees.ToList();
+                gridEmployee.Columns["Birthday"].DefaultCellStyle.Format = "MM/dd/yyyy";
             }
 
             //DescriptionViewInTable();
@@ -67,13 +68,8 @@ namespace SiliconValley.Список_сотрдников
 
             using (Context db = new Context())
             {
-                gridEmployee.DataSource = db.Genres.ToList();
+                gridEmployee.DataSource = db.Employees.ToList();
             }
-        }
-
-        private void gridEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         void DescriptionViewInTable()
@@ -85,6 +81,14 @@ namespace SiliconValley.Список_сотрдников
 
                 Education edu = (Education)Enum.Parse(typeof(Education), gridEmployee.Rows[i].Cells[6].Value.ToString());
                 //gridEmployee.Rows[i].Cells[6].Value = edu.GetDescription();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (Context db = new Context())
+            {
+                gridEmployee.DataSource = db.Employees.Where(d => d.Surname.Contains(textBox1.Text) || d.Name.Contains(textBox1.Text)).ToList();
             }
         }
     }
