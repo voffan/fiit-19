@@ -14,7 +14,7 @@ namespace SportAchievements.ResultBtns
 {
     public partial class AddResult : Form
     {
-        
+        Context c;
         public AddResult()
         {
             
@@ -24,7 +24,7 @@ namespace SportAchievements.ResultBtns
 
         private void AddResult_Load(object sender, EventArgs e)
         {
-            Context c = new Context();
+            c = new Context();
             
 
             sportsman.DataSource = c.Sportsmen.ToList();
@@ -63,17 +63,19 @@ namespace SportAchievements.ResultBtns
 
         private void Add_Click(object sender, EventArgs e)
         {
-            if (numericUpDown1.Value.ToString() != "" && numericUpDown2.Value.ToString() != "")
+            if (Place.Value.ToString() != "" && Points.Value.ToString() != "")
             {
                 try
                 {
-
+                    ResultComp.AddResult((int)Place.Value, (int)Points.Value, (int)sportsman.SelectedValue, (int)competition.SelectedValue, (int)vitsporta.SelectedValue, (int)vesovkat.SelectedValue);
+                    Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
             }
+            else MessageBox.Show("Заполните все поля!");
         }
 
         private void Cancel_Click(object sender, EventArgs e)

@@ -31,7 +31,8 @@ namespace SportAchievements.Links
         private void InitTable()
         {
             Context c = new Context();
-            dataGridView1.DataSource = c.Results.ToList();
+            dataGridView1.DataSource = c.Results.Include("WeightCategory").ToList();
+
         }
 
         private void AddRes_Click(object sender, EventArgs e)
@@ -43,7 +44,24 @@ namespace SportAchievements.Links
 
         private void EdRes_Click(object sender, EventArgs e)
         {
+            int id = -1;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+            }
+            else if (dataGridView1.SelectedCells.Count > 0)
+            {
+                id = Convert.ToInt32(dataGridView1.SelectedCells[0].OwningRow.Cells[0].Value);
+            }
+            else
+            {
+                MessageBox.Show("Выберите строку или ячейку!");
+                return;
+            }
 
+            EditResult result = new EditResult(id);
+            result.ShowDialog();
+            InitTable();
         }
 
         private void DelRes_Click(object sender, EventArgs e)

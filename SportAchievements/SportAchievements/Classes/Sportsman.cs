@@ -22,5 +22,9 @@ namespace SportAchievements.Classes
         public Gender Gender { get; set; }
         public int? WeightCategoryId { get; set; }
         public virtual WeightCategory Weight { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

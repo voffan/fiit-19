@@ -33,5 +33,10 @@ namespace SportAchievements.Classes
         public virtual CompType Type { get; set; }
         public virtual List<Employee> Employee { get; set; }
         public virtual List<KindOfSport> KindOfSports { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

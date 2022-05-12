@@ -186,6 +186,12 @@
     <Compile Include="ResultBtns\AddResult.Designer.cs">
       <DependentUpon>AddResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultBtns\EditResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultBtns\EditResult.Designer.cs">
+      <DependentUpon>EditResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="SportsmanBtns\AddSportsman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResultBtns\AddResult.resx">
       <DependentUpon>AddResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultBtns\EditResult.resx">
+      <DependentUpon>EditResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SportsmanBtns\AddSportsman.resx">
       <DependentUpon>AddSportsman.cs</DependentUpon>

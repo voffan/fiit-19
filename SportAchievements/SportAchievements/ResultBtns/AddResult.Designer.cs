@@ -37,14 +37,14 @@ namespace SportAchievements.ResultBtns
             this.vitsporta = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.vesovkat = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.Place = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.Points = new System.Windows.Forms.NumericUpDown();
             this.Add = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Place)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Points)).BeginInit();
             this.SuspendLayout();
             // 
             // sportsman
@@ -116,18 +116,18 @@ namespace SportAchievements.ResultBtns
             this.vesovkat.Size = new System.Drawing.Size(308, 21);
             this.vesovkat.TabIndex = 7;
             // 
-            // numericUpDown1
+            // Place
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(12, 260);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.Place.Location = new System.Drawing.Point(12, 260);
+            this.Place.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(153, 20);
-            this.numericUpDown1.TabIndex = 8;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.Place.Name = "Place";
+            this.Place.Size = new System.Drawing.Size(153, 20);
+            this.Place.TabIndex = 8;
+            this.Place.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -151,12 +151,12 @@ namespace SportAchievements.ResultBtns
             this.label6.TabIndex = 10;
             this.label6.Text = "Баллы";
             // 
-            // numericUpDown2
+            // Points
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(12, 310);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(153, 20);
-            this.numericUpDown2.TabIndex = 11;
+            this.Points.Location = new System.Drawing.Point(12, 310);
+            this.Points.Name = "Points";
+            this.Points.Size = new System.Drawing.Size(153, 20);
+            this.Points.TabIndex = 11;
             // 
             // Add
             // 
@@ -185,10 +185,10 @@ namespace SportAchievements.ResultBtns
             this.ClientSize = new System.Drawing.Size(332, 399);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Add);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.Points);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.Place);
             this.Controls.Add(this.vesovkat);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.vitsporta);
@@ -200,8 +200,8 @@ namespace SportAchievements.ResultBtns
             this.Name = "AddResult";
             this.Text = "AddResult";
             this.Load += new System.EventHandler(this.AddResult_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Place)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Points)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,10 +217,10 @@ namespace SportAchievements.ResultBtns
         private System.Windows.Forms.ComboBox vitsporta;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox vesovkat;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown Place;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown Points;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Button Cancel;
     }
