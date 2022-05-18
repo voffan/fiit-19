@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Aspose.Words;
+using Microsoft.Office.Interop.Word;
 
 namespace SiliconValley.Список_картин
 {
@@ -62,74 +62,86 @@ namespace SiliconValley.Список_картин
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CreateWordReport();
-        }
+            string filename = CreateWordReport();
 
-
-        void CreateWordReport()
-        {
-
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "Word File |*.docx;";
-            saveFileDialog1.Title = "Save an Image File";
-            saveFileDialog1.FileName = $"{Text}.docx";
-
-            if (saveFileDialog1.ShowDialog() != DialogResult.OK)
+            if (filename == null)
                 return;
 
-            Document doc = new Document();
-            doc.Watermark.Remove();
-            DocumentBuilder builder = new DocumentBuilder(doc);
+            Microsoft.Office.Interop.Word.Application application = null;
+            application = new Microsoft.Office.Interop.Word.Application();
+            var document = application.Documents.Add();
 
+            Table table = SettingsTable(application,document);
 
-            Font font = builder.Font;
-            font.Size = 16;
-            font.Bold = true;
-            font.Color = System.Drawing.Color.Black;
-            font.Name = "Times new roman";
-
-            // Insert text
-            builder.Writeln($"{Text}.\n");
-
-            CreateTableForWord(builder,font);
+            CreateTableForWord(table);
 
             try
             {
-                doc.Save($"{saveFileDialog1.FileName}");
-                
+                application.ActiveDocument.SaveAs(filename, WdSaveFormat.wdFormatDocumentDefault);//try
             }
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
                 return;
             }
+            document.Close();
 
             MessageBox.Show("Отчет создан");
         }
 
-        void CreateTableForWord(DocumentBuilder builder, Font font)
-        {
-            builder.StartTable();
 
+        string CreateWordReport()
+        {
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Word File |*.docx;";
+            saveFileDialog.Title = "Сохранить отчет";
+            saveFileDialog.FileName = $"{Text}.docx";
+
+            if (saveFileDialog.ShowDialog() != DialogResult.OK)
+                return null;
+            
+
+
+            return saveFileDialog.FileName;
+        }
+
+        Table SettingsTable(Microsoft.Office.Interop.Word.Application application, Document document)
+        {
+            var paragraph = document.Paragraphs.Add();
+            paragraph.Range.Font.Size = 20;
+            paragraph.Range.Bold = 1;
+            paragraph.Range.Text = $"{Text}\n";
+
+            Range tableLocation = document.Range(paragraph.Range.Start);
+            document.Tables.Add(tableLocation, dataGridView1.Rows.Count + 1, dataGridView1.Columns.Count);
+
+            document.Tables[1].Borders.InsideLineStyle = WdLineStyle.wdLineStyleSingle;
+            document.Tables[1].Borders.OutsideLineStyle = WdLineStyle.wdLineStyleSingle;
+
+            document.Tables[1].Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+
+            return document.Tables[1];
+        }
+        void CreateTableForWord(Table table)
+        {
             for (int j = 0; j < dataGridView1.Columns.Count; j++)//Создание заголовка
             {
-                builder.InsertCell();
-                builder.Write(dataGridView1.Columns[j].Name);
-            }
-            builder.EndRow();
+                table.Cell(1, j + 1).Range.Font.Bold = 1;
+                table.Cell(1, j + 1).Range.Font.Size = 16;
 
-            font.Size = 12;
+                table.Cell(1, j + 1).Range.Text = dataGridView1.Columns[j].Name;
+            }
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)//Создание таблицы
             {
                 for (int j = 0; j < dataGridView1.Columns.Count; j++)
                 {
-                    builder.InsertCell();
-                    builder.Write(dataGridView1.Rows[i].Cells[j].Value.ToString());
+                    table.Cell(i + 2, j + 1).Range.Font.Size = 12;
+                    table.Cell(i + 2, j + 1).Range.Font.Bold = 0;
+                    table.Cell(i+2,j+1).Range.Text = dataGridView1.Rows[i].Cells[j].Value.ToString();
                 }
-                builder.EndRow();
             }
-            builder.EndTable();
         }
     }
 }

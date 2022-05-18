@@ -54,7 +54,8 @@ namespace SiliconValley.Список_картин
             if (this.button1.Text == "Добавить") {
                 PictureComponent.Add(textBox1.Text, price, dateTimePicker1.Value, placement.Id, genre.Id, artist.Id);
             }
-            else if (this.button1.Text == "Изменить") {
+            else if (this.button1.Text == "Изменить") 
+            {
                 if (Index < 0) {
                     MessageBox.Show("");
                     this.Close();
@@ -72,7 +73,14 @@ namespace SiliconValley.Список_картин
                 textBox1.Text = p.Name;
                 textBox2.Text = p.Price.ToString();
                 dateTimePicker1.Value = p.Date;
-                //////// осталось инициализировать комбобоксы 1 2 3 чтобы сразу стояли значения выбранной картины
+
+                Placement placement = ListsComponent.GetObjById<Placement>(p.PlacementId);
+                Genre genre = ListsComponent.GetObjById<Genre>(p.GenreId);
+                Artist artist = ListsComponent.GetObjById<Artist>(p.ArtistId);
+                
+                comboBox1.Text = placement.Name;
+                comboBox2.Text = genre.Name;
+                comboBox3.Text = artist.Name;
             }
         }
     }
