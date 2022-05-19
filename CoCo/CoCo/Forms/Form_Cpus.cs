@@ -67,5 +67,17 @@ namespace CoCo
                 dataGridView1.DataSource = context.Cpus.Where(h => h.Name.Contains(textBox1.Text)).ToList();
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var CpuId = dataGridView1.SelectedCells[0].Value;
+            Hdd hdd = new Hdd();
+            ChangeHdd adh = new ChangeHdd(CpuId)
+            {
+                MdiParent = this.MdiParent
+            };
+            adh.FormClosing += MdiChildClose;
+            adh.Show();
+        }
     }
 }

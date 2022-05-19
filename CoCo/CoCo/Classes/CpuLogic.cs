@@ -25,5 +25,17 @@ namespace CoCo.Classes
             context.Hdds.Remove(cpu);
             context.SaveChanges();
         }
+
+        public static void CpuChange(string name, decimal freq, string manufacturer, object hddId)
+        {
+            using (var context = new Context())
+            {
+                Cpu cpu = context.Cpus.FirstOrDefault(x => x.Id == (int)hddId);
+                cpu.Name = name;
+                cpu.Frequency = freq;
+                cpu.Manufacturer = manufacturer;
+                context.SaveChanges();
+            }
+        }
     }
 }
