@@ -30,11 +30,13 @@ namespace SportAchievements.ResultBtns
 
         private void Save_Click(object sender, EventArgs e)
         {
+            int kindOfSportId = (from KindOfSport ks in vitsporta.Items where
+                                 ks.Name == vitsporta.SelectedValue.ToString() select ks.Id).FirstOrDefault();
             if (Place.Value.ToString() != "" && Points.Value.ToString() != "")
             {
                 try
                 {
-                    ResultComp.EditResult(Id, vitsporta.SelectedValue.ToString(), vesovkat.SelectedValue.ToString(), (int)Place.Value, (int)Points.Value);
+                    ResultComp.EditResult(Id, (int)vitsporta.SelectedValue, (int)vesovkat.SelectedValue, (int)Place.Value, (int)Points.Value);
                     Close();
                 }
                 catch (Exception ex)
@@ -47,15 +49,16 @@ namespace SportAchievements.ResultBtns
 
         private void EditResult_Load(object sender, EventArgs e)
         {
-            using (Context c = new Context())
-            {
-                vitsporta.DataSource = c.KindsOfSports.ToList();
-                vitsporta.DisplayMember = "Name";
-                vitsporta.ValueMember = "Id";
-                vesovkat.DataSource = c.WeightCategories.ToList();
-                vesovkat.DisplayMember = "Name";
-                vesovkat.ValueMember = "Id";
-            }
+            vitsporta.DataSource = (new Context()).KindsOfSports.ToList();
+            vitsporta.DisplayMember = "Name";
+            vitsporta.ValueMember = "Id";
+            vitsporta.SelectedItem = (from KindOfSport wc in vitsporta.Items where wc.Id == res.KindOfSportId select wc).FirstOrDefault();
+
+            vesovkat.DataSource = (new Context()).WeightCategories.ToList();
+            vesovkat.DisplayMember = "Name";
+            vesovkat.ValueMember = "Id";
+            vesovkat.SelectedItem = (from WeightCategory wc in vesovkat.Items where wc.Id == res.WeightCategoryId select wc).FirstOrDefault();
+
             Points.Value = res.Points;
             Place.Value = res.Place;
         }

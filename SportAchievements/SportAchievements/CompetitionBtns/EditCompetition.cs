@@ -32,9 +32,9 @@ namespace SportAchievements.CompetitionBtns
             {
                 listBox1.SelectionMode = SelectionMode.MultiExtended;
 
-                comboBox2.DataSource = c.CompTypes.ToList();
+                /*comboBox2.DataSource = c.CompTypes.ToList();
                 comboBox2.DisplayMember = "Name";
-                comboBox2.ValueMember = "Id";
+                comboBox2.ValueMember = "Id";*/
                 listBox1.DataSource = c.KindsOfSports.ToList();
                 listBox1.DisplayMember = "Name";
                 listBox1.ValueMember = "Id";

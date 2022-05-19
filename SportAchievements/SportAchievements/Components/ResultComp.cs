@@ -28,7 +28,7 @@ namespace SportAchievements.Components
             }
         }
 
-        public static Result EditResult(int Id, string kind, string weight,
+        public static Result EditResult(int Id, int kind, int weight,
             int Place, int Points)
         {
             Result res;
@@ -37,10 +37,27 @@ namespace SportAchievements.Components
                 res = c.Results.Where(r => r.Id == Id).FirstOrDefault();
                 if (res != null)
                 {
+                    res.Points = Points;
+                    res.Place = Place;
+                    res.KindOfSportId = kind;
+                    res.WeightCategoryId = weight;
 
+                    c.SaveChanges();
+                    return res;
                 }
             }
             return res;
+        }
+
+        public static void DelResult(int Id)
+        {
+            Context c = new Context();
+            Result res = c.Results.Where(r => r.Id == Id).FirstOrDefault();
+            if (res != null)
+            {
+                c.Results.Remove(res);
+                c.SaveChanges();
+            }
         }
     }
 }

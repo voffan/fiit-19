@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SportAchievements.ResultBtns;
+using SportAchievements.Components;
 
 namespace SportAchievements.Links
 {
@@ -66,7 +67,25 @@ namespace SportAchievements.Links
 
         private void DelRes_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Вы уверены?", "Внимание!", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                int id = -1;
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                }
+                else if (dataGridView1.SelectedCells.Count > 0)
+                {
+                    id = Convert.ToInt32(dataGridView1.SelectedCells[0].OwningRow.Cells[0].Value);
+                }
+                else
+                {
+                    MessageBox.Show("Выберите строку или ячейку!");
+                    return;
+                }
+                ResultComp.DelResult(id);
+                InitTable();
+            }
         }
     }
 }
