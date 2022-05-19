@@ -7,13 +7,13 @@ namespace CoCo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class fourth : IMigrationMetadata
+    public sealed partial class _7 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fourth));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_7));
         
         string IMigrationMetadata.Id
         {
-            get { return "202204070216082_fourth"; }
+            get { return "202205050328079_7"; }
         }
         
         string IMigrationMetadata.Source

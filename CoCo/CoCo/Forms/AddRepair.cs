@@ -25,16 +25,17 @@ namespace CoCo.Forms
             if (textBox1.Text.Length > 0)
                 for (int i = 0; i < ids.Count; i++)
                 {
-                    try
-                    {
+                    /*try
+                    {*/
                         RepairLogic.Add(ids[i], textBox1.Text);
                         PCLogic.ChangeStatus(ids[i], Status.repairing);
                         Close();
-                    }
-                    catch (Exception ex)
+                    /*}*/
+                    /*catch (Exception ex)
                     {
-                        Messages.ServerError();
-                    }
+                        // Messages.ServerError();
+                        MessageBox.Show(ex.Message);
+                    }*/
                 }
             else
                 Messages.Empty();
