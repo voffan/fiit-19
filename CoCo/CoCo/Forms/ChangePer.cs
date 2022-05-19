@@ -13,25 +13,36 @@ namespace CoCo.Forms
 {
     public partial class ChangePer : Form
     {
-        object emplId;
-        public ChangePer(object _empl)
+        readonly int perId;
+        public ChangePer(int _per)
         {
             InitializeComponent();
-            emplId = _empl;
+            perId = _per;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string name = textBox1.Text;
             string manu = textBox2.Text;
-            string empl = comboBox1.Text;
-            //PeripheralLogic.PeripheralChange(name, manu, emplId);
+            int empl = (int)comboBox1.SelectedValue;
+            PeripheralLogic.PeripheralChange(name, manu, empl, perId);
             Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ChangePer_Load(object sender, EventArgs e)
+        {
+
+            using (Context c = new Context())
+            {
+                comboBox1.DataSource = (from em in c.Employees select new { em.Id, Name = em.FullName + ", " + em.DepartmentId + " отдел" }).ToList();
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "Id";
+            }
         }
     }
 }

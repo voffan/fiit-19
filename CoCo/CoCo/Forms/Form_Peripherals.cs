@@ -85,7 +85,14 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            var perId = Convert.ToInt32(dataGridView1.SelectedCells[2].Value);
+            Peripheral per = new Peripheral();
+            ChangePer adh = new ChangePer(perId)
+            {
+                MdiParent = this.MdiParent
+            };
+            adh.FormClosing += MdiChildClose;
+            adh.Show();
         }
     }
 }
