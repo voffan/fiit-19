@@ -76,5 +76,17 @@ namespace CoCo
         {
             textChange();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var MBId = dataGridView1.SelectedCells[0].Value;
+            Motherboard mb = new Motherboard();
+            ChangeMotherboard mot = new ChangeMotherboard(MBId)
+            {
+                MdiParent = this.MdiParent
+            };
+            mot.FormClosing += MdiChildClose;
+            mot.Show();
+        }
     }
 }
