@@ -12,10 +12,10 @@ using App.Logic;
 
 namespace App
 {
-    public partial class Form2 : Form
+    public partial class Mainmenu : Form
     {
         int cat;
-        public Form2()
+        public Mainmenu()
         {
             InitializeComponent();
         }
@@ -63,9 +63,11 @@ namespace App
         {
             switch (cat)
             {
-                case 4: Form3 form3 = new Form3(); form3.ShowDialog(); break;
-                case 1: Form4 form4 = new Form4(); form4.ShowDialog(); break;
-                case 5: Form5 form5 = new Form5(); form5.ShowDialog(); break;
+                case 4: FilmName form3 = new FilmName(); form3.ShowDialog(); break;
+                case 1: Order form4 = new Order(); form4.ShowDialog(); break;
+                case 5: People form5 = new People(); form5.ShowDialog(); break;
+                case 8: Disk form6 = new Disk(); form6.ShowDialog(); break;
+                case 3: Form7 form7 = new Form7(); form7.ShowDialog(); break;
             }
             InitTable();
         }
@@ -92,6 +94,9 @@ namespace App
                     case 2: dataGridView1.DataSource = con.Clients.ToList();break;
                     case 3: dataGridView1.DataSource = con.Disks.ToList(); break;
                     case 5: dataGridView1.DataSource = con.Humen.ToList(); break;
+                    case 6: dataGridView1.DataSource = con.Clients.ToList(); break;
+                    case 7: dataGridView1.DataSource = con.People.ToList(); break;
+                    case 8: dataGridView1.DataSource = con.Films.ToList(); break;
                 }
             }
         }
@@ -99,6 +104,24 @@ namespace App
         private void фИОToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cat = 5;
+            InitTable();
+        }
+
+        private void черныйСписокToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cat = 6;
+            InitTable();
+        }
+
+        private void данныеКлиентаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cat = 7;
+            InitTable();
+        }
+
+        private void фильмыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cat = 8;
             InitTable();
         }
     }

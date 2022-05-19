@@ -11,9 +11,9 @@ using App.Classes;
 
 namespace App
 {
-    public partial class Form4 : Form
+    public partial class Order : Form
     {
-        public Form4()
+        public Order()
         {
             InitializeComponent();
         }
@@ -54,7 +54,7 @@ namespace App
         {
             using (Context c = new Context())
             {
-                Order g = new Order();
+                Classes.Order g = new Classes.Order();
                 g.Client = (Client)comboBox2.SelectedItem;
                 c.Orders.Add(g);
                 c.SaveChanges();

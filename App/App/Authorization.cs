@@ -12,9 +12,9 @@ using App.Logic;
 
 namespace App
 {
-    public partial class Form1 : Form
+    public partial class Authorization : Form
     {
-        public Form1()
+        public Authorization()
         {
             InitializeComponent();
         }
@@ -50,7 +50,7 @@ namespace App
                     MessageBox.Show("Неверный пароль или логин!");
                     return;
                 }
-                Form2 form2 = new Form2();
+                Mainmenu form2 = new Mainmenu();
                 this.Hide();
                 form2.ShowDialog();
                 this.Show();

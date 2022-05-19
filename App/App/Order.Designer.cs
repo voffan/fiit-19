@@ -1,7 +1,7 @@
 ﻿
 namespace App
 {
-    partial class Form4
+    partial class Order
     {
         /// <summary>
         /// Required designer variable.

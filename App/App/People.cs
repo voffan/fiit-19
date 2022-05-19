@@ -11,9 +11,9 @@ using App.Classes;
 
 namespace App
 {
-    public partial class Form3 : Form
+    public partial class People : Form
     {
-        public Form3()
+        public People()
         {
             InitializeComponent();
             textBox1.Select();
@@ -21,26 +21,21 @@ namespace App
             textBox1.Focus();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Form5_Load(object sender, EventArgs e)
         {
-            Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (Context c=new Context())
+            using (Context c = new Context())
             {
-                Genre g = new Genre();
-                g.Name = textBox1.Text;
-                c.Genres.Add(g);
+                Human h = new Human();
+                h.Name = textBox1.Text;
+                c.Humen.Add(h);
                 c.SaveChanges();
             }
             Close();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -23,7 +23,7 @@ namespace App
         public DbSet<Employee> Employees { get; set; }
 
         public DbSet<Film> Films { get; set; }
-        public DbSet<Disk> Disks { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        public DbSet<Classes.Disk> Disks { get; set; }
+        public DbSet<Classes.Order> Orders { get; set; }
     }
 }

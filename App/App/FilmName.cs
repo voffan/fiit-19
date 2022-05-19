@@ -11,9 +11,9 @@ using App.Classes;
 
 namespace App
 {
-    public partial class Form5 : Form
+    public partial class FilmName : Form
     {
-        public Form5()
+        public FilmName()
         {
             InitializeComponent();
             textBox1.Select();
@@ -21,21 +21,26 @@ namespace App
             textBox1.Focus();
         }
 
-        private void Form5_Load(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (Context c = new Context())
+            using (Context c=new Context())
             {
-                Human h = new Human();
-                h.Name = textBox1.Text;
-                c.Humen.Add(h);
+                Genre g = new Genre();
+                g.Name = textBox1.Text;
+                c.Genres.Add(g);
                 c.SaveChanges();
             }
             Close();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

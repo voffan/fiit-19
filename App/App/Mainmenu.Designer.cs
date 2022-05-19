@@ -1,7 +1,7 @@
 ﻿
 namespace App
 {
-    partial class Form2
+    partial class Mainmenu
     {
         /// <summary>
         /// Required designer variable.
@@ -37,13 +37,14 @@ namespace App
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.фИОToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.черныйСписокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.данныеКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.дискиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.жанрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.фИОToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.черныйСписокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.данныеКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.фильмыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +101,8 @@ namespace App
             this.сотрудникиToolStripMenuItem1,
             this.клиентыToolStripMenuItem,
             this.дискиToolStripMenuItem,
-            this.жанрыToolStripMenuItem});
+            this.жанрыToolStripMenuItem,
+            this.фильмыToolStripMenuItem});
             this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
             this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.сотрудникиToolStripMenuItem.Text = "Списки";
@@ -108,7 +110,7 @@ namespace App
             // сотрудникиToolStripMenuItem1
             // 
             this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
-            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
             this.сотрудникиToolStripMenuItem1.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem1_Click);
             // 
@@ -123,17 +125,38 @@ namespace App
             this.клиентыToolStripMenuItem.Text = "Клиенты";
             this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.клиентыToolStripMenuItem_Click);
             // 
+            // фИОToolStripMenuItem
+            // 
+            this.фИОToolStripMenuItem.Name = "фИОToolStripMenuItem";
+            this.фИОToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.фИОToolStripMenuItem.Text = "ФИО";
+            this.фИОToolStripMenuItem.Click += new System.EventHandler(this.фИОToolStripMenuItem_Click);
+            // 
+            // черныйСписокToolStripMenuItem
+            // 
+            this.черныйСписокToolStripMenuItem.Name = "черныйСписокToolStripMenuItem";
+            this.черныйСписокToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.черныйСписокToolStripMenuItem.Text = "Черный список";
+            this.черныйСписокToolStripMenuItem.Click += new System.EventHandler(this.черныйСписокToolStripMenuItem_Click);
+            // 
+            // данныеКлиентаToolStripMenuItem
+            // 
+            this.данныеКлиентаToolStripMenuItem.Name = "данныеКлиентаToolStripMenuItem";
+            this.данныеКлиентаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.данныеКлиентаToolStripMenuItem.Text = "Данные клиента";
+            this.данныеКлиентаToolStripMenuItem.Click += new System.EventHandler(this.данныеКлиентаToolStripMenuItem_Click);
+            // 
             // дискиToolStripMenuItem
             // 
             this.дискиToolStripMenuItem.Name = "дискиToolStripMenuItem";
-            this.дискиToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.дискиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.дискиToolStripMenuItem.Text = "Диски";
             this.дискиToolStripMenuItem.Click += new System.EventHandler(this.дискиToolStripMenuItem_Click);
             // 
             // жанрыToolStripMenuItem
             // 
             this.жанрыToolStripMenuItem.Name = "жанрыToolStripMenuItem";
-            this.жанрыToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.жанрыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.жанрыToolStripMenuItem.Text = "Жанры";
             this.жанрыToolStripMenuItem.Click += new System.EventHandler(this.жанрыToolStripMenuItem_Click);
             // 
@@ -157,24 +180,12 @@ namespace App
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // фИОToolStripMenuItem
+            // фильмыToolStripMenuItem
             // 
-            this.фИОToolStripMenuItem.Name = "фИОToolStripMenuItem";
-            this.фИОToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.фИОToolStripMenuItem.Text = "ФИО";
-            this.фИОToolStripMenuItem.Click += new System.EventHandler(this.фИОToolStripMenuItem_Click);
-            // 
-            // черныйСписокToolStripMenuItem
-            // 
-            this.черныйСписокToolStripMenuItem.Name = "черныйСписокToolStripMenuItem";
-            this.черныйСписокToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.черныйСписокToolStripMenuItem.Text = "Черный список";
-            // 
-            // данныеКлиентаToolStripMenuItem
-            // 
-            this.данныеКлиентаToolStripMenuItem.Name = "данныеКлиентаToolStripMenuItem";
-            this.данныеКлиентаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.данныеКлиентаToolStripMenuItem.Text = "Данные клиента";
+            this.фильмыToolStripMenuItem.Name = "фильмыToolStripMenuItem";
+            this.фильмыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.фильмыToolStripMenuItem.Text = "Фильмы";
+            this.фильмыToolStripMenuItem.Click += new System.EventHandler(this.фильмыToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -215,5 +226,6 @@ namespace App
         private System.Windows.Forms.ToolStripMenuItem фИОToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem черныйСписокToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem данныеКлиентаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem фильмыToolStripMenuItem;
     }
 }
