@@ -31,5 +31,10 @@ namespace CoCo.Forms
         {
             Close();
         }
+
+        private void ChangeDepartment_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

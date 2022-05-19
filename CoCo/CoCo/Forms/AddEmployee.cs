@@ -26,15 +26,15 @@ namespace CoCo.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0)
+            if (textBox1.Text.Length > 0 && comboBox1.Text.Length > 0)
             {
                 string Name = textBox1.Text;
                 if (Name.Length > 300)
-                    Messages.TooLong("Имя");
+                    Messages.TooLong("Имя слишком длинная");
                 else
                     try
                     {
-                        int Id = Convert.ToInt32(textBox2.Text);
+                        int Id = (int)comboBox1.SelectedValue;
                         EmployeeLogic.EmployeeAdd(Name, Id);
                         Close();
                     }
@@ -50,6 +50,17 @@ namespace CoCo.Forms
             else
             {
                 Messages.Empty();
+            }
+        }
+
+        private void AddEmployee_Load(object sender, EventArgs e)
+        {
+            using (Context c = new Context())
+            {
+                
+                comboBox1.DataSource = (from dep in c.Departments select new { dep.Id, Name = dep.Name + ", " + dep.Id + " отдел" }).ToList();
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "Id";
             }
         }
     }
