@@ -25,5 +25,16 @@ namespace CoCo.Classes
             context.Hdds.Remove(hdd);
             context.SaveChanges();
         }
+        public static void HddChange(string name, decimal volume, string manufacturer, object hddId)
+        {
+            using (var context = new Context())
+            {
+                Hdd hdd = context.Hdds.FirstOrDefault(x => x.Id == (int)hddId);
+                hdd.Name = name;
+                hdd.Volume = volume;
+                hdd.Manufacturer = manufacturer;
+                context.SaveChanges();
+            }
+        }
     }
 }

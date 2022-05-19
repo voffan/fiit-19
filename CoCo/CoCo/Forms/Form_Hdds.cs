@@ -87,5 +87,17 @@ namespace CoCo
         {
             textChange();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            var HddId = dataGridView1.SelectedCells[0].Value;
+            Hdd hdd = new Hdd();
+            ChangeHdd adh = new ChangeHdd(HddId)
+            {
+                MdiParent = this.MdiParent
+            };
+            adh.FormClosing += MdiChildClose;
+            adh.Show();
+        }
     }
 }
