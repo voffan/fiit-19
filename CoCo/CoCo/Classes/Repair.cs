@@ -16,7 +16,6 @@ namespace CoCo.Classes
     }
     public class Repair
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int DeviceId { get; set; }
         public virtual Device Device { get; set; }

@@ -279,33 +279,9 @@
     <Compile Include="Forms\Form_Repairs.Designer.cs">
       <DependentUpon>Form_Repairs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202150917068_First.cs" />
-    <Compile Include="Migrations\202202150917068_First.designer.cs">
-      <DependentUpon>202202150917068_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203100335468_second.cs" />
-    <Compile Include="Migrations\202203100335468_second.designer.cs">
-      <DependentUpon>202203100335468_second.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204070214437_third.cs" />
-    <Compile Include="Migrations\202204070214437_third.designer.cs">
-      <DependentUpon>202204070214437_third.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204070216082_fourth.cs" />
-    <Compile Include="Migrations\202204070216082_fourth.designer.cs">
-      <DependentUpon>202204070216082_fourth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205050343403_fifth.cs" />
-    <Compile Include="Migrations\202205050343403_fifth.designer.cs">
-      <DependentUpon>202205050343403_fifth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205050344292_sixth.cs" />
-    <Compile Include="Migrations\202205050344292_sixth.designer.cs">
-      <DependentUpon>202205050344292_sixth.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205050352109_7.cs" />
-    <Compile Include="Migrations\202205050352109_7.designer.cs">
-      <DependentUpon>202205050352109_7.cs</DependentUpon>
+    <Compile Include="Migrations\202205190255005_first.cs" />
+    <Compile Include="Migrations\202205190255005_first.designer.cs">
+      <DependentUpon>202205190255005_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -370,26 +346,8 @@
     <EmbeddedResource Include="Forms\Form_Repairs.resx">
       <DependentUpon>Form_Repairs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202150917068_First.resx">
-      <DependentUpon>202202150917068_First.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203100335468_second.resx">
-      <DependentUpon>202203100335468_second.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204070214437_third.resx">
-      <DependentUpon>202204070214437_third.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204070216082_fourth.resx">
-      <DependentUpon>202204070216082_fourth.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205050343403_fifth.resx">
-      <DependentUpon>202205050343403_fifth.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205050344292_sixth.resx">
-      <DependentUpon>202205050344292_sixth.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205050352109_7.resx">
-      <DependentUpon>202205050352109_7.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205190255005_first.resx">
+      <DependentUpon>202205190255005_first.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
