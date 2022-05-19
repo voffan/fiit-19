@@ -73,7 +73,6 @@ namespace CoCo
                 };
                 addRepair.FormClosing += MdiChildClose;
                 addRepair.Show();
-                initTable();
         }
 
 

@@ -72,13 +72,26 @@ namespace CoCo
                 initTable();
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textChange()
         {
             using (Context context = new Context())
             {
-                dataGridView1.DataSource = context.Employees.Where(h => h.FullName.Contains(textBox1.Text)).ToList();
+                dataGridView1.DataSource = context.Employees.Where(h =>
+                h.FullName.Contains(textBox1.Text) &&
+                h.DepartmentId.ToString().Contains(textBox2.Text)).ToList();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+
+
     }
 }

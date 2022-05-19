@@ -22,6 +22,8 @@ namespace CoCo
         private void Form_Cpus_Load(object sender, EventArgs e)
         {
             initTable();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ClearSelection();
         }
 
         private void initTable()
@@ -60,24 +62,46 @@ namespace CoCo
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Cpus.Where(h => h.Name.Contains(textBox1.Text)).ToList();
-            }
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             var CpuId = dataGridView1.SelectedCells[0].Value;
-            Hdd hdd = new Hdd();
-            ChangeHdd adh = new ChangeHdd(CpuId)
+            Cpu cpu = new Cpu();
+            ChangeCpu adh = new ChangeCpu(CpuId,Convert.ToString(dataGridView1.SelectedCells[1].Value), Convert.ToString(dataGridView1.SelectedCells[2].Value), Convert.ToString(dataGridView1.SelectedCells[3].Value))
             {
                 MdiParent = this.MdiParent
             };
             adh.FormClosing += MdiChildClose;
             adh.Show();
+        
+        }
+
+
+        private void textChange()
+        {
+            using (Context context = new Context())
+            {
+                dataGridView1.DataSource = context.Cpus.Where(h =>
+                h.Name.Contains(textBox1.Text) &&
+                h.Manufacturer.Contains(textBox3.Text) &&
+                h.Frequency.ToString().Contains(textBox2.Text)).ToList();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            textChange();
         }
     }
+
 }

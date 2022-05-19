@@ -26,11 +26,11 @@ namespace CoCo.Classes
             context.SaveChanges();
         }
 
-        public static void CpuChange(string name, decimal freq, string manufacturer, object hddId)
+        public static void CpuChange(string name, decimal freq, string manufacturer, object cpuId)
         {
             using (var context = new Context())
             {
-                Cpu cpu = context.Cpus.FirstOrDefault(x => x.Id == (int)hddId);
+                Cpu cpu = context.Cpus.FirstOrDefault(x => x.Id == (int)cpuId);
                 cpu.Name = name;
                 cpu.Frequency = freq;
                 cpu.Manufacturer = manufacturer;

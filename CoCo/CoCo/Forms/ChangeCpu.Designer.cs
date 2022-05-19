@@ -128,6 +128,7 @@
             this.Controls.Add(this.button1);
             this.Name = "ChangeCpu";
             this.Text = "ChangeCpu";
+            this.Load += new System.EventHandler(this.ChangeCpu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
