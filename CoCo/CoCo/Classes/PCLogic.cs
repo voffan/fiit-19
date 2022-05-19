@@ -8,21 +8,35 @@ namespace CoCo.Classes
 {
     class PCLogic
     {
+        public static int today = 0;
+        public DateTime LastDay;
+        public DateTime ThisDay = DateTime.Today;
         public static void Add(int hddid ,int cpuid,int motherboardid,int employeeid)
         {
             using (Context context = new Context())
             {
+                whattoday();
+                string inventorynumber = Convert.ToString(ThisDay.Year) + Convert.ToString(ThisDay.Month) + Convert.ToString(ThisDay.Day)
+                    + "0" + ;
+           
                 PC pc = new PC
                 {
                     HddId = hddid,
                     CpuId = cpuid,
                     MotherboardId = motherboardid,
-                    EmployeeId = employeeid
+                    EmployeeId = employeeid,
+                    InventoryNumber = inventorynumber
                 };
                 context.PCs.Add(pc);
                 context.SaveChanges();
             }
         }
+
+        private static void whattoday()
+        {
+            lastday = 
+        }
+
         public static void Delete(object value)
         {
             using (Context context = new Context())

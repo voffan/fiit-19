@@ -21,7 +21,7 @@ namespace CoCo.Classes
         public int Id { get; set; }
         //Инвентарный номер устройства будет присваиваться по дате добавления, типу (0 - компьютер, 1 - другое),
         //порядковому номеру добавляемого типа устройства за день. Пример: четвертый ПК, добавленный 22 марта 2023 года - 202303220004?
-        public int InventoryNumber { get; set; }
+        public string InventoryNumber { get; set; }
         public Status Status { get; set; }
         public int EmployeeId { get; set; }
         public virtual Employee Employee { get; set; }

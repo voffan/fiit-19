@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CpuLogic.cs" />
+    <Compile Include="Classes\DeviceLogic.cs" />
     <Compile Include="Classes\HddLogic.cs" />
     <Compile Include="Classes\MotherboardLogic.cs" />
     <Compile Include="Classes\PCLogic.cs" />
@@ -309,6 +310,10 @@
     <Compile Include="Migrations\202205190255005_first.designer.cs">
       <DependentUpon>202205190255005_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205190347107_stringinv.cs" />
+    <Compile Include="Migrations\202205190347107_stringinv.designer.cs">
+      <DependentUpon>202205190347107_stringinv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -386,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205190255005_first.resx">
       <DependentUpon>202205190255005_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205190347107_stringinv.resx">
+      <DependentUpon>202205190347107_stringinv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
