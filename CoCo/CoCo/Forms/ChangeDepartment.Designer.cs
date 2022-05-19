@@ -37,28 +37,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(16, 71);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(13, 55);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 25);
+            this.label2.Size = new System.Drawing.Size(123, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Название отдела";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(233, 70);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(166, 55);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 22);
+            this.textBox1.Size = new System.Drawing.Size(291, 22);
             this.textBox1.TabIndex = 4;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(224, 126);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(203, 112);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 41);
+            this.button1.Size = new System.Drawing.Size(124, 30);
             this.button1.TabIndex = 5;
             this.button1.Text = "Изменить";
             this.button1.UseVisualStyleBackColor = true;
@@ -66,10 +66,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(353, 126);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(333, 112);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 41);
+            this.button2.Size = new System.Drawing.Size(124, 30);
             this.button2.TabIndex = 6;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
@@ -79,12 +79,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 197);
+            this.ClientSize = new System.Drawing.Size(483, 167);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChangeDepartment";
             this.Text = "ChangeDepartment";
             this.Load += new System.EventHandler(this.ChangeDepartment_Load);
