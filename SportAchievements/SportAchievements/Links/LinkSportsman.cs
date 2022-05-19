@@ -20,6 +20,7 @@ namespace SportAchievements
 
         private void LinkSportsman_Load(object sender, EventArgs e)
         {
+            bibor.Items.AddRange(new string[] { "Пол", "Весовая категория", "Имя", "Дата рождения" });
             InitTable();
         }
 
@@ -80,6 +81,61 @@ namespace SportAchievements
                 }
                 SportsmanComp.DelSprtsmn(id);
                 InitTable();
+            }
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            using (Context c = new Context())
+            {
+
+                string asd = bibor.Text;
+                switch (asd)
+                {
+                    case "Пол":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Sportsmen.Where(o => o.Gender.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Sportsmen.ToList();
+                        }
+                        break;
+                    case "Весовая категория":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+                            dataGridView1.DataSource = c.Sportsmen.Include("Weight").Where(o => o.Weight.Name.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Sportsmen.Include("Weight").ToList();
+                        }
+                        break;
+                    case "Имя":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Sportsmen.Where(o => o.Name.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Sportsmen.ToList();
+                        }
+                        break;
+                    case "Дата рождения":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Sportsmen.Where(o => o.BirthDate.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Sportsmen.ToList();
+                        }
+                        break;
+                }
             }
         }
     }

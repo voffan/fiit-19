@@ -21,6 +21,7 @@ namespace SportAchievements.Links
 
         private void LinkResult_Load(object sender, EventArgs e)
         {
+            bibor.Items.AddRange(new string[] { "Призовое место", "Очки", "Весовая категория", "Имя спортсмена", "Название соревнования", "Название спорта" });
             InitTable();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[3].Visible = false;
@@ -85,6 +86,83 @@ namespace SportAchievements.Links
                 }
                 ResultComp.DelResult(id);
                 InitTable();
+            }
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            using (Context c = new Context())
+            {
+
+                string asd = bibor.Text;
+                switch (asd)
+                {
+                    case "Призовое место":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+                            int p = Convert.ToInt32(searchTextBox.Text);
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").Where(o => o.Place==p).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").ToList();
+                        }
+                        break;
+                    case "Очки":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").Where(o => o.Points==Convert.ToInt32(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").ToList();
+                        }
+                        break;
+                    case "Весовая категория":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").Where(o => o.WeightCategory.Name.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").ToList();
+                        }
+                        break;
+                    case "Имя спортсмена":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").Where(o => o.Sportsman.Name.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").ToList();
+                        }
+                        break;
+                    case "Название соревнования":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").Where(o => o.Competition.Name.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").ToList();
+                        }
+                        break;
+                    case "Название спорта":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").Where(o => o.Sport.Name.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Results.Include("WeightCategory").Include("Sportsman").Include("Competition").Include("Sport").ToList();
+                        }
+                        break;
+                }
             }
         }
     }

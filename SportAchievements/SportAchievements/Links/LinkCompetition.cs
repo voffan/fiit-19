@@ -21,6 +21,8 @@ namespace SportAchievements
 
         private void LinkCompetition_Load(object sender, EventArgs e)
         {
+            bibor.Items.AddRange(new string[] { "Индекс", "Название", "Начало", "Конец", "Тип" });
+
             InitTable();
         }
 
@@ -83,41 +85,69 @@ namespace SportAchievements
             }
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            Context c = new Context();
-            //Competition competition = c.Competitions.Find(searchTextBox.Text);
-
-            Competition cmp = new Competition();
-            CompType cmpType = (from CompType ct in c.CompTypes
-                                where ct.Name == searchTextBox.Text
-                                select ct).FirstOrDefault();
-
-            //MessageBox.Show(cmpType.Name);
-            /*if (cmp != null)
-            {
-                try
-                {
-                    ShowDialog();
-                }
-                catch
-                {
-                    MessageBox.Show("Название: " + cmpType.Name);
-                }
-            }*/
-        }
-
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
-            using(Context c = new Context())
+            using (Context c = new Context())
             {
-                if (searchTextBox.Text.Length > 0)
+
+                string asd = bibor.Text;
+                switch (asd)
                 {
-                    dataGridView1.DataSource = c.Competitions.Include("Type").Where(o => o.Name.Contains(searchTextBox.Text)).ToList();
-                }
-                else
-                {
-                    dataGridView1.DataSource = c.Competitions.Include("Type").ToList();
+                    case "Индекс":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Competitions.Include("Type").Where(o => o.Id.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Competitions.Include("Type").ToList();
+                        }
+                        break;
+                    case "Название":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Competitions.Include("Type").Where(o => o.Name.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Competitions.Include("Type").ToList();
+                        }
+                        break;
+                    case "Начало":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Competitions.Include("Type").Where(o => o.DateBeginning.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Competitions.Include("Type").ToList();
+                        }
+                        break;
+                    case "Конец":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Competitions.Include("Type").Where(o => o.DateEnding.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Competitions.Include("Type").ToList();
+                        }
+                        break;
+                    case "Тип":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Competitions.Include("Type").Where(o => o.Type.Name.Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Competitions.Include("Type").ToList();
+                        }
+                        break;
                 }
             }
         }

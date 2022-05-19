@@ -20,6 +20,7 @@ namespace SportAchievements
 
         private void LinkEmployee_Load(object sender, EventArgs e)
         {
+            bibor.Items.AddRange(new string[] { "Логин", "Пароль", "Должность", "Имя", "Дата рождения" });
             InitTable();
         }
 
@@ -52,7 +53,7 @@ namespace SportAchievements
                 {
                     id = Convert.ToInt32(dataGridView1.SelectedCells[0].OwningRow.Cells[3].Value);
                 }
-                else 
+                else
                 {
                     MessageBox.Show("Выберите строку или ячейку!");
                     return;
@@ -82,6 +83,73 @@ namespace SportAchievements
             EmployeeBtns.EditEmpl Employee = new EmployeeBtns.EditEmpl(id);
             Employee.ShowDialog();
             InitTable();
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            using (Context c = new Context())
+            {
+
+                string asd = bibor.Text;
+                switch (asd)
+                {
+                    case "Логин":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Employees.Where(o => o.Login.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Employees.ToList();
+                        }
+                        break;
+                    case "Пароль":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Employees.Where(o => o.Pwd.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Employees.ToList();
+                        }
+                        break;
+                    case "Должность":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Employees.Where(o => o.Position.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Employees.ToList();
+                        }
+                        break;
+                    case "Имя":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Employees.Where(o => o.Name.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Employees.ToList();
+                        }
+                        break;
+                    case "Дата рождения":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.Employees.Where(o => o.BirthDate.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.Employees.ToList();
+                        }
+                        break;
+                }
+            }
         }
     }
 }

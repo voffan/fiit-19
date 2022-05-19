@@ -33,6 +33,9 @@ namespace SportAchievements
             this.AddSprtsmn = new System.Windows.Forms.Button();
             this.Edit_Sprtsmn = new System.Windows.Forms.Button();
             this.Del_Sprtsmn = new System.Windows.Forms.Button();
+            this.bibor = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,11 +77,39 @@ namespace SportAchievements
             this.Del_Sprtsmn.UseVisualStyleBackColor = true;
             this.Del_Sprtsmn.Click += new System.EventHandler(this.Del_Sprtsmn_Click);
             // 
+            // bibor
+            // 
+            this.bibor.FormattingEnabled = true;
+            this.bibor.Location = new System.Drawing.Point(306, 369);
+            this.bibor.Name = "bibor";
+            this.bibor.Size = new System.Drawing.Size(173, 21);
+            this.bibor.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(103, 371);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Поиск";
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(148, 369);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(152, 20);
+            this.searchTextBox.TabIndex = 18;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            // 
             // LinkSportsman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 420);
+            this.Controls.Add(this.bibor);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.Del_Sprtsmn);
             this.Controls.Add(this.Edit_Sprtsmn);
             this.Controls.Add(this.AddSprtsmn);
@@ -88,6 +119,7 @@ namespace SportAchievements
             this.Load += new System.EventHandler(this.LinkSportsman_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +129,8 @@ namespace SportAchievements
         private System.Windows.Forms.Button AddSprtsmn;
         private System.Windows.Forms.Button Edit_Sprtsmn;
         private System.Windows.Forms.Button Del_Sprtsmn;
+        private System.Windows.Forms.ComboBox bibor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox searchTextBox;
     }
 }

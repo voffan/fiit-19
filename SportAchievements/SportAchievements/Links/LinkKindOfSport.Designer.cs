@@ -33,6 +33,9 @@ namespace SportAchievements
             this.EditLinkkindofsport = new System.Windows.Forms.Button();
             this.Deletlinkkindofsport = new System.Windows.Forms.Button();
             this.addlinkkindofsport = new System.Windows.Forms.Button();
+            this.bibor = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,11 +77,39 @@ namespace SportAchievements
             this.addlinkkindofsport.UseVisualStyleBackColor = true;
             this.addlinkkindofsport.Click += new System.EventHandler(this.addlinkkindofsport_Click);
             // 
+            // bibor
+            // 
+            this.bibor.FormattingEnabled = true;
+            this.bibor.Location = new System.Drawing.Point(296, 319);
+            this.bibor.Name = "bibor";
+            this.bibor.Size = new System.Drawing.Size(173, 21);
+            this.bibor.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(93, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Поиск";
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(138, 319);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(152, 20);
+            this.searchTextBox.TabIndex = 15;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            // 
             // DovavitLink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 378);
+            this.Controls.Add(this.bibor);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.addlinkkindofsport);
             this.Controls.Add(this.Deletlinkkindofsport);
             this.Controls.Add(this.EditLinkkindofsport);
@@ -88,6 +119,7 @@ namespace SportAchievements
             this.Load += new System.EventHandler(this.LinkKindOfSport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +129,8 @@ namespace SportAchievements
         private System.Windows.Forms.Button EditLinkkindofsport;
         private System.Windows.Forms.Button Deletlinkkindofsport;
         private System.Windows.Forms.Button addlinkkindofsport;
+        private System.Windows.Forms.ComboBox bibor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox searchTextBox;
     }
 }

@@ -21,7 +21,7 @@ namespace SportAchievements
 
         private void LinkKindOfSport_Load(object sender, EventArgs e)
         {
-            
+            bibor.Items.AddRange(new string[] { "ID", "Название"});
             InitTable();
         }
 
@@ -84,6 +84,40 @@ namespace SportAchievements
                 }
                 KindofsportComp.DelKind(id);
                 InitTable();
+            }
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            using (Context c = new Context())
+            {
+
+                string asd = bibor.Text;
+                switch (asd)
+                {
+                    case "ID":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.KindsOfSports.Where(o => o.Id.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.KindsOfSports.ToList();
+                        }
+                        break;
+                    case "Название":
+                        if (searchTextBox.Text.Length > 0)
+                        {
+
+                            dataGridView1.DataSource = c.KindsOfSports.Where(o => o.Name.ToString().Contains(searchTextBox.Text)).ToList();
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = c.KindsOfSports.ToList();
+                        }
+                        break;
+                }
             }
         }
     }
