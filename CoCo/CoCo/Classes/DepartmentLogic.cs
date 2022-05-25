@@ -21,7 +21,7 @@ namespace CoCo.Classes
             }
         }
 
-        public static void DepartmentChange(string name, object depId)
+        public static void DepartmentChange(string name, int depId)
         {
             using (var context = new Context())
             {
@@ -32,7 +32,7 @@ namespace CoCo.Classes
 
         }
 
-        public static void Delete(object value)
+        public static void Delete(int value)
         {
             using (Context context = new Context())
             {

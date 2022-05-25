@@ -22,19 +22,19 @@ namespace CoCo.Classes
             context.SaveChanges();
         }
 
-        public static void EmployeeChange(string Name, int Id, object emplId)
+        public static void EmployeeChange(string Name, int Id, int emplId)
         {
 
             using (var context = new Context())
             {
-                Employee employee = context.Employees.FirstOrDefault(x => x.Id == (int)emplId);
+                Employee employee = context.Employees.FirstOrDefault(x => x.Id == emplId);
                 employee.FullName = Name;
                 employee.DepartmentId = Id;
                 context.SaveChanges();
             }
         }
 
-        public static void Delete(object value)
+        public static void Delete(int value)
         {
             Context context = new Context();
             var cpu = context.Employees.Find(value);

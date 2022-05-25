@@ -57,7 +57,7 @@ namespace CoCo
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    HddLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                    HddLogic.Delete((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
                 initTable();
             }
@@ -90,7 +90,7 @@ namespace CoCo
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var HddId = dataGridView1.SelectedCells[0].Value;
+            int HddId = (int)dataGridView1.SelectedCells[0].Value;
             Hdd hdd = new Hdd();
             ChangeHdd adh = new ChangeHdd(HddId)
             {

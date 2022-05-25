@@ -49,7 +49,7 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var depId = dataGridView1.SelectedCells[0].Value;
+            int depId = (int)dataGridView1.SelectedCells[0].Value;
             Department dep = new Department();
             ChangeDepartment adh = new ChangeDepartment(depId)
             {
@@ -64,7 +64,7 @@ namespace CoCo
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    DepartmentLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                    DepartmentLogic.Delete((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
                 initTable();
             }

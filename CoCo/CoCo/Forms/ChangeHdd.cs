@@ -13,9 +13,9 @@ namespace CoCo.Forms
 {
     public partial class ChangeHdd : Form
     {
-        object hddId;
+        int hddId;
 
-        public ChangeHdd(object _hdd)
+        public ChangeHdd(int _hdd)
         {
             InitializeComponent();
             hddId = _hdd;

@@ -50,7 +50,7 @@ namespace CoCo
             {
                 for(int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    PCLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                    PCLogic.Delete((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
                 initTable();
             }

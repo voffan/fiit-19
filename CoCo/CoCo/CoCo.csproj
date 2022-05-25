@@ -151,10 +151,6 @@
     <Compile Include="Forms\AddRepair.Designer.cs">
       <DependentUpon>AddRepair.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ChangeCpu.cs" />
-    <Compile Include="Forms\ChangeCpu.Designer.cs">
-      <DependentUpon>ChangeCpu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ChangeCpu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,18 +168,6 @@
     </Compile>
     <Compile Include="Forms\ChangeEmployee.Designer.cs">
       <DependentUpon>ChangeEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ChangeHdd.cs" />
-    <Compile Include="Forms\ChangeHdd.Designer.cs">
-      <DependentUpon>ChangeHdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ChangeMotherboard.cs" />
-    <Compile Include="Forms\ChangeMotherboard.Designer.cs">
-      <DependentUpon>ChangeMotherboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ChangePer.cs" />
-    <Compile Include="Forms\ChangePer.Designer.cs">
-      <DependentUpon>ChangePer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChangeHdd.cs">
       <SubType>Form</SubType>

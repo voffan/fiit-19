@@ -30,10 +30,11 @@ namespace CoCo.Forms
             {
                 string Name = textBox1.Text;
                 if (Name.Length > 300)
-                    Messages.TooLong("Имя слишком длинная");
+                    Messages.TooLong("Поле имя слишком длинное");
                 else
                     try
                     {
+
                         int Id = (int)comboBox1.SelectedValue;
                         EmployeeLogic.EmployeeAdd(Name, Id);
                         Close();

@@ -13,9 +13,9 @@ namespace CoCo.Forms
 {
     public partial class ChangeCpu : Form
     {
-        object cpuId;
+        int cpuId;
         string name, freq, manu;
-        public ChangeCpu(object _cpu, string _name, string _freq, string _manu)
+        public ChangeCpu(int _cpu, string _name, string _freq, string _manu)
         {
             InitializeComponent();
             cpuId = _cpu;

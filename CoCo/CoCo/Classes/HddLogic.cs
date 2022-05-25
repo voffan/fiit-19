@@ -18,18 +18,18 @@ namespace CoCo.Classes
             context.Hdds.Add(hdd);
             context.SaveChanges();
         }
-        public static void Delete(object value)
+        public static void Delete(int value)
         {
             Context context = new Context();
             var hdd = context.Hdds.Find(value);
             context.Hdds.Remove(hdd);
             context.SaveChanges();
         }
-        public static void HddChange(string name, decimal volume, string manufacturer, object hddId)
+        public static void HddChange(string name, decimal volume, string manufacturer, int hddId)
         {
             using (var context = new Context())
             {
-                Hdd hdd = context.Hdds.FirstOrDefault(x => x.Id == (int)hddId);
+                Hdd hdd = context.Hdds.FirstOrDefault(x => x.Id == hddId);
                 hdd.Name = name;
                 hdd.Volume = volume;
                 hdd.Manufacturer = manufacturer;

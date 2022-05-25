@@ -51,7 +51,7 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var emplId = dataGridView1.SelectedCells[0].Value;
+            int emplId = (int)dataGridView1.SelectedCells[0].Value;
             Employee emp = new Employee();
             ChangeEmployee adh = new ChangeEmployee(emplId)
             {
@@ -67,7 +67,7 @@ namespace CoCo
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    EmployeeLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                    EmployeeLogic.Delete((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
                 initTable();
             }

@@ -30,7 +30,7 @@ namespace CoCo.Classes
         }
 
 
-        public static void Delete(object value)
+        public static void Delete(int value)
         {
             using (Context context = new Context())
             {

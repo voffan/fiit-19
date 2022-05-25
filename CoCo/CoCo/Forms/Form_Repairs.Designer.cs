@@ -44,7 +44,7 @@ namespace CoCo
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(192, 323);
+            this.button_delete.Location = new System.Drawing.Point(558, 307);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(75, 23);
             this.button_delete.TabIndex = 4;
@@ -56,7 +56,7 @@ namespace CoCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(640, 334);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form_Repairs";

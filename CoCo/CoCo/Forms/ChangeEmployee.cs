@@ -14,8 +14,8 @@ namespace CoCo.Forms
     public partial class ChangeEmployee : Form
     {
 
-        readonly object emplId;
-        public ChangeEmployee(object _empl)
+        readonly int emplId;
+        public ChangeEmployee(int _empl)
         {
             InitializeComponent();
             emplId = _empl;       

@@ -56,7 +56,7 @@ namespace CoCo
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    CpuLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                    CpuLogic.Delete((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
                 initTable();
             }
@@ -65,7 +65,7 @@ namespace CoCo
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            var CpuId = dataGridView1.SelectedCells[0].Value;
+            int CpuId = (int)dataGridView1.SelectedRows[0].Cells["id"].Value;
             Cpu cpu = new Cpu();
             ChangeCpu adh = new ChangeCpu(CpuId,Convert.ToString(dataGridView1.SelectedCells[1].Value), Convert.ToString(dataGridView1.SelectedCells[2].Value), Convert.ToString(dataGridView1.SelectedCells[3].Value))
             {

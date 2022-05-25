@@ -30,7 +30,7 @@ namespace CoCo
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    RepairLogic.Delete((int)dataGridView1.SelectedRows[i].Cells["deviceid"].Value);
+                    RepairLogic.Delete((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
                 initTable();
             }

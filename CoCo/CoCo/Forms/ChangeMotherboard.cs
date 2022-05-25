@@ -13,8 +13,8 @@ namespace CoCo.Forms
 {
     public partial class ChangeMotherboard : Form
     {
-        object MBId;
-        public ChangeMotherboard(object _mb)
+        int MBId;
+        public ChangeMotherboard(int _mb)
         {
             InitializeComponent();
             MBId = _mb;

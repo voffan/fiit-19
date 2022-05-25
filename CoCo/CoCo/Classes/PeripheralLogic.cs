@@ -24,10 +24,10 @@ namespace CoCo.Classes
             context.SaveChanges();
 
         }
-        public static void Delete(object value)
+        public static void Delete(int value)
         {
             Context context = new Context();
-            var cpu = context.Peripherals.Find((int)value);
+            var cpu = context.Peripherals.Find(value);
             context.Peripherals.Remove(cpu);
             context.SaveChanges();
         }

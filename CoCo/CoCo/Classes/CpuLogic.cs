@@ -18,7 +18,7 @@ namespace CoCo.Classes
             context.Cpus.Add(cpu);
             context.SaveChanges();
         }
-        public static void Delete(object value)
+        public static void Delete(int value)
         {
             Context context = new Context();
             var cpu = context.Hdds.Find(value);
@@ -26,7 +26,7 @@ namespace CoCo.Classes
             context.SaveChanges();
         }
 
-        public static void CpuChange(string name, decimal freq, string manufacturer, object cpuId)
+        public static void CpuChange(string name, decimal freq, string manufacturer, int cpuId)
         {
             using (var context = new Context())
             {

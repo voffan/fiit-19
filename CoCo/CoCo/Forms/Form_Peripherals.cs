@@ -50,7 +50,7 @@ namespace CoCo
         {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    PeripheralLogic.Delete(dataGridView1.SelectedRows[i].Cells["id"].Value);
+                    PeripheralLogic.Delete((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
                 initTable();
                 
@@ -85,7 +85,7 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var perId = Convert.ToInt32(dataGridView1.SelectedCells[2].Value);
+            int perId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
             Peripheral per = new Peripheral();
             ChangePer adh = new ChangePer(perId)
             {

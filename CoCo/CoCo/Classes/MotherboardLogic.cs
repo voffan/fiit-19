@@ -25,11 +25,11 @@ namespace CoCo.Classes
             context.SaveChanges();
         }
 
-        public static void Change(string name, string manufacturer, object MBId)
+        public static void Change(string name, string manufacturer, int MBId)
         {
             using (var context = new Context())
             {
-                Motherboard MB = context.Motherboards.FirstOrDefault(x => x.Id == (int)MBId);
+                Motherboard MB = context.Motherboards.FirstOrDefault(x => x.Id == MBId);
                 MB.Name = name;
                 MB.Manufacturer = manufacturer;
                 context.SaveChanges();
