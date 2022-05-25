@@ -10,6 +10,7 @@ namespace CoCo.Classes
     {
         public static void Add(string name, string manu, int employeeid)
         {
+            DateTime ThisDay = DateTime.Today;
             Context context = new Context();
             Peripheral pc = new Peripheral
             {
@@ -17,6 +18,8 @@ namespace CoCo.Classes
                 Manufacturer = manu,
                 EmployeeId = employeeid
             };
+            pc.InventoryNumber = Convert.ToString(ThisDay.Year) + Convert.ToString(ThisDay.Month) + Convert.ToString(ThisDay.Day)
+                    + "0" + Convert.ToString(pc.Id);
             context.Peripherals.Add(pc);
             context.SaveChanges();
 
