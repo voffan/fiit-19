@@ -20,6 +20,7 @@ namespace CoCo.Classes
             };
             context.Employees.Add(emp);
             context.SaveChanges();
+            context.Dispose();
         }
 
         public static void EmployeeChange(string Name, int Id, int emplId)
@@ -40,6 +41,7 @@ namespace CoCo.Classes
             var cpu = context.Employees.Find(value);
             context.Employees.Remove(cpu);
             context.SaveChanges();
+            context.Dispose();
         }
     }
 }

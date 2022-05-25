@@ -53,7 +53,7 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Messages.ConfirmDelete())
+            if (Messages.ConfirmDelete() == DialogResult.OK)
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {

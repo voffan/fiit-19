@@ -22,9 +22,10 @@ namespace CoCo.Classes
                     MotherboardId = motherboardid,
                     EmployeeId = employeeid,
                 };
-                pc.InventoryNumber = Convert.ToString(ThisDay.Year) + Convert.ToString(ThisDay.Month) + Convert.ToString(ThisDay.Day)
-                    + "0" + Convert.ToString(pc.Id);
                 context.PCs.Add(pc);
+                context.SaveChanges();
+                pc.InventoryNumber = ThisDay.ToString("yyyyMMdd")
+                    + "0" + Convert.ToString(pc.Id);
                 context.SaveChanges();
             }
         }

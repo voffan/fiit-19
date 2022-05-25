@@ -18,11 +18,12 @@ namespace CoCo.Classes
                 Manufacturer = manu,
                 EmployeeId = employeeid
             };
-            pc.InventoryNumber = Convert.ToString(ThisDay.Year) + Convert.ToString(ThisDay.Month) + Convert.ToString(ThisDay.Day)
-                    + "0" + Convert.ToString(pc.Id);
             context.Peripherals.Add(pc);
             context.SaveChanges();
-
+            pc.InventoryNumber = ThisDay.ToString("yyyyMMdd")
+                    + "1" + Convert.ToString(pc.Id);
+            context.SaveChanges();
+            context.Dispose();
         }
         public static void Delete(int value)
         {
@@ -30,6 +31,7 @@ namespace CoCo.Classes
             var cpu = context.Peripherals.Find(value);
             context.Peripherals.Remove(cpu);
             context.SaveChanges();
+            context.Dispose();
         }
 
         public static void PeripheralChange(string name, string manu, int empl, int value)
@@ -44,8 +46,6 @@ namespace CoCo.Classes
                 per.Name = name;
                 per.Manufacturer = manu;
                 per.Employee = context.Employees.Find(empl);
-
-
                 context.SaveChanges();
             }
 

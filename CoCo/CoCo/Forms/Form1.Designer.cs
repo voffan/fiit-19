@@ -39,13 +39,18 @@
             this.жДискиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.процессорыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ремонтыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.составитьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оРаботающихКомпьютерахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оСписанныхКомпьютерахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.спискиToolStripMenuItem});
+            this.спискиToolStripMenuItem,
+            this.составитьОтчетToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(891, 24);
@@ -131,6 +136,34 @@
             this.ремонтыToolStripMenuItem.Text = "Ремонты";
             this.ремонтыToolStripMenuItem.Click += new System.EventHandler(this.ремонтыToolStripMenuItem_Click);
             // 
+            // составитьОтчетToolStripMenuItem
+            // 
+            this.составитьОтчетToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.оРаботающихКомпьютерахToolStripMenuItem,
+            this.оСписанныхКомпьютерахToolStripMenuItem,
+            this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem});
+            this.составитьОтчетToolStripMenuItem.Name = "составитьОтчетToolStripMenuItem";
+            this.составитьОтчетToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.составитьОтчетToolStripMenuItem.Text = "Составить отчет";
+            // 
+            // оРаботающихКомпьютерахToolStripMenuItem
+            // 
+            this.оРаботающихКомпьютерахToolStripMenuItem.Name = "оРаботающихКомпьютерахToolStripMenuItem";
+            this.оРаботающихКомпьютерахToolStripMenuItem.Size = new System.Drawing.Size(349, 22);
+            this.оРаботающихКомпьютерахToolStripMenuItem.Text = "О работающих компьютерах";
+            // 
+            // оСписанныхКомпьютерахToolStripMenuItem
+            // 
+            this.оСписанныхКомпьютерахToolStripMenuItem.Name = "оСписанныхКомпьютерахToolStripMenuItem";
+            this.оСписанныхКомпьютерахToolStripMenuItem.Size = new System.Drawing.Size(349, 22);
+            this.оСписанныхКомпьютерахToolStripMenuItem.Text = "О списанных компьютерах";
+            // 
+            // оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem
+            // 
+            this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem.Name = "оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem";
+            this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem.Size = new System.Drawing.Size(349, 22);
+            this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem.Text = "О ремонтированных в этом месяце компьютерах";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +196,10 @@
         private System.Windows.Forms.ToolStripMenuItem жДискиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem процессорыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ремонтыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem составитьОтчетToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оРаботающихКомпьютерахToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оСписанныхКомпьютерахToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem;
     }
 }
 

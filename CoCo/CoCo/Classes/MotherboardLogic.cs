@@ -16,6 +16,7 @@ namespace CoCo.Classes
             motherboard.Manufacturer = manufacturer;
             context.Motherboards.Add(motherboard);
             context.SaveChanges();
+            context.Dispose();
         }
         public static void Delete(object value)
         {
@@ -23,6 +24,7 @@ namespace CoCo.Classes
             var cpu = context.Motherboards.Find(value);
             context.Motherboards.Remove(cpu);
             context.SaveChanges();
+            context.Dispose();
         }
 
         public static void Change(string name, string manufacturer, int MBId)

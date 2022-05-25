@@ -25,7 +25,6 @@ namespace CoCo
             initTable();
         }
 
-
         private void initTable()
         {
             dataGridView1.DataSource = new Context().Motherboards.ToList();
@@ -50,7 +49,7 @@ namespace CoCo
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Messages.ConfirmDelete())
+            if (Messages.ConfirmDelete() == DialogResult.OK)
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
@@ -79,7 +78,7 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var MBId = dataGridView1.SelectedCells[0].Value;
+            int MBId = (int)dataGridView1.SelectedCells[0].Value;
             Motherboard mb = new Motherboard();
             ChangeMotherboard mot = new ChangeMotherboard(MBId)
             {

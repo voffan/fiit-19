@@ -8,6 +8,13 @@ namespace CoCo.Classes
 {
     internal class DeviceLogic
     {
-
+        internal static void ChangeStatus(int id, Status status)
+        {
+            Context context = new Context();
+            Device device = context.Device.Find(id);
+            device.Status = status;
+            context.SaveChanges();
+            context.Dispose();
+        }
     }
 }

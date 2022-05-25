@@ -26,7 +26,7 @@ namespace CoCo
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (Messages.ConfirmDelete())
+            if (Messages.ConfirmDelete() == DialogResult.OK)
             {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
@@ -38,6 +38,31 @@ namespace CoCo
         private void initTable()
         {
             dataGridView1.DataSource = new Context().Repairs.ToList();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = Messages.RepairComplete();
+            if (dr != DialogResult.Cancel)
+            {
+                RepairStatus rs;
+                Status ds;
+                if (dr == DialogResult.Yes)
+                {
+                    rs = RepairStatus.done;
+                    ds = Status.working;
+                }
+                else
+                {
+                    rs = RepairStatus.failed;
+                    ds = Status.broken;
+                }
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                {
+                    RepairLogic.Complete((int)dataGridView1.SelectedRows[i].Cells["id"].Value, (int)dataGridView1.SelectedRows[i].Cells["deviceid"].Value, rs, ds);
+                }
+                initTable();
+            }
         }
     }
 }

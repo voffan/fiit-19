@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
+using CoCo.Classes;
 
 
 namespace CoCo.Classes
@@ -22,6 +23,7 @@ namespace CoCo.Classes
             Context context = new Context();
             context.Repairs.Add(repair);
             context.SaveChanges();
+            context.Dispose();
         }
 
         internal static void Delete(int id)
@@ -30,6 +32,18 @@ namespace CoCo.Classes
             var thing = context.Repairs.Find(id);
             context.Repairs.Remove(thing);
             context.SaveChanges();
+            context.Dispose();
+        }
+
+        internal static void Complete(int id, int did, RepairStatus rs, Status ds)
+        {
+            Context context = new Context();
+            Repair thing = context.Repairs.Find(id);
+            thing.EndDate = DateTime.Today;
+            thing.Status = rs;
+            DeviceLogic.ChangeStatus(did, ds);
+            context.SaveChanges();
+            context.Dispose();
         }
     }
 }

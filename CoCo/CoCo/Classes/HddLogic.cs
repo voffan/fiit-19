@@ -17,6 +17,7 @@ namespace CoCo.Classes
             hdd.Manufacturer = manufacturer;
             context.Hdds.Add(hdd);
             context.SaveChanges();
+            context.Dispose();
         }
         public static void Delete(int value)
         {
@@ -24,6 +25,7 @@ namespace CoCo.Classes
             var hdd = context.Hdds.Find(value);
             context.Hdds.Remove(hdd);
             context.SaveChanges();
+            context.Dispose();
         }
         public static void HddChange(string name, decimal volume, string manufacturer, int hddId)
         {

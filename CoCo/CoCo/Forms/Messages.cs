@@ -5,26 +5,19 @@ namespace CoCo.Forms
 {
     public partial class Messages : UserControl
     {
-        public static bool ConfirmDelete()
+        public static DialogResult ConfirmDelete()
         {
-            if (MessageBox.Show(
-                "Вы уверены, что хатите удалить этот элемент?",
+            return MessageBox.Show(
+                "Вы уверены, что хотите удалить этот элемент?",
                 "Удаление",
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Question
-                ) == DialogResult.OK)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+                );
         }
         public static void TooLong(string what)
         {
             MessageBox.Show(
-                    what + " слишком длинное",
+                    "Поле " + what + " слишком длинное",
                     "Сообщение",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -51,6 +44,14 @@ namespace CoCo.Forms
                     "Заполните все поля",
                     "Сообщение",
                     MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+        }
+        public static DialogResult RepairComplete()
+        {
+            return MessageBox.Show(
+                    "Успешно?",
+                    "Сообщение",
+                    MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Warning);
         }
 

@@ -17,6 +17,7 @@ namespace CoCo.Classes
             cpu.Manufacturer = manu;
             context.Cpus.Add(cpu);
             context.SaveChanges();
+            context.Dispose();
         }
         public static void Delete(int value)
         {
@@ -24,6 +25,7 @@ namespace CoCo.Classes
             var cpu = context.Hdds.Find(value);
             context.Hdds.Remove(cpu);
             context.SaveChanges();
+            context.Dispose();
         }
 
         public static void CpuChange(string name, decimal freq, string manufacturer, int cpuId)
