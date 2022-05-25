@@ -67,36 +67,295 @@ namespace SportAchievements
             ex.DisplayAlerts = false;
             Excel.Worksheet sheet = (Excel.Worksheet)ex.Worksheets.get_Item(1);
       
+
+
+
+
+
+
+
+
+
+
+
+
+
             if (Report1.Checked == true)
             {
                 sheet.Name = "Отчет " + DateTime.Parse(DateTime.Now.Date.ToString()).ToShortDateString();
-                string sport = sportKind.Text;
                 
-                List<Sportsman> sportsmen = c.Sportsmen.ToList();
-                string[][] new_sportsmen = new string[sportsmen.Count][];
-                List<Result> results = c.Results.ToList();
 
-                int i = 0;
+
+                string sport = sportKind.Text;
+
+                List<Result> results = c.Results.Where(r => r.Sport.Name.ToString().Contains(sport)).ToList();
+                List<Sportsman> sportsmen = c.Sportsmen.ToList();
+                List<string> new_sportsmen = new List<string>();
+
+
+                int i = 1;
+
                 foreach (Result res in results)
                 {
-                    
-                    if (res.Sport.Name == sport)
+                    if (!new_sportsmen.Contains(res.Sportsman.Name))
                     {
-                        Sportsman sportsman = (from Sportsman s in results where s.Id == res.SportsmanId select s).FirstOrDefault();
-                        for (int j = 0; j < 4; j++)
-                            new_sportsmen[i][j] = res.Sportsman.Name;
-                        
+                        new_sportsmen.Add(res.Sportsman.Name);
                     }
+                }
+
+                foreach (string s in new_sportsmen)
+                {
+                    sheet.Cells[i, 1] = s;
+                    sheet.Cells[i, 2] = (from st in sportsmen
+                                         where st.Name == s
+                                         select st.Gender.ToString()).FirstOrDefault();
+                    /*sheet.Cells[i, 3] = (from st in results
+                                         where st.Sportsman.Name == s
+                                         select st.WeightCategory).FirstOrDefault();*/
+                    sheet.Cells[i, 4] = (from st in results
+                                         where st.Place < 4
+                                         && st.Sportsman.Name == s
+                                         select st).Count();
                     i++;
                 }
+
+
+
+
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             if (Report2.Checked ==  true)
             {
                 sheet.Name = "Отчет " + DateTime.Parse(DateTime.Now.Date.ToString()).ToShortDateString();
-                string sport = sportKind.Text;
+                
                 DateTime start = dateTimePicker1.Value;
-                DateTime end = dateTimePicker1.Value;
+                DateTime end = dateTimePicker2.Value;
+
+                
+                string sport = sportKind.Text;
+
+                List<Result> results = c.Results.Where(r => r.Sport.Name.ToString().Contains(sport)).ToList();
+
+                
+                List<DateTime> new_com_1 = new List<DateTime>();
+                List<DateTime> new_com_2 = new List<DateTime>();
+                List<string> com = new List<string>();
+                List<int> place = new List<int>();
+                List<int> point = new List<int>();
+                List<string> new_sportsmen = new List<string>();
+                //List<string> categ = new List<string>();
+                List<string> vit = new List<string>();
+
+                List<Sportsman> sportsmen = c.Sportsmen.ToList();
+                
+
+
+                
+                
+
+
+                
+
+                foreach (Result res in results)
+                {
+                    new_com_1.Add(res.Competition.DateBeginning);
+                    new_com_2.Add(res.Competition.DateEnding);
+                    com.Add(res.Competition.Name);
+                    //categ.Add(res.WeightCategory.Name.ToString());
+                    place.Add(res.Place);
+                    point.Add(res.Points);
+                    new_sportsmen.Add(res.Sportsman.Name);
+                }
+
+                int col = new_com_2.Count();
+                int[] nums = new int[col+1];
+
+                //////////////////////////////////////////////////////////////////////////////////////
+
+                int i = 1;
+                
+                foreach (DateTime s in new_com_2)
+                {
+
+                    if ((s > start) && (s < end))
+                    {
+                        //sheet.Cells[i, 1] = s;
+
+                        nums[i] = 1;
+
+
+
+
+
+                        i++;
+                    }
+                    else 
+                    {
+                        nums[i] = 0;
+                        i++;
+                    }
+
+                    
+                }
+
+
+                i = 1;
+                foreach (int h in place)
+                {
+                    if (h >= 4)
+                    {
+                        nums[i] = 0;
+                        i++;
+                    }
+                    else 
+                    {
+                        i++;
+                    }
+                    
+                    
+                }
+                //////////////////////////////////////////////////////////////////////////////////////
+                /*i = 1;
+                int j = 2;
+                foreach (DateTime h in new_com_2)
+                {
+
+                    if (nums[i] == 1)
+                    {
+                        sheet.Cells[j, 1] = h;
+
+                        j++;
+                        i++;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+
+
+                }*/
+                i = 1;
+                int j = 2;
+                foreach (string h in new_sportsmen)
+                {
+                    if (nums[i] == 1)
+                    {
+                        sheet.Cells[j, 1] = h;
+
+
+                        i++;
+                        j++;
+                    }
+                    else 
+                    {
+                        i++;
+                    }
+                }
+                i = 1;
+                j = 2;
+                foreach (string h in com)
+                {
+                    if (nums[i] == 1)
+                    {
+                        sheet.Cells[j, 2] = h;
+
+
+                        i++;
+                        j++;
+                    }
+                    else 
+                    {
+                        i++;
+                    }
+                }
+                i = 1;
+                j = 2;
+                foreach (int h in place)
+                {
+                    if (nums[i] == 1)
+                    {
+                        sheet.Cells[j, 3] = h.ToString();
+
+
+                        i++;
+                        j++;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                }
+                i = 1;
+                j = 2;
+                foreach (int h in point)
+                {
+                    if (nums[i] == 1)
+                    {
+                        sheet.Cells[j, 4] = h.ToString();
+
+
+                        i++;
+                        j++;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                }
+                /*i = 1;
+                j = 2;
+                foreach (string h in categ)
+                {
+                    if (nums[i] == 1)
+                    {
+                        sheet.Cells[j, 5] = h.ToString();
+
+
+                        i++;
+                        j++;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             }
         }
