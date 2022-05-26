@@ -26,20 +26,27 @@ namespace SiliconValley.Список_авторов
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.button1.Text == "Добавить")
+            if(textBox1.Text != "")
             {
-                ArtistComponent.Add(textBox1.Text, dateTimePicker1.Value);
-            }
-            else if (this.button1.Text == "Изменить")
-            {
-                if (Index < 0) 
+                if (this.button1.Text == "Добавить")
                 {
-                    MessageBox.Show("");
-                    this.Close();
+                    ArtistComponent.Add(textBox1.Text, dateTimePicker1.Value);
                 }
-                ArtistComponent.Edit(Index, textBox1.Text, dateTimePicker1.Value);
+                else if (this.button1.Text == "Изменить")
+                {
+                    if (Index < 0)
+                    {
+                        MessageBox.Show("");
+                        this.Close();
+                    }
+                    ArtistComponent.Edit(Index, textBox1.Text, dateTimePicker1.Value);
+                }
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                MessageBox.Show("Заполните все поля, чтобы добавить автора.");
+            }
         }
 
         private void Form_artist_Load(object sender, EventArgs e)

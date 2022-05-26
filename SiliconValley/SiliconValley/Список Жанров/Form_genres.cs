@@ -34,16 +34,23 @@ namespace SiliconValley.Список_Жанров
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "Добавить")
+            if(textBox1.Text != "")
             {
-                AddGenres();
-                Close();
-            }
+                if (button1.Text == "Добавить")
+                {
+                    AddGenres();
+                    Close();
+                }
 
-            if (button1.Text == "Изменить")
+                if (button1.Text == "Изменить")
+                {
+                    ChangeGenre();
+                    Close();
+                }
+            }
+            else
             {
-                ChangeGenre();
-                Close();
+                MessageBox.Show("Заполните поле, чтобы добавить жанр.");
             }
         }
 

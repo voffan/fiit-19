@@ -38,7 +38,6 @@ namespace SiliconValley.Список_выставок
         private void ChangeExpo_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(GridExpo.CurrentRow.Cells[3].Value);
-            MessageBox.Show(id.ToString());
             Form_expos form_Expos = new Form_expos("Изменить выставку", "Изменить", id);
             form_Expos.ShowDialog();
 

@@ -28,16 +28,29 @@ namespace SiliconValley.Список_выставок
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "Добавить")
+            if (textBox1.Text != "" && textBox2.Text != "" )
             {
-                AddExpos();
-                Close();
+                if(dateTimePicker1.Value <= dateTimePicker2.Value)
+                {
+                    if (button1.Text == "Добавить")
+                    {
+                        AddExpos();
+                        Close();
+                    }
+                    if (button1.Text == "Изменить")
+                    {
+                        ChangeExpo();
+                        Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Неверные даты начала и конца выставки.");
+                }
             }
-
-            if (button1.Text == "Изменить")
+            else
             {
-                ChangeExpo();
-                Close();
+                MessageBox.Show("Заполните все поля, чтобы добавить выставку.");
             }
         }
         void AddExpos()

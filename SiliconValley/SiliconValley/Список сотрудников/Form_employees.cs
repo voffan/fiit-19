@@ -25,16 +25,23 @@ namespace SiliconValley.Список_сотрудников
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "Добавить")
+            if(surnameTextBox.Text != "" && nameTextBox.Text != "" && patronymicTextBox.Text != "" && textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && comboBox1.SelectedIndex != -1 && comboBox2.SelectedIndex != -1)
             {
-                AddEmployee();
-                Close();
-            }
+                if (button1.Text == "Добавить")
+                {
+                    AddEmployee();
+                    Close();
+                }
 
-            if (button1.Text == "Изменить")
+                if (button1.Text == "Изменить")
+                {
+                    ChangeEmployee();
+                    Close();
+                }
+            }
+            else
             {
-                ChangeEmployee();
-                Close();
+                MessageBox.Show("Заполните все поля, чтобы добавить сотрудника.");
             }
         }
 

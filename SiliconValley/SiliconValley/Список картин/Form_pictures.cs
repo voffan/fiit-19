@@ -41,28 +41,36 @@ namespace SiliconValley.Список_картин
                 comboBox3.DataSource = db.Artists.ToList();
                 comboBox3.DisplayMember = "Name";
                 comboBox3.ValueMember = "Id";
-
-            }   
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double price = double.Parse(textBox2.Text);
-            Placement placement = (Placement)comboBox1.SelectedItem;
-            Genre genre = (Genre)comboBox2.SelectedItem;
-            Artist artist = (Artist)comboBox3.SelectedItem;
-            if (this.button1.Text == "Добавить") {
-                PictureComponent.Add(textBox1.Text, price, dateTimePicker1.Value, placement.Id, genre.Id, artist.Id);
-            }
-            else if (this.button1.Text == "Изменить") 
+            if (textBox1.Text != "" && textBox2.Text != "" && comboBox1.SelectedIndex != -1 && comboBox2.SelectedIndex != -1 && comboBox3.SelectedIndex != -1)
             {
-                if (Index < 0) {
-                    MessageBox.Show("");
-                    this.Close();
+                double price = double.Parse(textBox2.Text);
+                Placement placement = (Placement)comboBox1.SelectedItem;
+                Genre genre = (Genre)comboBox2.SelectedItem;
+                Artist artist = (Artist)comboBox3.SelectedItem;
+                if (this.button1.Text == "Добавить")
+                {
+                    PictureComponent.Add(textBox1.Text, price, dateTimePicker1.Value, placement.Id, genre.Id, artist.Id);
                 }
-                PictureComponent.Edit(Index, textBox1.Text, price, dateTimePicker1.Value, placement.Id, genre.Id, artist.Id);
+                else if (this.button1.Text == "Изменить")
+                {
+                    if (Index < 0)
+                    {
+                        MessageBox.Show("");
+                        this.Close();
+                    }
+                    PictureComponent.Edit(Index, textBox1.Text, price, dateTimePicker1.Value, placement.Id, genre.Id, artist.Id);
+                }
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                MessageBox.Show("Заполните все поля, чтобы добавить картину.");
+            }
         }
 
         private void Form_pictures_Load(object sender, EventArgs e)

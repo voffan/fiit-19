@@ -24,20 +24,26 @@ namespace SiliconValley.Список_отделов
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "Добавить")
+            if (textBox1.Text != "")
             {
-                Department dep = new Department();
-                dep.Name = textBox1.Text;
-                ListsComponent.Add(dep);
-                Close();
+                if (button1.Text == "Добавить")
+                {
+                    Department dep = new Department();
+                    dep.Name = textBox1.Text;
+                    ListsComponent.Add(dep);
+                    Close();
+                }
+                if (button1.Text == "Изменить")
+                {
+                    Department dep = ListsComponent.GetObjById<Department>(Index);
+                    dep.Name = textBox1.Text;
+                    ListsComponent.Edit(dep);
+                    Close();
+                }
             }
-
-            if (button1.Text == "Изменить")
+            else
             {
-                Department dep = ListsComponent.GetObjById<Department>(Index);
-                dep.Name = textBox1.Text;
-                ListsComponent.Edit(dep);
-                Close();
+                MessageBox.Show("Заполните поле, чтобы добавить отдел.");
             }
         }
 
