@@ -42,7 +42,7 @@ namespace SiliconValley.Список_картин
                 comboBox3.DisplayMember = "Name";
                 comboBox3.ValueMember = "Id";
 
-            }   
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
