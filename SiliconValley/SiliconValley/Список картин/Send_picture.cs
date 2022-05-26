@@ -14,10 +14,10 @@ namespace SiliconValley.Список_картин
 {
     public partial class Send_picture : Form
     {
-        int pictureId;
-        int FromId;
-        public static int placementId=-1;//выбранный placement
-        public Send_picture(int id,int placementId)
+        int? pictureId;
+        int? FromId;
+        public static int? placementId=-1;//выбранный placement
+        public Send_picture(int? id,int? placementId)
         {
             InitializeComponent();
             pictureId = id;

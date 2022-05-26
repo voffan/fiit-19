@@ -17,7 +17,7 @@ namespace SiliconValley.Список_картин
     public partial class Form_pictures : Form
     {
         public Button Button { get { return button1; } }
-        public int Index { get; set; }
+        public int? Index { get; set; }
         public Form_pictures(string labelText, string buttonText)
         {
             Index = -1;
@@ -86,9 +86,9 @@ namespace SiliconValley.Список_картин
                 Genre genre = ListsComponent.GetObjById<Genre>(p.GenreId);
                 Artist artist = ListsComponent.GetObjById<Artist>(p.ArtistId);
                 
-                comboBox1.Text = placement.Name;
-                comboBox2.Text = genre.Name;
-                comboBox3.Text = artist.Name;
+                comboBox1.Text = placement?.Name;
+                comboBox2.Text = genre?.Name;
+                comboBox3.Text = artist?.Name;
             }
         }
 

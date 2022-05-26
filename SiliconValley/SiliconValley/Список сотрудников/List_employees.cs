@@ -42,7 +42,7 @@ namespace SiliconValley.Список_сотрдников
 
         private void ChangeEmployee_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(gridEmployee.CurrentRow.Cells[0].Value);
+            int? id = Convert.ToInt32(gridEmployee.CurrentRow.Cells[0].Value);
             Form_employees form_Employee = new Form_employees("Изменить данные сотрудника", "Изменить",id);
             form_Employee.ShowDialog();
 
@@ -60,7 +60,7 @@ namespace SiliconValley.Список_сотрдников
 
             for (int i = 0; i < gridEmployee.SelectedRows.Count; i++)
             {
-                int currentId = Convert.ToInt32(gridEmployee.SelectedRows[i].Cells[0].Value);
+                int? currentId = Convert.ToInt32(gridEmployee.SelectedRows[i].Cells[0].Value);
                 Employee emp = ListsComponent.GetObjById<Employee>(currentId);
 
                 ListsComponent.Delete(emp);

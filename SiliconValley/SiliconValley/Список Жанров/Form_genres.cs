@@ -12,7 +12,7 @@ namespace SiliconValley.Список_Жанров
 {
     public partial class Form_genres : Form
     {
-        int id;
+        int? id;
         public Form_genres(string labelText,string buttonText)
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace SiliconValley.Список_Жанров
             button1.Text = buttonText;
         }
 
-        public Form_genres(string labelText, string buttonText, int id):this(labelText, buttonText)
+        public Form_genres(string labelText, string buttonText, int? id):this(labelText, buttonText)
         {
             this.id = id;
         }

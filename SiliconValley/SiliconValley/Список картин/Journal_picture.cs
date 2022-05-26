@@ -9,12 +9,11 @@ namespace SiliconValley.Список_картин
 {
     public partial class Journal_picture : Form
     {
-        int pictureId;//id выбранной картины
-        int placementId;
-        public Journal_picture(int id)
+        int? pictureId;//id выбранной картины
+        int? placementId;
+        public Journal_picture(int? id)
         {
             InitializeComponent();
-
 
             this.pictureId = id;
 
@@ -51,13 +50,14 @@ namespace SiliconValley.Список_картин
                        where move.PictureId == pictureId
                        select new
                        {
-                           Из = ListsComponent.GetObjById<Placement>(move.FromID).Name,
-                           В = ListsComponent.GetObjById<Placement>(move.ToID).Name,
+                           Из = ((ListsComponent.GetObjById<Placement>(move.FromID)) == null) ? "null" : (ListsComponent.GetObjById<Placement>(move.FromID)).Name,
+                           В = ((ListsComponent.GetObjById<Placement>(move.ToID)) == null) ? "null" : (ListsComponent.GetObjById<Placement>(move.ToID)).Name,
                            Дата = move.Date,
-                           Соторудник = emp.Surname + " "+ emp.Name +" "+ emp.Patronymic
+                           Соторудник = emp.Surname + " " + emp.Name + " " + emp.Patronymic
                         };
 
-            dataGridView1.DataSource = list.ToList();
+           // MessageBox.Show(ListsComponent.GetObjById<Placement>(2).Name);
+                dataGridView1.DataSource = list?.ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)
