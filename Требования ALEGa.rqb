@@ -311,7 +311,7 @@ DefaultChar=
 Script=
 ConvTable=
 ConvTablePath=%_HOME%\Resource Files\Conversion Tables</a:ModelOptionsText>
-<a:RepositoryFilename>C:\Users\Артём\Documents\GitHub\fiit-19\Требования ALEGa.rqm</a:RepositoryFilename>
+<a:RepositoryFilename>C:\ALEG\fiit-19\Требования ALEGa.rqm</a:RepositoryFilename>
 <c:DocumentViews>
 <o:RequirementsDocumentView Id="o3">
 <a:ObjectID>8AEB0E7E-0734-4C03-A050-95A1F04C8103</a:ObjectID>
@@ -1325,8 +1325,8 @@ Shadow=0</a:DisplayPreferences>
 <a:Code>REQ_  63</a:Code>
 <a:CreationDate>1631763265</a:CreationDate>
 <a:Creator>Student</a:Creator>
-<a:ModificationDate>1653526472</a:ModificationDate>
-<a:Modifier>Peres</a:Modifier>
+<a:ModificationDate>1631764893</a:ModificationDate>
+<a:Modifier>Student</a:Modifier>
 <a:Priority>0</a:Priority>
 <a:Status>0</a:Status>
 <a:Risk>0</a:Risk>
@@ -1358,22 +1358,35 @@ Shadow=0</a:DisplayPreferences>
 <a:Risk>0</a:Risk>
 <a:VerificationMethod/>
 </o:Requirement>
+<o:Requirement Id="o68">
+<a:ObjectID>FDC4D7E3-2687-437B-99E0-314EC847571F</a:ObjectID>
+<a:Requirement.Title>Массовый ввод</a:Requirement.Title>
+<a:Code>REQ_  70</a:Code>
+<a:CreationDate>1631764890</a:CreationDate>
+<a:Creator>Student</a:Creator>
+<a:ModificationDate>1631764898</a:ModificationDate>
+<a:Modifier>Student</a:Modifier>
+<a:Priority>0</a:Priority>
+<a:Status>0</a:Status>
+<a:Risk>0</a:Risk>
+<a:VerificationMethod/>
+</o:Requirement>
 </c:Requirements>
 </o:Requirement>
-<o:Requirement Id="o68">
+<o:Requirement Id="o69">
 <a:ObjectID>D8D15109-A140-47C8-9935-193754233BCE</a:ObjectID>
 <a:Requirement.Title>Судьи</a:Requirement.Title>
 <a:Code>REQ_  66</a:Code>
 <a:CreationDate>1631763326</a:CreationDate>
 <a:Creator>Student</a:Creator>
-<a:ModificationDate>1653526473</a:ModificationDate>
-<a:Modifier>Peres</a:Modifier>
+<a:ModificationDate>1631764884</a:ModificationDate>
+<a:Modifier>Student</a:Modifier>
 <a:Priority>0</a:Priority>
 <a:Status>0</a:Status>
 <a:Risk>0</a:Risk>
 <a:VerificationMethod/>
 <c:Requirements>
-<o:Requirement Id="o69">
+<o:Requirement Id="o70">
 <a:ObjectID>2B8B4682-5CAA-4F24-86E6-91D4391FA642</a:ObjectID>
 <a:Requirement.Title>Вводить результаты</a:Requirement.Title>
 <a:Code>REQ_  67</a:Code>
@@ -1386,13 +1399,26 @@ Shadow=0</a:DisplayPreferences>
 <a:Risk>0</a:Risk>
 <a:VerificationMethod/>
 </o:Requirement>
-<o:Requirement Id="o70">
+<o:Requirement Id="o71">
 <a:ObjectID>C0534544-C4C3-414C-9069-F08062759E4B</a:ObjectID>
 <a:Requirement.Title>Добавлять новых спортсменов</a:Requirement.Title>
 <a:Code>REQ_  68</a:Code>
 <a:CreationDate>1631763347</a:CreationDate>
 <a:Creator>Student</a:Creator>
 <a:ModificationDate>1631764717</a:ModificationDate>
+<a:Modifier>Student</a:Modifier>
+<a:Priority>0</a:Priority>
+<a:Status>0</a:Status>
+<a:Risk>0</a:Risk>
+<a:VerificationMethod/>
+</o:Requirement>
+<o:Requirement Id="o72">
+<a:ObjectID>92CC3EDD-BA50-459B-8088-294418F01815</a:ObjectID>
+<a:Requirement.Title>Массовый ввод</a:Requirement.Title>
+<a:Code>REQ_  69</a:Code>
+<a:CreationDate>1631764880</a:CreationDate>
+<a:Creator>Student</a:Creator>
+<a:ModificationDate>1631764890</a:ModificationDate>
 <a:Modifier>Student</a:Modifier>
 <a:Priority>0</a:Priority>
 <a:Status>0</a:Status>

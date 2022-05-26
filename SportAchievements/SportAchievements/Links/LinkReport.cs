@@ -61,24 +61,11 @@ namespace SportAchievements
         {
             Context c = new Context();
             Excel.Application ex = new Excel.Application();
-            ex.Visible = true;
+            //ex.Visible = true;
             ex.SheetsInNewWorkbook = 1;
             Excel.Workbook workBook = ex.Workbooks.Add(Type.Missing);
             ex.DisplayAlerts = false;
             Excel.Worksheet sheet = (Excel.Worksheet)ex.Worksheets.get_Item(1);
-      
-
-
-
-
-
-
-
-
-
-
-
-
 
             if (Report1.Checked == true)
             {
@@ -91,27 +78,48 @@ namespace SportAchievements
                 List<Result> results = c.Results.Where(r => r.Sport.Name.ToString().Contains(sport)).ToList();
                 List<Sportsman> sportsmen = c.Sportsmen.ToList();
                 List<string> new_sportsmen = new List<string>();
+                List<WeightCategory> wc = c.WeightCategories.ToList();
 
 
-                int i = 1;
+                int i = 2;
 
                 foreach (Result res in results)
                 {
                     if (!new_sportsmen.Contains(res.Sportsman.Name))
                     {
                         new_sportsmen.Add(res.Sportsman.Name);
+                       
                     }
                 }
+
+                sheet.get_Range("A1", "D1").Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                sheet.get_Range("A1", "D1").Font.Bold = true;
+                sheet.get_Range("A1", "D1").Font.Size = 13;
+                sheet.get_Range("A1", "D1").ColumnWidth = 20;
+                sheet.Cells[1, 1] = "ФИО";
+                sheet.Cells[1, 2] = "Пол";
+                sheet.Cells[1, 3] = "Весовая категория";
+                sheet.Cells[1, 4] = "Количество";
 
                 foreach (string s in new_sportsmen)
                 {
                     sheet.Cells[i, 1] = s;
-                    sheet.Cells[i, 2] = (from st in sportsmen
-                                         where st.Name == s
-                                         select st.Gender.ToString()).FirstOrDefault();
-                    /*sheet.Cells[i, 3] = (from st in results
-                                         where st.Sportsman.Name == s
-                                         select st.WeightCategory).FirstOrDefault();*/
+                    if ((from st in sportsmen
+                         where st.Name == s
+                         select st.Gender.ToString()).FirstOrDefault() == "Man")
+                    {
+                        sheet.Cells[i, 2] = "Мужской";
+                    }
+                    else
+                    {
+                        sheet.Cells[i, 2] = "Женский";
+                    }
+                    //Dictionary<string, string> Gender = DescriptionAttributes<Gender>.RetrieveAttributes();
+                    
+                    sheet.Cells[i, 3] = (from r in results
+                                         join w in wc on r.WeightCategoryId equals w.Id
+                                         where r.Sportsman.Name == s
+                                         select w.Name).FirstOrDefault();
                     sheet.Cells[i, 4] = (from st in results
                                          where st.Place < 4
                                          && st.Sportsman.Name == s
@@ -119,33 +127,7 @@ namespace SportAchievements
                     i++;
                 }
 
-
-
-
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             if (Report2.Checked ==  true)
             {
@@ -166,18 +148,13 @@ namespace SportAchievements
                 List<int> place = new List<int>();
                 List<int> point = new List<int>();
                 List<string> new_sportsmen = new List<string>();
+                List<WeightCategory> weightCategories = c.WeightCategories.ToList();
                 //List<string> categ = new List<string>();
                 List<string> vit = new List<string>();
 
                 List<Sportsman> sportsmen = c.Sportsmen.ToList();
                 
 
-
-                
-                
-
-
-                
 
                 foreach (Result res in results)
                 {
@@ -196,7 +173,17 @@ namespace SportAchievements
                 //////////////////////////////////////////////////////////////////////////////////////
 
                 int i = 1;
-                
+
+                sheet.get_Range("A1", "E1").Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                sheet.get_Range("A1", "E1").Font.Bold = true;
+                sheet.get_Range("A1", "E1").Font.Size = 13;
+                sheet.get_Range("A1", "E1").ColumnWidth = 20;
+                sheet.Cells[1, 1] = "ФИО";
+                sheet.Cells[1, 2] = "Вид соревнования";
+                sheet.Cells[1, 3] = "Место";
+                sheet.Cells[1, 4] = "Очки";
+                sheet.Cells[1, 5] = "Весовая категория";
+
                 foreach (DateTime s in new_com_2)
                 {
 
@@ -205,11 +192,6 @@ namespace SportAchievements
                         //sheet.Cells[i, 1] = s;
 
                         nums[i] = 1;
-
-
-
-
-
                         i++;
                     }
                     else 
@@ -220,8 +202,6 @@ namespace SportAchievements
 
                     
                 }
-
-
                 i = 1;
                 foreach (int h in place)
                 {
@@ -237,26 +217,7 @@ namespace SportAchievements
                     
                     
                 }
-                //////////////////////////////////////////////////////////////////////////////////////
-                /*i = 1;
-                int j = 2;
-                foreach (DateTime h in new_com_2)
-                {
-
-                    if (nums[i] == 1)
-                    {
-                        sheet.Cells[j, 1] = h;
-
-                        j++;
-                        i++;
-                    }
-                    else
-                    {
-                        i++;
-                    }
-
-
-                }*/
+          
                 i = 1;
                 int j = 2;
                 foreach (string h in new_sportsmen)
@@ -325,13 +286,13 @@ namespace SportAchievements
                         i++;
                     }
                 }
-                /*i = 1;
+                i = 1;
                 j = 2;
-                foreach (string h in categ)
+                foreach (WeightCategory wc in weightCategories)
                 {
                     if (nums[i] == 1)
                     {
-                        sheet.Cells[j, 5] = h.ToString();
+                        sheet.Cells[j, 5] = wc.ToString();
 
 
                         i++;
@@ -341,22 +302,33 @@ namespace SportAchievements
                     {
                         i++;
                     }
-                }*/
+                }
 
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            DialogResult result = MessageBox.Show("Отчет сформирован. \nНажмите 'Да', чтобы открыь отчет. \nНажмите 'Нет', чтобы сохранить файл.", "Экспорт в Excel", MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.Yes)
+            { ex.Visible = true; }
+            if (result == DialogResult.No)
+            {
+                string fileName = String.Empty;
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "xls files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveFileDialog1.FilterIndex = 1;
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    fileName = saveFileDialog1.FileName;
+                }
+                else
+                    return;
+                //сохраняем Workbook
+                workBook.SaveAs(fileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                saveFileDialog1.Dispose();
+            }
+            if (result == DialogResult.Cancel)
+            {
+                MessageBox.Show("Сохранение результатов экспорта отменено");
             }
         }
 
