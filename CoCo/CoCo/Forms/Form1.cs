@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = ExcelLibrary;
+using CoCo.Classes;
 
 namespace CoCo
 {
@@ -227,6 +229,25 @@ namespace CoCo
         private void Form1_Load(object sender, EventArgs e)
         {
             Context context = new Context();
+        }
+
+        private void оРаботающихКомпьютерахToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*           ExcelLibrary.SpreadSheet ex = new Excel.Application();
+                       ex.SheetsInNewWorkbook = 1;
+                       Workbook workBook = ex.Workbooks.Add(Type.Missing);
+                       ex.DisplayAlerts = false;
+                       ExcelLibrary.SpreadSheet sheet = (Excel.Worksheet)ex.Worksheets.get_Item(1);
+                       sheet.Name = "Отчет о работающих компьютерах от " + DateTime.Today.ToString();
+                       Context context = new Context();
+                       List<PC> pcs = (from PC d in context.PCs
+                                   where d.Status == Status.working
+                                   select d).ToList();
+                       for(int i = 0; i < pcs.Count; i++)
+                       {
+                           sheet.Cells[i, 1] = pcs[i].Id;
+                       }
+                       context.Dispose();*/
         }
     }
 }

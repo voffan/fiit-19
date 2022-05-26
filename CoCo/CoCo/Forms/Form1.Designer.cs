@@ -151,6 +151,7 @@
             this.оРаботающихКомпьютерахToolStripMenuItem.Name = "оРаботающихКомпьютерахToolStripMenuItem";
             this.оРаботающихКомпьютерахToolStripMenuItem.Size = new System.Drawing.Size(349, 22);
             this.оРаботающихКомпьютерахToolStripMenuItem.Text = "О работающих компьютерах";
+            this.оРаботающихКомпьютерахToolStripMenuItem.Click += new System.EventHandler(this.оРаботающихКомпьютерахToolStripMenuItem_Click);
             // 
             // оСписанныхКомпьютерахToolStripMenuItem
             // 

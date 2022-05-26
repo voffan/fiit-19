@@ -14,7 +14,9 @@ namespace CoCo.Classes
         [Description("на ремонте")]
         repairing,
         [Description("сломано")]
-        broken
+        broken,
+        [Description("списан")]
+        writtenoff
     }
     public class Device
     {
