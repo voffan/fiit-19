@@ -37,7 +37,7 @@ namespace SiliconValley.Список_выставок
 
         private void ChangeExpo_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(GridExpo.CurrentRow.Cells[3].Value);
+            int? id = Convert.ToInt32(GridExpo.CurrentRow.Cells[3].Value);
             MessageBox.Show(id.ToString());
             Form_expos form_Expos = new Form_expos("Изменить выставку", "Изменить", id);
             form_Expos.ShowDialog();
@@ -54,14 +54,21 @@ namespace SiliconValley.Список_выставок
             if (result == DialogResult.No)
                 return;
 
-            for (int i = 0; i < GridExpo.SelectedRows.Count; i++)
+            try
             {
-                int currentId = Convert.ToInt32(GridExpo.SelectedRows[i].Cells[3].Value);
-                Expo expo = ListsComponent.GetObjById<Expo>(currentId);
+                for (int i = 0; i < GridExpo.SelectedRows.Count; i++)
+                {
+                    int? currentId = Convert.ToInt32(GridExpo.SelectedRows[i].Cells[3].Value);
+                    Expo expo = ListsComponent.GetObjById<Expo>(currentId);
 
-                ListsComponent.Delete(expo);
+                    ListsComponent.Delete(expo);
+                }
             }
-
+            catch (Exception error)
+            {
+                MessageBox.Show(@"Данные, которую вы хотите удалить используется приложением. 
+Пожалуйста, удалите сначала эти данные с других списков)))");
+            }
             using (Context db = new Context())
             {
                 GridExpo.DataSource = db.Expos.ToList();

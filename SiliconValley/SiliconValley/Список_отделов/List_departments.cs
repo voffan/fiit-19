@@ -36,7 +36,7 @@ namespace SiliconValley.Список_отделов
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            int? id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             Form_department formDep = new Form_department("Изменить отдел", "Изменить");
             formDep.Index = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             formDep.ShowDialog();
@@ -52,11 +52,19 @@ namespace SiliconValley.Список_отделов
             if (result == DialogResult.No)
                 return;
 
-            for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+            try
             {
-                int currentId = Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value);
-                Department d = ListsComponent.GetObjById<Department>(currentId);
-                ListsComponent.Delete(d);
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                {
+                    int? currentId = Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value);
+                    Department d = ListsComponent.GetObjById<Department>(currentId);
+                    ListsComponent.Delete(d);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(@"Данные, которую вы хотите удалить используется приложением. 
+Пожалуйста, удалите сначала эти данные с других списков)))");
             }
 
             using (Context db = new Context())

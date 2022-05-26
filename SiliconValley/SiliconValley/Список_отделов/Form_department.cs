@@ -13,7 +13,7 @@ namespace SiliconValley.Список_отделов
     public partial class Form_department : Form
     {
         public Button Button { get { return button1; } }
-        public int Index { get; set; }
+        public int? Index { get; set; }
         public Form_department(string labelText, string buttonText)
         {
             Index = -1;

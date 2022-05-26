@@ -8,7 +8,7 @@ namespace SiliconValley.Список_картин
 {
     class PictureComponent
     {
-        public static void Add(string name, double price, DateTime date, int placement_id, int genre_id, int artist_id)
+        public static void Add(string name, double price, DateTime date, int? placement_id, int? genre_id, int artist_id)
         {
             using (var db = new Context())
             {
@@ -17,7 +17,7 @@ namespace SiliconValley.Список_картин
                 db.SaveChanges();
             }
         }
-        public static void Edit(int index, string name, double price, DateTime date, int placement_id, int genre_id, int artist_id)
+        public static void Edit(int? index, string name, double price, DateTime date, int? placement_id, int? genre_id, int? artist_id)
         {
             using (var db = new Context())
             {
@@ -36,7 +36,7 @@ namespace SiliconValley.Список_картин
                 else throw new Exception("");
             }
         }
-        public static void Delete(int index)
+        public static void Delete(int? index)
         {
             using (var db = new Context())
             {
@@ -50,7 +50,7 @@ namespace SiliconValley.Список_картин
             }
         }
 
-        public static Picture GetPictureByIndex(int index)
+        public static Picture GetPictureByIndex(int? index)
         {
             Context c = new Context();
             Picture p = (from picture in c.Pictures

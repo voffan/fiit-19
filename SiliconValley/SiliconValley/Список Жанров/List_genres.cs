@@ -36,7 +36,7 @@ namespace SiliconValley.Список_Жанров
 
         private void ChangeGenre_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(gridGenre.CurrentRow.Cells[0].Value);
+            int? id = Convert.ToInt32(gridGenre.CurrentRow.Cells[0].Value);
             Form_genres form_Genres = new Form_genres("Изменить жанр", "Изменить",id);
             form_Genres.ShowDialog();
             var db = new Context();
@@ -53,7 +53,7 @@ namespace SiliconValley.Список_Жанров
 
             for (int i = 0; i < gridGenre.SelectedRows.Count; i++)
             {
-                int currentId = Convert.ToInt32(gridGenre.SelectedRows[i].Cells[0].Value);
+                int? currentId = Convert.ToInt32(gridGenre.SelectedRows[i].Cells[0].Value);
                 Genre genre = ListsComponent.GetObjById<Genre>(currentId);
                 ListsComponent.Delete(genre);
             }

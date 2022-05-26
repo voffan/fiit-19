@@ -5,7 +5,7 @@ namespace SiliconValley.Список_сотрудников
 {
     public partial class Form_employees : Form
     {
-        int id;
+        int? id;
         public Form_employees(string title,string buttonText)
         {
             InitializeComponent();
@@ -13,7 +13,7 @@ namespace SiliconValley.Список_сотрудников
             button1.Text = buttonText;
         }
 
-        public Form_employees(string title, string buttonText,int id):this(title, buttonText)
+        public Form_employees(string title, string buttonText,int? id):this(title, buttonText)
         {
             this.id = id;
         }

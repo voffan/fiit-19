@@ -189,10 +189,15 @@
     </Compile>
     <Compile Include="Genre.cs" />
     <Compile Include="Journal.cs" />
+    <Compile Include="Migrations\20220216095135_First.cs" />
+    <Compile Include="Migrations\20220216095135_First.Designer.cs">
+      <DependentUpon>20220216095135_First.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20220428021516_Second.cs" />
-    <Compile Include="Migrations\20220428021516_Second.designer.cs">
+    <Compile Include="Migrations\20220428021516_Second.Designer.cs">
       <DependentUpon>20220428021516_Second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Список авторов\Form_artist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,11 +217,6 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20220216095135_First.cs" />
-    <Compile Include="Migrations\20220216095135_First.designer.cs">
-      <DependentUpon>20220216095135_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Placement.cs" />
     <Compile Include="Position.cs" />

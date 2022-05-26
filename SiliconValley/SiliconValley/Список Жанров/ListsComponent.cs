@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SiliconValley
 {
@@ -41,8 +42,12 @@ namespace SiliconValley
             }
         }
 
-        public static T GetObjById<T>(int index) where T : class
+        public static T GetObjById<T>(int? index) where T : class
         {
+            if (index == null)
+            {
+                return null;
+            }
             Context c = new Context();
             T a = (from obj in c.Set<T>()
                         where ((IId)obj).Id == index

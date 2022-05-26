@@ -13,7 +13,7 @@ namespace SiliconValley.Список_выставок
 {
     public partial class Form_expos : Form
     {
-        int id;
+        int? id;
         public Form_expos(string labelText, string buttonText)
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace SiliconValley.Список_выставок
             button1.Text = buttonText;
         }
 
-        public Form_expos(string labelText, string buttonText, int id) : this(labelText, buttonText)
+        public Form_expos(string labelText, string buttonText, int? id) : this(labelText, buttonText)
         {
             this.id = id;
         }

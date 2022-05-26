@@ -49,7 +49,7 @@ namespace SiliconValley.Список_картин
         }
         private void editBtn_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            int? id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             Form_pictures formPicture = new Form_pictures("Изменить картину", "Изменить");
             formPicture.Index = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             formPicture.ShowDialog();
@@ -67,7 +67,7 @@ namespace SiliconValley.Список_картин
 
             for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
             {
-                int currentId = Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value);
+                int? currentId = Convert.ToInt32(dataGridView1.SelectedRows[i].Cells[0].Value);
                 PictureComponent.Delete(currentId);
             }
 
@@ -84,7 +84,7 @@ namespace SiliconValley.Список_картин
                 MessageBox.Show("Выберите картину");
                 return;
             }
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);//id выбранной картины
+            int? id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);//id выбранной картины
             Journal_picture journal = new Journal_picture(id);
             journal.ShowDialog();
             Context db = new Context();

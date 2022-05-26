@@ -78,9 +78,9 @@ namespace SiliconValley.Migrations
                     Name = table.Column<string>(maxLength: 255, nullable: true),
                     Price = table.Column<double>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
-                    PlacementId = table.Column<int>(nullable: false),
-                    GenreId = table.Column<int>(nullable: false),
-                    ArtistId = table.Column<int>(nullable: false)
+                    PlacementId = table.Column<int>(nullable: true),
+                    GenreId = table.Column<int>(nullable: true),
+                    ArtistId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -90,19 +90,19 @@ namespace SiliconValley.Migrations
                         column: x => x.ArtistId,
                         principalTable: "Artists",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Pictures_Genres_GenreId",
                         column: x => x.GenreId,
                         principalTable: "Genres",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Pictures_Placements_PlacementId",
                         column: x => x.PlacementId,
                         principalTable: "Placements",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,9 +113,9 @@ namespace SiliconValley.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(nullable: false),
                     PictureId = table.Column<int>(nullable: false),
-                    FromID = table.Column<int>(nullable: false),
-                    ToID = table.Column<int>(nullable: false),
-                    EmployeeId = table.Column<int>(nullable: false)
+                    FromID = table.Column<int>(nullable: true),
+                    ToID = table.Column<int>(nullable: true),
+                    EmployeeId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -125,25 +125,28 @@ namespace SiliconValley.Migrations
                         column: x => x.EmployeeId,
                         principalTable: "Employees",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Journals_Placements_FromID",
                         column: x => x.FromID,
                         principalTable: "Placements",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.SetNull
+                        );
                     table.ForeignKey(
                         name: "FK_Journals_Pictures_PictureId",
                         column: x => x.PictureId,
                         principalTable: "Pictures",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade
+                        );
                     table.ForeignKey(
                         name: "FK_Journals_Placements_ToID",
                         column: x => x.ToID,
                         principalTable: "Placements",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.NoAction
+                        );
                 });
 
             migrationBuilder.CreateIndex(
