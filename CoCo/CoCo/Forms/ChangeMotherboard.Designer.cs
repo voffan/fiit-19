@@ -101,6 +101,7 @@
             this.Controls.Add(this.button1);
             this.Name = "ChangeMotherboard";
             this.Text = "ChangeMotherboard";
+            this.Load += new System.EventHandler(this.ChangeMotherboard_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

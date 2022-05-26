@@ -105,6 +105,17 @@ namespace CoCo
             textChange();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int pcId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+            ChangePC chPC = new ChangePC(pcId)
+            {
+                MdiParent = this.MdiParent
+            };
+            chPC.FormClosing += MdiChildClose;
+            chPC.Show();
+        }
+
         private void button_Write_Off_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)

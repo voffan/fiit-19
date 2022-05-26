@@ -180,6 +180,12 @@
     <Compile Include="Forms\ChangeMotherboard.Designer.cs">
       <DependentUpon>ChangeMotherboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChangePC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePC.Designer.cs">
+      <DependentUpon>ChangePC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ChangePer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeMotherboard.resx">
       <DependentUpon>ChangeMotherboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePC.resx">
+      <DependentUpon>ChangePC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

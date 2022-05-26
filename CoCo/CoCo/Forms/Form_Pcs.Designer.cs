@@ -41,6 +41,7 @@ namespace CoCo
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.button_Write_Off = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +152,16 @@ namespace CoCo
             this.label4.TabIndex = 12;
             this.label4.Text = "Работник";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(388, 416);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Изменить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button_Write_Off
             // 
             this.button_Write_Off.Location = new System.Drawing.Point(384, 416);
@@ -166,6 +177,7 @@ namespace CoCo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 452);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button_Write_Off);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
@@ -202,6 +214,7 @@ namespace CoCo
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button_Write_Off;
     }
 }

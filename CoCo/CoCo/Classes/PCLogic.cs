@@ -52,15 +52,17 @@ namespace CoCo.Classes
             }
         }
 
-        //static void Search()
-        //{
-        //    Context context = new Context();
-        //    dataGridView1.DataSource = context.PCs.Where(h =>
-        //   h.Hdd.Name.Contains(textBox1.Text) &&
-        //   h.Cpu.Name.Contains(textBox2.Text) &&
-        //   h.Motherboard.Name.Contains(textBox3.Text) &&
-        //   h.Employee.FullName.Contains(textBox4.Text)
-        //   ).ToList();
-        //}
+        public static void PCChange(int hdd, int cpu, int motherboard, int empl,int value)
+        {
+            using(var context = new Context())
+            {
+                var pc = context.PCs.Find(value);
+                pc.Hdd = context.Hdds.Find(hdd);
+                pc.Cpu = context.Cpus.Find(cpu);
+                pc.Motherboard = context.Motherboards.Find(motherboard);
+                pc.Employee = context.Employees.Find(empl);
+                context.SaveChanges();
+            }
+        }
     }
 }

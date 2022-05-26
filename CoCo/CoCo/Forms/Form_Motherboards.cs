@@ -23,6 +23,8 @@ namespace CoCo
         private void Motherboards_Load(object sender, EventArgs e)
         {
             initTable();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ClearSelection();
         }
 
         private void initTable()
@@ -78,9 +80,9 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int MBId = (int)dataGridView1.SelectedCells[0].Value;
+            int MBId = (int)dataGridView1.SelectedRows[0].Cells["id"].Value;
             Motherboard mb = new Motherboard();
-            ChangeMotherboard mot = new ChangeMotherboard(MBId)
+            ChangeMotherboard mot = new ChangeMotherboard(MBId, Convert.ToString(dataGridView1.SelectedCells[1].Value), Convert.ToString(dataGridView1.SelectedCells[2].Value))
             {
                 MdiParent = this.MdiParent
             };
