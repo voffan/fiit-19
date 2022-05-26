@@ -22,6 +22,8 @@ namespace CoCo
         private void Form_Employees_Load(object sender, EventArgs e)
         {
             initTable();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ClearSelection();
         }
 
         private void initTable()
@@ -51,9 +53,9 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int emplId = (int)dataGridView1.SelectedCells[0].Value;
+            int emplId = (int)dataGridView1.SelectedRows[0].Cells["id"].Value;
             Employee emp = new Employee();
-            ChangeEmployee adh = new ChangeEmployee(emplId)
+            ChangeEmployee adh = new ChangeEmployee(emplId, Convert.ToString(dataGridView1.SelectedCells[1].Value))
             {
                 MdiParent = this.MdiParent
             };

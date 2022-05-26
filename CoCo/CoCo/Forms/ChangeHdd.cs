@@ -14,11 +14,21 @@ namespace CoCo.Forms
     public partial class ChangeHdd : Form
     {
         int hddId;
-
-        public ChangeHdd(int _hdd)
+        string name, vol, manu;
+        public ChangeHdd(int _hdd, string _name, string _vol, string _manu)
         {
             InitializeComponent();
             hddId = _hdd;
+            name = _name;
+            vol = _vol;
+            manu = _manu;
+        }
+
+        private void ChangeHdd_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = name;
+            textBox2.Text = vol;
+            textBox3.Text = manu;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,34 +45,5 @@ namespace CoCo.Forms
             Close();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

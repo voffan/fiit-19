@@ -14,10 +14,13 @@ namespace CoCo.Forms
     public partial class ChangeMotherboard : Form
     {
         int MBId;
-        public ChangeMotherboard(int _mb)
+        string name, manu;
+        public ChangeMotherboard(int _mb, string _name, string _manu)
         {
             InitializeComponent();
             MBId = _mb;
+            name = _name;
+            manu = _manu;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,6 +29,12 @@ namespace CoCo.Forms
             string manu = textBox2.Text;
             MotherboardLogic.Change(name, manu, MBId);
             Close();
+        }
+
+        private void ChangeMotherboard_Load_1(object sender, EventArgs e)
+        {
+            textBox1.Text = name;
+            textBox2.Text = manu;
         }
 
         private void button2_Click(object sender, EventArgs e)
