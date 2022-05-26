@@ -83,5 +83,19 @@ namespace SiliconValley.Список_картин
                 comboBox3.Text = artist?.Name;
             }
         }
+
+        // цена картины реагирует только на цифры, другие символы игнорирует
+        // + возможен ввод одной запятой
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
