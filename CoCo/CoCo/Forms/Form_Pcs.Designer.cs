@@ -49,16 +49,18 @@ namespace CoCo
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 16);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(816, 336);
+            this.dataGridView1.Size = new System.Drawing.Size(1088, 414);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(691, 416);
+            this.button1.Location = new System.Drawing.Point(921, 512);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 23);
+            this.button1.Size = new System.Drawing.Size(184, 28);
             this.button1.TabIndex = 1;
             this.button1.Text = "Добавить компьютер";
             this.button1.UseVisualStyleBackColor = true;
@@ -66,9 +68,10 @@ namespace CoCo
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(610, 416);
+            this.button_delete.Location = new System.Drawing.Point(813, 512);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_delete.Size = new System.Drawing.Size(100, 28);
             this.button_delete.TabIndex = 3;
             this.button_delete.Text = "Удалить";
             this.button_delete.UseVisualStyleBackColor = true;
@@ -76,17 +79,19 @@ namespace CoCo
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 382);
+            this.textBox1.Location = new System.Drawing.Point(17, 470);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // repair
             // 
-            this.repair.Location = new System.Drawing.Point(465, 416);
+            this.repair.Location = new System.Drawing.Point(620, 512);
+            this.repair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.repair.Name = "repair";
-            this.repair.Size = new System.Drawing.Size(139, 23);
+            this.repair.Size = new System.Drawing.Size(185, 28);
             this.repair.TabIndex = 5;
             this.repair.Text = "Отправить на ремонт";
             this.repair.UseVisualStyleBackColor = true;
@@ -94,69 +99,77 @@ namespace CoCo
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 382);
+            this.textBox2.Location = new System.Drawing.Point(159, 470);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 6;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 363);
+            this.label1.Location = new System.Drawing.Point(17, 447);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.Size = new System.Drawing.Size(98, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Жесткий диск";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(116, 363);
+            this.label2.Location = new System.Drawing.Point(155, 447);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(79, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Процессор";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(222, 363);
+            this.label3.Location = new System.Drawing.Point(296, 447);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Матплата";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(225, 382);
+            this.textBox3.Location = new System.Drawing.Point(300, 470);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(132, 22);
             this.textBox3.TabIndex = 10;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(331, 382);
+            this.textBox4.Location = new System.Drawing.Point(441, 470);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 11;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(328, 363);
+            this.label4.Location = new System.Drawing.Point(437, 447);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(70, 16);
             this.label4.TabIndex = 12;
             this.label4.Text = "Работник";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(388, 416);
+            this.button2.Location = new System.Drawing.Point(517, 512);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 23);
+            this.button2.Size = new System.Drawing.Size(95, 28);
             this.button2.TabIndex = 13;
             this.button2.Text = "Изменить";
             this.button2.UseVisualStyleBackColor = true;
@@ -164,9 +177,10 @@ namespace CoCo
             // 
             // button_Write_Off
             // 
-            this.button_Write_Off.Location = new System.Drawing.Point(384, 416);
+            this.button_Write_Off.Location = new System.Drawing.Point(409, 512);
+            this.button_Write_Off.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_Write_Off.Name = "button_Write_Off";
-            this.button_Write_Off.Size = new System.Drawing.Size(75, 23);
+            this.button_Write_Off.Size = new System.Drawing.Size(100, 28);
             this.button_Write_Off.TabIndex = 13;
             this.button_Write_Off.Text = "Списать";
             this.button_Write_Off.UseVisualStyleBackColor = true;
@@ -174,9 +188,9 @@ namespace CoCo
             // 
             // Form_Pcs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 452);
+            this.ClientSize = new System.Drawing.Size(1125, 556);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button_Write_Off);
             this.Controls.Add(this.label4);
@@ -191,6 +205,7 @@ namespace CoCo
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_Pcs";
             this.Text = "Компьютеры";
             this.Load += new System.EventHandler(this.Form_Pcs_Load);
