@@ -94,5 +94,14 @@ namespace CoCo
             adh.FormClosing += MdiChildClose;
             adh.Show();
         }
+
+        private void button_Write_Off_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+            {
+                PeripheralLogic.ChangeStatus((int)dataGridView1.SelectedRows[i].Cells["id"].Value, Status.writtenoff);
+            }
+            initTable();
+        }
     }
 }

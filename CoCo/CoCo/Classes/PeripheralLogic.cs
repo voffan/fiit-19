@@ -50,5 +50,15 @@ namespace CoCo.Classes
             }
 
         }
+
+        internal static void ChangeStatus(int value, Status status)
+        {
+            using (Context context = new Context())
+            {
+                var pc = context.Peripherals.Find(value);
+                pc.Status = status;
+                context.SaveChanges();
+            }
+        }
     }
 }
