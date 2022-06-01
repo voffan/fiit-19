@@ -45,7 +45,7 @@ namespace CoCo
                     MessageBoxIcon.Error);
                 return;
             }
-            if (textBox1.Text == admin.FullName && textBox2.Text == admin.Password)
+            if (textBox1.Text == admin.Login && textBox2.Text == admin.Password)
             {
                 Hide();
                 new Form1().ShowDialog();
@@ -57,7 +57,6 @@ namespace CoCo
                     "Сообщение",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-            
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

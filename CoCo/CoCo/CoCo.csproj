@@ -319,6 +319,10 @@
     <Compile Include="Migrations\202205190347107_stringinv.designer.cs">
       <DependentUpon>202205190347107_stringinv.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206010348404_login.cs" />
+    <Compile Include="Migrations\202206010348404_login.designer.cs">
+      <DependentUpon>202206010348404_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -402,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205190347107_stringinv.resx">
       <DependentUpon>202205190347107_stringinv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206010348404_login.resx">
+      <DependentUpon>202206010348404_login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
