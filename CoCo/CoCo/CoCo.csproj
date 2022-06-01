@@ -144,7 +144,7 @@
     <Compile Include="Classes\EmployeeLogic.cs" />
     <Compile Include="Classes\PeripheralLogic.cs" />
     <Compile Include="Classes\RepairLogic.cs" />
-    <Compile Include="Classes\TMPExcell.cs" />
+    <Compile Include="Classes\ReportLogic.cs" />
     <Compile Include="Forms\AddRepair.cs">
       <SubType>Form</SubType>
     </Compile>
