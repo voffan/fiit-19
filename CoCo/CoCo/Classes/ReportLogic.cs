@@ -8,12 +8,12 @@ using Microsoft.Office.Interop.Excel;
 
 namespace CoCo.Classes
 {
-    internal class TMPExcell: IDisposable
+    internal class ReportLogic: IDisposable
     {
         private Application _excel;
         private _Workbook _workbook;
         private string _filePath;
-        public TMPExcell()
+        public ReportLogic()
         {
             _excel = new Microsoft.Office.Interop.Excel.Application();
 

@@ -16,6 +16,7 @@ namespace CoCo
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -241,9 +242,9 @@ namespace CoCo
         {
             try
             {
-                using(var excel = new TMPExcell())
+                using(var excel = new ReportLogic())
                 {
-                    if (excel.Open(filePath: Path.Combine(Environment.CurrentDirectory, "Test.xlsx")))
+                    if (excel.Open(filePath: Path.Combine(Environment.CurrentDirectory, $"Отчет о работающих компьютерах за {DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} {DateTime.Now.Hour}ч{DateTime.Now.Minute}м.xlsx")))
                     {
                         
                         Context context = new Context();
@@ -272,21 +273,15 @@ namespace CoCo
 
                             excel.Set("J",i+2,pcs[i].InventoryNumber);
                         }
-                        //int i = 2;
-                        //foreach(PC pc in pcs)
-                        //{
-                        //    excel.Set("A", i, pc.Employee.FullName);
-                        //    excel.Set("B", i, pc.InventoryNumber);
-                        //    excel.Set("C", i, pc.Cpu.Frequency);
-                        //}
-
-                        excel.Save();
                       
+                        excel.Save();
                     }
+                    MessageBox.Show("Успешно сохранено");
                 }
             }catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("Call to developer");
             }
            
 
@@ -305,6 +300,104 @@ namespace CoCo
             //    sheet.Cells[i, 1] = pcs[i].Id;
             //}
             //context.Dispose();
+        }
+
+        private void оСписанныхКомпьютерахToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var excel = new ReportLogic())
+                {
+                    if (excel.Open(filePath: Path.Combine(Environment.CurrentDirectory, $"Отчет о списанных компьютерах за {DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} {DateTime.Now.Hour}ч{DateTime.Now.Minute}м.xlsx")))
+                    {
+
+                        Context context = new Context();
+                        List<PC> pcs = (from PC d in context.PCs
+                                        where d.Status == Status.writtenoff
+                                        select d).ToList();
+                        excel.Set("A", 1, "Сотрудник");
+                        excel.Set("B", 1, "Процессор");
+                        excel.Set("E", 1, "Жесткий диск");
+                        excel.Set("H", 1, "Материнская плата");
+                        excel.Set("J", 1, "Инвентарный номер");
+                        for (int i = 0; i < pcs.Count; i++)
+                        {
+                            excel.Set("A", i + 2, pcs[i].Employee.FullName);
+
+                            excel.Set("B", i + 2, pcs[i].Cpu.Name);
+                            excel.Set("C", i + 2, pcs[i].Cpu.Frequency);
+                            excel.Set("D", i + 2, pcs[i].Cpu.Manufacturer);
+
+                            excel.Set("E", i + 2, pcs[i].Hdd.Name);
+                            excel.Set("F", i + 2, pcs[i].Hdd.Volume);
+                            excel.Set("G", i + 2, pcs[i].Hdd.Manufacturer);
+
+                            excel.Set("H", i + 2, pcs[i].Motherboard.Name);
+                            excel.Set("I", i + 2, pcs[i].Motherboard.Manufacturer);
+
+                            excel.Set("J", i + 2, pcs[i].InventoryNumber);
+                        }
+
+                        excel.Save();
+                    }
+                    MessageBox.Show("Успешно сохранено");
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("Call to developer");
+            }
+        }
+
+        private void оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var excel = new ReportLogic())
+                {
+                    if (excel.Open(filePath: Path.Combine(Environment.CurrentDirectory, $"Отчет о ремонтированных в этом месяце компьютерах за {DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} {DateTime.Now.Hour}ч{DateTime.Now.Minute}м.xlsx")))
+                    {
+
+                        Context context = new Context();
+                        List<PC> pcs = (from PC p in context.PCs join Repair r in context.Repairs on p.InventoryNumber equals r.Device.InventoryNumber
+                                        where (((DateTime)r.EndDate).Month == DateTime.Now.Month)
+                                        select p).ToList();
+
+
+                        excel.Set("A", 1, "Сотрудник");
+                        excel.Set("B", 1, "Процессор");
+                        excel.Set("E", 1, "Жесткий диск");
+                        excel.Set("H", 1, "Материнская плата");
+                        excel.Set("J", 1, "Инвентарный номер");
+                        for (int i = 0; i < pcs.Count; i++)
+                        {
+                            excel.Set("A", i + 2, pcs[i].Employee.FullName);
+
+                            excel.Set("B", i + 2, pcs[i].Cpu.Name);
+                            excel.Set("C", i + 2, pcs[i].Cpu.Frequency);
+                            excel.Set("D", i + 2, pcs[i].Cpu.Manufacturer);
+
+                            excel.Set("E", i + 2, pcs[i].Hdd.Name);
+                            excel.Set("F", i + 2, pcs[i].Hdd.Volume);
+                            excel.Set("G", i + 2, pcs[i].Hdd.Manufacturer);
+
+                            excel.Set("H", i + 2, pcs[i].Motherboard.Name);
+                            excel.Set("I", i + 2, pcs[i].Motherboard.Manufacturer);
+
+                            excel.Set("J", i + 2, pcs[i].InventoryNumber);
+                        }
+
+                        excel.Save();
+                    }
+                    MessageBox.Show("Успешно сохранено");
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("Call to developer");
+            }
         }
     }
 }

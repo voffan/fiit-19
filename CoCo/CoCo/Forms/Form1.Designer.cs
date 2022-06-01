@@ -158,12 +158,14 @@
             this.оСписанныхКомпьютерахToolStripMenuItem.Name = "оСписанныхКомпьютерахToolStripMenuItem";
             this.оСписанныхКомпьютерахToolStripMenuItem.Size = new System.Drawing.Size(349, 22);
             this.оСписанныхКомпьютерахToolStripMenuItem.Text = "О списанных компьютерах";
+            this.оСписанныхКомпьютерахToolStripMenuItem.Click += new System.EventHandler(this.оСписанныхКомпьютерахToolStripMenuItem_Click);
             // 
             // оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem
             // 
             this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem.Name = "оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem";
             this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem.Size = new System.Drawing.Size(349, 22);
             this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem.Text = "О ремонтированных в этом месяце компьютерах";
+            this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem.Click += new System.EventHandler(this.оРемонтированныхВЭтомМесяцеКомпьютерахToolStripMenuItem_Click);
             // 
             // Form1
             // 
