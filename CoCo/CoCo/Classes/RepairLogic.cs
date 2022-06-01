@@ -47,5 +47,17 @@ namespace CoCo.Classes
                 context.SaveChanges();
             }
         }
+        internal static void CompleteFromDevice(int did, RepairStatus rs)
+        {
+            using (Context context = new Context())
+            {
+                Repair thing = (from r in context.Repairs
+                                where r.DeviceId == did && r.Status == RepairStatus.inProgress
+                                select r).FirstOrDefault();
+                thing.EndDate = DateTime.Today;
+                thing.Status = rs;
+                context.SaveChanges();
+            }
+        }
     }
 }

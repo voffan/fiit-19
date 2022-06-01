@@ -51,8 +51,26 @@ namespace CoCo.Forms
                 int empl = (int)comboBox4.SelectedValue;
                 Status status = (Status)Enum.Parse(typeof(Status), (string)comboBox5.SelectedValue);
                 string invn = textBox1.Text;
-                PCLogic.PCChange(hdd, cpu, motherboard, empl, pcId, status, invn);
-                Close();
+
+                if (this.status != status)
+                {
+                    if (this.status == Status.repairing)
+                    {
+                        if (status == Status.working)
+                            RepairLogic.CompleteFromDevice(pcId, RepairStatus.done);
+                        else if (status == Status.broken || status == Status.writtenoff)
+                            RepairLogic.CompleteFromDevice(pcId, RepairStatus.failed);
+                    }
+                        
+                        else if (this.status == Status.working || this.status == Status.broken)
+                            if (status == Status.repairing)
+                            {
+                                AddRepair addRepair = new AddRepair(pcId);
+                                addRepair.Show();
+                            }
+                }
+                    PCLogic.PCChange(hdd, cpu, motherboard, empl, pcId, status, invn);
+                    Close();
             }
             catch(Exception ex)
             {
