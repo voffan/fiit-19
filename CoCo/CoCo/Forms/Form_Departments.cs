@@ -22,6 +22,8 @@ namespace CoCo
         private void Form_Departments_Load(object sender, EventArgs e)
         {
             initTable();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ClearSelection();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,7 +53,7 @@ namespace CoCo
         {
             int depId = (int)dataGridView1.SelectedCells[0].Value;
             Department dep = new Department();
-            ChangeDepartment adh = new ChangeDepartment(depId)
+            ChangeDepartment adh = new ChangeDepartment(depId, Convert.ToString(dataGridView1.SelectedCells[1].Value))
             {
                 MdiParent = this.MdiParent
             };

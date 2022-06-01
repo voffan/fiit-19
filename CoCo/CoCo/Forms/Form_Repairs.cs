@@ -22,6 +22,8 @@ namespace CoCo
         private void Form_Repairs_Load(object sender, EventArgs e)
         {
             initTable();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ClearSelection();
         }
 
         private void button_delete_Click(object sender, EventArgs e)

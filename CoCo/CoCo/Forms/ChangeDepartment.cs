@@ -14,10 +14,12 @@ namespace CoCo.Forms
     public partial class ChangeDepartment : Form
     {
         readonly int depId;
-        public ChangeDepartment(int _dep)
+        string name;
+        public ChangeDepartment(int _dep, string _name)
         {
             InitializeComponent();
             depId = _dep;
+            name = _name;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace CoCo.Forms
 
         private void ChangeDepartment_Load(object sender, EventArgs e)
         {
-            
+            textBox1.Text = name;
         }
 
     }

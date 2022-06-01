@@ -22,6 +22,8 @@ namespace CoCo
         private void Form_Pcs_Load(object sender, EventArgs e)
         {
            initTable();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ClearSelection();
         }
 
         private void initTable()
