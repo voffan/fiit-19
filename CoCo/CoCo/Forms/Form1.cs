@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Excel = ExcelLibrary;
 using CoCo.Classes;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
+
 
 namespace CoCo
 {
@@ -62,7 +64,7 @@ namespace CoCo
 
         private void периферияToolStripMenuItem_Click(object sender, EventArgs e)
         {
- //           Show_Child_Form(new Form_Peripherals());
+            //           Show_Child_Form(new Form_Peripherals());
             Form_Peripherals form_per;
             bool isOpen = false;
             foreach (Form form in Application.OpenForms)
@@ -154,7 +156,7 @@ namespace CoCo
 
         private void жДискиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // Show_Child_Form(new Form_Hdds());
+            // Show_Child_Form(new Form_Hdds());
             Form_Hdds form_Hdds;
             bool isOpen = false;
             foreach (Form form in Application.OpenForms)
@@ -231,23 +233,78 @@ namespace CoCo
             Context context = new Context();
         }
 
+        
+
+
+
         private void оРаботающихКомпьютерахToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*           ExcelLibrary.SpreadSheet ex = new Excel.Application();
-                       ex.SheetsInNewWorkbook = 1;
-                       Workbook workBook = ex.Workbooks.Add(Type.Missing);
-                       ex.DisplayAlerts = false;
-                       ExcelLibrary.SpreadSheet sheet = (Excel.Worksheet)ex.Worksheets.get_Item(1);
-                       sheet.Name = "Отчет о работающих компьютерах от " + DateTime.Today.ToString();
-                       Context context = new Context();
-                       List<PC> pcs = (from PC d in context.PCs
-                                   where d.Status == Status.working
-                                   select d).ToList();
-                       for(int i = 0; i < pcs.Count; i++)
-                       {
-                           sheet.Cells[i, 1] = pcs[i].Id;
-                       }
-                       context.Dispose();*/
+            try
+            {
+                using(var excel = new TMPExcell())
+                {
+                    if (excel.Open(filePath: Path.Combine(Environment.CurrentDirectory, "Test.xlsx")))
+                    {
+                        
+                        Context context = new Context();
+                        List<PC> pcs = (from PC d in context.PCs
+                                        where d.Status == Status.working
+                                        select d).ToList();
+                        excel.Set("A", 1, "Сотрудник");
+                        excel.Set("B", 1, "Процессор");
+                        excel.Set("E", 1, "Жесткий диск");
+                        excel.Set("H", 1, "Материнская плата");
+                        excel.Set("J", 1, "Инвентарный номер");
+                        for (int i = 0; i < pcs.Count; i++)
+                        {
+                            excel.Set("A", i+2, pcs[i].Employee.FullName);
+
+                            excel.Set("B", i+2, pcs[i].Cpu.Name);
+                            excel.Set("C", i+2, pcs[i].Cpu.Frequency);
+                            excel.Set("D", i+2, pcs[i].Cpu.Manufacturer);
+
+                            excel.Set("E", i + 2, pcs[i].Hdd.Name);
+                            excel.Set("F", i + 2, pcs[i].Hdd.Volume);
+                            excel.Set("G", i + 2, pcs[i].Hdd.Manufacturer);
+
+                            excel.Set("H",i+2, pcs[i].Motherboard.Name);
+                            excel.Set("I", i + 2, pcs[i].Motherboard.Manufacturer);
+
+                            excel.Set("J",i+2,pcs[i].InventoryNumber);
+                        }
+                        //int i = 2;
+                        //foreach(PC pc in pcs)
+                        //{
+                        //    excel.Set("A", i, pc.Employee.FullName);
+                        //    excel.Set("B", i, pc.InventoryNumber);
+                        //    excel.Set("C", i, pc.Cpu.Frequency);
+                        //}
+
+                        excel.Save();
+                      
+                    }
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+
+            //Excel.SpreadSheet ex = new Excel.Application();
+            //ex.SheetsInNewWorkbook = 1;
+            //Workbook workBook = ex.Workbooks.Add(Type.Missing);
+            //ex.DisplayAlerts = false;
+            //Excel.SpreadSheet sheet = (Excel.Worksheet)ex.Worksheets.get_Item(1);
+            //sheet.Name = "Отчет о работающих компьютерах от " + DateTime.Today.ToString();
+            //Context context = new Context();
+            //List<PC> pcs = (from PC d in context.PCs
+            //                where d.Status == Status.working
+            //                select d).ToList();
+            //for (int i = 0; i < pcs.Count; i++)
+            //{
+            //    sheet.Cells[i, 1] = pcs[i].Id;
+            //}
+            //context.Dispose();
         }
     }
 }
