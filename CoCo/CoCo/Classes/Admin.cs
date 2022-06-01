@@ -11,6 +11,8 @@ namespace CoCo.Classes
     public class Admin : Employee
     {
         [MaxLength(300)]
+        public String Login { get; set; }
+        [MaxLength(300)]
         public String Password { get; set; }
     }
 }
