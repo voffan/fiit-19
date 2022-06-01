@@ -23,15 +23,37 @@ namespace CoCo.Forms
             emplId = _empl;
             name = _name;
             depid = _depid;
-            //depid = _depid;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = textBox1.Text;
-            int id = (int)comboBox1.SelectedValue;
-            EmployeeLogic.EmployeeChange(name, id, emplId);
-            Close();
+            if (textBox1.Text.Length > 0 && comboBox1.Text.Length > 0)
+            {
+                string Name = textBox1.Text;
+                if (Name.Length > 300)
+                {
+                    Messages.TooLong(label1.Text);
+                    return;
+                }
+                try
+                {
+                    int Id = (int)comboBox1.SelectedValue;
+                    EmployeeLogic.EmployeeChange(Name, Id, emplId);
+                    Close();
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Messages.ServerError();
+                }
+            }
+            else
+            {
+                Messages.Empty();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

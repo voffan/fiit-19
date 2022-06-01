@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using CoCo.Classes;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CoCo.Classes;
 
 namespace CoCo.Forms
 {
@@ -24,53 +19,27 @@ namespace CoCo.Forms
             {
                 if (textBox1.Text.Length > 300)
                 {
-                    MessageBox.Show(
-                    "Название слишком длинное",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    Messages.TooLong(label1.Text);
+                    return;
                 }
-                else if (textBox2.Text.Length > 300)
+                if (textBox2.Text.Length > 300)
                 {
-                    MessageBox.Show(
-                    "Название производителя слишком длинное",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    Messages.TooLong(label2.Text);
+                    return;
                 }
-                else try
-                    {
-                        //int empl_id = comboBox1.SelectedValue;
-                        try
-                        {
-                            PeripheralLogic.Add(textBox1.Text, textBox2.Text, (int)comboBox1.SelectedValue);
-                            Close();
-                        }
-                        catch
-                        {
-                            MessageBox.Show(
-                            "Ошибка сервера",
-                            "Сообщение",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show(
-                        "Неизвестная ошибка",
-                        "Сообщение",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    }
+                try
+                {
+                    PeripheralLogic.Add(textBox1.Text, textBox2.Text, (int)comboBox1.SelectedValue);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    Messages.ServerError();
+                }
             }
             else
             {
-                MessageBox.Show(
-                    "Заполните все поля",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                Messages.Empty();
             }
         }
 

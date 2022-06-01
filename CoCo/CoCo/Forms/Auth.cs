@@ -20,23 +20,24 @@ namespace CoCo
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            Context context = new Context();
-            /*
-            Department d = (from Department dep in context.Departments
-                           where dep.Id == 1
-                           select dep).FirstOrDefault();
-            
-            Admin admin = new Classes.Admin();
-            admin.FullName = "San";
-            admin.Password = "qwerty";
-            admin.Department = d;
-            context.Admins.Add(admin);
-            context.SaveChanges();*/
-            Admin admin = (from Admin dep in context.Admins
-                           where dep.Id == 2
-                            select dep).FirstOrDefault();
+            using (Context context = new Context())
+            {
+                /*
+                Department d = (from Department dep in context.Departments
+                               where dep.Id == 1
+                               select dep).FirstOrDefault();
+
+                Admin admin = new Classes.Admin();
+                admin.FullName = "San";
+                admin.Password = "qwerty";
+                admin.Department = d;
+                context.Admins.Add(admin);
+                context.SaveChanges();*/
+                Admin admin = (from Admin dep in context.Admins
+                               where dep.Id == 2
+                               select dep).FirstOrDefault();
             //           if (textBox)
-            if(admin == null)
+            if (admin == null)
             {
                 MessageBox.Show(
                     "Пользователь не найден!",
@@ -57,6 +58,7 @@ namespace CoCo
                     "Сообщение",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+        }
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

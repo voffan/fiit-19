@@ -28,105 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxManu = new System.Windows.Forms.TextBox();
+            this.textBoxFreq = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.label_manu = new System.Windows.Forms.Label();
+            this.label_freq = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
+            this.button_cancel = new System.Windows.Forms.Button();
+            this.button_change = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox3
+            // textBoxManu
             // 
-            this.textBox3.Location = new System.Drawing.Point(118, 76);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 16;
+            this.textBoxManu.Location = new System.Drawing.Point(118, 76);
+            this.textBoxManu.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxManu.Name = "textBoxManu";
+            this.textBoxManu.Size = new System.Drawing.Size(200, 20);
+            this.textBoxManu.TabIndex = 16;
             // 
-            // textBox2
+            // textBoxFreq
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 48);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 15;
+            this.textBoxFreq.Location = new System.Drawing.Point(118, 48);
+            this.textBoxFreq.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxFreq.Name = "textBoxFreq";
+            this.textBoxFreq.Size = new System.Drawing.Size(200, 20);
+            this.textBoxFreq.TabIndex = 15;
             // 
-            // textBox1
+            // textBoxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 20);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 14;
+            this.textBoxName.Location = new System.Drawing.Point(118, 20);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(200, 20);
+            this.textBoxName.TabIndex = 14;
             // 
-            // label3
+            // label_manu
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 81);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Производитель";
+            this.label_manu.AutoSize = true;
+            this.label_manu.Location = new System.Drawing.Point(11, 79);
+            this.label_manu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_manu.Name = "label_manu";
+            this.label_manu.Size = new System.Drawing.Size(86, 13);
+            this.label_manu.TabIndex = 13;
+            this.label_manu.Text = "Производитель";
             // 
-            // label2
+            // label_freq
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 55);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Частота";
+            this.label_freq.AutoSize = true;
+            this.label_freq.Location = new System.Drawing.Point(11, 51);
+            this.label_freq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_freq.Name = "label_freq";
+            this.label_freq.Size = new System.Drawing.Size(49, 13);
+            this.label_freq.TabIndex = 12;
+            this.label_freq.Text = "Частота";
             // 
-            // label1
+            // label_name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Название";
+            this.label_name.AutoSize = true;
+            this.label_name.Location = new System.Drawing.Point(11, 23);
+            this.label_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(57, 13);
+            this.label_name.TabIndex = 11;
+            this.label_name.Text = "Название";
             // 
-            // button2
+            // button_cancel
             // 
-            this.button2.Location = new System.Drawing.Point(262, 119);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Отмена";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_cancel.Location = new System.Drawing.Point(262, 119);
+            this.button_cancel.Margin = new System.Windows.Forms.Padding(2);
+            this.button_cancel.Name = "button_cancel";
+            this.button_cancel.Size = new System.Drawing.Size(56, 19);
+            this.button_cancel.TabIndex = 10;
+            this.button_cancel.Text = "Отмена";
+            this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // button_change
             // 
-            this.button1.Location = new System.Drawing.Point(187, 119);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 19);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Изменить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_change.Location = new System.Drawing.Point(187, 119);
+            this.button_change.Margin = new System.Windows.Forms.Padding(2);
+            this.button_change.Name = "button_change";
+            this.button_change.Size = new System.Drawing.Size(70, 19);
+            this.button_change.TabIndex = 9;
+            this.button_change.Text = "Изменить";
+            this.button_change.UseVisualStyleBackColor = true;
+            this.button_change.Click += new System.EventHandler(this.button1_Click);
             // 
             // ChangeCpu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 157);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBoxManu);
+            this.Controls.Add(this.textBoxFreq);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.label_manu);
+            this.Controls.Add(this.label_freq);
+            this.Controls.Add(this.label_name);
+            this.Controls.Add(this.button_cancel);
+            this.Controls.Add(this.button_change);
             this.Name = "ChangeCpu";
             this.Text = "ChangeCpu";
             this.Load += new System.EventHandler(this.ChangeCpu_Load);
@@ -137,13 +137,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxManu;
+        private System.Windows.Forms.TextBox textBoxFreq;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Label label_manu;
+        private System.Windows.Forms.Label label_freq;
+        private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Button button_cancel;
+        private System.Windows.Forms.Button button_change;
     }
 }

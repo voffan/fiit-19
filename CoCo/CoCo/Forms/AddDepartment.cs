@@ -23,9 +23,23 @@ namespace CoCo.Forms
         {
             if (textBox1.Text.Length > 0)
             {
+                if (textBox1.Text.Length > 300)
+                {
+                    Messages.TooLong(label2.Text);
+                    return;
+                }
                 //добавить обработку ошибок
                 String dname = textBox1.Text;
-                DepartmentLogic.DepartmentAdd(dname);
+                try
+                {
+                    DepartmentLogic.DepartmentAdd(dname);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    Messages.ServerError();
+                }
+                
                 Close();
             }
             else

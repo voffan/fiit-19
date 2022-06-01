@@ -18,39 +18,36 @@ namespace CoCo.Forms
             {
                 if (textBox1.Text.Length > 300)
                 {
-                    Messages.TooLong("Название");
+                    Messages.TooLong(label1.Text);
+                    return;
                 }
-                else if (textBox3.Text.Length > 300)
+                if (textBox3.Text.Length > 300)
                 {
-                    Messages.TooLong("Название производителя");
+                    Messages.TooLong(label3.Text);
+                    return;
                 }
-                else
+                try
                 {
+                    decimal freq = Convert.ToDecimal(textBox2.Text);
+                    if (freq < 0 || freq > 30)
+                    {
+                        Messages.WrongFormat(label2.Text);
+                        return;
+                    }
                     try
                     {
-                        decimal freq = Convert.ToDecimal(textBox2.Text);
-                        if (freq < 0 || freq > 30)
-                        {
-                            Messages.WrongFormat("Частота");
-                        }
-                        else
-                        {
-                            try
-                            {
-                                CpuLogic.Add(textBox1.Text, freq, textBox3.Text);
-                                Close();
-                            }
-                            catch
-                            {
-                                Messages.ServerError();
-                            }
-                        }
-
+                        CpuLogic.Add(textBox1.Text, freq, textBox3.Text);
+                        Close();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        Messages.WrongFormat("Частота");
+                        Messages.ServerError();
                     }
+
+                }
+                catch (FormatException ex)
+                {
+                    Messages.WrongFormat(label2.Text);
                 }
             }
             else

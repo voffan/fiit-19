@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CoCo.Classes;
+using System;
 using System.Windows.Forms;
-using CoCo.Classes;
 
 namespace CoCo.Forms
 {
     public partial class AddHdd : Form
     {
-      
+
         public AddHdd()
         {
             InitializeComponent();
@@ -26,36 +19,36 @@ namespace CoCo.Forms
                 if (textBox1.Text.Length > 300)
                 {
                     Messages.TooLong(label1.Text);
+                    return;
                 }
-                else if (textBox3.Text.Length > 300)
+                if (textBox3.Text.Length > 300)
                 {
                     Messages.TooLong(label3.Text);
+                    return;
                 }
-                else try
+                try
+                {
+                    decimal volume = Convert.ToDecimal(textBox2.Text);
+                    if (volume < 0 || volume > 2000)
                     {
-                        decimal volume = Convert.ToDecimal(textBox2.Text);
-                        if (volume < 0 || volume > 2000)
-                        {
-                            Messages.WrongFormat(label2.Text);
-                        }
-                        else
-                        {
-                            try
-                            {
-                                HddLogic.Add(textBox1.Text, volume, textBox3.Text);
-                                Close();
-                            }
-                            catch(Exception ex)
-                            {
-                                MessageBox.Show(ex.Message);
-                            }
-                        }
+                        Messages.WrongFormat(label2.Text);
+                        return;
+                    }
+                    try
+                    {
+                        HddLogic.Add(textBox1.Text, volume, textBox3.Text);
+                        Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        Messages.ServerError();
+                    }
 
-                    }
-                    catch ( FormatException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                }
+                catch (FormatException ex)
+                {
+                    Messages.WrongFormat(label2.Text);
+                }
 
 
             }
@@ -63,7 +56,7 @@ namespace CoCo.Forms
             {
                 Messages.Empty();
             }
-            
+
         }
     }
 }

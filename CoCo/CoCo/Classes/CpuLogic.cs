@@ -10,22 +10,24 @@ namespace CoCo.Classes
     {
         public static void Add(string name, decimal freq, string manu)
         {
-            Context context = new Context();
-            Cpu cpu = new Cpu();
-            cpu.Name = name;
-            cpu.Frequency = freq;
-            cpu.Manufacturer = manu;
-            context.Cpus.Add(cpu);
-            context.SaveChanges();
-            context.Dispose();
+            using (Context context = new Context())
+            {
+                Cpu cpu = new Cpu();
+                cpu.Name = name;
+                cpu.Frequency = freq;
+                cpu.Manufacturer = manu;
+                context.Cpus.Add(cpu);
+                context.SaveChanges();
+            }
         }
         public static void Delete(int value)
         {
-            Context context = new Context();
-            var cpu = context.Hdds.Find(value);
+            using (Context context = new Context())
+            {
+                var cpu = context.Hdds.Find(value);
             context.Hdds.Remove(cpu);
             context.SaveChanges();
-            context.Dispose();
+        }
         }
 
         public static void CpuChange(string name, decimal freq, string manufacturer, int cpuId)

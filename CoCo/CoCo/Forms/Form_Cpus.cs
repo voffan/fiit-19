@@ -28,11 +28,15 @@ namespace CoCo
 
         private void initTable()
         {
-            dataGridView1.DataSource = new Context().Cpus.ToList();
-            dataGridView1.Columns[0].HeaderText = "Номер";
-            dataGridView1.Columns[1].HeaderText = "Название";
-            dataGridView1.Columns[2].HeaderText = "Частота";
-            dataGridView1.Columns[3].HeaderText = "Производитель";
+            using (Context context = new Context())
+            {
+                dataGridView1.DataSource = context.Cpus.ToList();
+                dataGridView1.Columns[0].HeaderText = "Номер";
+                dataGridView1.Columns[1].HeaderText = "Название";
+                dataGridView1.Columns[2].HeaderText = "Частота";
+                dataGridView1.Columns[3].HeaderText = "Производитель";
+            }
+            
         } 
         private void button1_Click(object sender, EventArgs e)
         {

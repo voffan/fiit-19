@@ -26,7 +26,7 @@ namespace CoCo.Forms
                 for (int i = 0; i < ids.Count; i++)
                 {
                         RepairLogic.Add(ids[i], textBox1.Text);
-                        PCLogic.ChangeStatus(ids[i], Status.repairing);
+                        DeviceLogic.ChangeStatus(ids[i], Status.repairing);
                         Close();
                 }
             else

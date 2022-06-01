@@ -28,11 +28,14 @@ namespace CoCo
 
         private void initTable()
         {
-            dataGridView1.DataSource = new Context().Employees.ToList();
-            dataGridView1.Columns[0].HeaderText = "Номер сотрудника";
-            dataGridView1.Columns[1].HeaderText = "ФИО";
-            dataGridView1.Columns[2].HeaderText = "Номер отдела";
-            dataGridView1.Columns[3].HeaderText = "Название отдела";
+            using (Context context = new Context())
+            {
+                dataGridView1.DataSource = context.Employees.ToList();
+                dataGridView1.Columns[0].HeaderText = "Номер сотрудника";
+                dataGridView1.Columns[1].HeaderText = "ФИО";
+                dataGridView1.Columns[2].HeaderText = "Номер отдела";
+                dataGridView1.Columns[3].HeaderText = "Название отдела";
+            }
         }
         private void MdiChildClose(Object sender, FormClosingEventArgs e)
         {

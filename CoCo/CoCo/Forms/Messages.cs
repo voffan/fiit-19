@@ -25,7 +25,7 @@ namespace CoCo.Forms
         public static void WrongFormat(string what)
         {
             MessageBox.Show(
-                    what + " содержит не поддерживаемый формат",
+                    "Поле " + what + " содержит не поддерживаемый формат",
                     "Сообщение",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -52,7 +52,7 @@ namespace CoCo.Forms
                     "Успешно?",
                     "Сообщение",
                     MessageBoxButtons.YesNoCancel,
-                    MessageBoxIcon.Warning);
+                    MessageBoxIcon.Question);
         }
 
     }

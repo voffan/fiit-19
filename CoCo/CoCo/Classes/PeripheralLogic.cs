@@ -35,7 +35,7 @@ namespace CoCo.Classes
             }
         }
 
-        public static void PeripheralChange(string name, string manu, int empl, int value, Status status, string invn)
+        public static void Change(string name, string manu, int empl, int value, Status status, string invn)
         {
             using (var context = new Context())
             {

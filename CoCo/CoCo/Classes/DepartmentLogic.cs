@@ -23,7 +23,7 @@ namespace CoCo.Classes
 
         public static void DepartmentChange(string name, int depId)
         {
-            using (var context = new Context())
+            using (Context context = new Context())
             {
                 Department department = context.Departments.FirstOrDefault(x => x.Id == (int)depId);
                 department.Name = name;

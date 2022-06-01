@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CpuLogic.cs" />
+    <Compile Include="Classes\DescriptionAttributes.cs" />
     <Compile Include="Classes\DeviceLogic.cs" />
     <Compile Include="Classes\HddLogic.cs" />
     <Compile Include="Classes\MotherboardLogic.cs" />
