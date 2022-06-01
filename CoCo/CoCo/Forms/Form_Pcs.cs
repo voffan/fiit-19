@@ -109,7 +109,8 @@ namespace CoCo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int pcId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+            var row = dataGridView1.SelectedRows[0];
+            int pcId = Convert.ToInt32(row.Cells["id"].Value);
             ChangePC chPC = new ChangePC(pcId)
             {
                 MdiParent = this.MdiParent

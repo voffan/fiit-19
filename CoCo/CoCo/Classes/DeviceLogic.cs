@@ -10,11 +10,12 @@ namespace CoCo.Classes
     {
         internal static void ChangeStatus(int id, Status status)
         {
-            Context context = new Context();
-            Device device = context.Device.Find(id);
-            device.Status = status;
-            context.SaveChanges();
-            context.Dispose();
+            using (Context context = new Context())
+            {
+                Device device = context.Device.Find(id);
+                device.Status = status;
+                context.SaveChanges();
+            }
         }
     }
 }

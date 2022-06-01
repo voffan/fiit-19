@@ -55,7 +55,7 @@ namespace CoCo
         {
             int emplId = (int)dataGridView1.SelectedRows[0].Cells["id"].Value;
             Employee emp = new Employee();
-            ChangeEmployee adh = new ChangeEmployee(emplId, Convert.ToString(dataGridView1.SelectedCells[1].Value))
+            ChangeEmployee adh = new ChangeEmployee(emplId, Convert.ToString(dataGridView1.SelectedRows[0].Cells["fullname"].Value), Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["departmentid"].Value))
             {
                 MdiParent = this.MdiParent
             };

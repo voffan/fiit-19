@@ -15,12 +15,14 @@ namespace CoCo.Forms
     {
 
         readonly int emplId;
-        string name, depid;
-        public ChangeEmployee(int _empl, string _name)
+        string name;
+        int depid;
+        public ChangeEmployee(int _empl, string _name, int _depid)
         {
             InitializeComponent();
             emplId = _empl;
             name = _name;
+            depid = _depid;
             //depid = _depid;
         }
 
@@ -45,9 +47,8 @@ namespace CoCo.Forms
                 comboBox1.DataSource = (from dep in c.Departments select new { dep.Id, Name = dep.Name + ", " + dep.Id + " отдел" }).ToList();
                 comboBox1.DisplayMember = "Name";
                 comboBox1.ValueMember = "Id";
+                comboBox1.SelectedValue = depid;
             }
         }
-
-
     }
 }

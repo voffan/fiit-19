@@ -10,31 +10,32 @@ namespace CoCo.Classes
     {
         public static void Add(string name, string manu, int employeeid)
         {
-            DateTime ThisDay = DateTime.Today;
-            Context context = new Context();
-            Peripheral pc = new Peripheral
+            using (var context = new Context())
             {
-                Name = name,
-                Manufacturer = manu,
-                EmployeeId = employeeid
-            };
-            context.Peripherals.Add(pc);
-            context.SaveChanges();
-            pc.InventoryNumber = ThisDay.ToString("yyyyMMdd")
-                    + "1" + Convert.ToString(pc.Id);
-            context.SaveChanges();
-            context.Dispose();
+                Peripheral pc = new Peripheral
+                {
+                    Name = name,
+                    Manufacturer = manu,
+                    EmployeeId = employeeid
+                };
+                context.Peripherals.Add(pc);
+                context.SaveChanges();
+                pc.InventoryNumber = DateTime.Today.ToString("yyyyMMdd")
+                        + "1" + Convert.ToString(pc.Id);
+                context.SaveChanges();
+            }
         }
         public static void Delete(int value)
         {
-            Context context = new Context();
-            var cpu = context.Peripherals.Find(value);
-            context.Peripherals.Remove(cpu);
-            context.SaveChanges();
-            context.Dispose();
+            using (var context = new Context())
+            {
+                var cpu = context.Peripherals.Find(value);
+                context.Peripherals.Remove(cpu);
+                context.SaveChanges();
+            }
         }
 
-        public static void PeripheralChange(string name, string manu, int empl, int value)
+        public static void PeripheralChange(string name, string manu, int empl, int value, Status status, string invn)
         {
             using (var context = new Context())
             {
@@ -46,9 +47,18 @@ namespace CoCo.Classes
                 per.Name = name;
                 per.Manufacturer = manu;
                 per.Employee = context.Employees.Find(empl);
+                per.Status = status;
+                per.InventoryNumber = invn;
                 context.SaveChanges();
             }
 
+        }
+
+        internal static string InvNumber(int perId)
+        {
+            string invNumber = DateTime.Today.ToString("yyyyMMdd")
+                    + "1" + Convert.ToString(perId);
+            return invNumber;
         }
 
         internal static void ChangeStatus(int value, Status status)
@@ -58,6 +68,14 @@ namespace CoCo.Classes
                 var pc = context.Peripherals.Find(value);
                 pc.Status = status;
                 context.SaveChanges();
+            }
+        }
+        internal static Peripheral Get(int pcId)
+        {
+            using (Context context = new Context())
+            {
+                Peripheral pc = context.Peripherals.Find(pcId);
+                return pc;
             }
         }
     }
