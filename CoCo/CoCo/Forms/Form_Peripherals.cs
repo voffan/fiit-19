@@ -28,10 +28,8 @@ namespace CoCo
 
         private void initTable()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Peripherals.ToList();
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Peripherals.ToList();
             /*dataGridView1.Columns[0].HeaderText = "Номер";
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Производитель";*/
@@ -65,13 +63,12 @@ namespace CoCo
 
         private void textChange()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Peripherals.Where(h =>
-                h.Name.Contains(textBox1.Text) &&
-                h.Manufacturer.Contains(textBox2.Text) &&
-                h.Employee.FullName.Contains(textBox3.Text)).ToList();
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Peripherals.Where(h =>
+            h.Name.Contains(textBox1.Text) &&
+            h.Manufacturer.Contains(textBox2.Text) &&
+            h.Employee.FullName.Contains(textBox3.Text)).ToList();
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

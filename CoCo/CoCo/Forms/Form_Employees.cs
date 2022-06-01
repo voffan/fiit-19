@@ -28,14 +28,12 @@ namespace CoCo
 
         private void initTable()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Employees.ToList();
-                dataGridView1.Columns[0].HeaderText = "Номер сотрудника";
-                dataGridView1.Columns[1].HeaderText = "ФИО";
-                dataGridView1.Columns[2].HeaderText = "Номер отдела";
-                dataGridView1.Columns[3].HeaderText = "Название отдела";
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Employees.ToList();
+            dataGridView1.Columns[0].HeaderText = "Номер сотрудника";
+            dataGridView1.Columns[1].HeaderText = "ФИО";
+            dataGridView1.Columns[2].HeaderText = "Номер отдела";
+            dataGridView1.Columns[3].HeaderText = "Название отдела";
         }
         private void MdiChildClose(Object sender, FormClosingEventArgs e)
         {
@@ -79,12 +77,10 @@ namespace CoCo
         }
         private void textChange()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Employees.Where(h =>
-                h.FullName.Contains(textBox1.Text) &&
-                h.DepartmentId.ToString().Contains(textBox2.Text)).ToList();
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Employees.Where(h =>
+            h.FullName.Contains(textBox1.Text) &&
+            h.DepartmentId.ToString().Contains(textBox2.Text)).ToList();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

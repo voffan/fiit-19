@@ -29,13 +29,11 @@ namespace CoCo
 
         private void initTable()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource =context.Motherboards.ToList();
-                dataGridView1.Columns[0].HeaderText = "Номер";
-                dataGridView1.Columns[1].HeaderText = "Название";
-                dataGridView1.Columns[2].HeaderText = "Производитель";
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Motherboards.ToList();
+            dataGridView1.Columns[0].HeaderText = "Номер";
+            dataGridView1.Columns[1].HeaderText = "Название";
+            dataGridView1.Columns[2].HeaderText = "Производитель";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,10 +64,8 @@ namespace CoCo
 
         private void textChange()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Motherboards.Where(h => h.Name.Contains(textBox1.Text)&&h.Manufacturer.Contains(textBox2.Text)).ToList();
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Motherboards.Where(h => h.Name.Contains(textBox1.Text) && h.Manufacturer.Contains(textBox2.Text)).ToList();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

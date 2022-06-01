@@ -39,10 +39,8 @@ namespace CoCo
         }
         private void initTable()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Repairs.ToList();
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Repairs.ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -28,10 +28,10 @@ namespace CoCo
 
         private void initTable()
         {
-            using (Context context = new Context())
-            {
+            Context context = new Context();
+            
                 dataGridView1.DataSource = context.PCs.ToList();
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,15 +83,15 @@ namespace CoCo
 
         private void textChange()
         {
-            using (Context context = new Context())
-            {
+            Context context = new Context();
+            
                 dataGridView1.DataSource = context.PCs.Where(h =>
             h.Hdd.Name.Contains(textBox1.Text) &&
             h.Cpu.Name.Contains(textBox2.Text) &&
             h.Motherboard.Name.Contains(textBox3.Text) &&
             h.Employee.FullName.Contains(textBox4.Text)
             ).ToList();
-            }
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

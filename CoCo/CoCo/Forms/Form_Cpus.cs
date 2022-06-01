@@ -28,16 +28,13 @@ namespace CoCo
 
         private void initTable()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Cpus.ToList();
-                dataGridView1.Columns[0].HeaderText = "Номер";
-                dataGridView1.Columns[1].HeaderText = "Название";
-                dataGridView1.Columns[2].HeaderText = "Частота";
-                dataGridView1.Columns[3].HeaderText = "Производитель";
-            }
-            
-        } 
+            Context context = new Context();
+            dataGridView1.DataSource = context.Cpus.ToList();
+            dataGridView1.Columns[0].HeaderText = "Номер";
+            dataGridView1.Columns[1].HeaderText = "Название";
+            dataGridView1.Columns[2].HeaderText = "Частота";
+            dataGridView1.Columns[3].HeaderText = "Производитель";
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             // new AddHdd().ShowDialog();
@@ -83,13 +80,11 @@ namespace CoCo
 
         private void textChange()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Cpus.Where(h =>
-                h.Name.Contains(textBox1.Text) &&
-                h.Manufacturer.Contains(textBox3.Text) &&
-                h.Frequency.ToString().Contains(textBox2.Text)).ToList();
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Cpus.Where(h =>
+            h.Name.Contains(textBox1.Text) &&
+            h.Manufacturer.Contains(textBox3.Text) &&
+            h.Frequency.ToString().Contains(textBox2.Text)).ToList();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

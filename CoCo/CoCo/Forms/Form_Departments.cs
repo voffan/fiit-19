@@ -44,12 +44,10 @@ namespace CoCo
 
         private void initTable()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Departments.ToList();
-                dataGridView1.Columns[0].HeaderText = "Номер";
-                dataGridView1.Columns[1].HeaderText = "Название";
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Departments.ToList();
+            dataGridView1.Columns[0].HeaderText = "Номер";
+            dataGridView1.Columns[1].HeaderText = "Название";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -77,10 +75,8 @@ namespace CoCo
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Departments.Where(h => h.Name.Contains(textBox1.Text)).ToList();
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Departments.Where(h => h.Name.Contains(textBox1.Text)).ToList();
         }
     }
 }
