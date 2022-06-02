@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace CoCo.Classes
 {
-    /*public class ReportLogic: IDisposable
+    public class ReportLogic: IDisposable
     {
         private Application _excel;
         private _Workbook _workbook;
@@ -83,5 +83,5 @@ namespace CoCo.Classes
                 Console.WriteLine(ex.Message);
             }
         }
-    }*/
+    }
 }
