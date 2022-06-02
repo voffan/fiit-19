@@ -31,7 +31,7 @@ namespace CoCo.Forms
                     decimal freq = Convert.ToDecimal(textBox2.Text);
                     if (freq < 0 || freq > 30)
                     {
-                        Messages.WrongFormat(label2.Text);
+                        Messages.WrongFormat(label4.Text);
                         return;
                     }
                     try
@@ -47,13 +47,18 @@ namespace CoCo.Forms
                 }
                 catch (FormatException ex)
                 {
-                    Messages.WrongFormat(label2.Text);
+                    Messages.WrongFormat(label4.Text);
                 }
             }
             else
             {
                 Messages.Empty();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

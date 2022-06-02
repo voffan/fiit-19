@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{073C2E34-D28F-4897-ABEF-105ABDB0F1F3}</ProjectGuid>
+    <ProjectGuid>{13AA9A28-C0A0-42FF-9F18-54182349205E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestProject1</RootNamespace>
-    <AssemblyName>UnitTestProject1</AssemblyName>
+    <RootNamespace>TestEgor</RootNamespace>
+    <AssemblyName>TestEgor</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -58,14 +58,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DepartmentTest.cs" />
-    <Compile Include="EmployeeTest.cs" />
-    <Compile Include="RepairTest.cs" />
-    <Compile Include="HddTest.cs" />
-    <Compile Include="CpuTest.cs" />
-    <Compile Include="MotherboardTest.cs" />
-    <Compile Include="PcTest.cs" />
-    <Compile Include="PerTest.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
