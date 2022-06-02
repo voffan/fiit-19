@@ -10,12 +10,12 @@ namespace CoCo.Classes
 {
     public class RepairLogic
     {
-        public static void Add(int id, string cause)
+        public static void Add(int did, string cause)
         {
             Repair repair = new Repair
             {
                 Status = 0,
-                DeviceId = id,
+                DeviceId = did,
                 Cause = cause,
                 BegginingDate = DateTime.Today
             };

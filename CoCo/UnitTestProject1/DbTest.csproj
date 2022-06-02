@@ -58,6 +58,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RepairTest.cs" />
     <Compile Include="HddTest.cs" />
     <Compile Include="CpuTest.cs" />
     <Compile Include="MotherboardTest.cs" />
