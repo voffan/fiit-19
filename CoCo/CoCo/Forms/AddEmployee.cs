@@ -26,7 +26,7 @@ namespace CoCo.Forms
                 string Name = textBox1.Text;
                 if (Name.Length > 300)
                 {
-                    Messages.TooLong(label1.Text);
+                    Messages.TooLong(label2.Text);
                     return;
                 }
                 try

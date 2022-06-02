@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxManu = new System.Windows.Forms.TextBox();
+            this.textBoxFreq = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_freq = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox3
+            // textBoxManu
             // 
-            this.textBox3.Location = new System.Drawing.Point(155, 105);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(257, 22);
-            this.textBox3.TabIndex = 16;
+            this.textBoxManu.Location = new System.Drawing.Point(155, 105);
+            this.textBoxManu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxManu.Name = "textBoxManu";
+            this.textBoxManu.Size = new System.Drawing.Size(257, 22);
+            this.textBoxManu.TabIndex = 16;
             // 
-            // textBox2
+            // textBoxFreq
             // 
-            this.textBox2.Location = new System.Drawing.Point(155, 70);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(257, 22);
-            this.textBox2.TabIndex = 15;
+            this.textBoxFreq.Location = new System.Drawing.Point(155, 70);
+            this.textBoxFreq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxFreq.Name = "textBoxFreq";
+            this.textBoxFreq.Size = new System.Drawing.Size(257, 22);
+            this.textBoxFreq.TabIndex = 15;
             // 
-            // textBox1
+            // textBoxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 36);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 22);
-            this.textBox1.TabIndex = 14;
+            this.textBoxName.Location = new System.Drawing.Point(155, 36);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(257, 22);
+            this.textBoxName.TabIndex = 14;
             // 
             // label3
             // 
@@ -71,23 +71,23 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Производитель";
             // 
-            // label2
+            // label_freq
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Частота";
+            this.label_freq.AutoSize = true;
+            this.label_freq.Location = new System.Drawing.Point(25, 77);
+            this.label_freq.Name = "label_freq";
+            this.label_freq.Size = new System.Drawing.Size(61, 16);
+            this.label_freq.TabIndex = 12;
+            this.label_freq.Text = "Частота";
             // 
-            // label1
+            // label_name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Название";
+            this.label_name.AutoSize = true;
+            this.label_name.Location = new System.Drawing.Point(25, 44);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(73, 16);
+            this.label_name.TabIndex = 11;
+            this.label_name.Text = "Название";
             // 
             // button2
             // 
@@ -116,15 +116,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 198);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxManu);
+            this.Controls.Add(this.textBoxFreq);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_freq);
+            this.Controls.Add(this.label_name);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChangeCpu";
             this.Text = "Изменить процессор";
             this.Load += new System.EventHandler(this.ChangeCpu_Load);
@@ -135,12 +135,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxManu;
+        private System.Windows.Forms.TextBox textBoxFreq;
+        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_freq;
+        private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }
