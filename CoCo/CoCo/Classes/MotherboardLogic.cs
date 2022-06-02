@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    internal class MotherboardLogic
+    public class MotherboardLogic
     {
         public static void Add(string name, string manufacturer)
         {

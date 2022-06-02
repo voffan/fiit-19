@@ -8,7 +8,7 @@ using CoCo.Classes;
 
 namespace CoCo.Classes
 {
-    internal class RepairLogic
+    public class RepairLogic
     {
         public static void Add(int id, string cause)
         {
@@ -26,7 +26,7 @@ namespace CoCo.Classes
             }
         }
 
-        internal static void Delete(int id)
+        public static void Delete(int id)
         {
             using (Context context = new Context())
             {
@@ -36,7 +36,7 @@ namespace CoCo.Classes
             }
         }
 
-        internal static void Complete(int id, int did, RepairStatus rs, Status ds)
+        public static void Complete(int id, int did, RepairStatus rs, Status ds)
         {
             using (Context context = new Context())
             {
@@ -44,6 +44,18 @@ namespace CoCo.Classes
                 thing.EndDate = DateTime.Today;
                 thing.Status = rs;
                 DeviceLogic.ChangeStatus(did, ds);
+                context.SaveChanges();
+            }
+        }
+        public static void Complete(int did, RepairStatus rs)
+        {
+            using (Context context = new Context())
+            {
+                Repair thing = (from r in context.Repairs
+                                where r.DeviceId == did && r.Status == RepairStatus.inProgress
+                                select r).FirstOrDefault();
+                thing.EndDate = DateTime.Today;
+                thing.Status = rs;
                 context.SaveChanges();
             }
         }

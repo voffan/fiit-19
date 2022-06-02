@@ -53,7 +53,7 @@ namespace CoCo.Forms
                 }
                 try
                 {
-                    CpuLogic.CpuChange(name, freq, manu, cpuId);
+                    CpuLogic.Change(name, freq, manu, cpuId);
                 }
                 catch (Exception ex)
                 {

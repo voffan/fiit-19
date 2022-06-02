@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    internal class HddLogic
+    public class HddLogic
     {
         public static void Add(string name, decimal volume, string manufacturer)
         {

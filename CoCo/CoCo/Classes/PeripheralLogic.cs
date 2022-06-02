@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    internal class PeripheralLogic
+    public class PeripheralLogic
     {
         public static void Add(string name, string manu, int employeeid)
         {
@@ -54,14 +54,14 @@ namespace CoCo.Classes
 
         }
 
-        internal static string InvNumber(int perId)
+        public static string InvNumber(int perId)
         {
             string invNumber = DateTime.Today.ToString("yyyyMMdd")
                     + "1" + Convert.ToString(perId);
             return invNumber;
         }
 
-        internal static void ChangeStatus(int value, Status status)
+        public static void ChangeStatus(int value, Status status)
         {
             using (Context context = new Context())
             {
@@ -70,7 +70,7 @@ namespace CoCo.Classes
                 context.SaveChanges();
             }
         }
-        internal static Peripheral Get(int pcId)
+        public static Peripheral Get(int pcId)
         {
             using (Context context = new Context())
             {

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace CoCo.Classes
 {
-    internal class EmployeeLogic
+    public class EmployeeLogic
     {
         public static void EmployeeAdd(string Name, int Id)
         {

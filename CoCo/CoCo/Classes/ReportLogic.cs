@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Office.Interop.Excel;
+//using Microsoft.Office.Interop.Excel;
 
 namespace CoCo.Classes
 {
-    internal class ReportLogic: IDisposable
+    /*public class ReportLogic: IDisposable
     {
         private Application _excel;
         private _Workbook _workbook;
@@ -19,7 +19,7 @@ namespace CoCo.Classes
 
         }
 
-        internal bool Open(string filePath)
+        public bool Open(string filePath)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace CoCo.Classes
             }
         }
 
-        internal void Save()
+        public void Save()
         {
             if (!string.IsNullOrEmpty(_filePath))
             {
@@ -54,7 +54,7 @@ namespace CoCo.Classes
             }
         }
 
-        internal bool Set(string column, int row, object data)
+        public bool Set(string column, int row, object data)
         {
             try
             {
@@ -83,5 +83,5 @@ namespace CoCo.Classes
                 Console.WriteLine(ex.Message);
             }
         }
-    }
+    }*/
 }

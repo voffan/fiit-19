@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace CoCo.Classes
 {
-    internal class DescriptionAttributes<T>
+    public class DescriptionAttributes<T>
     {
         public static Dictionary<string, string> RetrieveAttributes()
         {
