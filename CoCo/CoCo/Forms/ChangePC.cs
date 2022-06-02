@@ -57,9 +57,9 @@ namespace CoCo.Forms
                     if (this.status == Status.repairing)
                     {
                         if (status == Status.working)
-                            RepairLogic.CompleteFromDevice(pcId, RepairStatus.done);
+                            RepairLogic.Complete(pcId, RepairStatus.done);
                         else if (status == Status.broken || status == Status.writtenoff)
-                            RepairLogic.CompleteFromDevice(pcId, RepairStatus.failed);
+                            RepairLogic.Complete(pcId, RepairStatus.failed);
                     }
                         
                         else if (this.status == Status.working || this.status == Status.broken)

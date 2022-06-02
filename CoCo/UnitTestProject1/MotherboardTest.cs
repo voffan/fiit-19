@@ -1,14 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using CoCo.Classes;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CoCo;
 using System.Linq;
 
 namespace UnitTestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class MotherboardTest
     {
         private static string name;
         private static string manu;
@@ -29,7 +28,7 @@ namespace UnitTestProject1
             MotherboardLogic.Delete(g.Id);
         }
         [TestMethod]
-        public void TestMethod1()
+        public void TestAdd()
         {
             Context c = new Context();
             MotherboardLogic.Add(name, manu);
@@ -39,7 +38,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void TestChange()
         {
             Context c = new Context();
             MotherboardLogic.Add("mb test 2", "some manu 2");
@@ -51,7 +50,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void TestMethod3()
+        public void TestDelete()
         {
             Context c = new Context();
             MotherboardLogic.Add("mb test 3", "some manu 2");
@@ -63,8 +62,8 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception))]
-        public void TestMethod4()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestException()
         {
             MotherboardLogic.Delete(222222);
         }

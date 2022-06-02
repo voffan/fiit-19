@@ -24,13 +24,13 @@ namespace CoCo.Classes
         {
             using (Context context = new Context())
             {
-                var cpu = context.Hdds.Find(value);
-            context.Hdds.Remove(cpu);
-            context.SaveChanges();
-        }
+                var cpu = context.Cpus.Find(value);
+                context.Cpus.Remove(cpu);
+                context.SaveChanges();
+            }
         }
 
-        public static void CpuChange(string name, decimal freq, string manufacturer, int cpuId)
+        public static void Change(string name, decimal freq, string manufacturer, int cpuId)
         {
             using (var context = new Context())
             {

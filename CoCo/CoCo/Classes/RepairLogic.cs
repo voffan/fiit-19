@@ -47,7 +47,7 @@ namespace CoCo.Classes
                 context.SaveChanges();
             }
         }
-        public static void CompleteFromDevice(int did, RepairStatus rs)
+        public static void Complete(int did, RepairStatus rs)
         {
             using (Context context = new Context())
             {
