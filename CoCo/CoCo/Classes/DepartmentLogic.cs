@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    internal class DepartmentLogic
+    public class DepartmentLogic
     {
         public static void DepartmentAdd(string name) 
         {

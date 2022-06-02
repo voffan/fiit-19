@@ -52,10 +52,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(624, 444);
+            this.button1.Location = new System.Drawing.Point(638, 444);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 31);
+            this.button1.Size = new System.Drawing.Size(150, 31);
             this.button1.TabIndex = 1;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -63,10 +63,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(453, 444);
+            this.button2.Location = new System.Drawing.Point(482, 444);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 31);
+            this.button2.Size = new System.Drawing.Size(150, 31);
             this.button2.TabIndex = 2;
             this.button2.Text = "Изменить";
             this.button2.UseVisualStyleBackColor = true;
@@ -74,10 +74,10 @@
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(347, 444);
-            this.button_delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_delete.Location = new System.Drawing.Point(325, 444);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(4);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(100, 28);
+            this.button_delete.Size = new System.Drawing.Size(150, 31);
             this.button_delete.TabIndex = 3;
             this.button_delete.Text = "Удалить";
             this.button_delete.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(17, 449);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(129, 379);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 

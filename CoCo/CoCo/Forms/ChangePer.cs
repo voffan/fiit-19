@@ -49,6 +49,7 @@ namespace CoCo.Forms
             textBox3.Text = PeripheralLogic.InvNumber(perId);
         }
 
+
         private void ChangePer_Load(object sender, EventArgs e)
         {
             using (Context c = new Context())

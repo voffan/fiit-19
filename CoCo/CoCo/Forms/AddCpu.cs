@@ -58,5 +58,10 @@ namespace CoCo.Forms
                 Messages.Empty();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

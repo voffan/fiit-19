@@ -84,5 +84,10 @@ namespace CoCo.Forms
                 comboBox1.ValueMember = "Id";
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
