@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    internal class DeviceLogic
+    public class DeviceLogic
     {
-        internal static void ChangeStatus(int id, Status status)
+        public static void ChangeStatus(int id, Status status)
         {
             using (Context context = new Context())
             {

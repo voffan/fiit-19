@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    class PCLogic
+    public class PCLogic
     {
         
         public static void Add(int hddid ,int cpuid,int motherboardid,int employeeid)
@@ -29,7 +29,7 @@ namespace CoCo.Classes
             }
         }
 
-        internal static PC Get(int pcId)
+        public static PC Get(int pcId)
         {
             using (Context context = new Context())
             {
@@ -49,7 +49,7 @@ namespace CoCo.Classes
                 
         }
 
-        internal static void ChangeStatus(int v, Status status)
+        public static void ChangeStatus(int v, Status status)
         {
             using (Context context = new Context())
             {

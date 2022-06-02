@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EntityTry;
-using EntityTry.Classes;
-using EntityTry.Logic;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using CoCo.Classes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CoCo;
+using System.Linq;
 
-namespace CoCo.TestDB
+namespace UnitTestProject1
 {
-    internal class MotherboardTest
+    [TestClass]
+    public class UnitTest1
     {
         private static string name;
         private static string manu;

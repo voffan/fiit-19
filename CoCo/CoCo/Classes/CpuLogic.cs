@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoCo.Classes
 {
-    internal class CpuLogic
+    public class CpuLogic
     {
         public static void Add(string name, decimal freq, string manu)
         {
