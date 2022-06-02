@@ -24,7 +24,7 @@ namespace CoCo.Classes
         {
             using (Context context = new Context())
             {
-                var cpu = context.Cpus.Find(value);
+                Cpu cpu = context.Cpus.Find(value);
                 context.Cpus.Remove(cpu);
                 context.SaveChanges();
             }
