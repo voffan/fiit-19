@@ -43,14 +43,39 @@ namespace CoCo.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int hdd = (int)comboBox1.SelectedValue;
-            int cpu = (int)comboBox2.SelectedValue;
-            int motherboard = (int)comboBox3.SelectedValue;
-            int empl = (int)comboBox4.SelectedValue;
-            Status status = (Status) comboBox5.SelectedItem;
-            string invn = textBox1.Text;
-            PCLogic.PCChange(hdd, cpu, motherboard, empl, pcId, status, invn);
-            Close();
+            try
+            {
+                int hdd = (int)comboBox1.SelectedValue;
+                int cpu = (int)comboBox2.SelectedValue;
+                int motherboard = (int)comboBox3.SelectedValue;
+                int empl = (int)comboBox4.SelectedValue;
+                Status status = (Status)Enum.Parse(typeof(Status), (string)comboBox5.SelectedValue);
+                string invn = textBox1.Text;
+
+                if (this.status != status)
+                {
+                    if (this.status == Status.repairing)
+                    {
+                        if (status == Status.working)
+                            RepairLogic.Complete(pcId, RepairStatus.done);
+                        else if (status == Status.broken || status == Status.writtenoff)
+                            RepairLogic.Complete(pcId, RepairStatus.failed);
+                    }
+                        
+                        else if (this.status == Status.working || this.status == Status.broken)
+                            if (status == Status.repairing)
+                            {
+                                AddRepair addRepair = new AddRepair(pcId);
+                                addRepair.Show();
+                            }
+                }
+                    PCLogic.PCChange(hdd, cpu, motherboard, empl, pcId, status, invn);
+                    Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ChangePC_Load(object sender, EventArgs e)
@@ -77,8 +102,10 @@ namespace CoCo.Forms
                 comboBox4.ValueMember = "Id";
                 comboBox4.SelectedValue = eid;
             }
-            comboBox5.DataSource = Enum.GetValues(typeof(Status));
-            comboBox5.SelectedItem = status;
+            comboBox5.DataSource = new BindingSource(DescriptionAttributes<Status>.RetrieveAttributes(), null);
+            comboBox5.DisplayMember = "Key";
+            comboBox5.ValueMember = "Value";
+            comboBox5.SelectedIndex = (int)status;
             textBox1.Text = invn;
         }
     } 

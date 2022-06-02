@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CoCo.Classes;
+using System;
 using System.Windows.Forms;
-using CoCo.Classes;
 
 namespace CoCo.Forms
 {
@@ -33,11 +26,47 @@ namespace CoCo.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = textBox1.Text;
-            string manu= textBox3.Text;
-            decimal vol = Convert.ToDecimal(textBox2.Text);
-            HddLogic.HddChange(name, vol, manu, hddId);
             Close();
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
+            {
+                if (textBox1.Text.Length > 300)
+                {
+                    Messages.TooLong(label1.Text);
+                    return;
+                }
+                if (textBox3.Text.Length > 300)
+                {
+                    Messages.TooLong(label3.Text);
+                    return;
+                }
+                try
+                {
+                    decimal volume = Convert.ToDecimal(textBox2.Text);
+                    if (volume < 0 || volume > 2000)
+                    {
+                        Messages.WrongFormat(label2.Text);
+                        return;
+                    }
+                    try
+                    {
+                        HddLogic.Change(textBox1.Text, volume, textBox3.Text, hddId);
+                        Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        Messages.ServerError();
+                    }
+
+                }
+                catch (FormatException ex)
+                {
+                    Messages.WrongFormat(label2.Text);
+                }
+            }
+            else
+            {
+                Messages.Empty();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

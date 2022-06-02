@@ -31,18 +31,48 @@ namespace CoCo.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = textBox1.Text;
-            string manu= textBox3.Text;
-            decimal freq = Convert.ToDecimal(textBox2.Text);
-            CpuLogic.CpuChange(name, freq, manu, cpuId);
+            if(textBoxName.Text.Length > 300)
+            {
+                Messages.TooLong(label_name.Text);
+                return;
+            }
+            if (textBoxManu.Text.Length > 300)
+            {
+                Messages.TooLong(label_name.Text);
+                return;
+            }
+            string name = textBoxName.Text;
+            string manu = textBoxManu.Text;
+            try
+            {
+                decimal freq = Convert.ToDecimal(textBoxFreq.Text);
+                if(freq < 0 || freq > 30)
+                {
+                    Messages.WrongFormat(label_freq.Text);
+                    return;
+                }
+                try
+                {
+                    CpuLogic.Change(name, freq, manu, cpuId);
+                }
+                catch (Exception ex)
+                {
+                    Messages.ServerError();
+                }
+            }
+            catch(FormatException ex)
+            {
+                Messages.WrongFormat(label_freq.Text);
+            }
+            
             Close();
         }
 
         private void ChangeCpu_Load(object sender, EventArgs e)
         {
-            textBox1.Text = name;
-            textBox2.Text = freq;
-            textBox3.Text = manu;
+            textBoxName.Text = name;
+            textBoxFreq.Text = freq;
+            textBoxManu.Text = manu;
         }
     }
 }

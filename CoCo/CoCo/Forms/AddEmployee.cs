@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using CoCo.Classes;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CoCo.Classes;
 
 namespace CoCo.Forms
 {
     public partial class AddEmployee : Form
     {
-    
+
         public AddEmployee()
         {
             InitializeComponent();
@@ -30,23 +25,24 @@ namespace CoCo.Forms
             {
                 string Name = textBox1.Text;
                 if (Name.Length > 300)
-                    Messages.TooLong("Поле имя слишком длинное");
-                else
-                    try
-                    {
-
-                        int Id = (int)comboBox1.SelectedValue;
-                        EmployeeLogic.EmployeeAdd(Name, Id);
-                        Close();
-                    }
-                    catch (FormatException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    catch (Exception ex) 
-                    { 
-                        Messages.ServerError(); 
-                    }
+                {
+                    Messages.TooLong(label1.Text);
+                    return;
+                }
+                try
+                {
+                    int Id = (int)comboBox1.SelectedValue;
+                    EmployeeLogic.EmployeeAdd(Name, Id);
+                    Close();
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Messages.ServerError();
+                }
             }
             else
             {
@@ -58,7 +54,7 @@ namespace CoCo.Forms
         {
             using (Context c = new Context())
             {
-                
+
                 comboBox1.DataSource = (from dep in c.Departments select new { dep.Id, Name = dep.Name + ", " + dep.Id + " отдел" }).ToList();
                 comboBox1.DisplayMember = "Name";
                 comboBox1.ValueMember = "Id";

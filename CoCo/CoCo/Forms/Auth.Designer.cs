@@ -40,9 +40,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(44, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "ФИО:";
+            this.label2.Text = "Логин:";
             // 
             // label3
             // 

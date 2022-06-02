@@ -37,17 +37,21 @@ namespace CoCo.Forms
                 comboBox4.DataSource = (from em in c.Employees select new { em.Id, Name = em.FullName + " " + em.DepartmentId + " отдел" }).ToList();
                 comboBox4.DisplayMember = "Name";
                 comboBox4.ValueMember = "Id";
-               // comboBox1.Items.Add((from em in c.Employees select new { Id = em.Id, Name = em.FullName + " " + em.DepartmentId + "отдел" }).ToList()[i).Name;
             }
            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            PCLogic.Add((int)comboBox1.SelectedValue, (int)comboBox2.SelectedValue, (int)comboBox3.SelectedValue, (int)comboBox4.SelectedValue);
-            Close();
-    
+            try
+            {
+                PCLogic.Add((int)comboBox1.SelectedValue, (int)comboBox2.SelectedValue, (int)comboBox3.SelectedValue, (int)comboBox4.SelectedValue);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

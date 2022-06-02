@@ -12,21 +12,22 @@ namespace CoCo.Classes
     {
         public static void EmployeeAdd(string Name, int Id)
         {
-            Context context = new Context();
-            Employee emp = new Employee
+            using (Context context = new Context())
             {
-                FullName = Name,
-                DepartmentId = Id
-            };
-            context.Employees.Add(emp);
-            context.SaveChanges();
-            context.Dispose();
+                Employee emp = new Employee
+                {
+                    FullName = Name,
+                    DepartmentId = Id
+                };
+                context.Employees.Add(emp);
+                context.SaveChanges();
+            }
         }
 
         public static void EmployeeChange(string Name, int Id, int emplId)
         {
 
-            using (var context = new Context())
+            using (Context context = new Context())
             {
                 Employee employee = context.Employees.FirstOrDefault(x => x.Id == emplId);
                 employee.FullName = Name;
@@ -37,11 +38,12 @@ namespace CoCo.Classes
 
         public static void Delete(int value)
         {
-            Context context = new Context();
-            var cpu = context.Employees.Find(value);
-            context.Employees.Remove(cpu);
-            context.SaveChanges();
-            context.Dispose();
+            using (Context context = new Context())
+            {
+                var cpu = context.Employees.Find(value);
+                context.Employees.Remove(cpu);
+                context.SaveChanges();
+            }
         }
     }
 }

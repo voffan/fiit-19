@@ -21,14 +21,15 @@ namespace CoCo
 
         private void Form_Pcs_Load(object sender, EventArgs e)
         {
-           initTable();
+            initTable();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ClearSelection();
         }
 
         private void initTable()
         {
-            dataGridView1.DataSource = new Context().PCs.ToList();
+            Context context = new Context();
+            dataGridView1.DataSource = context.PCs.ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,10 +82,10 @@ namespace CoCo
         private void textChange()
         {
             Context context = new Context();
-            dataGridView1.DataSource = context.PCs.Where(h => 
-            h.Hdd.Name.Contains(textBox1.Text) && 
-            h.Cpu.Name.Contains(textBox2.Text) && 
-            h.Motherboard.Name.Contains(textBox3.Text)&&
+            dataGridView1.DataSource = context.PCs.Where(h =>
+            h.Hdd.Name.Contains(textBox1.Text) &&
+            h.Cpu.Name.Contains(textBox2.Text) &&
+            h.Motherboard.Name.Contains(textBox3.Text) &&
             h.Employee.FullName.Contains(textBox4.Text)
             ).ToList();
         }

@@ -38,11 +38,12 @@ namespace CoCo
             //initTable();
         }
 
-     
+
 
         private void initTable()
         {
-            dataGridView1.DataSource = new Context().Hdds.ToList();
+            Context context = new Context();
+            dataGridView1.DataSource = context.Hdds.ToList();
             dataGridView1.Columns[0].HeaderText = "Номер";
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Объем";
@@ -66,13 +67,11 @@ namespace CoCo
         }
         private void textChange()
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Hdds.Where(h => 
-                h.Name.Contains(textBox1.Text) && 
-                h.Manufacturer.Contains(textBox3.Text)&& 
-                h.Volume.ToString().Contains(textBox2.Text)).ToList();
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Hdds.Where(h =>
+            h.Name.Contains(textBox1.Text) &&
+            h.Manufacturer.Contains(textBox3.Text) &&
+            h.Volume.ToString().Contains(textBox2.Text)).ToList();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

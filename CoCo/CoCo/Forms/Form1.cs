@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoCo.Classes;
-using Excel = Microsoft.Office.Interop.Excel;
+//using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
 
 
@@ -242,7 +242,7 @@ namespace CoCo
         {
             try
             {
-                using(var excel = new ReportLogic())
+                /*using(var excel = new ReportLogic())
                 {
                     if (excel.Open(filePath: Path.Combine(Environment.CurrentDirectory, $"Отчет о работающих компьютерах за {DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} {DateTime.Now.Hour}ч{DateTime.Now.Minute}м.xlsx")))
                     {
@@ -277,7 +277,7 @@ namespace CoCo
                         excel.Save();
                     }
                     MessageBox.Show("Успешно сохранено");
-                }
+                }*/
             }catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
@@ -306,7 +306,7 @@ namespace CoCo
         {
             try
             {
-                using (var excel = new ReportLogic())
+                /*using (var excel = new ReportLogic())
                 {
                     if (excel.Open(filePath: Path.Combine(Environment.CurrentDirectory, $"Отчет о списанных компьютерах за {DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} {DateTime.Now.Hour}ч{DateTime.Now.Minute}м.xlsx")))
                     {
@@ -341,7 +341,7 @@ namespace CoCo
                         excel.Save();
                     }
                     MessageBox.Show("Успешно сохранено");
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -354,7 +354,7 @@ namespace CoCo
         {
             try
             {
-                using (var excel = new ReportLogic())
+                /*using (var excel = new ReportLogic())
                 {
                     if (excel.Open(filePath: Path.Combine(Environment.CurrentDirectory, $"Отчет о ремонтированных в этом месяце компьютерах за {DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} {DateTime.Now.Hour}ч{DateTime.Now.Minute}м.xlsx")))
                     {
@@ -391,7 +391,7 @@ namespace CoCo
                         excel.Save();
                     }
                     MessageBox.Show("Успешно сохранено");
-                }
+                }*/
             }
             catch (Exception ex)
             {

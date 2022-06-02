@@ -44,7 +44,8 @@ namespace CoCo
 
         private void initTable()
         {
-            dataGridView1.DataSource = new Context().Departments.ToList();
+            Context context = new Context();
+            dataGridView1.DataSource = context.Departments.ToList();
             dataGridView1.Columns[0].HeaderText = "Номер";
             dataGridView1.Columns[1].HeaderText = "Название";
         }
@@ -74,10 +75,8 @@ namespace CoCo
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            using (Context context = new Context())
-            {
-                dataGridView1.DataSource = context.Departments.Where(h => h.Name.Contains(textBox1.Text)).ToList();
-            }
+            Context context = new Context();
+            dataGridView1.DataSource = context.Departments.Where(h => h.Name.Contains(textBox1.Text)).ToList();
         }
     }
 }

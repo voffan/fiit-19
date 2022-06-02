@@ -28,7 +28,8 @@ namespace CoCo
 
         private void initTable()
         {
-            dataGridView1.DataSource = new Context().Peripherals.ToList();
+            Context context = new Context();
+            dataGridView1.DataSource = context.Peripherals.ToList();
             /*dataGridView1.Columns[0].HeaderText = "Номер";
             dataGridView1.Columns[1].HeaderText = "Название";
             dataGridView1.Columns[2].HeaderText = "Производитель";*/
@@ -50,24 +51,24 @@ namespace CoCo
 
         private void button_delete_Click(object sender, EventArgs e)
         {
+            if (Messages.ConfirmDelete() == DialogResult.OK)
+            {
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
                     PeripheralLogic.Delete((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
                 }
                 initTable();
-                
+            }
         }
 
         private void textChange()
         {
             Context context = new Context();
-          
+            dataGridView1.DataSource = context.Peripherals.Where(h =>
+            h.Name.Contains(textBox1.Text) &&
+            h.Manufacturer.Contains(textBox2.Text) &&
+            h.Employee.FullName.Contains(textBox3.Text)).ToList();
 
-                dataGridView1.DataSource = context.Peripherals.Where(h =>
-                h.Name.Contains(textBox1.Text) &&
-                h.Manufacturer.Contains(textBox2.Text) &&
-                h.Employee.FullName.Contains(textBox3.Text)).ToList();
-           
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -104,6 +105,21 @@ namespace CoCo
                 PeripheralLogic.ChangeStatus((int)dataGridView1.SelectedRows[i].Cells["id"].Value, Status.writtenoff);
             }
             initTable();
+        }
+
+        private void repair_Click(object sender, EventArgs e)
+        {
+            List<int> ids = new List<int>();
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+            {
+                ids.Add((int)dataGridView1.SelectedRows[i].Cells["id"].Value);
+            }
+            AddRepair addRepair = new AddRepair(ids)
+            {
+                MdiParent = this.MdiParent
+            };
+            addRepair.FormClosing += MdiChildClose;
+            addRepair.Show();
         }
     }
 }

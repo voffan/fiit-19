@@ -40,6 +40,7 @@ namespace CoCo
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button_Write_Off = new System.Windows.Forms.Button();
+            this.repair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,11 +147,22 @@ namespace CoCo
             this.button_Write_Off.UseVisualStyleBackColor = true;
             this.button_Write_Off.Click += new System.EventHandler(this.button_Write_Off_Click);
             // 
+            // repair
+            // 
+            this.repair.Location = new System.Drawing.Point(571, 386);
+            this.repair.Name = "repair";
+            this.repair.Size = new System.Drawing.Size(139, 23);
+            this.repair.TabIndex = 15;
+            this.repair.Text = "Отправить на ремонт";
+            this.repair.UseVisualStyleBackColor = true;
+            this.repair.Click += new System.EventHandler(this.repair_Click);
+            // 
             // Form_Peripherals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 450);
+            this.Controls.Add(this.repair);
             this.Controls.Add(this.button_Write_Off);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -184,5 +196,6 @@ namespace CoCo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_Write_Off;
+        private System.Windows.Forms.Button repair;
     }
 }

@@ -24,9 +24,31 @@ namespace CoCo.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = textBox1.Text;
-            DepartmentLogic.DepartmentChange(name, depId);
-            Close();
+            if (textBox1.Text.Length > 0)
+            {
+                if (textBox1.Text.Length > 300)
+                {
+                    Messages.TooLong(label2.Text);
+                    return;
+                }
+                //добавить обработку ошибок
+                String dname = textBox1.Text;
+                try
+                {
+                    DepartmentLogic.DepartmentChange(dname, depId);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    Messages.ServerError();
+                }
+
+                Close();
+            }
+            else
+            {
+                Messages.Empty();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

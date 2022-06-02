@@ -33,10 +33,36 @@ namespace CoCo.Forms
             string name = textBox1.Text;
             string manu = textBox2.Text;
             int empl = (int)comboBox1.SelectedValue;
-            Status status = (Status)comboBox2.SelectedItem;
+            Status status = (Status)Enum.Parse(typeof(Status), (string)comboBox2.SelectedValue);
             string invn = textBox3.Text;
-            PeripheralLogic.PeripheralChange(name, manu, empl, perId, status, invn);
             Close();
+            if (textBox1.Text != "" && textBox2.Text != "" && comboBox1.Text != "")
+            {
+                if (textBox1.Text.Length > 300)
+                {
+                    Messages.TooLong(label1.Text);
+                    return;
+                }
+                if (textBox2.Text.Length > 300)
+                {
+                    Messages.TooLong(label2.Text);
+                    return;
+                }
+                //int empl_id = comboBox1.SelectedValue;
+                try
+                {
+                    PeripheralLogic.Change(textBox1.Text, textBox2.Text, (int)comboBox1.SelectedValue, perId, status, invn);
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                Messages.Empty();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,8 +85,10 @@ namespace CoCo.Forms
                 comboBox1.ValueMember = "Id";
                 comboBox1.SelectedValue = eId;
             }
-            comboBox2.DataSource = Enum.GetValues(typeof(Status));
-            comboBox2.SelectedItem = status;
+            comboBox2.DataSource = new BindingSource(DescriptionAttributes<Status>.RetrieveAttributes(), null);
+            comboBox2.DisplayMember = "Key";
+            comboBox2.ValueMember = "Value";
+            comboBox2.SelectedIndex = (int)status;
             textBox3.Text = invn;
         }
     }
