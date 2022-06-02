@@ -12,25 +12,40 @@ namespace UnitTestProject1
     {
         private static string name;
         private static string manu;
-        private static int emplId;
+        private static int eId, depId;
 
         [ClassInitialize]
         public static void ClassInit(TestContext context)
         {
             name = "test1";
             manu = "test1";
-            emplId = 1;
+            Context c = new Context();
+
+            DepartmentLogic.DepartmentAdd("test dep");
+            Department d = c.Departments.Where(dep => dep.Name == "test dep").FirstOrDefault();
+            depId = d.Id;
+
+            EmployeeLogic.EmployeeAdd("test empl", d.Id);
+            Employee e = c.Employees.Where(dep => dep.FullName == "test empl").FirstOrDefault();
+            eId = e.Id;
         }
 
 
         [ClassCleanup]
         public static void ClassClean()
         {
-            Context context = new Context();
-            Peripheral g = context.Peripherals.Where(per => per.Name == name && per.Manufacturer == manu && per.EmployeeId == emplId).FirstOrDefault();
+            Context c = new Context();
+            Peripheral g = c.Peripherals.Where(per => per.Name == name && per.Manufacturer == manu && per.EmployeeId == eId).FirstOrDefault();
             PeripheralLogic.Delete(g.Id);
-            g = context.Peripherals.Where(per => per.Name == name && per.Manufacturer == manu && per.EmployeeId == emplId).FirstOrDefault();
+            g = c.Peripherals.Where(per => per.Name == name && per.Manufacturer == manu && per.EmployeeId == eId).FirstOrDefault();
             PeripheralLogic.Delete(g.Id);
+            g = c.Peripherals.Where(per => per.Name == "test3" && per.Manufacturer == "test3" && per.EmployeeId == eId).FirstOrDefault();
+            PeripheralLogic.Delete(g.Id);
+            Employee e = c.Employees.Find(eId);
+            EmployeeLogic.Delete(e.Id);
+
+            Department d = c.Departments.Find(depId);
+            DepartmentLogic.Delete(d.Id);
         }
 
 
@@ -38,36 +53,36 @@ namespace UnitTestProject1
         public void TestAdd()
         {
             Context context = new Context();
-            PeripheralLogic.Add(name, manu, emplId);
-            Peripheral g = context.Peripherals.Where(per => per.Name == name && per.Manufacturer == manu && per.EmployeeId == emplId).FirstOrDefault();
+            PeripheralLogic.Add(name, manu, eId);
+            Peripheral g = context.Peripherals.Where(per => per.Name == name && per.Manufacturer == manu && per.EmployeeId == eId).FirstOrDefault();
             Assert.IsNotNull(g);
         }
 
         [TestMethod]
         public void TestChange()
         {
-            //Context context = new Context();
-            //PeripheralLogic.Add("test2", "test2", 2);
-            //Peripheral g = context.Peripherals.Where(per => per.Name == "test2" && per.Manufacturer == "test2" && per.EmployeeId == 2).FirstOrDefault();
-            //PeripheralLogic.Change(per => per.Name == "test3" && per.Manufacturer == "test3" && per.EmployeeId == 3);
-            //g = context.Peripherals.Where(per => per.Name == "test2" && per.Manufacturer == "test2" && per.EmployeeId == 2).FirstOrDefault();
-            //Assert.IsNotNull(g);
+            Context context = new Context();
+            PeripheralLogic.Add("test2", "test2", eId);
+            Peripheral g = context.Peripherals.Where(per => per.Name == "test2" && per.Manufacturer == "test2" && per.EmployeeId == eId).FirstOrDefault();
+            PeripheralLogic.Change("test3", "test3", eId, g.Id, Status.broken, "2");
+            g = context.Peripherals.Where(per => per.Name == "test3" && per.Manufacturer == "test3" && per.EmployeeId == eId).FirstOrDefault();
+            Assert.IsNotNull(g);
         }
 
         [TestMethod]
         public void TestDelete()
         {
             Context context = new Context();
-            PeripheralLogic.Add("test3", "test3", 3);
-            Peripheral g = context.Peripherals.Where(per => per.Name == "test3" && per.Manufacturer == "test3" && per.EmployeeId == 3).FirstOrDefault();
+            PeripheralLogic.Add("test4", "test4", eId);
+            Peripheral g = context.Peripherals.Where(per => per.Name == "test4" && per.Manufacturer == "test4" && per.EmployeeId == eId).FirstOrDefault();
             PeripheralLogic.Delete(g.Id);
-            g = context.Peripherals.Where(per => per.Name == "test3" && per.Manufacturer == "test3" && per.EmployeeId == 3).FirstOrDefault();
+            g = context.Peripherals.Where(per => per.Name == "test4" && per.Manufacturer == "test4" && per.EmployeeId == eId).FirstOrDefault();
             Assert.IsNull(g);
         }
 
 
         [TestMethod]
-        [ExpectedException(typeof(Exception))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void TestException()
         {
             PeripheralLogic.Delete(222222);

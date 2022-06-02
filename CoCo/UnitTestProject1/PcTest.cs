@@ -10,7 +10,7 @@ namespace UnitTestProject1
     [TestClass]
     public class PcTest
     {
-        private static int hddId;
+        private static int hddId, hddId2;
         //private static string hddName;
         //private static decimal hddVolume;
         //private static string hddManu;
@@ -21,7 +21,7 @@ namespace UnitTestProject1
         //private static decimal cpuFreq;
         //private static string cpuManu;
 
-        private static int mbId;
+        private static int mbId, mbId2;
         //private static string motherboardName;
         //private static string motherboardManu;
 
@@ -60,6 +60,10 @@ namespace UnitTestProject1
             Hdd hdd = c.Hdds.Where(dep => dep.Name == "test hdd").FirstOrDefault();
             hddId = hdd.Id;
 
+            HddLogic.Add("test hdd2", 10, "test manu");
+            Hdd hdd2 = c.Hdds.Where(dep => dep.Name == "test hdd2").FirstOrDefault();
+            hddId2 = hdd2.Id;
+
             CpuLogic.Add("test cpu", 10, "test manu");
             Cpu cpu = c.Cpus.Where(dep => dep.Name == "test cpu").FirstOrDefault();
             cpuId = cpu.Id;
@@ -67,6 +71,9 @@ namespace UnitTestProject1
             MotherboardLogic.Add("test mb", "test manu");
             Motherboard mb = c.Motherboards.Where(dep => dep.Name == "test mb").FirstOrDefault();
             mbId = mb.Id;
+            MotherboardLogic.Add("test mb2", "test manu");
+            Motherboard mb2 = c.Motherboards.Where(dep => dep.Name == "test mb").FirstOrDefault();
+            mbId2 = mb2.Id;
 
         }
 
@@ -78,8 +85,8 @@ namespace UnitTestProject1
             PC g = c.PCs.Where(p => p.HddId == hddId).FirstOrDefault();
             PCLogic.Delete(g.Id);
 
-            PC pc = c.PCs.Find(eId);
-            PCLogic.Delete(pc.Id);
+            g = c.PCs.Where(p => p.HddId == hddId).FirstOrDefault();
+            PCLogic.Delete(g.Id);
 
             Employee e = c.Employees.Find(eId);
             EmployeeLogic.Delete(e.Id);
@@ -87,14 +94,20 @@ namespace UnitTestProject1
             Department d = c.Departments.Find(depId);
             DepartmentLogic.Delete(d.Id);
 
-            Hdd hdd = c.Hdds.Find(eId);
+            Hdd hdd = c.Hdds.Find(hddId);
             HddLogic.Delete(hdd.Id);
 
-            Cpu cpu = c.Cpus.Find(eId);
+            Hdd hdd2 = c.Hdds.Find(hddId2);
+            HddLogic.Delete(hdd2.Id);
+
+            Cpu cpu = c.Cpus.Find(cpuId);
             CpuLogic.Delete(cpu.Id);
 
-            Motherboard mb = c.Motherboards.Find(eId);
+            Motherboard mb = c.Motherboards.Find(mbId);
             MotherboardLogic.Delete(mb.Id);
+
+            Motherboard mb2 = c.Motherboards.Find(mbId2);
+            MotherboardLogic.Delete(mb2.Id);
         }
 
 
@@ -125,9 +138,10 @@ namespace UnitTestProject1
         public void TestDelete()
         {
             Context c = new Context();
-            PCLogic.Add(hddId, cpuId, mbId, eId);
-            PC g = c.PCs.Where(p => p.HddId == hddId && p.CpuId == cpuId && p.MotherboardId == mbId && p.EmployeeId == eId).FirstOrDefault();
+            PCLogic.Add(hddId2, cpuId, mbId2, eId);
+            PC g = c.PCs.Where(p => p.HddId == hddId2 && p.CpuId == cpuId && p.MotherboardId == mbId2 && p.EmployeeId == eId).FirstOrDefault();
             PCLogic.Delete(g.Id);
+            g = c.PCs.Where(p => p.HddId == hddId2 && p.CpuId == cpuId && p.MotherboardId == mbId2 && p.EmployeeId == eId).FirstOrDefault();
             Assert.IsNull(g);
 
         }
