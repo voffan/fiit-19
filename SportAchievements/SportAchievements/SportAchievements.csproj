@@ -119,6 +119,7 @@
     <Compile Include="Links\LinkResult.Designer.cs">
       <DependentUpon>LinkResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="logic\PersonLogic.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
