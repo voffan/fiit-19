@@ -61,6 +61,8 @@
     <Compile Include="HddTest.cs" />
     <Compile Include="CpuTest.cs" />
     <Compile Include="MotherboardTest.cs" />
+    <Compile Include="PcTest.cs" />
+    <Compile Include="PerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
