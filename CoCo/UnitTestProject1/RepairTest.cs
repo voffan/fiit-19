@@ -1,51 +1,21 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Data.Entity;
-using System.Linq;
 using CoCo.Classes;
 using CoCo;
+using System.Linq;
 
 namespace UnitTestProject1
 {
     [TestClass]
-    public class PcTest
+    public class RepairTest
     {
-        private static int hddId;
-        //private static string hddName;
-        //private static decimal hddVolume;
-        //private static string hddManu;
-
-
-        private static int cpuId;
-        //private static string cpuName;
-        //private static decimal cpuFreq;
-        //private static string cpuManu;
-
-        private static int mbId;
-        //private static string motherboardName;
-        //private static string motherboardManu;
-
-        private static int eId;
-        //private static string employeeName;
-        //private static int employeeDepartmentId;
-
-        private static int depId;
-       
-
-        private static int id;
-        private static Status status;
-        private static string invNumber;
-
-
+        private static string cause;
+        private static int dId, hddId, cpuId, mbId, eId, depId;
 
         [ClassInitialize]
         public static void ClassInit(TestContext context)
         {
-
-            status = Status.working;
-            invNumber = DateTime.Today.ToString("yyyyMMdd")
-                    + "0" + Convert.ToString(id); 
-
+            cause = "some cause";
             Context c = new Context();
 
             DepartmentLogic.DepartmentAdd("test dep");
@@ -68,22 +38,25 @@ namespace UnitTestProject1
             Motherboard mb = c.Motherboards.Where(dep => dep.Name == "test mb").FirstOrDefault();
             mbId = mb.Id;
 
+            PCLogic.Add(hddId, cpuId, mbId, eId);
+            PC pc = c.PCs.Where(thing => thing.HddId == hddId).FirstOrDefault();
+            dId = pc.Id;
         }
-
-
         [ClassCleanup]
         public static void ClassClean()
         {
             Context c = new Context();
-            PC g = c.PCs.Where(p => p.HddId == hddId).FirstOrDefault();
-            PCLogic.Delete(g.Id);
+            Repair g = c.Repairs.Where(Repair => Repair.Cause == "mb test 2" && Repair.DeviceId == 20).FirstOrDefault();
+            RepairLogic.Delete(g.Id);
+            g = c.Repairs.Where(Repair => Repair.Cause == cause).FirstOrDefault();
+            RepairLogic.Delete(g.Id);
 
             PC pc = c.PCs.Find(eId);
             PCLogic.Delete(pc.Id);
 
             Employee e = c.Employees.Find(eId);
             EmployeeLogic.Delete(e.Id);
-
+            
             Department d = c.Departments.Find(depId);
             DepartmentLogic.Delete(d.Id);
 
@@ -96,28 +69,25 @@ namespace UnitTestProject1
             Motherboard mb = c.Motherboards.Find(eId);
             MotherboardLogic.Delete(mb.Id);
         }
-
-
         [TestMethod]
         public void TestAdd()
         {
-            Context context = new Context();
-            PCLogic.Add(hddId, cpuId, mbId, eId);
-            PC g = context.PCs.Where(p => p.HddId == hddId && p.CpuId == cpuId && p.MotherboardId == mbId && p.EmployeeId == eId).FirstOrDefault();
+            Context c = new Context();
+            RepairLogic.Add(dId, cause);
+            Repair g = c.Repairs.Where(Repair => Repair.Cause == cause && Repair.DeviceId == dId).FirstOrDefault();
+            //Assert.AreNotSame(null, g);
             Assert.IsNotNull(g);
-
         }
 
         [TestMethod]
-        public void TestChange()
+        public void TestComplete()
         {
-            Context context = new Context();
-            PCLogic.Add(hddId, cpuId, mbId, eId);
-
-            PC g = context.PCs.Where(p => p.HddId == hddId && p.CpuId == cpuId && p.MotherboardId == mbId && p.EmployeeId == eId).FirstOrDefault();
-            PCLogic.PCChange(hddId, cpuId, mbId, eId, g.Id, Status.repairing, "2");
-            g = context.PCs.Where(p => p.HddId == hddId && p.CpuId == cpuId && p.MotherboardId == mbId && p.EmployeeId == eId && p.Status == Status.repairing && p.InventoryNumber == "2").FirstOrDefault();
-
+            Context c = new Context();
+            RepairLogic.Add(dId, cause);
+            Repair g = c.Repairs.Where(Repair => Repair.Cause == cause && Repair.DeviceId == dId).FirstOrDefault();
+            RepairLogic.Complete(dId, RepairStatus.done);
+            g = c.Repairs.Where(Repair => Repair.Cause == cause && /*Repair.DeviceId == dId && */Repair.Status == RepairStatus.done).FirstOrDefault();
+            //Assert.AreNotSame(null, g);
             Assert.IsNotNull(g);
         }
 
@@ -125,20 +95,19 @@ namespace UnitTestProject1
         public void TestDelete()
         {
             Context c = new Context();
-            PCLogic.Add(hddId, cpuId, mbId, eId);
-            PC g = c.PCs.Where(p => p.HddId == hddId && p.CpuId == cpuId && p.MotherboardId == mbId && p.EmployeeId == eId).FirstOrDefault();
-            PCLogic.Delete(g.Id);
+            RepairLogic.Add(dId, "mb test 3");
+            Repair g = c.Repairs.Where(Repair => Repair.Cause == "mb test 3" && Repair.DeviceId == dId).FirstOrDefault();
+            RepairLogic.Delete(g.Id);
+            g = c.Repairs.Where(Repair => Repair.Cause == "mb test 3" && Repair.DeviceId == dId).FirstOrDefault();
+            //Assert.AreNotSame(null, g);
             Assert.IsNull(g);
-
         }
-
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestException()
         {
-            PCLogic.Delete(222222);
+            RepairLogic.Delete(222222);
         }
-
     }
 }

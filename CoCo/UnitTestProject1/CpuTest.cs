@@ -26,7 +26,9 @@ namespace UnitTestProject1
             Context c = new Context();
             Cpu g = c.Cpus.Where(cpu => cpu.Name == "mb test 1" && cpu.Manufacturer == "some manu" && cpu.Frequency == freq).FirstOrDefault();
             CpuLogic.Delete(g.Id);
-            g = c.Cpus.Where(cpu => cpu.Name == name && cpu.Manufacturer == manu).FirstOrDefault();
+            g = c.Cpus.Where(cpu => cpu.Name == name && cpu.Manufacturer == manu && cpu.Frequency == freq).FirstOrDefault();
+            CpuLogic.Delete(g.Id);
+            g = c.Cpus.Where(cpu => cpu.Name == "mb test 3" && cpu.Manufacturer == "some manu 2" && cpu.Frequency == freq).FirstOrDefault();
             CpuLogic.Delete(g.Id);
         }
         [TestMethod]
@@ -55,12 +57,12 @@ namespace UnitTestProject1
         public void TestDelete()
         {
             Context c = new Context();
-            CpuLogic.Add("mb test 3", 10, "some manu 2");
-            Cpu g = c.Cpus.Where(cpu => cpu.Name == "mb test 3" && cpu.Frequency == 10 && cpu.Manufacturer == "some manu 2").FirstOrDefault();
+            CpuLogic.Add("mb test 4", 10, "some manu 2");
+            Cpu g = c.Cpus.Where(cpu => cpu.Name == "mb test 4" && cpu.Frequency == 10 && cpu.Manufacturer == "some manu 2").FirstOrDefault();
             CpuLogic.Delete(g.Id);
-            g = c.Cpus.Where(cpu => cpu.Name == "mb test 3" && cpu.Frequency == 10 && cpu.Manufacturer == "some manu 2").FirstOrDefault();
+            Cpu go = c.Cpus.Where(cpu => cpu.Name == "mb test 4" && cpu.Frequency == 10 && cpu.Manufacturer == "some manu 2").FirstOrDefault();
             //Assert.AreNotSame(null, g);
-            Assert.IsNull(g);
+            Assert.IsNull(go);
         }
 
         [TestMethod]
