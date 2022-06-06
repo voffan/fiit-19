@@ -1,0 +1,19 @@
+1) Установить Microsoft.Office.Interop.Excel в нугет
+2) using Excel = Microsoft.Office.Interop.Excel;
+
+	Excel.Application exApp = new Excel.Application();
+
+            exApp.Workbooks.Add();
+            Excel.Worksheet wsh = (Excel.Worksheet)exApp.ActiveSheet;
+            for (int i = 0; i < dataGridView1.RowCount - 2; i++)
+            {
+                for (int j = 0; j < dataGridView1.ColumnCount - 1; j++)
+                {
+                    wsh.Cells[1, j + 1] = dataGridView1.Columns[j].HeaderText.ToString();
+                    wsh.Cells[i + 1, j + 1] = dataGridView1[j, i].Value.ToString();
+                }
+            }
+            exApp.Visible = true;
+
+3) Установить "*" в passwordChar в textBox пароля авторизации
+4) Решить проблему редактирования только что добавленного сотрудника
