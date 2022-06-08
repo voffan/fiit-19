@@ -53,7 +53,7 @@ namespace SiliconValley.Список_картин
                            Из = ((ListsComponent.GetObjById<Placement>(move.FromID)) == null) ? "null" : (ListsComponent.GetObjById<Placement>(move.FromID)).Name,
                            В = ((ListsComponent.GetObjById<Placement>(move.ToID)) == null) ? "null" : (ListsComponent.GetObjById<Placement>(move.ToID)).Name,
                            Дата = move.Date,
-                           Соторудник = emp.Surname + " " + emp.Name + " " + emp.Patronymic
+                           Сотрудник = emp.Surname + " " + emp.Name + " " + emp.Patronymic
                         };
 
            // MessageBox.Show(ListsComponent.GetObjById<Placement>(2).Name);

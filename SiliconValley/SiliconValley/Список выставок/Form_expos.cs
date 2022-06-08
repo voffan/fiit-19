@@ -19,6 +19,8 @@ namespace SiliconValley.Список_выставок
             InitializeComponent();
             Text = labelText;
             button1.Text = buttonText;
+            dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker2.Value = dateTimePicker1.Value;
         }
 
         public Form_expos(string labelText, string buttonText, int? id) : this(labelText, buttonText)

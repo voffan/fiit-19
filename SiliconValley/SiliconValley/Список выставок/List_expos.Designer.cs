@@ -44,19 +44,17 @@ namespace SiliconValley.Список_выставок
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridExpo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridExpo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridExpo.Location = new System.Drawing.Point(249, 15);
-            this.GridExpo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridExpo.Location = new System.Drawing.Point(187, 12);
             this.GridExpo.Name = "GridExpo";
             this.GridExpo.RowHeadersWidth = 51;
-            this.GridExpo.Size = new System.Drawing.Size(801, 524);
+            this.GridExpo.Size = new System.Drawing.Size(601, 426);
             this.GridExpo.TabIndex = 3;
             // 
             // ChangeExpo
             // 
-            this.ChangeExpo.Location = new System.Drawing.Point(16, 113);
-            this.ChangeExpo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangeExpo.Location = new System.Drawing.Point(12, 92);
             this.ChangeExpo.Name = "ChangeExpo";
-            this.ChangeExpo.Size = new System.Drawing.Size(212, 37);
+            this.ChangeExpo.Size = new System.Drawing.Size(159, 30);
             this.ChangeExpo.TabIndex = 4;
             this.ChangeExpo.Text = "Изменить выставку";
             this.ChangeExpo.UseVisualStyleBackColor = true;
@@ -64,10 +62,9 @@ namespace SiliconValley.Список_выставок
             // 
             // DeleteExpo
             // 
-            this.DeleteExpo.Location = new System.Drawing.Point(16, 158);
-            this.DeleteExpo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteExpo.Location = new System.Drawing.Point(12, 128);
             this.DeleteExpo.Name = "DeleteExpo";
-            this.DeleteExpo.Size = new System.Drawing.Size(212, 37);
+            this.DeleteExpo.Size = new System.Drawing.Size(159, 30);
             this.DeleteExpo.TabIndex = 5;
             this.DeleteExpo.Text = "Удалить";
             this.DeleteExpo.UseVisualStyleBackColor = true;
@@ -75,10 +72,9 @@ namespace SiliconValley.Список_выставок
             // 
             // AddExpo
             // 
-            this.AddExpo.Location = new System.Drawing.Point(16, 65);
-            this.AddExpo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddExpo.Location = new System.Drawing.Point(12, 53);
             this.AddExpo.Name = "AddExpo";
-            this.AddExpo.Size = new System.Drawing.Size(212, 37);
+            this.AddExpo.Size = new System.Drawing.Size(159, 30);
             this.AddExpo.TabIndex = 6;
             this.AddExpo.Text = "Добавить выставку";
             this.AddExpo.UseVisualStyleBackColor = true;
@@ -87,26 +83,26 @@ namespace SiliconValley.Список_выставок
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(16, 15);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 30);
+            this.textBox1.Size = new System.Drawing.Size(159, 26);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // List_expos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.AddExpo);
             this.Controls.Add(this.DeleteExpo);
             this.Controls.Add(this.ChangeExpo);
             this.Controls.Add(this.GridExpo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "List_expos";
             this.Text = "List_expos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.List_expos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridExpo)).EndInit();
             this.ResumeLayout(false);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SiliconValley
 {
-    class Context:DbContext
+    public class Context:DbContext
     {
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Department> Departments { get; set; }

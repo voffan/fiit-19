@@ -58,7 +58,7 @@ namespace SiliconValley.Список_выставок
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(279, 247);
+            this.button1.Location = new System.Drawing.Point(279, 168);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -120,7 +120,7 @@ namespace SiliconValley.Список_выставок
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 338);
+            this.ClientSize = new System.Drawing.Size(385, 213);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
@@ -130,6 +130,7 @@ namespace SiliconValley.Список_выставок
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_expos";
             this.Text = "Form_expos";
             this.Load += new System.EventHandler(this.Form_expos_Load);
